@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Unofficial DEAXS ADVENTURE Collection - Comic</title>
+    <link rel="icon" type="image/png" href="assets/media/icon.png">
+    
+    <link rel="stylesheet" href="assets/css/shared.css">
+    
+    <style>
+        /* certain themes here are unused for now cuz im gonna make them into an actual thing later. */
+        :root { --bg-color: #121212; --text-color: #e0e0e0; --block-bg: #0e0e1a; --block-border: #202225; --nav-btn-border: #fff; --nav-btn-text: #fff; --font-main: "Courier New", Courier, monospace; --base-font-size: 1.2rem; --dialogue-font-size: 1.1rem; }
+        body.light-mode { --bg-color: #ffffff; --text-color: #1a1a1a; --block-bg: #f0f0f5; --block-border: #d1d1d1; --nav-btn-border: #1a1a1a; --nav-btn-text: #1a1a1a; }
+        body.theme-blood { --bg-color: #220000; --text-color: #ff6666; --block-bg: #110000; --block-border: #ff0000; --nav-btn-border: #ff0000; --nav-btn-text: #ff0000; }
+        body.theme-void { --bg-color: #000000; --text-color: #555555; --block-bg: #000000; --block-border: #111111; --nav-btn-border: #333333; --nav-btn-text: #555555; }
+        body.font-serif { --font-main: "Georgia", serif; }
+        body.font-sans { --font-main: "Arial", Helvetica, sans-serif; }
+        body.size-small { --base-font-size: 0.9rem; --dialogue-font-size: 0.85rem; }
+        body.size-large { --base-font-size: 1.6rem; --dialogue-font-size: 1.4rem; }
+        body { background: var(--bg-color); color: var(--text-color); font-family: var(--font-main); margin: 0; padding: 0; display: flex; flex-direction: column; align-items: center; line-height: 1.6; transition: background 0.3s, color 0.3s; }
+        
+        .theme-controls { position: fixed; top: 95px; right: 10px; z-index: 1000; display: flex; gap: 5px; background: rgba(0,0,0,0.5); padding: 8px; border-radius: 5px; backdrop-filter: blur(4px); }
+        .theme-controls select { background: #1e1e1e; color: #fff; border: 1px solid #444; font-family: sans-serif; font-size: 0.7rem; padding: 4px; cursor: pointer; outline: none; }
+        header { width: 100%; max-width: 800px; padding: 110px 20px 40px 20px; text-align: center; box-sizing: border-box; }
+        .logo { width: 100%; max-width: 800px; height: auto; display: block; margin: 0 auto; }
+        .comic-container { width: 100%; max-width: 800px; padding: 0 20px; box-sizing: border-box; min-height: 50vh; }
+        .content-block { width: 100%; margin-bottom: 50px; animation: fadeIn 0.8s ease-in; }
+        img, video { width: 100%; height: auto; display: block; border-radius: 2px; }
+        .text-block { text-align: left; line-height: 1.8; font-size: var(--base-font-size); margin: 30px 0; width: 100%; word-wrap: break-word; white-space: pre-wrap; }
+        .dialogue-box { background: var(--block-bg); border: 1px solid var(--block-border); border-radius: 4px; padding: 20px; margin: 25px 0; width: 100%; box-sizing: border-box; font-family: "Consolas", "Monaco", monospace; color: var(--text-color); white-space: pre-wrap; font-size: var(--dialogue-font-size); text-align: left; }
+        footer { width: 100%; max-width: 800px; padding: 60px 0; text-align: center; border-top: 1px solid #222; margin-top: 40px; }
+        
+        .page-indicator { font-size: 0.9rem; color: #555; margin: 0 20px; vertical-align: middle; }
+        .jump-container { margin-top: 30px; color: #aaa; font-size: 0.9rem; display: flex; align-items: center; justify-content: center; gap: 10px; font-weight: bold; }
+        .jump-input { background: #000; color: #00ff00; padding: 4px; width: 50px; text-align: center; font-family: "Courier New", monospace; font-weight: bold; font-size: 1rem; outline: none; border-top: 2px solid #555; border-left: 2px solid #555; border-right: 2px solid #eee; border-bottom: 2px solid #eee; border-radius: 0; }
+        input::-webkit-outer-spin-button, input::-webkit-inner-spin-button { -webkit-appearance: none; margin: 0; }
+        input[type=number] { -webkit-appearance: none; appearance: none; -moz-appearance: textfield; }
+        .jump-input:focus { background: #111; }
+        .jump-btn { background-color: #c0c0c0; color: black; font-weight: bold; font-family: "MS Sans Serif", Arial, sans-serif; font-size: 12px; padding: 4px 15px; cursor: pointer; border-top: 2px solid #ffffff; border-left: 2px solid #ffffff; border-right: 2px solid #000000; border-bottom: 2px solid #000000; }
+        .jump-btn:active { border-top: 2px solid #000000; border-left: 2px solid #000000; border-right: 2px solid #ffffff; border-bottom: 2px solid #ffffff; }
+        
+        .custom-video-wrapper { position: relative; width: 100%; background: #000; overflow: hidden; display: flex; flex-direction: column; margin: 20px 0; }
+        .video-controls { position: absolute; bottom: 0; left: 0; width: 100%; box-sizing: border-box; display: flex; align-items: center; background: rgba(192, 192, 192, 0.95); padding: 5px 10px; gap: 10px; border-top: 2px solid #fff; color: black; z-index: 10; opacity: 0; transform: translateY(100%); transition: opacity 0.2s ease, transform 0.2s ease; }
+        .custom-video-wrapper:hover .video-controls { opacity: 1; transform: translateY(0); }
+        .video-controls input[type=range] { -webkit-appearance: none; appearance: none; background: #808080; height: 4px; cursor: pointer; }
+        .video-controls input[type=range]::-webkit-slider-thumb { -webkit-appearance: none; appearance: none; height: 16px; width: 8px; background: gold; border: 1px solid black; cursor: pointer; box-shadow: 1px 1px 0 #fff inset; }
+        .video-time-display { font-size: 10px; font-family: Arial, sans-serif; min-width: 60px; text-align: center; }
+        .progress-bar { flex-grow: 1; }
+        
+        body.green-mode { background-color: #00ff00 !important; transition: background-color 0.1s; }
+        .green-jumpscare { position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%) scale(0.1); z-index: 10000; pointer-events: none; opacity: 0; animation: jumpScareAnim 0.8s forwards ease-out; }
+        @keyframes jumpScareAnim { 0% { transform: translate(-50%, -50%) scale(0.1); opacity: 0; } 20% { transform: translate(-50%, -50%) scale(0.8); opacity: 1; } 70% { transform: translate(-50%, -50%) scale(1.0); opacity: 1; } 100% { transform: translate(-50%, -50%) scale(2); opacity: 0; } }
+    </style>
+</head>
+<body>
+    <div class="retro-title-bar">
+        <div style="display: flex; align-items: center;">
+            <img src="assets/media/icon.png" class="title-bar-icon" alt="icon">
+            <div class="retro-title-text">The Unofficial DEAXS ADVENTURE Collection - Comic</div>
+        </div>
+        <div class="retro-window-controls">
+            <button class="retro-btn" onclick="minimizeApp()">_</button>
+            <button class="retro-btn" onclick="maximizeApp()">□</button>
+            <button class="retro-btn" onclick="closeApp()">X</button>
+        </div>
+    </div>
+
+    <div class="browser-ui-container">
+        <div class="retro-tabs" id="tab-container"></div>
+        <div class="retro-address-bar">
+            <span class="retro-address-label">Address</span>
+            <div class="retro-address-input-wrapper">
+                <img src="assets/media/icon.png" class="fake-favicon" alt="icon">
+                <input type="text" id="address-input" onkeypress="handleAddressBar(event)" spellcheck="false">
+            </div>
+        </div>
+    </div>
+
+    <a href="home.html" class="nav-btn floating-menu-btn">MAIN MENU</a>
+    
+    <div class="theme-controls">
+        <select id="mode-select" onchange="applyTheme()">
+            <option value="dark">Dark</option>
+            <option value="light">Light</option>
+        </select>
+        <select id="font-select" onchange="applyTheme()">
+            <option value="default">Mono</option>
+            <option value="serif">Serif</option>
+            <option value="sans">Sans</option>
+        </select>
+        <select id="size-select" onchange="applyTheme()">
+            <option value="medium">Standard</option>
+            <option value="small">Small</option>
+            <option value="large">Large</option>
+        </select>
+    </div>
+    
+    <header>
+        <img src="assets/media/logo.png" alt="Deaxs Adventure" class="logo">
+    </header>
+    
+    <img id="green-easter-egg" src="assets/media/greendav.png" style="display: none;">
+    
+    <main class="comic-container" id="main-content">
+        <p style="text-align:center; color: #444;">[ LOADING DATA ]</p>
+    </main>
+    
+    <footer id="nav-footer"></footer>
+    
+    <script src="assets/js/shared.js"></script>
+    
+    <script>
+        let totalPagesCount = 1;
+
+        function applyTheme() {
+            const mode = document.getElementById('mode-select').value;
+            const font = document.getElementById('font-select').value;
+            const size = document.getElementById('size-select').value;
+            document.body.classList.toggle('light-mode', mode === 'light');
+            document.body.classList.remove('font-serif', 'font-sans');
+            if (font === 'serif') document.body.classList.add('font-serif');
+            if (font === 'sans') document.body.classList.add('font-sans');
+            document.body.classList.remove('size-small', 'size-large');
+            if (size === 'small') document.body.classList.add('size-small');
+            if (size === 'large') document.body.classList.add('size-large');
+            localStorage.setItem('reader-mode', mode);
+            localStorage.setItem('reader-font', font);
+            localStorage.setItem('reader-size', size);
+        }
+
+        function loadSavedTheme() {
+            const savedMode = localStorage.getItem('reader-mode') || 'dark';
+            const savedFont = localStorage.getItem('reader-font') || 'default';
+            const savedSize = localStorage.getItem('reader-size') || 'medium';
+            document.getElementById('mode-select').value = savedMode;
+            document.getElementById('font-select').value = savedFont;
+            document.getElementById('size-select').value = savedSize;
+            applyTheme();
+        }
+
+        function jumpToPage(event) {
+            if (event.key === "Enter") {
+                let page = parseInt(event.target.value);
+                if (isNaN(page)) return;
+                if (page < 1) page = 1;
+                if (page > totalPagesCount) page = totalPagesCount;
+                window.location.search = `?p=${page}`;
+            }
+        }
+
+        function executeJump() {
+            let input = document.getElementById('jump-input-field');
+            if (input) {
+                let page = parseInt(input.value);
+                if (!isNaN(page)) {
+                    if (page < 1) page = 1;
+                    if (page > totalPagesCount) page = totalPagesCount;
+                    window.location.search = `?p=${page}`;
+                }
+            }
+        }
+
+        function handleAddressBar(event) {
+            if (event.key === "Enter") {
+                const val = event.target.value.toLowerCase();
+                const match = val.match(/(\d+)/); 
+                if (match) {
+                    let page = parseInt(match[1]);
+                    if (page < 1) page = 1;
+                    if (page > totalPagesCount) page = totalPagesCount;
+                    window.location.search = `?p=${page}`;
+                }
+            }
+        }
+
+        let keyBuffer = '';
+        const secretCode = 'green';
+
+        document.addEventListener('keydown', (e) => {
+            if (e.target.tagName.toLowerCase() === 'input') return;
+            keyBuffer += e.key.toLowerCase();
+            if (keyBuffer.length > secretCode.length) {
+                keyBuffer = keyBuffer.slice(-secretCode.length);
+            }
+            if (keyBuffer === secretCode) {
+                triggerGreenEasterEgg();
+                keyBuffer = ''; 
+            }
+        });
+
+        function triggerGreenEasterEgg() {
+            if (window.unlockAchievement) window.unlockAchievement('unlocked-green');
+            
+            const greenSound = new Audio('assets/media/bell.mp3');
+            greenSound.volume = 0.8;
+            greenSound.play().catch(err => console.log(err));
+            document.body.classList.add('green-mode');
+            const eggImg = document.getElementById('green-easter-egg');
+            eggImg.style.display = 'block';
+            eggImg.classList.remove('green-jumpscare');
+            void eggImg.offsetWidth; 
+            eggImg.classList.add('green-jumpscare');
+            setTimeout(() => {
+                eggImg.style.display = 'none';
+            }, 800);
+        }
+
+        async function loadComic() {
+            loadSavedTheme();
+            const container = document.getElementById('main-content');
+            const footer = document.getElementById('nav-footer');
+            const urlParams = new URLSearchParams(window.location.search);
+            let currentPage = urlParams.get('p') || "1";
+            localStorage.setItem('saved-page', currentPage);
+            
+            let highest = parseInt(localStorage.getItem('highest-page')) || 0;
+            if (parseInt(currentPage) > highest) {
+                localStorage.setItem('highest-page', currentPage);
+            }
+
+            try {
+                const res = await fetch('assets/data.json');
+                const data = await res.json();
+                container.innerHTML = "";
+                document.body.className = ''; 
+                applyTheme();
+                
+                if (!data.pages || !data.pages[currentPage]) {
+                    container.innerHTML = "<p style='text-align:center;'>[ EMPTY PAGE ]</p>";
+                    return;
+                }
+                
+                const pageKeys = Object.keys(data.pages).sort((a,b) => a-b);
+                totalPagesCount = pageKeys.length;
+                const lastPage = pageKeys[pageKeys.length - 1];
+
+                function scanForAchievements(triggerType, currentVideoTime = 0) {
+                    if (!window.APP_ACHIEVEMENTS) return;
+                    for (const [id, ach] of Object.entries(window.APP_ACHIEVEMENTS)) {
+                        if (ach.page === "last" && currentPage === lastPage && ach.trigger === triggerType) {
+                            window.unlockAchievement(id);
+                        }
+                        else if (ach.page === currentPage) {
+                            if (ach.trigger === triggerType) {
+                                window.unlockAchievement(id);
+                            } else if (ach.trigger === "video-time" && currentVideoTime >= ach.triggerTime) {
+                                window.unlockAchievement(id);
+                            }
+                        }
+                    }
+                }
+
+                scanForAchievements("load");
+
+                if (data.pages[currentPage]) {
+                    data.pages[currentPage].forEach(block => {
+                        if (block.type === 'theme') {
+                            document.body.classList.add(block.value);
+                            return; 
+                        }
+
+                        const div = document.createElement('div');
+                        div.className = "content-block";
+                        
+                        if (block.type === 'image') {
+                            div.innerHTML = `<img src="${block.value}" alt="Panel">`;
+                        } else if (block.type === 'video') {
+                            div.innerHTML = `
+                                <div class="custom-video-wrapper">
+                                    <video class="custom-video" src="${block.value}"></video>
+                                    <div class="video-controls">
+                                        <button class="retro-btn play-pause-btn" style="width: 30px;">▶</button>
+                                        <div class="video-time-display"><span class="current-time">0:00</span></div>
+                                        <input type="range" class="progress-bar" value="0" min="0" max="100" step="0.1">
+                                        <button class="retro-btn mute-btn" style="width: 30px;">🔊</button>
+                                        <input type="range" class="volume-bar" value="1" min="0" max="1" step="0.05" style="width: 50px;">
+                                    </div>
+                                </div>
+                            `;
+                        } else if (block.type === 'text') {
+                            div.className += " text-block";
+                            div.innerHTML = parseColors(block.value);
+                        } else if (block.type === 'dialogue') {
+                            div.className += " dialogue-box";
+                            div.innerHTML = parseColors(block.value);
+                        }
+                        container.appendChild(div);
+                    });
+                }
+
+                const videoWrappers = document.querySelectorAll('.custom-video-wrapper');
+                videoWrappers.forEach(wrapper => {
+                    const video = wrapper.querySelector('.custom-video');
+                    const playBtn = wrapper.querySelector('.play-pause-btn');
+                    const progressBar = wrapper.querySelector('.progress-bar');
+                    const muteBtn = wrapper.querySelector('.mute-btn');
+                    const volumeBar = wrapper.querySelector('.volume-bar'); 
+                    const timeDisplay = wrapper.querySelector('.current-time');
+
+                    const formatTime = (seconds) => {
+                        const mins = Math.floor(seconds / 60);
+                        const secs = Math.floor(seconds % 60);
+                        return `${mins}:${secs.toString().padStart(2, '0')}`;
+                    };
+
+                    const togglePlay = () => {
+                        if (video.paused) {
+                            video.play();
+                            playBtn.innerText = "⏸";
+                        } else {
+                            video.pause();
+                            playBtn.innerText = "▶";
+                        }
+                    };
+
+                    playBtn.addEventListener('click', togglePlay);
+                    video.addEventListener('click', togglePlay);
+
+                    video.addEventListener('timeupdate', () => {
+                        if (video.duration) {
+                            progressBar.value = (video.currentTime / video.duration) * 100;
+                            timeDisplay.innerText = formatTime(video.currentTime);
+                        }
+                        scanForAchievements("video-time", video.currentTime);
+                    });
+
+                    video.addEventListener('ended', () => {
+                        scanForAchievements("video-end");
+                    });
+
+                    progressBar.addEventListener('input', (e) => {
+                        video.currentTime = (e.target.value / 100) * video.duration;
+                    });
+
+                    muteBtn.addEventListener('click', () => {
+                        video.muted = !video.muted;
+                        muteBtn.innerText = video.muted ? "🔇" : "🔊";
+                        volumeBar.value = video.muted ? 0 : video.volume; 
+                    });
+
+                    volumeBar.addEventListener('input', (e) => {
+                        video.volume = e.target.value;
+                        video.muted = (video.volume === 0);
+                        muteBtn.innerText = video.muted ? "🔇" : "🔊";
+                    });
+                });
+
+                function parseColors(text) {
+                    return text.replace(/\[(.*?)\|(.*?)(?:\|(.*?))?\]/g, (match, name, color, highlight) => {
+                        let style = `color:${color.trim()}; font-weight:bold;`;
+                        if (highlight) {
+                            style += `background-color:${highlight.trim()}; padding: 0 4px; border-radius: 2px;`;
+                        }
+                        return `<span style="${style}">${name}</span>`;
+                    });
+                }
+
+                const nextNum = parseInt(currentPage) + 1;
+                const prevNum = parseInt(currentPage) - 1;
+
+                footer.innerHTML = `
+                    ${currentPage !== "1" ? `<a href="?p=1" class="nav-btn">FIRST</a>` : ''}
+                    ${prevNum > 0 ? `<a href="?p=${prevNum}" class="nav-btn">PREV</a>` : ''}
+                    <span class="page-indicator">PG. ${currentPage} / ${totalPagesCount}</span>
+                    ${data.pages[nextNum.toString()] ? `<a href="?p=${nextNum}" class="nav-btn">NEXT</a>` : ''}
+                    ${currentPage !== lastPage ? `<a href="?p=${lastPage}" class="nav-btn">LAST</a>` : ''}
+                    <div class="jump-container">
+                        GO TO PAGE: 
+                        <input type="number" id="jump-input-field" class="jump-input" min="1" max="${totalPagesCount}" placeholder="${currentPage}" onkeypress="jumpToPage(event)">
+                        <button class="jump-btn" onclick="executeJump()">GO</button>
+                    </div>
+                `;
+            } catch (err) {
+                container.innerHTML = "<p style='text-align:center;'>[ ERROR LOADING ]</p>";
+            }
+        }
+        
+        window.onload = loadComic;
+    </script>
+</body>
+</html>

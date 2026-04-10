@@ -1,0 +1,55 @@
+/* assets/css/shared.css */
+body { background-color: #121212; color: white; font-family: "Courier New", monospace; text-align: center; overflow-x: hidden; }
+
+@font-face {
+    font-family: 'medallion';
+    src: url('../fonts/Alkhemikal.ttf');
+}
+
+.retro-title-bar { background-color: #000080; color: white; font-family: "MS Sans Serif", "Microsoft Sans Serif", "Terminal", sans-serif; display: flex; justify-content: space-between; align-items: center; padding: 3px 5px; -webkit-app-region: drag; position: fixed; top: 0; left: 0; width: 100%; box-sizing: border-box; z-index: 9999; }
+.retro-title-text { font-weight: bold; font-size: 14px; margin-left: 5px; letter-spacing: 1px; text-shadow: 1px 1px 0 #000; }
+.title-bar-icon { width: 16px; height: 16px; margin-right: 5px; -webkit-app-region: drag; }
+.retro-window-controls { display: flex; gap: 2px; -webkit-app-region: no-drag; }
+.retro-btn { background-color: #c0c0c0; color: black; font-weight: bold; font-family: Arial, sans-serif; font-size: 12px; padding: 2px 0; width: 24px; cursor: pointer; border-top: 2px solid #ffffff; border-left: 2px solid #ffffff; border-right: 2px solid #000000; border-bottom: 2px solid #000000; }
+.retro-btn:active { border-top: 2px solid #000000; border-left: 2px solid #000000; border-right: 2px solid #ffffff; border-bottom: 2px solid #ffffff; }
+
+.browser-ui-container { position: fixed; top: 22px; left: 0; width: 100%; z-index: 9998; background: #c0c0c0; }
+.retro-tabs { display: flex; gap: 2px; padding: 5px 5px 0 5px; border-bottom: 1px solid #fff; }
+.retro-tab { padding: 5px 15px; font-family: "MS Sans Serif", Arial, sans-serif; font-size: 12px; text-decoration: none; color: black; border-top: 2px solid #fff; border-left: 2px solid #fff; border-right: 2px solid #000; border-top-left-radius: 4px; border-top-right-radius: 4px; position: relative; top: 1px; transition: 0.2s; display: flex; align-items: center; user-select: none; cursor: pointer; }
+.retro-tab.active { background: #c0c0c0; font-weight: bold; border-bottom: 1px solid #c0c0c0; z-index: 2; }
+.retro-tab.inactive { background: #a0a0a0; border-bottom: 1px solid #fff; color: #444; }
+.retro-tab.inactive:hover { background: #b0b0b0; }
+.retro-address-bar { display: flex; align-items: center; gap: 10px; padding: 4px 10px; border-top: 1px solid #808080; border-bottom: 2px solid #000; box-shadow: 0 1px 0 #fff inset, 0 -1px 0 #808080 inset; }
+.retro-address-label { color: black; font-family: "MS Sans Serif", Arial, sans-serif; font-size: 12px; }
+.retro-address-input-wrapper { flex-grow: 1; background: white; border-top: 2px solid #808080; border-left: 2px solid #808080; border-right: 2px solid #fff; border-bottom: 2px solid #fff; padding: 2px 4px; display: flex; align-items: center; }
+.retro-address-input-wrapper input { width: 100%; border: none; outline: none; font-family: Arial, sans-serif; font-size: 12px; color: black; }
+.fake-favicon { width: 12px; height: 12px; margin-right: 6px; }
+
+.nav-btn { background: #222; color: white; padding: 10px 20px; text-decoration: none; border: 1px solid white; display: inline-block; transition: 0.3s; cursor: pointer; }
+.nav-btn:hover { background: white; color: black; }
+.floating-menu-btn { position: fixed; bottom: 20px; left: 20px; z-index: 1000; background: rgba(34, 34, 34, 0.9); box-shadow: 0 4px 10px rgba(0,0,0,0.8); }
+
+@keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+
+.achievement-popup { 
+    position: fixed; 
+    bottom: -120px; 
+    right: 20px; 
+    background: #1e1e1e; 
+    color: white; 
+    border: 2px solid gold; 
+    border-radius: 5px; 
+    padding: 15px 20px; 
+    font-family: "Courier New", Courier, monospace; 
+    box-shadow: 0 4px 15px rgba(0,0,0,0.8); 
+    display: flex; 
+    align-items: center; 
+    gap: 15px; 
+    z-index: 99999; 
+    transition: bottom 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275); 
+}
+.achievement-popup.show { bottom: 20px; }
+.achievement-icon-img { width: 40px; height: 40px; object-fit: contain; }
+.achievement-text { text-align: left; }
+.achievement-text h4 { margin: 0 0 5px 0; color: gold; font-size: 1rem; }
+.achievement-text p { margin: 0; font-size: 0.85rem; color: #ccc; white-space: pre-wrap; }

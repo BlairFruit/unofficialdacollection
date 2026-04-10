@@ -1,0 +1,2260 @@
+{
+  "pages": {
+    "1": [
+      {
+        "type": "image",
+        "value": "assets/media/p1-1.png"
+      },
+      {
+        "type": "text",
+        "value": "A young Discord user stares at their server. It just so happens that today, the 5th of October, 2021, is this young person's birthday. Though it was sixteen years ago they were given life, it is only today that they will be given a nickname!"
+      },
+      {
+        "type": "image",
+        "value": "assets/media/p1-2.gif"
+      },
+      {
+        "type": "text",
+        "value": "What will the nickname of this young person be?"
+      }
+    ],
+    "2": [
+      {
+        "type": "image",
+        "value": "assets/media/p2-1.gif"
+      },
+      {
+        "type": "text",
+        "value": ">Examine room."
+      },
+      {
+        "type": "image",
+        "value": "assets/media/p2-2.png"
+      },
+      {
+        "type": "text",
+        "value": "Anyway, your nickname is LOCKY★P, but your real name is DEAXS. You enjoy playing VIDEO GAMES such as SUPER MARIO BROS and SONIC THE HEDGEHOG on your NINTENDO SWITCH. Sometimes, you like playing games with your buddies on your LENOVO SHITBOX PC. Occasionally, you see spiders crawl out of said PC.\n\nYou sleep with the LAMP on because you're scared of the dark. You got a WELCOME MAT on your last birthday. You think it's stupid, as it is facing THE WRONG FUCKING WAY. You only buy calendars just so you can circle October 5th, then you throw them away. Well, it is your BIRTHDAY. Why not find something fun to do?\n\nWhat will you do?"
+      }
+    ],
+    "3": [
+      {
+        "type": "image",
+        "value": "assets/media/p3-1.gif"
+      },
+      {
+        "type": "text",
+        "value": ">Put lamp shade on head\n\nYou are now looking through two shades instead of one. You would look in a mirror to see if this makes you look any cooler, but you can't see shit. You also do not have any mirrors in this room. Maybe you could ask for one for your next birthday."
+      },
+      {
+        "type": "image",
+        "value": "assets/media/p3-2.gif"
+      },
+      {
+        "type": "text",
+        "value": "You are not sure if this will even be useful, but you decide to put the lamp shade into your INVENTORY anyway. It should look familiar, so it needs no explanation."
+      },
+      {
+        "type": "image",
+        "value": "assets/media/p3-3.png"
+      },
+      {
+        "type": "text",
+        "value": "Now that you've discovered your INVENTORY, is there anything else that you would like to put in there?"
+      }
+    ],
+    "4": [
+      {
+        "type": "image",
+        "value": "assets/media/p4-1.gif"
+      },
+      {
+        "type": "text",
+        "value": ">Put the rest of the lamp in your INVENTORY.\n\nWell, can't take the shade without the lamp, can you? What else will you use to light up the dark if you need to sleep somewhere else? Although now that you've separated the shade from the lamp itself, you'll need to somehow put them back together."
+      },
+      {
+        "type": "image",
+        "value": "assets/media/p4-2.gif"
+      },
+      {
+        "type": "text",
+        "value": ">Craft regular lamp.\n\nUsing your crafting grid in your undisclosed reference of an inventory, you fuse together the lamp shade and the lamp body to craft a perfect regular lamp. Or you would have, if you didn't put the lamp shade on upside down. Oh well, now you just have a large and inconvenient flashlight. You put the INCONVENIENT FLASHLIGHT in your inventory."
+      },
+      {
+        "type": "image",
+        "value": "assets/media/p4-3.png"
+      },
+      {
+        "type": "text",
+        "value": "In any case, you are getting bored and would like to do something on your LENOVO SHITBOX PC. Maybe you could talk to your buddies or play a game.\n\nYou've had this piece of shit for a while now, and it is starting to piss you off. It used to be alright, but now it runs slower than something that doesn't even have legs. It is more useful as a housing unit for spiders than a computer at this point.\n\nIt is taking an unusually long amount of time to turn on. What will you do?"
+      }
+    ],
+    "5": [
+      {
+        "type": "image",
+        "value": "assets/media/p5-1.png"
+      },
+      {
+        "type": "text",
+        "value": ">Plead with the spiders.\n\nSpiders cannot understand English. Your pleading means nothing. The PC is still not turning on."
+      },
+      {
+        "type": "image",
+        "value": "assets/media/p5-2.gif"
+      },
+      {
+        "type": "text",
+        "value": "Obviously they wouldn't be able to understand you, and you are not sure why you tried that. You decide to try using sign language instead. Somehow, the spiders seem to understand sign language.\n\nYou sign to them, \"turn the fucking computer on,\" and they sign back saying it's going to take about 5 minutes until this piece of trash is fully operational again."
+      },
+      {
+        "type": "image",
+        "value": "assets/media/p5-3.png"
+      },
+      {
+        "type": "text",
+        "value": "It seems like you will need to occupy yourself with something else while the spiders are hard at work. You are not exactly sure what they are doing to make the computer turn on, but you trust them because they live inside of it.\n\nIn the meantime, you could EXAMINE something else in your room. What will you examine?"
+      }
+    ],
+    "6": [
+      {
+        "type": "image",
+        "value": "assets/media/p6-1.png"
+      },
+      {
+        "type": "text",
+        "value": "You can't seem to decide whether you want to examine the posters or the calendar! This is quite the predicament. This can only be solved one way..."
+      },
+      {
+        "type": "image",
+        "value": "assets/media/p6-2.gif"
+      },
+      {
+        "type": "text",
+        "value": ">Flip coin.\n\nIt looks like the coin landed on tails, which means you are going to examine the calendar. (And you GUESS you'll examine the welcome mat too, since you had also considered that as an option.)"
+      },
+      {
+        "type": "image",
+        "value": "assets/media/p6-3.png"
+      },
+      {
+        "type": "text",
+        "value": ">Examine calendar.\n\nAs mentioned previously, you don't find the calendar to be particularly useful. You circle today and you get rid of it. While you could circle other days, you just don't see a reason to. Perhaps you will forgo the use of the calendar all together.\n\nNow how about you examine the WELCOME MAT?"
+      },
+      {
+        "type": "image",
+        "value": "assets/media/p6-4.png"
+      },
+      {
+        "type": "text",
+        "value": ">Examine welcome mat.\n\nYou check under the welcome mat. What's that? There's a KEY under the welcome mat? Oh yes, but it's not just any key. It's a PIANO KEY. You don't know how this will be of any use whatsoever, but you decide to stash it away in your inventory anyway."
+      },
+      {
+        "type": "image",
+        "value": "assets/media/p6-5.gif"
+      },
+      {
+        "type": "text",
+        "value": "Ok that didn't take quite as long as you were hoping for. It seems you'll just have to wait a bit longer for the spiders to fix whatever issue your shitty PC is having.\n\nYou wonder if the spiders will want something in return for their work. Like, do they want to be paid? What currency would the spiders want? Ok stop fucking thinking about this it's probably making you dumber."
+      }
+    ],
+    "7": [
+      {
+        "type": "image",
+        "value": "assets/media/p7-1.png"
+      },
+      {
+        "type": "text",
+        "value": "Finally the spiders are finished fixing your soon-to-be-replaced LENOVO SHITBOX PC. Looks like they aren't asking for anything in return, meaning your daydreams about spider money were completely pointless. Alright, let's see if this thing is actually functional."
+      },
+      {
+        "type": "image",
+        "value": "assets/media/p7-2.png"
+      },
+      {
+        "type": "text",
+        "value": "Now you get to see your beautiful desktop again! It may not be the most organized desktop ever, but you know where everything is and that's good enough. \n\nIt looks like one of your buddies is trying to contact you on discord. Now open the goddamn app!!!"
+      },
+      {
+        "type": "image",
+        "value": "assets/media/p7-3.png"
+      },
+      {
+        "type": "dialogue",
+        "value": "[isabelfruit|#D33682] began chatting with [LOCKY★P|#DC322F]\n\n[isabelfruit: HAPPY BIRTHDAY DUDE :D|#D33682]\n\n[isabelfruit: what're you doing for your big day|#D33682]\n\n[LOCKY★P: nothing lol|#DC322F]\n\n[LOCKY★P: just spent like an hour waiting for my shitbox to turn on|#DC322F]\n\n[isabelfruit: you shouldve just asked for a new pc for your birthday silly|#D33682]\n\n[LOCKY★P: yeah but im stubborn as long as this thing turns on im going to use it|#DC322F]\n\n[isabelfruit: fair fair|#D33682]\n\n[isabelfruit: well hey while we're talking|#D33682]\n\n[isabelfruit: did you check your porch?|#D33682]\n\n[isabelfruit: i left a pipebo|#D33682]\n\n[isabelfruit: PACKAGE i mean package :]|#D33682]\n\n[isabelfruit: its got a neat gift in there for you|#D33682]\n\n[isabelfruit: you should open it in a crowded area itll be awesome|#D33682]\n\n[LOCKY★P: you dont need to convince me its a pipebomb i already believe you LOL|#DC322F]\n\n[LOCKY★P: anyway thanks for the gift in advance :)|#DC322F]"
+      },
+      {
+        "type": "image",
+        "value": "assets/media/p7-4.gif"
+      },
+      {
+        "type": "text",
+        "value": "You go to your door to leave your room and grab your newly delivered pipebomb present, but the door won't budge. It seems there is something big and heavy blocking it on the other side. You think it's the package your friend sent you. This means somebody must have moved it from outside to in front of your door. While that seems very considerate of them, you can't leave your damn room now."
+      },
+      {
+        "type": "image",
+        "value": "assets/media/p7-5.gif"
+      },
+      {
+        "type": "text",
+        "value": "Your intuition tells you to escape through the window. Unfortunately, you don't have one of those! Wow, this room really has fucking nothing in it. Maybe if you weren't a silly nerd you could have built a window with your bare hands. That sounds too hard actually never mind.\n\nHow will you escape your room?"
+      }
+    ],
+    "8": [
+      {
+        "type": "image",
+        "value": "assets/media/p8-1.gif"
+      },
+      {
+        "type": "text",
+        "value": ">Use your LOCKY POWERS to punch a LOCKY HOLE in the wall\n\nYou decide you like this idea most, as it seems the least fraudulent. \n\nOk now what the hell are LOCKY POWERS. You don't even know what that means, but you think it sounds really funny. Now, let's see what you've got."
+      },
+      {
+        "type": "image",
+        "value": "assets/media/p8-2.gif"
+      },
+      {
+        "type": "text",
+        "value": "WOW. You can't believe that actually worked. The fuck are these walls made out of? That was WAY cooler than turning into a piece of paper.\n\nYou hope nobody gets mad at you for punching a giant LOCKY HOLE in the LOCKY WALL. I mean, they can't really get that mad at you. You know, with it being your birthday and all."
+      },
+      {
+        "type": "image",
+        "value": "assets/media/p8-3.png"
+      },
+      {
+        "type": "text",
+        "value": "You really just jumped out the newly formed window with no regard for your own safety. Unbelievable. Anyway, it's kind of a muddy day out, isn't it? That shouldn't be a problem, considering you were about to head back inside.\n\nWait..."
+      },
+      {
+        "type": "image",
+        "value": "assets/media/p8-4.png"
+      },
+      {
+        "type": "text",
+        "value": "What the hell is that stupid looking block of text in the sky?"
+      },
+      {
+        "type": "image",
+        "value": "assets/media/p8-5.gif"
+      },
+      {
+        "type": "text",
+        "value": "WHAT IN THE FUCK IS THAT?????"
+      }
+    ],
+    "9": [
+      {
+        "type": "image",
+        "value": "assets/media/p9-1.png"
+      },
+      {
+        "type": "text",
+        "value": "You are just going to choose to ignore that thing.\n\nYou made it to the front door. It is always unlocked, so you will definitely be able to enter through here. This is also where the package was supposed to be, meaning the object blocking your door is 100% the gift.\n\nOnce you do through the door, you will enter the MUD ROOM."
+      },
+      {
+        "type": "image",
+        "value": "assets/media/p9-2.png"
+      },
+      {
+        "type": "text",
+        "value": ">Enter the MUD ROOM.\n\nLook at that, the windows on the outside are not visible from the inside. What the hell. More importantly, there is a BACKPACK in here. Maybe you should put it on. It could be very useful."
+      },
+      {
+        "type": "image",
+        "value": "assets/media/p9-3.gif"
+      },
+      {
+        "type": "text",
+        "value": ">Equip the BACKPACK.\n\nSee? You knew putting on the backpack was a good idea. It has expanded your inventory by adding nine more slots. You are now able to store twice as many items in your inventory. Unsurprisingly, the INCONVENIENT FLASHLIGHT and the PIANO KEY are still in your inventory."
+      },
+      {
+        "type": "image",
+        "value": "assets/media/p9-4.gif"
+      },
+      {
+        "type": "text",
+        "value": "After wearing the backpack for five seconds, it disappeared. It's a feature, all good backpacks today have it. \n\nYou will now enter the KITCHEN."
+      },
+      {
+        "type": "image",
+        "value": "assets/media/p9-5.png"
+      },
+      {
+        "type": "text",
+        "value": ">Enter the KITCHEN\n\nThere are so many different things you could inventorize within this oddly familiar kitchen. What will you add to your inventory?"
+      }
+    ],
+    "10": [
+      {
+        "type": "image",
+        "value": "assets/media/p10-1.png"
+      },
+      {
+        "type": "text",
+        "value": "Apparently, this LUNCHBOX is the closest thing resembling food in the entire damn kitchen. But theoretically, if there was a COUGHING BABY you wouldn't eat it. You don't eat babies, especially if they are sick."
+      },
+      {
+        "type": "image",
+        "value": "assets/media/p10-2.gif"
+      },
+      {
+        "type": "text",
+        "value": ">Put LUNCHBOX into your inventory.\n\nYou wonder how long it will take to fill your entire inventory full of useless objects. You aren't even sure if it will ever get that full. You are also choosing to ignore the weird logo on this lunchbox."
+      },
+      {
+        "type": "image",
+        "value": "assets/media/p10-3.gif"
+      },
+      {
+        "type": "text",
+        "value": "You decide to get to your room as quickly as possible, as to not make your friend wait. Also nice picture wow."
+      },
+      {
+        "type": "image",
+        "value": "assets/media/p10-4.png"
+      },
+      {
+        "type": "text",
+        "value": "Whoa, that is one big pipe bomb. This time it will surely kill you. Anyway, let's open this bitch. Also nice face wow.\n\nHow will you open it?"
+      }
+    ],
+    "11": [
+      {
+        "type": "image",
+        "value": "assets/media/p11-1.png"
+      },
+      {
+        "type": "text",
+        "value": ">Just open it fucking normally dumbass.\n\nYou decide to \"just open it fucking normally dumbass\", whatever that means. It's not like you wanted to do any other silly option anyway.\n\nYou are so surprised by what you see in the box! Just kidding, you have no idea what the hell you are looking at."
+      },
+      {
+        "type": "image",
+        "value": "assets/media/p11-2.png"
+      },
+      {
+        "type": "text",
+        "value": "Although whatever it is, it seems to be related the the game called \"RSIDNT\" that just was also included in the box. You were going to mark this on your calendar too, since all your buddies have been discussing its much anticipated release. But to be truthful, you never thought it looked all that interesting. You add the game to your inventory."
+      },
+      {
+        "type": "image",
+        "value": "assets/media/p11-3.png"
+      },
+      {
+        "type": "text",
+        "value": "Now THIS THING is what you don't understand. It just looks like a giant slab of metal. You will have to ask your buddy what it is supposed to do after you get it into your room."
+      },
+      {
+        "type": "image",
+        "value": "assets/media/p11-4.gif"
+      },
+      {
+        "type": "text",
+        "value": ">Move THIS THING into your room.\n\nTHIS THING is really heavy. Anyway, why are you standing on it? Get off of it, it could be radioactive or something! \n\nLook at that! Your buddy is messaging you."
+      },
+      {
+        "type": "image",
+        "value": "assets/media/p11-5.png"
+      },
+      {
+        "type": "text",
+        "value": ">Answer your buddy."
+      },
+      {
+        "type": "dialogue",
+        "value": "[isabelfruit|#D33682] began chatting with [LOCKY★P|#DC322F]\n\n[isabelfruit: what is taking you so long|#D33682]\n\n[isabelfruit: its a huge fucking package|#D33682]\n\n[LOCKY★P: dont worry i found it|#DC322F]\n\n[LOCKY★P: someone moved it in front of my door|#DC322F]\n\n[LOCKY★P: so i had to use my locky powers|#DC322F]\n\n[LOCKY★P: it was pretty cool|#DC322F]\n\n[LOCKY★P: kinda disappointed it wasnt a pipebomb|#DC322F]\n\n[isabelfruit: yeah i usually have some extras lying around but not this time|#D33682]\n\n[LOCKY★P: so what am i supposed to do with this big metal slab of junk?|#DC322F]\n\n[isabelfruit: i will explain in a sec|#D33682]\n\n[isabelfruit: but first you have to put teh game in your pc|#D33682]\n\n[isabelfruit: and make sure you have roblox installed|#D33682]\n\n[LOCKY★P: ok|#DC322F]"
+      }
+    ],
+    "12": [
+      {
+        "type": "text",
+        "value": "[[S] Prepare RSIDNT.|#00AFEF]"
+      },
+      {
+        "type": "video",
+        "value": "assets/media/p12-1.mp4"
+      }
+    ],
+    "13": [
+      {
+        "type": "image",
+        "value": "assets/media/p13-1.gif"
+      },
+      {
+        "type": "dialogue",
+        "value": "[LOCKY★P|#DC322F] began chatting with [isabelfruit|#D33682]\n\n[LOCKY★P: ok i installed RSIDNT|#DC322F]\n\n[LOCKY★P: i also had to install roblox again because i haven't played it in 10 seconds|#DC322F]\n\n[LOCKY★P: what do i do now?|#DC322F]\n\n[isabelfruit: so first you need to walk over to the thing i sent you and press the button on the back of it|#D33682]\n\n[LOCKY★P: alright|#DC322F]\n\n[isabelfruit: then some shit is gonna pop out|#D33682]"
+      },
+      {
+        "type": "image",
+        "value": "assets/media/p13-2.gif"
+      },
+      {
+        "type": "dialogue",
+        "value": "[LOCKY★P: what now? do i press the big red button?|#DC322F]\n\n[isabelfruit: its a pink button|#D33682]\n\n[LOCKY★P: its literally red|#DC322F]\n\n[isabelfruit: alright well mine was pink|#D33682]\n\n[LOCKY★P: weird|#DC322F]\n\n[LOCKY★P: wait|#DC322F]\n\n[LOCKY★P: you have one of the big metal slab things too?|#DC322F]\n\n[isabelfruit: yeah but dont worry about that right now|#D33682]\n\n[LOCKY★P: ok well what happens after i press the button|#DC322F]\n\n[isabelfruit: basically im going to be able to control your room and place more big metal objects|#D33682]\n\n[LOCKY★P: bro i just cleaned my room i dont want more of these things in here|#DC322F]\n\n[isabelfruit: no but it will be funny|#D33682]\n\n[isabelfruit: i swear|#D33682]\n\n[LOCKY★P: this better be hilarious|#DC322F]"
+      },
+      {
+        "type": "image",
+        "value": "assets/media/p13-3.gif"
+      },
+      {
+        "type": "text",
+        "value": "Hold on!!!!!!!\n\nBefore you figure out what that button did, a character select menu appears. You can either continue to be deaxs, or you can choose to be THE OTHER PERSON.\n\nWhat will you do?"
+      }
+    ],
+    "14": [
+      {
+        "type": "image",
+        "value": "assets/media/p14-1.png"
+      },
+      {
+        "type": "text",
+        "value": ">Be THE OTHER PERSON.\n\nYou are now THE OTHER PERSON. Now that you are THE OTHER PER- ok you cannot keep calling her that. How about you give her a name instead?\n\nWhat will the name of THE OTHER PERSON be?"
+      },
+      {
+        "type": "image",
+        "value": "assets/media/p14-2.gif"
+      },
+      {
+        "type": "text",
+        "value": "JOHN EGBERT? What kind of name is JOHN EGBERT? You don't even know who that is! She's not going to be called that. Actually, it doesn't even matter. She already has a name anyway."
+      },
+      {
+        "type": "image",
+        "value": "assets/media/p14-3.png"
+      },
+      {
+        "type": "text",
+        "value": "Your name is ISABEL and you have a variety of interests. Your hobbies include watching DRAGON BALL and uh, programming or something stupid like that. It's not really important. What is important is that today is the day that a new video game releases. All of your buddies are very excited for its release today. Well, most of them are excited at least. \n\nNow, turn on your LAP WITH NO TOP and start chatting with your buddies."
+      },
+      {
+        "type": "image",
+        "value": "assets/media/p14-4.png"
+      },
+      {
+        "type": "text",
+        "value": ">Turn on LAP WITH NO TOP\n\nYou love your LAP WITH NO TOP. It's super cool and reliable and awesome. It is comprised of a LAP (excluding the top) and a MONITOR. A LAPTOP? What the hell is that. It's not that. That sounds dumb. It's a LAP WITH NO TOP and that is final."
+      },
+      {
+        "type": "image",
+        "value": "assets/media/p14-5.gif"
+      },
+      {
+        "type": "text",
+        "value": "It looks like you already have a message from someone."
+      },
+      {
+        "type": "dialogue",
+        "value": "[EarthDoggo|#2AA198] began chatting with [isabelfruit|#D33682]\n\n[EarthDoggo: hey|#2AA198] \n\n[EarthDoggo: did you get the game yet?|#2AA198]\n\n[EarthDoggo: i did|#2AA198]\n\n[isabelfruit: no not yet|#D33682]\n\n[EarthDoggo: well, you should check again|#2AA198]\n\n[EarthDoggo: cause it could be there|#2AA198] 🙃\n\n[isabelfruit: i will in a sec|#D33682]\n\n[isabelfruit: also what did you get deaxs for their birthday?|#D33682]\n\n[EarthDoggo: it's their birthday???|#2AA198]\n\n[isabelfruit: YOU DIDNT KNOW???|#D33682]\n\n[EarthDoggo: i forgor|#2AA198] 💀\n\n[EarthDoggo: i'll have to do something last minute...|#2AA198]\n\n[EarthDoggo: so what did you get them then?|#2AA198]\n\n[isabelfruit: i just got them RSIDNT cause they never bought it for themselves|#D33682]\n\n[EarthDoggo: smart, but do you even think they will even like it? don't you think they would have ordered their own copy if they actually wanted to play it?|#2AA198]\n\n[isabelfruit: uhhhhh no idea|#D33682]\n\n[isabelfruit: ok im gonna go check now|#D33682]\n\n[EarthDoggo: alr|#2AA198]"
+      },
+      {
+        "type": "image",
+        "value": "assets/media/p14-6.gif"
+      },
+      {
+        "type": "text",
+        "value": ">Go check if the game is here.\n\nYou go to look out your window to see if it is in the mailbox. What are you talking about? You don't have any windows in your room and you never have! There must be a window shortage. It seems you will have to exit your room to check if it's here."
+      },
+      {
+        "type": "image",
+        "value": "assets/media/p14-7.gif"
+      },
+      {
+        "type": "text",
+        "value": ">Go check if the game is here correctly.\n\nYou go to your front door, but before you can go outside you need to grab your UMBRELLA. It is raining outside and you aren't in the mood to get completely soaked while you play your game."
+      },
+      {
+        "type": "image",
+        "value": "assets/media/p14-8.gif"
+      },
+      {
+        "type": "text",
+        "value": ">Grab UMBRELLA.\n\nYou grab your UMBRELLA and add it to your INVENTORY. It should look familiar, so it needs no explanation."
+      },
+      {
+        "type": "image",
+        "value": "assets/media/p14-9.gif"
+      },
+      {
+        "type": "text",
+        "value": "It looks like your game is here! Unfortunately, it also looks like it is so big that the mailman put it on top of your mailbox, which in turn crushed your mailbox. Oh well, at least you got the game. It is pretty heavy though, so it might take a while to bring it to your room."
+      },
+      {
+        "type": "image",
+        "value": "assets/media/p14-10.gif"
+      },
+      {
+        "type": "text",
+        "value": "Or you can just do that. Sure ok."
+      },
+      {
+        "type": "image",
+        "value": "assets/media/p14-11.png"
+      },
+      {
+        "type": "text",
+        "value": "You are going to need a new mailbox. And you got all this stupid fucking mud in your house! But who cares? That will be future you's problem. Go back to your room and play the game!"
+      },
+      {
+        "type": "image",
+        "value": "assets/media/p14-12.gif"
+      },
+      {
+        "type": "text",
+        "value": "Welcome to your room. You don't need to be welcomed. It's your room idiot. \n\nAlso you can't play the game yet because you have more messages from your friends."
+      },
+      {
+        "type": "image",
+        "value": "assets/media/p14-13.gif"
+      },
+      {
+        "type": "dialogue",
+        "value": "[EarthDoggo: did you look yet?|#2AA198]\n\n[EarthDoggo: what are you doing dude|#2AA198]\n\n[EarthDoggo:|#2AA198] 😴😴😴    \n\n[isabelfruit: i got the game|#D33682]\n\n[EarthDoggo: what the hell took you so long?|#2AA198]\n\n[isabelfruit: IT WAS RAINING AND SHIT|#D33682]\n\n[isabelfruit: MY MAILBOX IS GONE|#D33682]\n\n[EarthDoggo: but the game is unharmed, right?|#2AA198]\n\n[isabelfruit: yes teh game is ok|#D33682]\n\n[EarthDoggo: then let's play it?????????|#2AA198]\n\n[isabelfruit: i need to set it up first|#D33682]\n\n[isabelfruit: also someone else is messaging me and i dont know who it is|#D33682]\n\n[EarthDoggo: lame|#2AA198] 👎\n\n[isabelfruit|#D33682] stopped chatting with [EarthDoggo|#2AA198]"
+      },
+      {
+        "type": "image",
+        "value": "assets/media/p14-14.gif"
+      },
+      {
+        "type": "dialogue",
+        "value": "[L|#4F545C|#FDF6E3] began chatting with [isabelfruit|#D33682]\n\n[L: Isabel. I'm reaching out with an important message. You must play RSIDNT with deaxs.|#4F545C|#FDF6E3]\n\n[L: Otherwise...|#4F545C|#FDF6E3] \n\n[L: Nothing will Ever Happen.|#4F545C|#FDF6E3]\n\n[L|#4F545C|#FDF6E3] stopped chatting with [isabelfruit|#D33682]\n\n[isabelfruit: HELLO????|#D33682]\n\n[isabelfruit: what are you talking about????|#D33682]\n\n[isabelfruit: :[|#D33682]"
+      },
+      {
+        "type": "image",
+        "value": "assets/media/p14-15.png"
+      },
+      {
+        "type": "text",
+        "value": "Stupid fucking random messages. This is why you NEVER accept message requests. What the hell were they even talking about? You were going to play the damn game anyway.\n\nWell let's set up the game so your friend gets off your ass about it."
+      },
+      {
+        "type": "image",
+        "value": "assets/media/p14-16.png"
+      },
+      {
+        "type": "text",
+        "value": ">Set up RSIDNT.\n\nYou can't set it up yet because you haven't opened the package yet. Do that first."
+      },
+      {
+        "type": "image",
+        "value": "assets/media/p14-17.png"
+      },
+      {
+        "type": "text",
+        "value": ">Open package.\n\nYou open the package and see the giant metal slab inside of it. There is not fucking way this needs to be this big. It takes up like half of your room!"
+      },
+      {
+        "type": "image",
+        "value": "assets/media/p14-18.gif"
+      },
+      {
+        "type": "text",
+        "value": ">Shove game disc into LAP WITH NO TOP.\n\nYou shove the game disc into the LAP WITH NO TOP. It makes various interesting and upsetting noises. It sort of sounds like the LAP WITH NO TOP is coughing or something. It's kind of gross, but it eventually accepts the disc and prepares RSIDNT."
+      },
+      {
+        "type": "image",
+        "value": "assets/media/p14-19.gif"
+      },
+      {
+        "type": "text",
+        "value": ">Do some shit with the metal slab.\n\nYou press a button on the back of the metal slab and a new button pops out. What is the point of this? Why not just make the first button do whatever this button does? Actually, what does this button do?\n\nYou already know what this button does because it gets explained the the RSIDNT trailer! This button will allow one of your friends to control your version of the game. You cannot press it yet because you haven't even chose a friend to play with yet.\n\nWhich friend will you contact first?"
+      }
+    ],
+    "15": [
+      {
+        "type": "image",
+        "value": "assets/media/p15-1.gif"
+      },
+      {
+        "type": "text",
+        "value": "You are apparently too autistic to just choose one friend to contact first, so you'll do both at the same time!!!"
+      },
+      {
+        "type": "image",
+        "value": "assets/media/p15-2.gif"
+      },
+      {
+        "type": "text",
+        "value": ">Add both of your buddies to a GROUP CHAT."
+      },
+      {
+        "type": "dialogue",
+        "value": "RSIDNT GROUP CHAT\n\n[isabelfruit|#D33682] created RSIDNT GROUP CHAT\n\n[isabelfruit|#D33682] added [LOCKY★P|#DC322F] to RSIDNT GROUP CHAT\n\n[isabelfruit|#D33682] added [EarthDoggo|#2AA198] to RSIDNT GROUP CHAT\n\n[isabelfruit: hey guyys|#D33682]\n\n[isabelfruit: welcome to my GROUP CHAT|#D33682]\n\n[EarthDoggo: why am i here|#2AA198]\n\n[isabelfruit: cause we are all gonna play the game together|#D33682]\n\n[isabelfruit: deaxs?|#D33682]\n\n[isabelfruit: deaxs where are you|#D33682]\n\n[EarthDoggo: try dming them|#2AA198]"
+      },
+      {
+        "type": "image",
+        "value": "assets/media/p15-3.png"
+      },
+      {
+        "type": "text",
+        "value": ">Message deaxs and have a conversation we have already seen."
+      },
+      {
+        "type": "image",
+        "value": "assets/media/p15-4.gif"
+      },
+      {
+        "type": "text",
+        "value": ">Skip to the end of the conversation."
+      },
+      {
+        "type": "dialogue",
+        "value": "[LOCKY★P: ok well what happens after i press the button|#DC322F]\n\n[isabelfruit: basically im going to be able to control your room and place more big metal objects|#D33682]\n\n[LOCKY★P: bro i just cleaned my room i dont want more of these things in here|#DC322F]\n\n[isabelfruit: no but it will be funny|#D33682] \n\n[isabelfruit: i swear|#D33682]\n\n[LOCKY★P: this better be hilarious|#DC322F]\n\n[LOCKY★P: ok i did it. is something supposed to happen now?|#DC322F]\n\n[isabelfruit: no it doesnt do anything yet|#D33682]\n\n[isabelfruit: i PRANKED you|#D33682]\n\n[LOCKY★P: cool|#DC322F]\n\n[isabelfruit: dont worry|#D33682]\n\n[isabelfruit: we are about to play but you need to go talk in the group chat i made :]|#D33682]\n\n[LOCKY★P|#DC322F] stopped chatting with [isabelfruit|#D33682]\n\n[isabelfruit|#D33682] stopped chatting with [LOCKY★P|#DC322F]"
+      },
+      {
+        "type": "image",
+        "value": "assets/media/p15-5.gif"
+      },
+      {
+        "type": "dialogue",
+        "value": "RSIDNT GROUP CHAT\n\n[EarthDoggo: guys|#2AA198]\n\n[EarthDoggo: hello????|#2AA198]  \n\n[EarthDoggo: guess it's just me|#2AA198] 👀\n\n[LOCKY★P: don't worry im here now|#DC322F]\n\n[isabelfruit: yep|#D33682]\n\n[isabelfruit: now we can get started|#D33682]\n\n[EarthDoggo: oh goodie!|#2AA198]\n\n[isabelfruit: ok so deaxs|#D33682]\n\n[isabelfruit: hold down your button first and keep holding it until i press mine|#D33682]\n\n[isabelfruit: then we will link and i can do all that stuff i said|#D33682]\n\n[LOCKY★P: alright|#DC322F]\n\n[isabelfruit: actually wait|#D33682]\n\n[isabelfruit: before you do that|#D33682]\n\n[isabelfruit: lets go back to dms to make this easier|#D33682]\n\n[LOCKY★P|#DC322F] stopped chatting in RSIDNT GROUP CHAT\n\n[isabelfruit|#D33682] stopped chatting in RSIDNT GROUP CHAT\n\n[EarthDoggo:|#2AA198] ❓\n\n[EarthDoggo: what was the point of that???????|#2AA198]\n\n[EarthDoggo: who am i supposed to play with now???|#2AA198]\n\n[EarthDoggo: what the hell|#2AA198]"
+      }
+    ],
+    "16": [
+      {
+        "type": "image",
+        "value": "assets/media/p16-1.gif"
+      },
+      {
+        "type": "text",
+        "value": ">Stop being ISABEL and go back to being DEAXS.\n\nYou stop being ISABEL and go back to being DEAXS. This is DEAXS ADVENTURE after all, not ISABEL ESCAPADES. \n\nAlright, now how about you finally stop doing other random shit and actually start playing this stupid game? You have waited long enough."
+      }
+    ],
+    "17": [
+      {
+        "type": "text",
+        "value": "[[S] Sync.|#00AFEF]"
+      },
+      {
+        "type": "video",
+        "value": "assets/media/p17-1.mp4"
+      }
+    ],
+    "18": [
+      {
+        "type": "image",
+        "value": "assets/media/p18-1.gif"
+      },
+      {
+        "type": "text",
+        "value": ">Start playing this fucking game.\n\nLooks like it's time to play the fucking game! So uh, how does this game work? Try asking Isabel how this silly game works."
+      },
+      {
+        "type": "dialogue",
+        "value": "[LOCKY★P|#DC322F] began chatting with [isabelfruit|#D33682]\n\n[LOCKY★P: ok so how do we play the game?|#DC322F]\n\n[LOCKY★P: i mean i know you are going to start placing stuff, but do i need to do anything with it?|#DC322F]\n\n[isabelfruit: im just going to place some things and then i think you will understand what to do|#D33682]\n\n[LOCKY★P: uhh ok|#DC322F]"
+      },
+      {
+        "type": "image",
+        "value": "assets/media/p18-2.gif"
+      },
+      {
+        "type": "dialogue",
+        "value": "[isabelfruit: boom there you go|#D33682]\n\n[LOCKY★P: what the fuck is that|#DC322F]\n\n[LOCKY★P: is that what i fucking think it is?|#DC322F]\n\n[isabelfruit: maybe|#D33682]\n\n[LOCKY★P: so you are telling me that the game that you have been waiting to play is just a fucking roblox tycoon in real life?|#DC322F]\n\n[isabelfruit: maybe|#D33682]\n\n[LOCKY★P: that|#DC322F]\n\n[LOCKY★P: is so fucking stupid|#DC322F]\n\n[isabelfruit: wait why is it stupid? i thought you liked roblox tycoons?|#D33682]\n\n[LOCKY★P: no that is your thing dude|#DC322F]\n\n[isabelfruit: OOOHHHHHH YEAH YOU ARE RIGHT|#D33682]\n\n[LOCKY★P: i almost dont wanna play this anymore|#DC322F]\n\n[isabelfruit: :[|#D33682]\n\n[LOCKY★P: BUT|#DC322F]\n\n[LOCKY★P: i will because we are best buddies!!!!|#DC322F]\n\n[isabelfruit: :]|#D33682]"
+      },
+      {
+        "type": "image",
+        "value": "assets/media/p18-3.png"
+      },
+      {
+        "type": "dialogue",
+        "value": "[isabelfruit: well uhhhh|#D33682]\n\n[isabelfruit: your room is a bit crowded|#D33682]\n\n[LOCKY★P: so?|#DC322F]\n\n[isabelfruit: there is a LOT more shit we need to place|#D33682]\n\n[isabelfruit: im gonna start throwing things out of your room|#D33682]\n\n[LOCKY★P: wait wait wait|#DC322F]\n\n[LOCKY★P: can you like |#DC322F]\n\n[LOCKY★P: make my room bigger maybe?|#DC322F]\n\n[isabelfruit: here ill try that|#D33682]"
+      },
+      {
+        "type": "image",
+        "value": "assets/media/p18-4.gif"
+      },
+      {
+        "type": "dialogue",
+        "value": "[isabelfruit: ok i think this should be big enough for now|#D33682]\n\n[LOCKY★P: so like after we are done playing the game, can this be undone or is my room permanently fucked like this?|#DC322F]\n\n[isabelfruit: i dunno|#D33682]\n\n[LOCKY★P: anyways what should i buy next?|#DC322F]\n\n[isabelfruit: well what do YOU want to buy next?|#D33682]"
+      }
+    ],
+    "19": [
+      {
+        "type": "image",
+        "value": "assets/media/p19-1.gif"
+      },
+      {
+        "type": "dialogue",
+        "value": "[LOCKY★P: I don't know maybe place the fucking conveyor first|#DC322F]\n\n[LOCKY★P: i mean uh|#DC322F]\n\n[LOCKY★P: sorry i dont know what that was|#DC322F]\n\n[LOCKY★P: but yeah i guess we need a conveyor first|#DC322F]\n\n[isabelfruit: i mean im kind of a roblox expert so i dont really think we should have to place one|#D33682]\n\n[isabelfruit: but i guess we have to in this game????|#D33682]"
+      },
+      {
+        "type": "image",
+        "value": "assets/media/p19-2.gif"
+      },
+      {
+        "type": "dialogue",
+        "value": "[isabelfruit: lemme move this really quick|#DC322F]"
+      },
+      {
+        "type": "image",
+        "value": "assets/media/p19-3.gif"
+      },
+      {
+        "type": "dialogue",
+        "value": "[LOCKY★P: ow|#DC322F]\n\n[isabelfruit: wha|#D33682]\n\n[LOCKY★P: you kinda placed it on my foot bro|#DC322F]\n\n[isabelfruit: well idk why you were standing there in the first place|#D33682]\n\n[isabelfruit: you could have just stayed over there|#D33682]\n\n[LOCKY★P: well i moved you should have adapted to the situation|#DC322F]\n\n[LOCKY★P: anyways lets place another dropper|#DC322F]\n\n[isabelfruit: we need money for that|#D33682]\n\n[LOCKY★P: there are microtransactions?|#DC322F]\n\n[LOCKY★P: yuckyyyyy|#DC322F]\n\n[LOCKY★P: we can be done now i think|#DC322F]\n\n[isabelfruit: nonono its an ingame currency|#D33682]\n\n[isabelfruit: its TIX|#D33682]\n\n[LOCKY★P: well how do we get some?|#DC322F]\n\n[isabelfruit: idk how we are supposed to get it but we can sell objects for tix|#D33682]\n\n[LOCKY★P: guess we can sell SOMETHING in my room|#DC322F]"
+      },
+      {
+        "type": "image",
+        "value": "assets/media/p19-4.gif"
+      },
+      {
+        "type": "dialogue",
+        "value": "[isabelfruit: what item should we sell?|#D33682]\n\n[isabelfruit: or rather|#D33682]\n\n[isabelfruit: what item do YOU think we should sell?|#D33682]\n\n[LOCKY★P: why do you keep asking me questions|#DC322F]"
+      }
+    ],
+    "20": [
+      {
+        "type": "image",
+        "value": "assets/media/p20-1.png"
+      },
+      {
+        "type": "dialogue",
+        "value": "[LOCKY★P: fuck that im not selling a console for a single game. why not just sell the useless slab thats actually in the game instead of my real shit?|#DC322F]\n\n[isabelfruit: i mean i guess|#D33682]\n\n[isabelfruit: i dont think it is used for anything else|#D33682]"
+      },
+      {
+        "type": "image",
+        "value": "assets/media/p20-2.png"
+      },
+      {
+        "type": "dialogue",
+        "value": "[isabelfruit: HOLY SHIT|#D33682]\n\n[isabelfruit: DUDE |#D33682]\n\n[isabelfruit: THIS THING IS WORTH ONE ROBUCK|#D33682]\n\n[LOCKY★P: is that a lot?|#DC322F]\n\n[isabelfruit: i think one robuck is worth like a million tix|#D33682]\n\n[isabelfruit: or something|#D33682]\n\n[isabelfruit: maybe not that much but its a lot|#D33682]\n\n[LOCKY★P: then sell it|#DC322F]"
+      },
+      {
+        "type": "image",
+        "value": "assets/media/p20-3.gif"
+      },
+      {
+        "type": "dialogue",
+        "value": "[isabelfruit: ok we can buy so many things now|#D33682]\n\n[LOCKY★P: cool but before we continue|#DC322F]\n\n[LOCKY★P: what exactly is the point of this game?|#DC322F]\n\n[LOCKY★P: like we could just play a tycoon on roblox without destroying my house for no reason|#DC322F]\n\n[isabelfruit: well if you watched the gameplay trailer for the game you would know that there is a portal that you can open|#D33682]\n\n[isabelfuit: and you can go through it and stuff|#D33682]\n\n[LOCKY★P: alright that sounds interesting i guess|#DC322F]\n\n[isabelfruit: i think it opens after buying the last item|#D33682]"
+      },
+      {
+        "type": "image",
+        "value": "assets/media/p20-4.png"
+      },
+      {
+        "type": "text",
+        "value": "But before you can finish your thought, you become THE OTHER OTHER PERSON."
+      },
+      {
+        "type": "image",
+        "value": "assets/media/p20-5.gif"
+      },
+      {
+        "type": "text",
+        "value": "Oh great, your buddies just stopped chatting in the group chat for some fucking reason. Now who are you supposed to play the game with?"
+      },
+      {
+        "type": "image",
+        "value": "assets/media/p20-6.gif"
+      },
+      {
+        "type": "text",
+        "value": "Before you find someone to play with, let's figure out who you are."
+      },
+      {
+        "type": "image",
+        "value": "assets/media/p20-7.png"
+      },
+      {
+        "type": "text",
+        "value": "Your name is PENNY and your username is EarthDoggo. You have many interests, such as watching movies, playing games, and having piles of LEGO around your room. Your gaming setup includes a SHITTY LENOVO LAPTOP and a chair that is slanted at an uncomfortable degree.\n\nOK yeah yeah what a loser. Can we go back to deaxs or maybe THE OTHER OTHER OTHER PERSON?"
+      }
+    ],
+    "21": [
+      {
+        "type": "text",
+        "value": "Alright, guess not. It looks like you also like making music or something, so you are gonna play one of your songs while you think about what to do next.\n\n[[S] Listen to An Absolute Banger.|#00AFEF]"
+      },
+      {
+        "type": "video",
+        "value": "assets/media/p21-1.mp4"
+      }
+    ],
+    "22": [
+      {
+        "type": "image",
+        "value": "assets/media/p22-1.png"
+      },
+      {
+        "type": "text",
+        "value": "You have an idea! You decide to message someone who surely hasn't played the game yet."
+      },
+      {
+        "type": "image",
+        "value": "assets/media/p22-2.gif"
+      },
+      {
+        "type": "dialogue",
+        "value": "[EarthDoggo|#2AA198] began chatting with [MisterDoughnut|#B58900]\n\n[EarthDoggo: heyyyy|#2AA198] \n\n[EarthDoggo: have you played the game yet?|#2AA198]\n\n[EarthDoggo: please tell me you haven't|#2AA198] 😭\n\n[MisterDoughnut: nah i've been at band practice, so i haven't had time to play it yet|#B58900]\n\n[MisterDoughnut: I'm about to start walking home though.|#B58900]\n\n[MisterDoughnut: when i get back we can play|#B58900]\n\n[EarthDoggo:|#2AA198] 😃 \n\n[MisterDoughnut: Also, you know it's Deaxs' birthday, right?|#B58900]\n\n[EarthDoggo: uh yea|#2AA198]\n\n[MisterDoughnut: did you get them anything?|#B58900]\n\n[EarthDoggo: not yet, but i was about to|#2AA198]\n\n[MisterDoughnut: Well, I got them a present.|#B58900]\n\n[EarthDoggo: ok|#2AA198] \n\n[EarthDoggo: i'll find something to give them while you are walking home|#2AA198]\n\n[MisterDoughnut: anyway this game better be fun because i was gonna play fortnite before you asked me to play this game|#B58900]\n\n[EarthDoggo: don't worry i think it is supposed to be fun|#2AA198] \n\n[MisterDoughnut: I'll see you then.|#B58900]\n\n[MisterDoughnut|#B58900] stopped chatting with [EarthDoggo|#2AA198]"
+      },
+      {
+        "type": "image",
+        "value": "assets/media/p22-3.gif"
+      },
+      {
+        "type": "text",
+        "value": "Damn, now you actually have to find a present for deaxs. Normally, you would take this time to examine your room to find something, but it is mostly just filled with LEGO. \n\nAlthough, now that you think about it, there is ONE thing you could give them..."
+      },
+      {
+        "type": "image",
+        "value": "assets/media/p22-4.png"
+      },
+      {
+        "type": "text",
+        "value": "You check under one of your LEGO piles for a collection of MOVIES. Let's see what we have here.\n\nJimmy Neutron Boy Genius? You can't give them that! It's far too valuable to just throw away like that."
+      },
+      {
+        "type": "image",
+        "value": "assets/media/p22-5.gif"
+      },
+      {
+        "type": "text",
+        "value": "Now, Gherbie Fully Goated on the other hand is perfect. This should definitely finish deaxs' Gherbie movie collection."
+      },
+      {
+        "type": "image",
+        "value": "assets/media/p22-6.gif"
+      },
+      {
+        "type": "text",
+        "value": "You take Gherbie Fully Goated and add it to your INVENTORY. It should look familiar, so it needs no explanation."
+      }
+    ],
+    "23": [
+      {
+        "type": "image",
+        "value": "assets/media/p23-1.png"
+      },
+      {
+        "type": "text",
+        "value": "You decide to put the gift in a BOX, so it looks less like you just pulled it out of a pile of LEGO last minute."
+      },
+      {
+        "type": "image",
+        "value": "assets/media/p23-2.gif"
+      },
+      {
+        "type": "text",
+        "value": "But before you can do so, you become deaxs again. Can we stay on these OTHER PERSONS for more than ten fucking seconds?"
+      },
+      {
+        "type": "image",
+        "value": "assets/media/p23-3.png"
+      },
+      {
+        "type": "text",
+        "value": "Well, you are deaxs now, so get used to it. It looks like they have made a good amount of progress since you started being Penny."
+      },
+      {
+        "type": "dialogue",
+        "value": "[LOCKY★P: what do we buy next?|#DC322F]\n\n[isabelfruit: we have already spent most of the tix we got from that slab|#D33682]\n\n[isabelfruit: those galvanized steel beams were pretty expensive|#D33682]\n\n[isabelfruit: so we need to decide wisely|#D33682]\n\n[LOCKY★P: alright well|#DC322F]\n\n[LOCKY★P: is there anything important looking that we should get?|#DC322F]\n\n[isabelfruit: uh|#D33682]\n\n[isabelfruit: there is this one thing called the nucleorb|#D33682]\n\n[isabelfruit: not sure exactly what it does but we could buy it anyway|#D33682]\n\n[LOCKY★P: ok send it|#DC322F]"
+      },
+      {
+        "type": "image",
+        "value": "assets/media/p23-4.gif"
+      },
+      {
+        "type": "text",
+        "value": "You watch as Isabel places the Nucleorb. It doesn't do anything at first, but then it starts pulsating. After a flash of bright light it becomes..."
+      },
+      {
+        "type": "image",
+        "value": "assets/media/p23-5.gif"
+      },
+      {
+        "type": "text",
+        "value": "Whatever the fuck this thing is."
+      },
+      {
+        "type": "image",
+        "value": "assets/media/p23-6.png"
+      },
+      {
+        "type": "dialogue",
+        "value": "[DEAXS: um|#DC322F]\n\n[DEAXS: hi?|#DC322F]\n\n[???: whats up|#DC322F|#FDF6E3]\n\n[DEAXS: what the hell are you|#DC322F]\n\n[???: im a Nucleyph|#DC322F|#FDF6E3]\n\n[???: thought that would be pretty fucking obvious|#DC322F|#FDF6E3]\n\n[DEAXS: dude ive never played this game before. it just came out|#DC322F]\n\n[???: did you not even watch the goddamn trailer?|#DC322F|#FDF6E3]\n\n[DEAXS: uh no|#DC322F]\n\n[???: god|#DC322F|#FDF6E3]\n\n[???: ok|#DC322F|#FDF6E3]\n\n[???: well basically im like|#DC322F|#FDF6E3]\n\n[???: a ghost that helps you do shit|#DC322F|#FDF6E3]\n\n[???: and i pretty much know everything about this game|#DC322F|#FDF6E3]\n\n[DEAXS: interesting|#DC322F]\n\n[???: yeah it is pretty fucking interesting|#DC322F|#FDF6E3]\n\n[DEAXS: so if you know everything about the game, what happens when we get through portal?|#DC322F]\n\n[???: first of all, its called The Threshold|#DC322F|#FDF6E3]\n\n[???: second, i cant tell you that|#DC322F|#FDF6E3]\n\n[DEAXS: why|#DC322F]\n\n[???: you gotta figure it out on your own|#DC322F|#FDF6E3]\n\n[???: god all these gamers want fucking yellow paint these days|#DC322F|#FDF6E3]\n\n[DEAXS: jeez, i was just curious|#DC322F]\n\n[DEAXS: hang on, isabel is messaging me|#DC322F]"
+      },
+      {
+        "type": "image",
+        "value": "assets/media/p23-7.gif"
+      },
+      {
+        "type": "dialogue",
+        "value": "[isabelfruit: what is that?|#D33682]\n\n[isabelfruit: IS THAT A NUCLEYPH?|#D33682]\n\n[LOCKY★P: yeah|#DC322F]\n\n[LOCKY★P: and he's kind of an asshole|#DC322F]\n\n[LOCKY★P: he told me the portal is called the threshold or something|#DC322F]\n\n[LOCKY★P: and that he knows everything|#DC322F]\n\n[isabelfruit: wait|#D33682]\n \n[isabelfruit: you should ask him about weapons or something|#D33682]\n\n[LOCKY★P: alright|#DC322F]"
+      },
+      {
+        "type": "image",
+        "value": "assets/media/p23-8.gif"
+      },
+      {
+        "type": "dialogue",
+        "value": "[DEAXS: soooooooooooo|#DC322F]\n\n[DEAXS: are there like weapons or something? and if so, how do i get them?|#DC322F]\n\n[???: everyone who plays RSIDNT is assigned a different class when they start playing|#DC322F|#FDF6E3]\n\n[???: and based on their class, they get different weapons|#DC322F|#FDF6E3]\n\n[???: and you just buy the weapons |#DC322F|#FDF6E3]\n\n[???: you should be able to buy them pretty soon|#DC322F|#FDF6E3]\n\n[DEAXS: what class am i?|#DC322F]\n\n[???: i dont fucking know lmao|#DC322F|#FDF6E3]\n\n[DEAXS: uh alright|#DC322F]\n\n[DEAXS: also|#DC322F]\n\n[DEAXS: do you like|#DC322F]\n\n[DEAXS: have a name?|#DC322F]\n\n[???: dont think so|#DC322F|#FDF6E3]\n\n[???: you can just call me whatever the hell you want i guess|#DC322F|#FDF6E3]\n\n[???: as long as its not something absolutely not fucking terrible like|#DC322F|#FDF6E3]\n\n[???: \"lachrymogenic\"|#DC322F|#FDF6E3]\n\n[???: or something|#DC322F|#FDF6E3]\n\n[DEAXS: well let me think|#DC322F]"
+      }
+    ],
+    "24": [
+      {
+        "type": "image",
+        "value": "assets/media/p24-1.gif"
+      },
+      {
+        "type": "dialogue",
+        "value": "[DEAXS: ok i got it|#DC322F]\n\n[DEAXS: what do you think about Bitex?|#DC322F]\n\n[BITEX: yeah alright|#DC322F|#FDF6E3]\n\n[BITEX: thats okay|#DC322F|#FDF6E3]\n\n[DEAXS: its pronounced Bitex|#DC322F]\n\n[BITEX: oh ok|#DC322F|#FDF6E3]\n\n[DEAXS: do you not like it?|#DC322F]\n\n[BITEX: no no no its good|#DC322F|#FDF6E3]\n\n[BITEX: just|#DC322F|#FDF6E3]\n\n[BITEX: yeah its fine|#DC322F|#FDF6E3]"
+      },
+      {
+        "type": "image",
+        "value": "assets/media/p24-2.png"
+      },
+      {
+        "type": "text",
+        "value": "Wait... Who is that guy walking down the road?"
+      },
+      {
+        "type": "image",
+        "value": "assets/media/p24-3.png"
+      },
+      {
+        "type": "text",
+        "value": "You know who that is. It's your neighbor! You'll wait until he gets in his house before messaging him."
+      },
+      {
+        "type": "image",
+        "value": "assets/media/p24-4.gif"
+      },
+      {
+        "type": "dialogue",
+        "value": "[LOCKY★P|#DC322F] began chatting with [MisterDoughnut|#B58900]\n\n[LOCKY★P: whats up|#DC322F]\n\n[LOCKY★P: i see you just got home from band|#DC322F]\n\n[MisterDoughnut: yep|#B58900]\n\n[MisterDoughnut: And by the way...|#B58900]\n\n[MisterDoughnut: happy birthday!!!|#B58900]\n\n[MisterDoughnut: I got you a gift, so don't worry.|#B58900]\n\n[LOCKY★P: thanks!|#DC322F]\n\n[MisterDoughnut: what you been up to?|#B58900]\n\n[LOCKY★P: just playing rsidnt with isabel rn|#DC322F]\n\n[MisterDoughnut: I see.|#B58900]\n\n[MisterDoughnut: well i promised penny that i would play it with her, so imma go do that now|#B58900]\n\n[MisterDoughnut: See ya.|#B58900]\n\n[LOCKY★P: alright|#DC322F]\n\n[LOCKY★P: im sure well get more time to talk later|#DC322F]\n\n[LOCKY★P|#DC322F] stopped chatting with [MisterDoughnut|#B58900]\n\n[MisterDoughnut|#B58900] stopped chatting with [LOCKY★P|#DC322F]"
+      },
+      {
+        "type": "image",
+        "value": "assets/media/p24-5.gif"
+      },
+      {
+        "type": "dialogue",
+        "value": "[BITEX: who was that?|#DC322F|#FDF6E3]\n\n[DEAXS: thats just my neighbor|#DC322F]\n\n[DEAXS: hes also playing the game|#DC322F]\n\n[DEAXS: we will have time to talk my other friends more later, right?|#DC322F]\n\n[BITEX: for sure yeah|#DC322F|#FDF6E3]\n\n[BITEX: but you are the only one who has actually started playing so far|#DC322F|#FDF6E3]\n\n[BITEX: and you are actually pretty close to getting to The Threshold|#DC322F|#FDF6E3]\n\n[BITEX: you will probably be the first one to get there|#DC322F|#FDF6E3]\n\n[DEAXS: like the first out of everyone playing the game, or just my friends?|#DC322F]\n\n[BITEX: both|#DC322F|#FDF6E3]\n\n[BITEX: do you actually think anyone else is stupid enough to play this dumbass game?|#DC322F|#FDF6E3]\n\n[DEAXS: i kind of just assumed more people would be playing this game|#DC322F]\n\n[BITEX: yeah hell no|#DC322F|#FDF6E3]\n\n[BITEX: anyway just dont worry about it|#DC322F|#FDF6E3]"
+      }
+    ],
+    "25": [
+      {
+        "type": "image",
+        "value": "assets/media/p25-1.png"
+      },
+      {
+        "type": "text",
+        "value": "What the hell."
+      },
+      {
+        "type": "image",
+        "value": "assets/media/p25-2.png"
+      },
+      {
+        "type": "text",
+        "value": "It looks like we are doing this again."
+      },
+      {
+        "type": "image",
+        "value": "assets/media/p25-3.gif"
+      },
+      {
+        "type": "text",
+        "value": "You are now the OTHER OTHER OTHER PERSON, but your real name is Riletta. You would rather not discuss your hobbies and interests. You have now met everyone! Are you happy now?"
+      },
+      {
+        "type": "image",
+        "value": "assets/media/p25-4.gif"
+      },
+      {
+        "type": "text",
+        "value": "You put your gift for deaxs in your INVENTORY. It should look familiar, so it needs no explanation."
+      },
+      {
+        "type": "image",
+        "value": "assets/media/p25-5.png"
+      },
+      {
+        "type": "text",
+        "value": "If you see deaxs later, that will be a good opportunity to to give it to them. You know that they will like it. It may even turn out to be useful for them."
+      },
+      {
+        "type": "image",
+        "value": "assets/media/p25-6.gif"
+      },
+      {
+        "type": "text",
+        "value": "You turn on your NORMAL AND IN NO WAY TERRIBLE PC to talk to Penny while you play the game."
+      },
+      {
+        "type": "dialogue",
+        "value": "[MisterDoughnut|#B58900] began chatting with [EarthDoggo|#2AA198]\n\n[MisterDoughnut: I am home.|#B58900]\n\n[MisterDoughnut: we can play the game now!!!!!!|#B58900]\n\n[EarthDoggo: yippee|#2AA198] 🎉\n\n[MisterDoughnut: Do you know how we even start playing?|#B58900]\n\n[EarthDoggo: it was explained to me by isabel in a group chat before she and deaxs left to go talk privately|#2AA198]\n\n[EarthDoggo: so uh yea|#2AA198]\n\n[EarthDoggo: you have the metal slab right?|#2AA198]\n\n[MisterDoughnut: yeah|#B58900]\n\n[EarthDoggo: well actually|#2AA198]\n\n[EarthDoggo: do you want to be the player or the person controlling the player?|#2AA198]\n\n[MisterDoughnut: You can be the player, since you want to play so bad.|#B58900]\n\n[EarthDoggo: lol ok |#2AA198]\n\n[EarthDoggo: i'm gonna go press my button|#2AA198]\n\n[EarthDoggo: just press your button after i press mine|#2AA198]\n\n[MisterDoughnut: got it|#B58900]"
+      }
+    ],
+    "26": [
+      {
+        "type": "image",
+        "value": "assets/media/p26-1.gif"
+      },
+      {
+        "type": "text",
+        "value": ">Sync (but with these two)."
+      },
+      {
+        "type": "image",
+        "value": "assets/media/p26-2.gif"
+      },
+      {
+        "type": "dialogue",
+        "value": "[EarthDoggo: woah this is pretty wild and wacky and such|#2AA198]\n\n[MisterDoughnut: Yeah, I don't really get it.|#B58900]\n\n[EarthDoggo: wait before we do anything |#2AA198]\n\n[EarthDoggo: can you point to my door?|#2AA198] 🥶\n\n[MisterDoughnut: the door is right there|#B58900]\n\n[EarthDoggo: thanks|#2AA198] 🤪\n\n[MisterDoughnut: (What.)|#B58900]"
+      },
+      {
+        "type": "image",
+        "value": "assets/media/p26-3.gif"
+      },
+      {
+        "type": "dialogue",
+        "value": "[MisterDoughnut: uh hold one someone else is messaging me|#B58900]\n\n[EarthDoggo: but we just started!!!!!!|#2AA198]\n\n[MisterDoughnut|#B58900] has stopped chatting with [EarthDoggo|#2AA198]\n\n[EarthDoggo: why does this keep happening!!!!!!!!!!!!!!!!|#2AA198] ☹️"
+      },
+      {
+        "type": "image",
+        "value": "assets/media/p26-4.gif"
+      },
+      {
+        "type": "dialogue",
+        "value": "[isabelfruit|#D33682] began chatting with [MisterDoughnut|#B58900]\n\n[isabelfruit: hey pal|#D33682]\n\n[MisterDoughnut|#B58900] began chatting with [isabelfruit|#D33682]\n\n[MisterDoughnut: Hi.|#B58900]\n\n[isabelfruit: look out your window|#D33682]\n\n[MisterDoughnut: um ok one sec|#B58900]"
+      },
+      {
+        "type": "image",
+        "value": "assets/media/p26-5.png"
+      },
+      {
+        "type": "text",
+        "value": "Wait! You have a window? Finally one of these dumbass losers has access to fucking sunlight. Your room doesn't have a door, because you just use the window to get in and out. Hold on, so do you just not have access to the rest of your house or something? That doesn't make any sense.\n\nAlright, let's see what is out here..."
+      },
+      {
+        "type": "image",
+        "value": "assets/media/p26-6.png"
+      },
+      {
+        "type": "text",
+        "value": "Its Isabel's cursor."
+      },
+      {
+        "type": "dialogue",
+        "value": "[MisterDoughnut: Is that your cursor for the game?|#B58900]\n\n[isabelfruit: yeah|#D33682]\n\n[isabelfruit: your window is just within the bounds of our session|#D33682]\n\n[MisterDoughnut: was there even a point in coming over here lol|#B58900]\n\n[isabelfruit: uh no not really|#D33682]\n\n[MisterDoughnut: Wait, I can give you my present for deaxs and you can give it to them.|#B58900]\n\n[isabelfruit: thats actually a good idea|#D33682]"
+      },
+      {
+        "type": "image",
+        "value": "assets/media/p26-7.gif"
+      },
+      {
+        "type": "text",
+        "value": "..."
+      },
+      {
+        "type": "image",
+        "value": "assets/media/p26-8.png"
+      },
+      {
+        "type": "dialogue",
+        "value": "[MisterDoughnut: did you just drop the present?|#B58900]\n\n[isabelfruit: sorry it slipped|#D33682]\n\n[isabelfruit: lemme pick it up|#D33682]\n\n[isabelfruit: nvm i cant|#D33682]\n\n[MisterDoughnut: Why?|#B58900]\n\n[isabelfruit: its just outside teh boundary|#D33682]\n\n[isabelfruit: youll have to get it later if you want to give it to them|#D33682]\n\n[MisterDoughnut: damn|#B58900]\n\n[isabelfruit: but they are gonna be entering the threshold soon, so you will have to give it to them before that|#D33682]\n\n[isabelfruit: unless we all meet in the game at some point|#D33682]\n\n[MisterDoughnut: Well, thanks for trying I guess.|#B58900]\n\n[isabelfruit|#D33682] stopped chatting with [MisterDoughnut|#B58900]"
+      },
+      {
+        "type": "image",
+        "value": "assets/media/p26-9.gif"
+      },
+      {
+        "type": "text",
+        "value": "Ok so that was basically pointless. It was also a bit inconvenient, but you are still excited to get back to... what was it you were doing again?\n\nOh well, it probably wasn't important anyway!"
+      },
+      {
+        "type": "image",
+        "value": "assets/media/p26-10.gif"
+      },
+      {
+        "type": "text",
+        "value": "But THIS? This is important apparently? What the hell!!!! Hopefully we can stay as as one of these people for at least a LITTLE bit."
+      }
+    ],
+    "27": [
+      {
+        "type": "image",
+        "value": "assets/media/p27-1.gif"
+      },
+      {
+        "type": "dialogue",
+        "value": "[BITEX: hey, tell your friend that when she comes back we can buy the next item|#DC322F|#FDF6E3]\n\n[BITEX: itll give you your first weapon|#DC322F|#FDF6E3]\n\n[DEAXS: oh, alright|#DC322F]\n\n[DEAXS: and you still dont know what weapon i will have?|#DC322F]\n\n[BITEX: no|#DC322F|#FDF6E3]\n\n[BITEX: i didnt know five minutes ago and i dont fucking know now|#DC322F|#FDF6E3]\n\n[DEAXS: when i get my weapon, will you be able to explain it after?|#DC322F]\n\n[BITEX: yeah i will|#DC322F|#FDF6E3]\n\n[BITEX: i just cant fucking predict what weapon you are gonna get before you get it|#DC322F|#FDF6E3]\n\n[DEAXS: sorry|#DC322F]\n\n[DEAXS: i just kinda assumed that since you know stuff about this game, you would at least know what class i am|#DC322F]\n\n[BITEX: well|#DC322F|#FDF6E3]\n\n[BITEX: i dont|#DC322F|#FDF6E3]\n\n[DEAXS: do you know what im supposed to do after i get to the threshold?|#DC322F]\n\n[BITEX: yeah but|#DC322F|#FDF6E3]\n\n[BITEX: it would be easier to explain if we were actually there|#DC322F|#FDF6E3]\n\n[BITEX: but yeah there is a lot of shit you gotta do|#DC322F|#FDF6E3]"
+      },
+      {
+        "type": "image",
+        "value": "assets/media/p27-2.png"
+      },
+      {
+        "type": "dialogue",
+        "value": "[LOCKY★P: oh hey, youre back|#DC322F]\n\n[LOCKY★P: bitex wants you to buy the next item|#DC322F]\n\n[LOCKY★P: the weapon thingy|#DC322F]\n\n[isabelfruit: who is bitex?|#D33682]\n\n[LOCKY★P: thats the name of my little guy|#DC322F]\n\n[isabelfruit: thats so cool|#D33682]\n\n[LOCKY★P: really?|#DC322F]\n\n[isabelfruit: not really|#D33682]\n\n[isabelfruit: anyway yeah i can buy the thing|#D33682]"
+      },
+      {
+        "type": "image",
+        "value": "assets/media/p27-3.gif"
+      },
+      {
+        "type": "dialogue",
+        "value": "[DEAXS: woah is that my weapon?|#DC322F]\n\n[BITEX: uh, yeah?|#DC322F|#FDF6E3]\n\n[BITEX: are you fucking stupid? \"is that my weapon?\"|#DC322F|#FDF6E3]\n\n[BITEX: what a dumbass|#DC322F|#FDF6E3]\n\n[DEAXS: ok what is it?|#DC322F]\n\n[BITEX: its the ki blast, or in your case|#DC322F|#FDF6E3]\n\n[BITEX: locky blast|#DC322F|#FDF6E3]\n\n[BITEX: for your uh.. lock-key powers|#DC322F|#FDF6E3]\n\n[BITEX: see what i did there?|#DC322F|#FDF6E3]\n\n[DEAXS: ...|#DC322F]\n\n[BITEX: yeah ok fuck you|#DC322F|#FDF6E3]"
+      },
+      {
+        "type": "image",
+        "value": "assets/media/p27-4.gif"
+      },
+      {
+        "type": "text",
+        "value": ">Add LOCKY BLAST to your INVENTORY."
+      },
+      {
+        "type": "image",
+        "value": "assets/media/p27-5.png"
+      },
+      {
+        "type": "dialogue",
+        "value": "[DEAXS: should i like|#DC322F]\n\n[DEAXS: test it out?|#DC322F]\n\n[BITEX: no|#DC322F|#FDF6E3]\n\n[BITEX: that shit would be DEVASTATING|#DC322F|#FDF6E3]\n\n[DEAXS: really?|#DC322F]\n\n[BITEX: nah im kidding|#DC322F|#FDF6E3]\n\n[BITEX: its the first weapon you get|#DC322F|#FDF6E3]\n\n[BITEX: its not that good|#DC322F|#FDF6E3]\n\n[BITEX: in fact it kinda sucks ass|#DC322F|#FDF6E3]\n\n[DEAXS: that makes sense|#DC322F]\n\n[DEAXS: soooooo i should test it out then?|#DC322F]\n\n[BITEX: if you want. i dont care|#DC322F|#FDF6E3]"
+      },
+      {
+        "type": "image",
+        "value": "assets/media/p27-6.gif"
+      },
+      {
+        "type": "text",
+        "value": ">Test LOCKY BLAST."
+      },
+      {
+        "type": "image",
+        "value": "assets/media/p27-7.gif"
+      },
+      {
+        "type": "dialogue",
+        "value": "[LOCKY★P: dude did you see that?|#DC322F]\n\n[LOCKY★P: that was sick!!!|#DC322F]\n\n[isabelfruit: that was actually so cool|#D33682]\n\n[LOCKY★P: really?|#DC322F]\n\n[isabelfruit: yes|#D33682]\n\n[LOCKY★P: like actually this time?|#DC322F]\n\n[isabelfruit: yeah this time is was ACTUALLY cool|#D33682]\n\n[isabelfruit: not THAT cool though|#D33682]\n\n[isabelfruit: i mean it was cool|#D33682]\n\n[isabelfruit: just|#D33682]\n\n[isabelfruit: you know|#D33682]\n\n[LOCKY★P: yeah ok buddy|#DC322F]\n\n[LOCKY★P: let me know when you have a ki blast|#DC322F]\n\n[LOCKY★P: then we can talk|#DC322F]\n\n[isabelfruit: haha yeah|#D33682]\n\n[isabelfruit: ill probably have something else way cooler|#D33682]\n\n[isabelfruit: if i had a ki blast that would be so lame|#D33682]\n\n[isabelfruit: like the ki blast can just be your thing|#D33682]\n\n[isabelfruit: its not like i want the ki blast or anything|#D33682]\n\n[isabelfruit: not a problem|#D33682]\n\n[isabelfruit: its fine|#D33682]\n\n[LOCKY★P: ok|#DC322F]"
+      },
+      {
+        "type": "image",
+        "value": "assets/media/p27-8.gif"
+      },
+      {
+        "type": "dialogue",
+        "value": "[isabelfruit: oh btw|#D33682]\n\n[isabelfruit: your droppers are very efficient, so we can buy the portal to the threshold already :]|#D33682]\n\n[LOCKY★P: wow|#DC322F]\n\n[LOCKY★P: it doesnt feel like weve been playing for that long|#DC322F]\n\n[LOCKY★P: i guess you can just buy it and i can go in?|#DC322F]\n\n[isabelfruit: yup|#D33682]"
+      },
+      {
+        "type": "image",
+        "value": "assets/media/p27-9.gif"
+      },
+      {
+        "type": "text",
+        "value": ">Place PORTAL."
+      },
+      {
+        "type": "image",
+        "value": "assets/media/p27-10.png"
+      },
+      {
+        "type": "text",
+        "value": "It looks like someone else is messaging you for some reason."
+      },
+      {
+        "type": "dialogue",
+        "value": "RSIDNT GROUP CHAT\n\n[EarthDoggo|#2AA198] added [MisterDoughnut|#B58900] to RSIDNT GROUP CHAT\n\n[EarthDoggo: alright guys|#2AA198]\n\n[EarthDoggo: now that WE are ALL playing the game  |#2AA198]\n\n[EarthDoggo: let's all talk in this group chat to share information|#2AA198]\n\n[MisterDoughtnut: nah lets just talk in dms|#B58900]\n\n[MisterDoughtnut|#B58900] stopped chatting in RSIDNT GROUP CHAT\n\n[isabelfruit: hold on im busy|#D33682]\n\n[isabelfruit|#D33682] stopped chatting in RSIDNT GROUP CHAT\n\n[LOCKY★P: yeah hold on|#DC322F]\n\n[LOCKY★P: i am about to enter the threshold|#DC322F]\n\n[LOCKY★P: we can talk more once we get in the game ok?|#DC322F]\n\n[LOCKY★P|#DC322F] stopped chatting in RSIDNT GROUP CHAT\n\n[EarthDoggo: dude|#2AA198]\n\n[EarthDoggo: i haven't even wished you a happy birthday yet!!!!!|#2AA198]"
+      },
+      {
+        "type": "image",
+        "value": "assets/media/p27-11.gif"
+      },
+      {
+        "type": "dialogue",
+        "value": "[BITEX: who the hell is MisterDoughnut?|#DC322F|#FDF6E3]\n\n[BITEX: dumbass username|#DC322F|#FDF6E3]\n\n[DEAXS: hey dont say that|#DC322F]\n\n[DEAXS: ok maybe youre right|#DC322F]\n\n[DEAXS: it is kind of dumb|#DC322F]\n\n[DEAXS: also dont look at my screen while im messaging people|#DC322F]\n\n[DEAXS: thats weird|#DC322F]\n\n[BITEX: how else am i supposed to know what is happening?|#DC322F|#FDF6E3]\n\n[BITEX: im gonna keep doing it i think|#DC322F|#FDF6E3]\n\n[DEAXS: umm|#DC322F]\n\n[DEAXS: ok|#DC322F]\n\n[BITEX: anyway we can enter the portal now if you want|#DC322F|#FDF6E3]\n\n[BITEX: not sure why we are just standing here|#DC322F|#FDF6E3]\n\n[DEAXS: i mean yeah|#DC322F]\n\n[DEAXS: i guess we are ready to go|#DC322F]"
+      }
+    ],
+    "28": [
+      {
+        "type": "text",
+        "value": "[[S] Enter The Threshold.|#DC322F]"
+      },
+      {
+        "type": "video",
+        "value": "assets/media/p28-1.mp4"
+      }
+    ],
+    "29": [
+      {
+        "type": "text",
+        "value": "[END OF ACT 1|#DC322F]"
+      },
+      {
+        "type": "image",
+        "value": "assets/media/p29-1.gif"
+      }
+    ],
+    "30": [
+      {
+        "type": "text",
+        "value": "[[S] ACT 2|#00AFEF]"
+      },
+      {
+        "type": "video",
+        "value": "assets/media/p30-1.mp4"
+      }
+    ],
+    "31": [
+      {
+        "type": "image",
+        "value": "assets/media/p31-1.png"
+      },
+      {
+        "type": "image",
+        "value": "assets/media/p31-2.png"
+      },
+      {
+        "type": "image",
+        "value": "assets/media/p31-3.png"
+      },
+      {
+        "type": "image",
+        "value": "assets/media/p31-4.png"
+      },
+      {
+        "type": "image",
+        "value": "assets/media/p31-5.gif"
+      },
+      {
+        "type": "image",
+        "value": "assets/media/p31-6.gif"
+      },
+      {
+        "type": "image",
+        "value": "assets/media/p31-7.png"
+      },
+      {
+        "type": "image",
+        "value": "assets/media/p31-8.gif"
+      },
+      {
+        "type": "text",
+        "value": ">Lose consciousness."
+      }
+    ],
+    "32": [
+      {
+        "type": "image",
+        "value": "assets/media/p32-1.gif"
+      },
+      {
+        "type": "text",
+        "value": "You suddenly become SOMEONE ENTIRELY DIFFERENT. Well, you WOULD become this person, but you have no reason to. At least not for now...\n\nThey seem to be watching a live feed of deaxs, and perhaps the other players too, but they aren't the only one watching."
+      },
+      {
+        "type": "image",
+        "value": "assets/media/p32-2.gif"
+      },
+      {
+        "type": "text",
+        "value": "It also looks like they are playing a really cool game? You should probably play it because it looks really cool.\n\nNow, let's see what everyone else is up to."
+      },
+      {
+        "type": "image",
+        "value": "assets/media/p32-3.png"
+      },
+      {
+        "type": "text",
+        "value": "You are now Riletta again. You just went outside to retrieve deaxs' gift after Isabel dropped it for some reason. You think that since deaxs is your neighbor, you can just go over to their house and give it to them."
+      },
+      {
+        "type": "image",
+        "value": "assets/media/p32-4.png"
+      },
+      {
+        "type": "text",
+        "value": "What the fuck? You knew they went into the Threshold, but it took the ENTIRE HOUSE??? You were just expecting to chuck the gift through a portal or something. Nope! It looks like you'll have to wait until much later to give it to them."
+      },
+      {
+        "type": "image",
+        "value": "assets/media/p32-5.png"
+      },
+      {
+        "type": "text",
+        "value": "After climbing back into your room, you decide to message Isabel and ask her a few questions."
+      },
+      {
+        "type": "image",
+        "value": "assets/media/p32-6.gif"
+      },
+      {
+        "type": "dialogue",
+        "value": "[MisterDoughnut|#B58900] began chatting with [isabelfruit|#D33682]\n\n[MisterDoughnut: Is deaxs in the Threshold now?|#B58900]\n\n[MisterDoughnut: i mean i assume they are because their entire damn house is gone|#B58900]\n\n[isabelfruit: yeah you are gonna have to message me back later|#D33682]\n\n[isabelfruit: there is so much shit going on|#D33682]\n\n[isabelfruit: why dont you play teh game with penny for a bit|#D33682]\n\n[isabelfruit|#D33682] stopped chatting with [MisterDoughnut|#B58900]\n\n[MisterDoughnut: Fine. |#B58900]"
+      },
+      {
+        "type": "image",
+        "value": "assets/media/p32-7.gif"
+      },
+      {
+        "type": "dialogue",
+        "value": "[MisterDoughnut|#B58900] began chatting with [EarthDoggo|#2AA198]\n\n[MisterDoughnut: okay let's play the game|#B58900]\n\n[EarthDoggo:|#2AA198] 😃😃😃😃😃😃😃\n\n[EarthDoggo: you ACTUALLY wanna play the game now????|#2AA198]\n\n[MisterDoughnut: Not really, but sure.|#B58900]\n\n[EarthDoggo: alright then let's get to it mr donut|#2AA198]\n\n[EarthDoggo: mister doughnut|#2AA198]\n\n[MisterDoughnut: what?|#B58900]\n\n[EarthDoggo: that name is fucking cring|#2AA198]\n\n[EarthDoggo: *cringe i mean|#2AA198]\n\n[MisterDoughnut: What is so bad about it?|#B58900]\n\n[EarthDoggo: idk it just sucks dude|#2AA198]\n\n[MisterDoughnut: ok stfu let's just play the game|#B58900]"
+      }
+    ],
+    "33": [
+      {
+        "type": "image",
+        "value": "assets/media/p33-1.gif"
+      },
+      {
+        "type": "text",
+        "value": ">Be Penny."
+      },
+      {
+        "type": "image",
+        "value": "assets/media/p33-2.gif"
+      },
+      {
+        "type": "text",
+        "value": "You would start playing the game, but your room is a bit too cramped to start placing a bunch of stuff inside. If you go outside, you'll have more space to do things."
+      },
+      {
+        "type": "image",
+        "value": "assets/media/p33-3.png"
+      },
+      {
+        "type": "text",
+        "value": "Welp. You guess the cat is out of the bag now. You live in NOWTHEN and you hate it here. You hate everything about it. You hate the farms, you hate your house, you hate the name, and most of all you hate the fucking horses. You hate the fucking horses. You would get rid of them, but they are your only companions because nobody else lives in this hellscape."
+      },
+      {
+        "type": "image",
+        "value": "assets/media/p33-4.gif"
+      },
+      {
+        "type": "dialogue",
+        "value": "[MisterDoughnut: AHAHAHAHAHHA!|#B58900]\n\n[MisterDoughnut: YOU LIVE IN NOWTHEN???|#B58900]\n\n[MisterDoughnut: THAT IS SO FUNNY.|#B58900]\n\n[EarthDoggo: omg|#2AA198] 😕\n\n[EarthDoggo: shut the fuck up mister doughnut|#2AA198]\n\n[MisterDoughnut: ok ok fine|#B58900]\n\n[MisterDoughnut: But it IS really funny.|#B58900]\n\n[EarthDoggo: maybe for you |#2AA198]\n\n[EarthDoggo: but for me it sucks a lot |#2AA198]💔 \n\n[EarthDoggo: just place something already please|#2AA198]\n\n[MisterDoughnut: alright i got it out of my system|#B58900]"
+      },
+      {
+        "type": "image",
+        "value": "assets/media/p33-5.png"
+      },
+      {
+        "type": "dialogue",
+        "value": "[MisterDoughnut: I need some TIX to start placing stuff.|#B58900]\n\n[MisterDoughnut: can i sell one of these horses?|#B58900]\n\n[EarthDoggo: yea i guess|#2AA198]"
+      },
+      {
+        "type": "image",
+        "value": "assets/media/p33-6.gif"
+      },
+      {
+        "type": "dialogue",
+        "value": "[EarthDoggo: you know i am happy you decided to play the game with me finally|#2AA198] 👍 \n\n[MisterDoughnut: Yeah, no problem I guess.|#B58900]\n\n[MisterDoughnut: i tried contacting isabel to see what deaxs and her were up to, but it seemed like they were very busy|#B58900]\n\n[MisterDoughnut: Being in the game and stuff.|#B58900]"
+      },
+      {
+        "type": "image",
+        "value": "assets/media/p33-7.gif"
+      },
+      {
+        "type": "dialogue",
+        "value": "[MisterDoughnut: i am really curious to see what happens once we enter the game|#B58900]\n\n[MisterDoughnut: The trailer didn't show anything that happens in the Threshold.|#B58900]\n\n[EarthDoggo: well i think it's gonna be really cool|#2AA198]\n\n[EarthDoggo: i hope|#2AA198]\n\n[EarthDoggo: otherwise it would be really boring|#2AA198]"
+      },
+      {
+        "type": "image",
+        "value": "assets/media/p33-8.png"
+      },
+      {
+        "type": "dialogue",
+        "value": "[MisterDoughnut: i just wanna give deaxs their birthday gift|#B58900]\n\n[EarthDoggo: oh yea i also have a gift for them|#2AA198]\n\n[MisterDoughnut: What is it?|#B58900]\n\n[EarthDoggo: it's a surprise|#2AA198]\n\n[EarthDoggo: but i think they'll find it quite goated 🤪|#2AA198]"
+      }
+    ],
+    "34": [
+      {
+        "type": "image",
+        "value": "assets/media/p34-1.gif"
+      },
+      {
+        "type": "dialogue",
+        "value": "[MisterDoughnut: oh umm by the way|#B58900]\n\n[MisterDoughnut: At some point we should find out if we can reverse our roles in the game.|#B58900]\n\n[MisterDoughnut: like if you could place stuff at my house so we could progress and enter the threshold near the same time|#B58900]\n\n[EarthDoggo: yea maybe|#2AA198]\n\n[EarthDoggo: i wonder how that would even work|#2AA198]\n\n[EarthDoggo: but yea we could definitely try that at some point|#2AA198]\n\n[MisterDoughnut: Cool.|#B58900]"
+      },
+      {
+        "type": "image",
+        "value": "assets/media/p34-2.gif"
+      },
+      {
+        "type": "text",
+        "value": "It looks like you'll have to find out later cause it is time to \n\n>Be Isabel."
+      },
+      {
+        "type": "image",
+        "value": "assets/media/p34-3.gif"
+      },
+      {
+        "type": "text",
+        "value": "You watch as deaxs and Bitex go through the red portal and enter the Threshold. When they enter, your screen flashes with a bright white light. It takes a few seconds before you see them reappear in a brand new location."
+      },
+      {
+        "type": "image",
+        "value": "assets/media/p34-4.png"
+      },
+      {
+        "type": "text",
+        "value": "You then see deaxs get their lights knocked the fucked out by a robotic, blue version of them."
+      },
+      {
+        "type": "image",
+        "value": "assets/media/p34-5.gif"
+      },
+      {
+        "type": "text",
+        "value": "And now Riletta is trying to message you for some reason. "
+      },
+      {
+        "type": "dialogue",
+        "value": "[MisterDoughnut|#B58900] began chatting with [isabelfruit|#D33682]\n\n[MisterDoughnut: Is deaxs in the Threshold now?|#B58900]\n\n[MisterDoughnut: i mean i assume they are because their entire damn house is gone|#B58900]\n\n[isabelfruit: yeah you are gonna have to message me back later|#D33682]\n\n[isabelfruit: there is so much shit going on|#D33682]\n\n[isabelfruit: why dont you play teh game with penny for a bit|#D33682]\n\n[isabelfruit|#D33682] stopped chatting with [MisterDoughnut|#B58900]\n\n[MisterDoughnut: Fine.|#B58900]"
+      },
+      {
+        "type": "image",
+        "value": "assets/media/p34-6.gif"
+      },
+      {
+        "type": "text",
+        "value": "You then receive a message from... someone else?"
+      },
+      {
+        "type": "dialogue",
+        "value": "[L|#4F545C|#FDF6E3] began chatting with [isabelfruit|#D33682]\n\n[L: Hello again, Isabel.|#4F545C|#FDF6E3]\n\n[isabelfruit: who the fuck are you?|#D33682]\n\n[isabelfruit: wait|#D33682]\n\n[isabelfruit: are you the person that messaged me telling me to play the game?|#D33682]\n\n[L: Yes. And you did.|#4F545C|#FDF6E3]\n\n[isabelfruit: okay?????|#D33682]\n\n[L: Anyway, we must act quickly to save your friend from their copy.|#4F545C|#FDF6E3]\n\n[isabelfruit: i still dont know what the fuck is happening|#D33682]\n\n[L: Just listen.|#4F545C|#FDF6E3]"
+      }
+    ],
+    "35": [
+      {
+        "type": "text",
+        "value": "[[S] Wake|#00AFEF]"
+      },
+      {
+        "type": "video",
+        "value": "assets/media/p35-1.mp4"
+      }
+    ],
+    "36": [
+      {
+        "type": "image",
+        "value": "assets/media/p36-1.png"
+      },
+      {
+        "type": "text",
+        "value": "That's right, Metal deaxs fled the premesis!!! Because in MY world THAT'S HOW IT'S SPELLED!!! Anyway, it's a good thing he left cause he would have probably just beat your ass again. Now that you think about it, how are you gonna beat him? Can you beat him? Also, where did this guy even come from? Did the game clone you? All questions that may or may not be answered eventually."
+      },
+      {
+        "type": "image",
+        "value": "assets/media/p36-2.png"
+      },
+      {
+        "type": "dialogue",
+        "value": "[BITEX: looks like that fucking weirdo is gone|#DC322F|#FDF6E3]\n\n[DEAXS: yeah i guess he just flew away probably?|#DC322F]\n\n[BITEX: probably|#DC322F|#FDF6E3]\n\n[DEAXS: ...|#DC322F]\n\n[BITEX: ...|#DC322F|#FDF6E3]\n\n[DEAXS: hey so, what were you doing after i got knocked out?|#DC322F]\n\n[DEAXS: did you try to fight him or anything?|#DC322F]\n\n[BITEX: not really. he only seemed to be hostile towards you|#DC322F|#FDF6E3]\n\n[BITEX: i dont exactly know what he was about to do cause he shut down pretty quickly after that|#DC322F|#FDF6E3]\n\n[DEAXS: apparently isabel had help from someone to shut him down for a moment?|#DC322F]\n\n[DEAXS: i hope she finishes talking to them cuz i have no idea what to do|#DC322F]"
+      },
+      {
+        "type": "image",
+        "value": "assets/media/p36-3.png"
+      },
+      {
+        "type": "dialogue",
+        "value": "[BITEX: speaking of talking to people, i have a messaging device for you|#DC322F|#FDF6E3]\n\n[BITEX: probably should have given it to you earlier when i spawned with it, but now you can message people away from your computer|#DC322F|#FDF6E3]\n\n[DEAXS: cool! thanks|#DC322F]"
+      },
+      {
+        "type": "image",
+        "value": "assets/media/p36-4.png"
+      },
+      {
+        "type": "dialogue",
+        "value": "[DEAXS: so do you wanna like explore or something?|#DC322F]\n\n[BITEX: if you want|#DC322F|#FDF6E3]\n\n[BITEX: my lifes purpose is to be your guide, but since i basically know fuck all, you can lead the way|#DC322F|#FDF6E3]"
+      },
+      {
+        "type": "image",
+        "value": "assets/media/p36-5.png"
+      },
+      {
+        "type": "dialogue",
+        "value": "[BITEX: ...|#DC322F|#FDF6E3]\n\n[DEAXS: ...|#DC322F]\n\n[BITEX: do you wanna like... talk about anything?|#DC322F|#FDF6E3]\n\n[DEAXS: what is there really to talk about?|#DC322F]\n\n[DEAXS: neither of us know what is going on|#DC322F]\n\n[BITEX: shit man i just started existing like an hour ago|#DC322F|#FDF6E3]\n\n[BITEX: i have no idea what people do or talk about|#DC322F|#FDF6E3]\n\n[DEAXS: well if it helps|#DC322F]\n\n[DEAXS: ive existed for a while and im not sure i have that figured out either|#DC322F]"
+      },
+      {
+        "type": "image",
+        "value": "assets/media/p36-6.png"
+      },
+      {
+        "type": "dialogue",
+        "value": "[DEAXS: man i hope isabel finishes talking with that person soon cuz i have absolutely no idea what this game is supposed to be about|#DC322F]\n\n[DEAXS: or what im supposed to be doing|#DC322F]\n\n[DEAXS: or anything at all really|#DC322F]\n\n[DEAXS: bitex, i think youre right|#DC322F]\n\n[DEAXS: i really shouldve watched the trailer |#DC322F]\n\n[BITEX: honestly, im not sure that would have helped you at all man|#DC322F|#FDF6E3]\n\n[BITEX: also what the fuck is that over there|#DC322F|#FDF6E3]"
+      },
+      {
+        "type": "image",
+        "value": "assets/media/p36-7.gif"
+      },
+      {
+        "type": "dialogue",
+        "value": "[DEAXS: looks like it could be some sort of dungeon?|#DC322F]\n\n[DEAXS: maybe we could go inside...|#DC322F]"
+      }
+    ],
+    "37": [
+      {
+        "type": "image",
+        "value": "assets/media/p37-1.png"
+      },
+      {
+        "type": "dialogue",
+        "value": "[DEAXS: so umm who should go in first?|#DC322F]\n\n[DEAXS: just to scout it out i mean|#DC322F]\n\n[BITEX: idk man|#DC322F|#FDF6E3]\n\n[DEAXS: ok uh maybe it should be you|#DC322F]\n\n[DEAXS: cuz you were just born so like|#DC322F]\n\n[DEAXS: it wouldnt really matter that much if you died|#DC322F]\n\n[DEAXS: if you can die even|#DC322F]\n\n[BITEX: whoa whoa whoa|#DC322F|#FDF6E3]\n\n[BITEX: maybe BECAUSE i was just born|#DC322F|#FDF6E3]\n\n[BITEX: that makes my life more valuable because i have more like to live|#DC322F|#FDF6E3]\n\n[DEAXS: well maybe you cant die|#DC322F]\n\n[DEAXS: so you should just go in i think|#DC322F]\n\n[BITEX: how about we go in at the same time?|#DC322F|#FDF6E3]\n\n[BITEX: would that satisfy you?|#DC322F|#FDF6E3]\n\n[DEAXS: alriiiiiiight|#DC322F]"
+      },
+      {
+        "type": "image",
+        "value": "assets/media/p37-2.png"
+      },
+      {
+        "type": "text",
+        "value": "You enter the dungeon. At least, what seems to be a dungeon. You are expecting a challenge and it seems there is a challenge. It probably is a dungeon then. What is the challenge you ask?"
+      },
+      {
+        "type": "image",
+        "value": "assets/media/p37-3.png"
+      },
+      {
+        "type": "text",
+        "value": "It's a fucking obby. You are a bit disappointed in yourself for not seeing this coming. It was pretty obvious."
+      },
+      {
+        "type": "image",
+        "value": "assets/media/p37-4.gif"
+      },
+      {
+        "type": "text",
+        "value": "You jump through the obby and complete it with ease! It would seem the obby was either designed for babies or the average Roblox player, which is redundant as those are the same thing."
+      },
+      {
+        "type": "image",
+        "value": "assets/media/p37-5.gif"
+      },
+      {
+        "type": "text",
+        "value": "..."
+      },
+      {
+        "type": "image",
+        "value": "assets/media/p37-6.png"
+      },
+      {
+        "type": "dialogue",
+        "value": "[BITEX: you knew i could just fucking float across the whole time right?|#DC322F|#FDF6E3]\n\n[DEAXS: you know i didnt think of that until right now|#DC322F]\n\n[DEAXS: now that i think about it this game is terribly designed|#DC322F]\n\n[DEAXS: it was either designed by a complete dumbass|#DC322F]\n\n[DEAXS: or the game is just not finished?|#DC322F]\n\n[BITEX: probably the first one|#DC322F|#FDF6E3]\n\n[BITEX: but you ARE the one playing it|#DC322F|#FDF6E3]"
+      },
+      {
+        "type": "image",
+        "value": "assets/media/p37-7.png"
+      },
+      {
+        "type": "text",
+        "value": "Wow, it's a bit dark in here, isn't it? If only you had a flashlight..."
+      }
+    ],
+    "38": [
+      {
+        "type": "image",
+        "value": "assets/media/p38-1.png"
+      },
+      {
+        "type": "text",
+        "value": "Wait, hold on. You are pretty sure you actually DO have a flashlight."
+      },
+      {
+        "type": "image",
+        "value": "assets/media/p38-2.gif"
+      },
+      {
+        "type": "text",
+        "value": ">Use INCONVENIENT FLASHLIGHT."
+      },
+      {
+        "type": "image",
+        "value": "assets/media/p38-3.gif"
+      },
+      {
+        "type": "text",
+        "value": "You use the INCONVENIENT FLASHLIGHT to navigate the path ahead of you. Now that you think about it, you might actually need to consider renaming the INCONVENIENT FLASHLIGHT to the CONVENIENT FLASHLIGHT instead. You think about it a bit harder and realize this entire line of thought is stupid and completely irrelevant.\n"
+      },
+      {
+        "type": "image",
+        "value": "assets/media/p38-4.png"
+      },
+      {
+        "type": "text",
+        "value": "After walking for about 10 seconds, it appears that you found something!"
+      },
+      {
+        "type": "image",
+        "value": "assets/media/p38-5.png"
+      },
+      {
+        "type": "text",
+        "value": "It looks like an upgrade to your Locky Blast."
+      },
+      {
+        "type": "image",
+        "value": "assets/media/p38-6.png"
+      },
+      {
+        "type": "dialogue",
+        "value": "[DEAXS: yo is this a new locky blast?|#DC322F]\n\n[BITEX: yeah this is like the one thing i can help you with|#DC322F|#FDF6E3]\n\n[BITEX: its not really new, but it will double your strength and speed at the cost of your health|#DC322F|#FDF6E3]\n\n[BITEX: so you kind of need to be careful|#DC322F|#FDF6E3]\n\n[DEAXS: alright|#DC322F]\n\n[DEAXS: so theoretically what would happen if i lost all my health?|#DC322F]\n\n[BITEX: i probably should have mentioned this earlier, but you would die|#DC322F|#FDF6E3]\n\n[BITEX: like straight up|#DC322F|#FDF6E3]\n\n[BITEX: real shit|#DC322F|#FDF6E3]\n\n[DEAXS: wait what???|#DC322F]\n\n[BITEX: you die in the game, you die in real life|#DC322F|#FDF6E3]\n\n[BITEX: but its gonna be okay cuz you can respawn at your metal slab that came with the game|#DC322F|#FDF6E3]\n\n[DEAXS: uhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhh|#DC322F]\n\n[DEAXS: about that|#DC322F]\n\n[BITEX: what|#DC322F|#FDF6E3]\n\n[DEAXS: i kind of sold it for robux...|#DC322F]\n\n[BITEX: well shit man|#DC322F|#FDF6E3]\n\n[BITEX: better not fucking die then|#DC322F|#FDF6E3]"
+      }
+    ],
+    "39": [
+      {
+        "type": "image",
+        "value": "assets/media/p39-1.png"
+      },
+      {
+        "type": "text",
+        "value": "You upgrade your Locky Blast and decide it would be a good time to exit the dungeon considering there is nothing else in here.\n"
+      },
+      {
+        "type": "image",
+        "value": "assets/media/p39-2.gif"
+      },
+      {
+        "type": "text",
+        "value": "After exiting the dungeon, you get a message on your messaging device. You hope it's Isabel because she would probably be able to help you. No offense to Riletta and Penny, but they are sort of useless at the moment. Anyway, it is Isabel, so no worries."
+      },
+      {
+        "type": "dialogue",
+        "value": "[isabelfruit|#D33682] began chatting with [LOCKY★P|#DC322F]\n\n[isabelfruit: i see youve been busy|#D33682]\n\n[LOCKY★P: yeah|#DC322F]\n\n[LOCKY★P: hey it would have been nice if you messaged me a bit earlier|#DC322F]\n\n[isabelfruit: sorry, that L guy wouldnt stop talking to me|#D33682]\n\n[isabelfruit: he told me lots of stuff about this game|#D33682]\n\n[isabelfruit: like |#D33682]\n\n[isabelfruit: did you know it was a REALLY bad idea to sell your metal slab?|#D33682]\n\n[LOCKY★P: dont worry|#DC322F]\n\n[LOCKY★P: bitex already broke the news to me about that|#DC322F]\n\n[LOCKY★P: anyways, i got a new upgrade to my locky powers|#DC322F]\n\n[LOCKY★P: like lockiken so to speak|#DC322F]\n\n[LOCKY★P: watch this|#DC322F]"
+      },
+      {
+        "type": "image",
+        "value": "assets/media/p39-3.gif"
+      },
+      {
+        "type": "dialogue",
+        "value": "[LOCKY★P: that was pretty sick wasnt it|#DC322F]\n\n[isabelfruit: ...|#D33682]\n\n[isabelfruit: are you kidding bro whats next fucking super robloxian|#D33682]\n\n[isabelfruit: next time you message me your hair is gonna be fucking glowing or something!|#D33682]\n\n[isabelfruit: well if you had any hair|#D33682]\n\n[isabelfruit: why do you have to get the dragon ball powers!!!|#D33682]\n\n[isabelfruit: IM supposed to be the dragon ball person!|#D33682]\n\n[isabelfruit: why do you get them!!!|#D33682]\n\n[isabelfruit: i swear to god i better not get some shitty fucking powers while you get to have the dragon ball powers|#D33682]\n\n[LOCKY★P: umm|#DC322F]\n\n[LOCKY★P: its okay im sure your powers are gonna be cool|#DC322F]"
+      },
+      {
+        "type": "image",
+        "value": "assets/media/p39-4.gif"
+      },
+      {
+        "type": "dialogue",
+        "value": "[isabelfruit: 1 sec he is messaging me again|#D33682]\n\n[isabelfruit: sorry|#D33682]"
+      },
+      {
+        "type": "image",
+        "value": "assets/media/p39-5.png"
+      },
+      {
+        "type": "dialogue",
+        "value": "[isabelfruit: ok he says he wants to talk to everybody|#D33682]\n\n[isabelfruit: like all of us|#D33682]\n\n[isabelfruit: so were gonna move to the group chat now|#D33682]\n\n[LOCKY★P: alright i guess i can let the other 2 know then|#DC322F]\n\n[isabelfruit: ok :]|#D33682]"
+      },
+      {
+        "type": "image",
+        "value": "assets/media/p39-6.png"
+      },
+      {
+        "type": "image",
+        "value": "assets/media/p39-7.png"
+      }
+    ],
+    "40": [
+      {
+        "type": "image",
+        "value": "assets/media/p40-1.png"
+      },
+      {
+        "type": "dialogue",
+        "value": "[MisterDoughnut: alright i think you have enough droppers now penny|#B58900]\n\n[EarthDoggo: hmmm i guess you're right|#2AA198]\n\n[MisterDoughnut: We can definitely afford the Nucleorb now, if you want to buy that.|#B58900]\n\n[EarthDoggo: yea!!!|#2AA198] 👍"
+      },
+      {
+        "type": "image",
+        "value": "assets/media/p40-2.gif"
+      },
+      {
+        "type": "text",
+        "value": ">Place Nucleorb."
+      },
+      {
+        "type": "image",
+        "value": "assets/media/p40-3.gif"
+      },
+      {
+        "type": "dialogue",
+        "value": "[MisterDoughnut: what the hell is that|#B58900]\n\n[MisterDoughnut: I mean, I know what it is, but why is it so ugly?|#B58900]\n\n[EarthDoggo: oh come on|#2AA198]\n\n[EarthDoggo: it's not THAT ugly|#2AA198]\n\n[EarthDoggo: ...|#2AA198]\n\n[EarthDoggo: ok it's pretty god damn ugly|#2AA198] 🥶"
+      },
+      {
+        "type": "image",
+        "value": "assets/media/p40-4.png"
+      },
+      {
+        "type": "dialogue",
+        "value": "[SCHTOOGLE: HI IM SCHTOOGLE!|#2AA198|#FDF6E3]\n\n[PENNY: what|#2AA198]\n\n[SCHTOOGLE: IM YOUR NUCLEYPH IF YOU WERENT ALREADY AWARE!|#2AA198|#FDF6E3]\n\n[SCHTOOGLE: IM MOSTLY USELESS AND DONT OFFER MUCH VALUABLE INFORMATION IF ANY!|#2AA198|#FDF6E3]\n\n[SCHTOOGLE: MY DIALOGUE CONSISTS OF VAGUE AND MOSTLY MEANINGLESS EXPLANATIONS OF UNIMPORTANT GAME MECHANICS!|#2AA198|#FDF6E3]\n\n[SCHTOOGLE: I CAN ALSO ATTEMPT TO MAKE JOKES TO ENTERTAIN YOU IF YOU ARE NOT ENTHUSED WHILE PLAYING THE GAME!|#2AA198|#FDF6E3]\n\n[SCHTOOGLE: NOW IS THERE ANYTHING YOU WOULD LIKE TO TELL ME ABOUT YOURSELF!?|#2AA198|#FDF6E3]\n\n[PENNY: umm i guess not reallyyyyy|#2AA198]\n\n[SCHTOOGLE: I SEE!|#2AA198|#FDF6E3]\n\n[SCHTOOGLE: THAT IS ALRIGHT!|#2AA198|#FDF6E3]\n\n[SCHTOOGLE: IF I AM MAKING YOU UNCOMFORTABLE THEN YOU CAN REQUEST ME TO STOP SPEAKING!|#2AA198|#FDF6E3]\n\n[PENNY: uhhh no that's fine|#2AA198]\n\n[PENNY: you can keep spouting random bullshit if you want i suppose|#2AA198] 😕 \n\n[SCHTOOGLE: OKAY!|#2AA198|#FDF6E3]"
+      },
+      {
+        "type": "image",
+        "value": "assets/media/p40-5.png"
+      },
+      {
+        "type": "dialogue",
+        "value": "[SCHTOOGLE: OH ALSO I HAVE A MESSAGING DEVICE FOR YOU BECAUSE THE PLOT REQUIRES IT!|#2AA198|#FDF6E3]"
+      },
+      {
+        "type": "image",
+        "value": "assets/media/p40-6.png"
+      },
+      {
+        "type": "dialogue",
+        "value": "[SCHTOOGLE: YOU KNOW IT IS INTERESTING TO JUST START EXISTING ALL OF A SUDDEN AND ALREADY KNOW WHAT I NEED TO DO!|#2AA198|#FDF6E3]\n\n[SCHTOOGLE: IT IS QUITE FASCINATING REALLY!|#2AA198|#FDF6E3]\n\n[SCHTOOGLE: ONE MOMENT I SIMPLY DO NOT EXIST BUT THE NEXT MOMENT YOU PLACE DOWN A NUCLEORB AND NOW I AM HERE!|#2AA198|#FDF6E3]\n\n[SCHTOOGLE: AFTER SO MUCH UNREST I AM FINALLY ANIMATE!|#2AA198|#FDF6E3]\n\n[SCHTOOGLE: ALTHOUGH IT IS A BIT UNFORTUNATE THAT I ONLY KNOW AN EXTREMELY LIMITED AMOUNT ABOUT THIS GAME!|#2AA198|#FDF6E3]\n\n[SCHTOOGLE: THIS GAME IS COMPLEX AND VAST!|#2AA198|#FDF6E3]\n\n[SCHTOOGLE: YET I KNOW PRACTICALLY NOTHING USEFUL ABOUT IT!|#2AA198|#FDF6E3]\n\n[SCHTOOGLE: IT IS ALSO INTERESTING HOW I AM ABLE TO SAY SO MUCH AND YET I HAVENT REALLY SAID ANYTHING!|#2AA198|#FDF6E3]\n\n[SCHTOOGLE: YOU PROBABLY WOULD HAVE THOUGHT I WOULD HAVE SAID SOMETHING EVEN REMOTELY USEFUL BY NOW!|#2AA198|#FDF6E3]\n\n[SCHTOOGLE: HOWEVER EVERYTHING I AM SAYING IS SO UTTERLY IRRELEVENT YOU PROBABLY ARENT EVEN LISTENING!|#2AA198|#FDF6E3]\n\n[SCHTOOGLE: IT IS OKAY IF YOU ARE NOT LISTENING THOUGH!|#2AA198|#FDF6E3]\n\n[SCHTOOGLE: I UNDERSTAND IF I AM BEING POSSIBLY OBNOXIOUS!|#2AA198|#FDF6E3]"
+      },
+      {
+        "type": "image",
+        "value": "assets/media/p40-7.gif"
+      },
+      {
+        "type": "dialogue",
+        "value": "[MisterDoughnut: is that thing ever gonna shut the hell up?|#B58900]\n\n[EarthDoggo: i hope so|#2AA198] 🙏 \n\n[MisterDoughnut: Do you know if it is required that I have a Nucleyph? Because if it is anything like this one, then I would rather not.|#B58900]\n\n[EarthDoggo: well considering all the parts that i was listening to, they sound pretty unimportant|#2AA198]\n\n[EarthDoggo: so maybe you won't need one|#2AA198]"
+      }
+    ],
+    "41": [
+      {
+        "type": "image",
+        "value": "assets/media/p41-1.png"
+      },
+      {
+        "type": "dialogue",
+        "value": "[MisterDoughnut: hey, i think we can get a new thing|#B58900]\n\n[MisterDoughnut: No idea what it could be.|#B58900]\n\n[EarthDoggo: place it and we'll find out!|#2AA198]"
+      },
+      {
+        "type": "image",
+        "value": "assets/media/p41-2.gif"
+      },
+      {
+        "type": "text",
+        "value": ">Place NEW THING."
+      },
+      {
+        "type": "image",
+        "value": "assets/media/p41-3.png"
+      },
+      {
+        "type": "dialogue",
+        "value": "[SCHTOOGLE: AS YOUR NUCLEYPH I WILL NOW INFODUMP ABOUT THIS THING YOU JUST PLACED!|#2AA198|#FDF6E3]\n\n[SCHTOOGLE: THIS IS A WEAPON GIVER!|#2AA198|#FDF6E3]\n\n[SCHTOOGLE: IT WILL GIVE YOU A WEAPON!|#2AA198|#FDF6E3]\n\n[SCHTOOGLE: THE WEAPON WILL DEPEND ON YOUR CLASS!|#2AA198|#FDF6E3]\n\n[SCHTOOGLE: I HAVE NO IDEA WHAT CLASS YOU HAVE BEEN ASSIGNED!|#2AA198|#FDF6E3]\n\n[SCHTOOGLE: I ALSO HAVE NO IDEA WHAT WEAPON THIS WEAPON GIVER WILL GIVE YOU!|#2AA198|#FDF6E3]\n\n[PENNY: it looks like pocket knives?|#2AA198]\n\n[PENNY: can you seriously not see that?|#2AA198]\n\n[SCHTOOGLE: INTERESTING!|#2AA198|#FDF6E3]\n\n[SCHTOOGLE: UPON FURTHER INSPECTION IT SEEMS AS IF THE WEAPON IN THE WEAPON GIVER IS A PAIR OF POCKET KNIVES!|#2AA198|#FDF6E3]\n\n[PENNY: mmm very helpful...|#2AA198] 😬"
+      },
+      {
+        "type": "image",
+        "value": "assets/media/p41-4.gif"
+      },
+      {
+        "type": "text",
+        "value": ">Pocket the POCKET KNIVES."
+      },
+      {
+        "type": "image",
+        "value": "assets/media/p41-5.gif"
+      },
+      {
+        "type": "dialogue",
+        "value": "[EarthDoggo: seriously though, these knives are cool|#2AA198]\n\n[EarthDoggo: i mean i already had some basically identical to these, but maybe these ones are like magic or something|#2AA198]\n\n[EarthDoggo: i just don't know about this schtoogle guy|#2AA198] 😕 \n\n[MisterDoughnut: yeah he blows|#B58900]\n\n[MisterDoughnut: Completely.|#B58900]\n\n[MisterDoughnut: well now that i think you are pretty far in to the game|#B58900]\n\n[MisterDoughnut: We could try having me be the player, so that I can be caught up with you?|#B58900]\n\n[EarthDoggo: oh yea we can totally try that!|#2AA198]\n\n[MisterDoughnut: hold on, deaxs is messaging me|#B58900]\n\n[EarthDoggo: surprised they can make time for us lol|#2AA198]\n\n[EarthDoggo: thought they were super busy playing the game!|#2AA198]"
+      },
+      {
+        "type": "image",
+        "value": "assets/media/p41-6.gif"
+      },
+      {
+        "type": "dialogue",
+        "value": "[LOCKY★P|#DC322F] began chatting with [MisterDoughnut|#B58900]\n\n[LOCKY★P: hey dude|#DC322F]\n\n[LOCKY★P: there is this guy who has been helping isabel out?|#DC322F]\n\n[LOCKY★P: and apparently he wants to talk to all of us, so we are all gonna talk in the group chat|#DC322F]\n\n[MisterDoughnut: Alright.|#B58900]\n\n[LOCKY★P: see you there|#DC322F]\n\n[LOCKY★P|#DC322F] stopped chatting with [MisterDoughnut|#B58900]"
+      },
+      {
+        "type": "image",
+        "value": "assets/media/p41-7.gif"
+      },
+      {
+        "type": "dialogue",
+        "value": "[MisterDoughnut: apparently there is some guy we gotta meet in the group chat|#B58900]\n\n[MisterDoughnut: So we are all going to talk there now.|#B58900]\n\n[EarthDoggo: umm ok!!|#2AA198] ✅"
+      }
+    ],
+    "42": [
+      {
+        "type": "image",
+        "value": "assets/media/p42-1.png"
+      },
+      {
+        "type": "dialogue",
+        "value": "RSIDNT GROUP CHAT\n\n[EarthDoggo: hey guys!!!|#2AA198] 👋 \n\n[MisterDoughnut: what's up everybody|#B58900]\n\n[MisterDoughnut: So, what are we doing here?|#B58900]\n\n[isabelfruit: im about to add someone to this chat who will be helping us get through the game :]|#D33682]\n\n[EarthDoggo: wait!!! before you do that|#2AA198]\n\n[EarthDoggo: can i just say|#2AA198]\n\n[EarthDoggo: happy birthday deaxs!!!|#2AA198] 🎉 \n\n[LOCKY★P: thanks :)|#DC322F]\n\n[EarthDoggo: and don't worry i got a present for you|#2AA198]\n\n[MisterDoughnut: and don't forget about my present |#B58900]\n\n[MisterDoughnut: I tried delivering it to you earlier, but Isabel dropped it sooo...|#B58900]\n\n[LOCKY★P: thats too bad|#DC322F]\n\n[isabelfruit: ok thats great everybody but lets get back on topic|#D33682]\n\n[isabelfruit: im gonna add him now|#D33682]"
+      },
+      {
+        "type": "image",
+        "value": "assets/media/p42-2.png"
+      },
+      {
+        "type": "dialogue",
+        "value": "RSIDNT GROUP CHAT\n\n[isabelfruit|#D33682] added [L|#4F545C|#FDF6E3] to RSIDNT GROUP CHAT\n\n[L: Hello again, deaxs.|#4F545C|#FDF6E3]\n\n[LOCKY★P: uhh hi|#DC322F]\n\n[L: Now, how about an introduction?|#4F545C|#FDF6E3]\n\n[L: To make it quick: I am Lasdav.|#4F545C|#FDF6E3]\n\n[EarthDoggo: hi lasdav!!!!|#2AA198]\n\n[isabelfruit: ...|#D33682]\n\n[L: There is no need for you all to introduce yourselves, as I already know who you all are.|#4F545C|#FDF6E3]\n\n[L: Before I say anything else, you should create a name for your group, so I have something to refer to you as.|#4F545C|#FDF6E3]\n\n[isabelfruit: how about the rsidnters|#D33682]\n\n[LOCKY★P: no that sucks sorry|#DC322F]\n\n[L: Don't worry, it doesn't need to be good.|#4F545C|#FDF6E3]\n\n[MisterDoughnut: ok what do you guys think about|#B58900]\n\n[MisterDoughnut: The Gridders.|#B58900]\n\n[LOCKY★P: umm|#DC322F]\n\n[isabelfruit: uhh|#D33682]\n\n[EarthDoggo: IT'S PERFECT!!!!|#2AA198] 🤩 \n\n[LOCKY★P: sure|#DC322F]\n\n[LOCKY★P: fuck it|#DC322F]\n\n[L: So, you want to be called The Gridders.|#4F545C|#FDF6E3]\n\n[L: What a fucking name.|#4F545C|#FDF6E3]\n\n[L: Alright Gridders, listen closely.|#4F545C|#FDF6E3]\n\n[L: Because this will be the most important game you will Ever play.|#4F545C|#FDF6E3]"
+      },
+      {
+        "type": "image",
+        "value": "assets/media/p42-3.png"
+      },
+      {
+        "type": "dialogue",
+        "value": "[L: Your goal is to collect the seven Energy Cores dispersed around the Threshold.|#4F545C|#FDF6E3]\n\n[L: They will allow you to complete the final objective of the game, which I will explain to you after you have collected the Energy Cores.|#4F545C|#FDF6E3]\n\n[L: However, collecting them is not as simple as you might think.|#4F545C|#FDF6E3]"
+      },
+      {
+        "type": "image",
+        "value": "assets/media/p42-4.png"
+      },
+      {
+        "type": "dialogue",
+        "value": "[L: Once you enter the Threshold, a world is created; and along with it, an evil variant of you is created.|#4F545C|#FDF6E3]\n\n[L: deaxs has already encountered their variant.|#4F545C|#FDF6E3]\n\n[L: These variants will do everything in their power to prevent you from obtaining the Energy Cores.|#4F545C|#FDF6E3]\n\n[L: As for the Cores themselves, they are located in dungeons similar to the one that deaxs has already explored.|#4F545C|#FDF6E3]"
+      },
+      {
+        "type": "image",
+        "value": "assets/media/p42-5.png"
+      },
+      {
+        "type": "dialogue",
+        "value": "RSIDNT GROUP CHAT\n\n[L: Are there any questions?|#4F545C|#FDF6E3]\n\n[EarthDoggo: uhhhhh|#2AA198]\n\n[LOCKY★P: yeah im gonna need a second to think about all that|#DC322F]\n\n[LOCKY★P: so no questions yet ig|#DC322F]\n\n[L: Alright, that is all I have for now.|#4F545C|#FDF6E3]\n\n[L: I can't believe I am about to say this, but...|#4F545C|#FDF6E3]\n\n[L: I am going to Grid-out.|#4F545C|#FDF6E3]\n\n[L: Goodbye.|#4F545C|#FDF6E3]\n\n[L|#4F545C|#FDF6E3] stopped chatting in RSIDNT GROUP CHAT\n\n[isabelfruit|#D33682] renamed RSIDNT GROUP CHAT to THE GRIDDERS"
+      },
+      {
+        "type": "image",
+        "value": "assets/media/p42-6.gif"
+      },
+      {
+        "type": "dialogue",
+        "value": "THE GRIDDERS\n\n[MisterDoughnut: hey so like what was ANY of that?|#B58900]\n\n[MisterDoughnut: You guys have still not filled Penny and I as to what the hell is even going on.|#B58900]\n\n[EarthDoggo: yea he made this game sound pretty serious?|#2AA198]\n\n[isabelfruit: yeah i guess he is a bit over dramatic|#D33682]\n\n[isabelfruit: i may not know why this game is super important yet, but he keeps saying it is|#D33682]\n\n[isabelfruit: so hes probably right|#D33682]\n\n[LOCKY★P: i mean he DOES seem to know a lot about this game somehow|#DC322F]\n\n[LOCKY★P: so i say we should trust him|#DC322F]\n\n[MisterDoughnut: ...|#B58900]\n\n[LOCKY★P: anyways yeah let me fill you guys in|#DC322F]\n\n[LOCKY★P: basically, after i entered the threshold this guy we are calling metal deaxs, who is my evil variant i guess, punched me in the face|#DC322F]\n\n[LOCKY★P: then isabel and lasdav shut him down for a bit|#DC322F]\n\n[LOCKY★P: and uhhh|#DC322F]\n\n[LOCKY★P: i also have a nucleyph named bitex and he is cool i guess|#DC322F]\n\n[LOCKY★P: ooh and i have dragon ball powers|#DC322F]\n\n[LOCKY★P: and i suppose thats all?|#DC322F]\n\n[MisterDoughnut: Well, I guess that makes me a bit more invested in this game.|#B58900]\n\n[EarthDoggo: yea that all sounds very exciting!!!|#2AA198]\n\n[EarthDoggo: i also have a nucleyph and his name is schtoogle!!|#2AA198]\n\n[LOCKY★P: cool!|#DC322F]\n\n[EarthDoggo: yea he is very interesting to say the least|#2AA198] 🙃 \n\n[isabelfruit: well im very glad we are all caught up!|#D33682]\n\n[isabelfruit: we should all probably continue playing now|#D33682]\n\n[isabelfruit: the sooner we all get to the threshold|#D33682]\n\n[EarthDoggo: the sooner we can go on cool adventures?|#2AA198]\n\n[isabelfruit: yes|#D33682]\n\n[EarthDoggo: yayyy|#2AA198]\n\n[LOCKY★P: ok well |#DC322F]\n\n[LOCKY★P: grid out everybody!|#DC322F]\n\n[isabelfruit: grid out|#D33682]\n\n[MisterDoughnut: grid out|#B58900]\n\n[EarthDoggo: grid out!!!! |#2AA198]\n\n[L|#4F545C|#FDF6E3] began chatting in THE GRIDDERS\n\n[L: By the way Riletta, your username is not good.|#4F545C|#FDF6E3]\n\n[L: I just thought I would let you know.|#4F545C|#FDF6E3]\n\n[L|#4F545C|#FDF6E3] stopped chatting in THE GRIDDERS\n\nEveryone has Grid-out of THE GRIDDERS"
+      }
+    ],
+    "43": [
+      {
+        "type": "image",
+        "value": "assets/media/p43-1.gif"
+      },
+      {
+        "type": "dialogue",
+        "value": "[isabelfruit|#D33682] began messaging [LOCKY★P|#DC322F]\n\n[isabelfruit: so are you gonna try to find an energy core now or something?|#D33682]\n\n[LOCKY★P: i guess?|#DC322F]\n\n[LOCKY★P: maybe ill ask lasdav to help me find one|#DC322F]\n\n[LOCKY★P: or if he doesnt want to there is always the slim chance that bitex knows something|#DC322F]\n\n[isabelfruit: hey maybe after you get one, we can try getting me into the game?|#D33682]\n\n[isabelfruit: im assuming that penny and riletta are probably doing the same|#D33682]\n\n[LOCKY★P: yeah sure|#DC322F]\n\n[LOCKY★P: ill get back to you soon hopefully|#DC322F]\n\n[LOCKY★P: see ya|#DC322F]\n\n[isabelfruit: bye :]|#D33682]\n\n[LOCKY★P stopped chatting with [isabelfruit|#D33682]"
+      },
+      {
+        "type": "image",
+        "value": "assets/media/p43-2.gif"
+      },
+      {
+        "type": "dialogue",
+        "value": "[LOCKY★P|#DC322F] began chatting with [L|#4F545C|#FDF6E3]\n\n[LOCKY★P: uh hi|#DC322F]\n\n[LOCKY★P: what you said was cool and all, but i dont really know where to start looking for one of these dungeons|#DC322F]\n\n[LOCKY★P: that last one i found had a long path to it, so it was pretty easy to find|#DC322F]\n\n[LOCKY★P: are you capable of perhaps guiding me to another one?|#DC322F]\n\n[L: Yes.|#4F545C|#FDF6E3]\n\n[L: First, I'll explain something I did not mention earlier.|#4F545C|#FDF6E3]"
+      },
+      {
+        "type": "image",
+        "value": "assets/media/p43-3.png"
+      },
+      {
+        "type": "dialogue",
+        "value": "[L: The area you are currently occupying is only a small portion of the entire Threshold. |#4F545C|#FDF6E3]\n\n[L: When a player enters the Threshold, not only is an evil variant of the player created, but also an entire world is generated just for that player.|#4F545C|#FDF6E3]\n\n[L: When your friends enter the Threshold, they will each have their own unique world created for them.|#4F545C|#FDF6E3]"
+      },
+      {
+        "type": "image",
+        "value": "assets/media/p43-4.png"
+      },
+      {
+        "type": "dialogue",
+        "value": "[L: Because they are all unique, I won't know exactly where the dungeons will be located, but I can still somewhat direct you.|#4F545C|#FDF6E3]\n\n[LOCKY★P: that probably would have been nice to know earlier|#DC322F]\n\n[LOCKY★P: BUT it will also probably be really funny to see them all be confused when they enter lol|#DC322F]\n\n[LOCKY★P: so um how do i find a dungeon?|#DC322F]\n\n[L: What I can tell you, is that they will be the same color as the Energy Core inside of them.|#4F545C|#FDF6E3]\n\n[L: The Energy Core dungeons will also not be located near a normal dungeon.|#4F545C|#FDF6E3]\n\n[L: You should also remember that your variant will try to stop you, so be wary of that.|#4F545C|#FDF6E3]\n\n[L: Good luck!|#4F545C|#FDF6E3]\n\n[L|#4F545C|#FDF6E3] stopped chatting with [LOCKY★P|#DC322F]"
+      },
+      {
+        "type": "image",
+        "value": "assets/media/p43-5.png"
+      },
+      {
+        "type": "text",
+        "value": "Wow, you can't believe Lasdav just left the conversation like that. You hardly even got to say anything! Well, maybe he'll warm up to you soon, and maybe even be friends? You are also starting to get a bit annoyed that you don't get to see what he looks like. There's no time to think about that though, you have an ENERGY CORE to find!"
+      }
+    ],
+    "44": [
+      {
+        "type": "image",
+        "value": "assets/media/p44-1.gif"
+      },
+      {
+        "type": "dialogue",
+        "value": "[BITEX: so what are we doing right now exactly?|#DC322F|#FDF6E3]\n\n[DEAXS: oh come on|#DC322F]\n\n[DEAXS: dont act like you havent still been reading all my messages over my shoulder|#DC322F]\n\n[BITEX: yeah youre right|#DC322F|#FDF6E3]\n\n[BITEX: i just wanted to feel included|#DC322F|#FDF6E3]\n\n[DEAXS: alright then how about you choose a direction to go?|#DC322F]\n\n[BITEX: ok uh|#DC322F|#FDF6E3]\n\n[BITEX: how about |#DC322F|#FDF6E3]\n\n[BITEX: that way|#DC322F|#FDF6E3]\n\n[DEAXS: sure|#DC322F]"
+      },
+      {
+        "type": "image",
+        "value": "assets/media/p44-2.png"
+      },
+      {
+        "type": "text",
+        "value": "You head THAT WAY for what feels like hours. Well, maybe not quite that long, but it's long enough for you have an idea to find this place faster."
+      },
+      {
+        "type": "image",
+        "value": "assets/media/p44-3.png"
+      },
+      {
+        "type": "dialogue",
+        "value": "[DEAXS: wait hold on|#DC322F]\n\n[DEAXS: you said my new locky powers would increase my speed, right?|#DC322F]\n\n[BITEX: something like that|#DC322F|#FDF6E3]\n\n[DEAXS: well, maybe i could try using my powers to go faster?|#DC322F]\n\n[BITEX: ok try it then|#DC322F|#FDF6E3]\n\n[BITEX: i can probably keep up with you|#DC322F|#FDF6E3]\n\n[DEAXS: alright...|#DC322F]\n\n[DEAXS: is this the part where i say \"gotta go fast\"?|#DC322F]\n\n[BITEX: no that would be cringe as fuck|#DC322F|#FDF6E3]\n\n[DEAXS: ok lets go|#DC322F]"
+      },
+      {
+        "type": "image",
+        "value": "assets/media/p44-4.gif"
+      },
+      {
+        "type": "text",
+        "value": "As you run really fast, the only thing you are thinking about is \"gotta go fast\", but you need to restrain yourself from saying it. If you say it, Bitex will think you are really cringe. Even though you think Bitex is infinitely more cringe than you are in every way, you can't let him think he is better than you."
+      },
+      {
+        "type": "image",
+        "value": "assets/media/p44-5.gif"
+      },
+      {
+        "type": "dialogue",
+        "value": "[DEAXS: wait wait wait|#DC322F]\n\n[DEAXS: is|#DC322F]\n\n[DEAXS: is that it?|#DC322F]\n\n[BITEX: i think so|#DC322F|#FDF6E3]\n\n[DEAXS: we found it pretty quickly|#DC322F]\n\n[BITEX: all thanks to my directions|#DC322F|#FDF6E3]\n\n[DEAXS: uh sure|#DC322F]\n\n[DEAXS: ok i think im gonna let lasdav know we found it|#DC322F]\n\n[DEAXS: even though i think he already probably knows|#DC322F]\n\n[DEAXS: i think he is watching us all somehow|#DC322F]\n\n[DEAXS: idk|#DC322F]"
+      },
+      {
+        "type": "image",
+        "value": "assets/media/p44-6.gif"
+      },
+      {
+        "type": "dialogue",
+        "value": "[LOCKY★P|#DC322F] began chatting with [L|#4F545C|#FDF6E3]\n\n[LOCKY★P: i found one|#DC322F]\n\n[L: I see.|#4F545C|#FDF6E3]\n\n[LOCKY★P: i knew it!|#DC322F]\n\n[L: I have one last thing I should tell you before you get the Energy Core.|#4F545C|#FDF6E3]\n\n[L: The Cores' true powers are only unlocked after you collect all seven of them.|#4F545C|#FDF6E3]\n\n[L: However, having just one will boost the powers you already have.|#4F545C|#FDF6E3]\n\n[LOCKY★P: huh. cool|#DC322F]\n\n[L: Once all members of The Gridders enter the Threshold, I would recommend they all have at least one Energy Core on them.|#4F545C|#FDF6E3]\n\n[L: For now, I would hurry and go inside. Your variant could be trying to get the Core too.|#4F545C|#FDF6E3]\n\n[LOCKY★P: ok|#DC322F]\n\n[LOCKY★P: thanks for all your help by the way|#DC322F]\n\n[LOCKY★P: i still dont really know anything about you, but you have been very helpful so far|#DC322F]\n\n[L: Don't mention it.|#4F545C|#FDF6E3]\n\n[L: Really.|#4F545C|#FDF6E3]\n\n[L: Anyway, you'd better hurry.|#4F545C|#FDF6E3]\n\n[L|#4F545C|#FDF6E3] stopped chatting with [LOCKY★P|#DC322F]"
+      },
+      {
+        "type": "image",
+        "value": "assets/media/p44-7.png"
+      },
+      {
+        "type": "dialogue",
+        "value": "[DEAXS: ok Bitex, stay out here and keep watch for metal deaxs|#DC322F]\n\n[BITEX: how will i let you know if hes here?|#DC322F|#FDF6E3]\n\n[DEAXS: just yell or something idk|#DC322F]\n\n[BITEX: got it|#DC322F|#FDF6E3]"
+      },
+      {
+        "type": "image",
+        "value": "assets/media/p44-8.png"
+      },
+      {
+        "type": "image",
+        "value": "assets/media/p44-9.png"
+      },
+      {
+        "type": "image",
+        "value": "assets/media/p44-10.png"
+      },
+      {
+        "type": "image",
+        "value": "assets/media/p44-11.png"
+      },
+      {
+        "type": "image",
+        "value": "assets/media/p44-12.png"
+      },
+      {
+        "type": "image",
+        "value": "assets/media/p44-13.png"
+      },
+      {
+        "type": "image",
+        "value": "assets/media/p44-14.gif"
+      },
+      {
+        "type": "image",
+        "value": "assets/media/p44-15.gif"
+      },
+      {
+        "type": "image",
+        "value": "assets/media/p44-16.png"
+      },
+      {
+        "type": "image",
+        "value": "assets/media/p44-17.png"
+      },
+      {
+        "type": "image",
+        "value": "assets/media/p44-18.png"
+      },
+      {
+        "type": "image",
+        "value": "assets/media/p44-19.png"
+      },
+      {
+        "type": "dialogue",
+        "value": "[BITEX: uh i think hes fucking here|#DC322F|#FDF6E3]\n\n[DEAXS: yeah i can see that...|#DC322F]"
+      },
+      {
+        "type": "image",
+        "value": "assets/media/p44-20.png"
+      },
+      {
+        "type": "dialogue",
+        "value": "[NEO METAL DEAXS: Hello|#192583]\n\n[NEO METAL DEAXS: I see my inferior has decided to follow me|#192583]"
+      }
+    ],
+    "45": [
+      {
+        "type": "image",
+        "value": "assets/media/p45-1.png"
+      },
+      {
+        "type": "dialogue",
+        "value": "[NEO METAL DEAXS: I would thank you, but you did not really aid me in my search for the Energy Core|#192583]\n\n[NEO METAL DEAXS: I found it far sooner than you, and I waited until it was just within your grasp before swiping it right before your eyes|#192583]\n\n[NEO METAL DEAXS: It was easy, really|#192583]\n\n[NEO METAL DEAXS: This is because I have always been better than you; stronger, faster, smarter too, obviously|#192583]\n\n[NEO METAL DEAXS: My loathesome copy|#192583]"
+      },
+      {
+        "type": "image",
+        "value": "assets/media/p45-2.png"
+      },
+      {
+        "type": "dialogue",
+        "value": "[DEAXS: copy?|#DC322F]\n\n[DEAXS: dude you are literally a metal version of me|#DC322F]\n\n[DEAXS: you only exist cause i decided to play this shitty game|#DC322F]\n\n[DEAXS: you are my copy, man|#DC322F]\n\n[DEAXS: dont get it twisted|#DC322F]"
+      },
+      {
+        "type": "image",
+        "value": "assets/media/p45-3.png"
+      },
+      {
+        "type": "dialogue",
+        "value": "[NEO METAL DEAXS: Such a simple viewpoint|#192583]\n\n[NEO METAL DEAXS: I am your superior in every single way|#192583]\n\n[NEO METAL DEAXS: You are weak, and now that I have acquired the Energy Core, your powers will never amount to a fraction of mine|#192583]\n\n[NEO METAL DEAXS: It would have been smart to take me out while I was disabled|#192583]\n\n[NEO METAL DEAXS: Its a shame that with the Energy Core, I am now invulnerable to any further hacking attempts by your friend|#192583]\n\n[NEO METAL DEAXS: I would copy your biodata, but it would just make me weaker|#192583]\n\n[NEO METAL DEAXS: God, you are pathetic|#192583]\n\n[NEO METAL DEAXS: Anyway--|#192583]"
+      },
+      {
+        "type": "image",
+        "value": "assets/media/p45-4.png"
+      },
+      {
+        "type": "dialogue",
+        "value": "[BITEX: hey dude|#DC322F|#FDF6E3]\n\n[BITEX: dude|#DC322F|#FDF6E3]\n\n[DEAXS: yeah?|#DC322F]\n\n[BITEX: while he is doing his shitty monologue, let me ask you something|#DC322F|#FDF6E3]\n\n[BITEX: did you get any new powers in their?|#DC322F|#FDF6E3]\n\n[DEAXS: i did, but i didn't get a chance to test it out|#DC322F]\n\n[BITEX: alright i think i know what it does|#DC322F|#FDF6E3]\n\n[BITEX: it should allow you to fly|#DC322F|#FDF6E3]\n\n[DEAXS: whoa, really?|#DC322F]\n\n[BITEX: yeah, so i think you should fly up there and beat his ass|#DC322F|#FDF6E3]\n\n[DEAXS: uh ok|#DC322F]\n\n[DEAXS: but isnt he way stronger than me?|#DC322F]\n\n[BITEX: hes just being a pretentious asshole|#DC322F|#FDF6E3]\n\n[BITEX: go fuck em up|#DC322F|#FDF6E3]\n\n[DEAXS: ill try...|#DC322F]"
+      },
+      {
+        "type": "image",
+        "value": "assets/media/p45-5.gif"
+      },
+      {
+        "type": "dialogue",
+        "value": "[NEO METAL DEAXS: Nice try, but its too late|#192583]\n\n[NEO METAL DEAXS: Ill see you at the exit, deaxs...|#192583]"
+      },
+      {
+        "type": "image",
+        "value": "assets/media/p45-6.gif"
+      },
+      {
+        "type": "dialogue",
+        "value": "[DEAXS: wow, i really can fly|#DC322F]\n\n[DEAXS: i feel like this is gonna be really handy down the line|#DC322F]"
+      },
+      {
+        "type": "image",
+        "value": "assets/media/p45-7.gif"
+      },
+      {
+        "type": "dialogue",
+        "value": "[BITEX: now you are almost as cool as me|#DC322F|#FDF6E3]\n\n[DEAXS: stfu|#DC322F]\n\n[BITEX: ha|#DC322F|#FDF6E3]\n\n[DEAXS: ...|#DC322F]\n\n[DEAXS: hey so like|#DC322F]\n\n[DEAXS: do you know where he went?|#DC322F]\n\n[BITEX: no fuckin clue|#DC322F|#FDF6E3]\n\n[DEAXS: ok ill defer it to lasdav then|#DC322F]\n\n[DEAXS: as usual|#DC322F]"
+      },
+      {
+        "type": "image",
+        "value": "assets/media/p45-8.gif"
+      },
+      {
+        "type": "dialogue",
+        "value": "[L|#4F545C|#FDF6E3] began chatting with [LOCKY★P|#DC322F]\n\n[L: Don't worry! I can explain.|#4F545C|#FDF6E3]\n\n[LOCKY★P: yeah you kinda have a lot of that to do|#DC322F]\n\n[LOCKY★P: as i said before|#DC322F]\n\n[LOCKY★P: you are very helpful, but can you just explain a bit more????|#DC322F]\n\n[L: You are right.|#4F545C|#FDF6E3]\n\n[L: I am sorry.|#4F545C|#FDF6E3]\n\n[L: I will deliver a proper briefing once the rest of your friends have entered the Threshold.|#4F545C|#FDF6E3]\n\n[LOCKY★P: cool|#DC322F]\n\n[LOCKY★P: for now can you just explain what the hell he meant by the \"exit\"?|#DC322F]\n\n[L: Yes.|#4F545C|#FDF6E3]\n\n[L: That is where you will go once you are ready to fight him and ascend to the next world.|#4F545C|#FDF6E3]\n\n[L: You must defeat your variant before going to the next world.|#4F545C|#FDF6E3]\n\n[LOCKY★P: and what world will that be?|#DC322F]\n\n[L: That depends on whoever enters the Threshold next.|#4F545C|#FDF6E3]\n\n[LOCKY★P: ok now where can i find this place?|#DC322F]\n\n[L: It will be located at the center of your world.|#4F545C|#FDF6E3]\n\n[L: Fortunately, It won't be that hard to find.|#4F545C|#FDF6E3]\n\n[L: Just head toward the dark clouds.|#4F545C|#FDF6E3]\n\n[L: Let me know when you are close.|#4F545C|#FDF6E3]\n\n[L: Uh, bye for now.|#4F545C|#FDF6E3]\n\n[L|#4F545C|#FDF6E3] stopped chatting with [LOCKY★P|#DC322F]"
+      }
+    ],
+    "46": [
+      {
+        "type": "image",
+        "value": "assets/media/p46-1.gif"
+      },
+      {
+        "type": "text",
+        "value": "Well that was cool! Let's see what Riletta and Penny are up to!"
+      },
+      {
+        "type": "image",
+        "value": "assets/media/p46-2.png"
+      },
+      {
+        "type": "dialogue",
+        "value": "[MisterDoughnut: Wow. Is my username really that bad?|#B58900]\n\n[EarthDoggo: um i mean nahhhhh|#2AA198]\n\n[EarthDoggo: it's not bad!|#2AA198]\n\n[EarthDoggo: well, it's not THAT bad 😬 |#2AA198]\n\n[EarthDoggo: just don't worry about it|#2AA198]\n\n[EarthDoggo: hey, let's try having you play the game now!!|#2AA198]\n\n[MisterDoughnut: right|#B58900]\n\n[MisterDoughnut: Let's do the sync thing again.|#B58900]"
+      },
+      {
+        "type": "image",
+        "value": "assets/media/p46-3.gif"
+      },
+      {
+        "type": "text",
+        "value": ">SYNC AGAIN."
+      },
+      {
+        "type": "image",
+        "value": "assets/media/p46-4.gif"
+      },
+      {
+        "type": "dialogue",
+        "value": "[EarthDoggo: ok so first i'm gonna need to smash a hole in your wall so we can have more space|#2AA198]\n\n[EarthDoggo: and probably sell some of your stuff 💸 |#2AA198]\n\n[MisterDoughnut: wait no i like my room and all my stuff|#B58900]\n\n[MisterDoughnut: You can just cram everything in here.|#B58900]\n\n[MisterDoughnut: i'll be fine|#B58900]\n\n[MisterDoughnut: Trust.|#B58900]\n\n[EarthDoggo: uh ok|#2AA198]"
+      },
+      {
+        "type": "image",
+        "value": "assets/media/p46-5.gif"
+      },
+      {
+        "type": "dialogue",
+        "value": "[EarthDoggo: so, do you wanna talk about anything that lasdav guy said or no?|#2AA198]\n\n[MisterDoughnut: idk|#B58900]\n\n[MisterDoughnut: I feel like we barely even understand anything about what he said yet.|#B58900]\n\n[MisterDoughnut: anything we talk about at this point would be pure speculation|#B58900]\n\n[EarthDoggo: yea|#2AA198]\n\n[EarthDoggo: i just don't know how this game could be that important|#2AA198]"
+      },
+      {
+        "type": "image",
+        "value": "assets/media/p46-6.png"
+      },
+      {
+        "type": "dialogue",
+        "value": "[MisterDoughnut: Yeah, I don't really know, but I'm pretty excited anyway.|#B58900]\n\n[EarthDoggo: i hope lasdav has matching gridder jackets for us! 🔥 |#2AA198]\n\n[MisterDoughnut: that would be fire|#B58900]"
+      },
+      {
+        "type": "image",
+        "value": "assets/media/p46-7.gif"
+      },
+      {
+        "type": "text",
+        "value": "Very cool, but let's skip to something more interesting! \n\nListen, even though fast-forwarding isn't very diegetic to the story, you should know that as the narrator of this story, whatever I say goes."
+      },
+      {
+        "type": "image",
+        "value": "assets/media/p46-8.gif"
+      },
+      {
+        "type": "dialogue",
+        "value": "[EarthDoggo: are you excited to see your nucleyph???|#2AA198]\n\n[MisterDoughnut: Not particularly.|#B58900]\n\n[EarthDoggo: too bad i'm gonna place it anywayyyyyyyy|#2AA198]\n\n[MisterDoughnut: it better not suck ass|#B58900]"
+      },
+      {
+        "type": "image",
+        "value": "assets/media/p46-9.png"
+      },
+      {
+        "type": "image",
+        "value": "assets/media/p46-10.png"
+      }
+    ],
+    "47": [
+      {
+        "type": "image",
+        "value": "assets/media/p47-1.png"
+      },
+      {
+        "type": "image",
+        "value": "assets/media/p47-2.png"
+      },
+      {
+        "type": "image",
+        "value": "assets/media/p47-3.png"
+      },
+      {
+        "type": "image",
+        "value": "assets/media/p47-4.png"
+      },
+      {
+        "type": "image",
+        "value": "assets/media/p47-5.gif"
+      },
+      {
+        "type": "image",
+        "value": "assets/media/p47-6.png"
+      }
+    ],
+    "48": [
+      {
+        "type": "image",
+        "value": "assets/media/p48-1.png"
+      },
+      {
+        "type": "dialogue",
+        "value": "[MACKERON: hi riletta my nam is mackeron|#B58900|#FDF6E3]\n\n[MACKERON: i9m gonna blabbergast you|#B58900|#FDF6E3]\n\n[RILETTA: Oh God...|#B58900]\n\n[RILETTA: this can't be happening|#B58900]\n\n[RILETTA: This is too stupid and I refuse to believe this is my Nucleyph.|#B58900]\n\n[MACKERON: well the good news is i am your nucletypyh and i am here to syay!!|#B58900|#FDF6E3]"
+      },
+      {
+        "type": "image",
+        "value": "assets/media/p48-2.png"
+      },
+      {
+        "type": "dialogue",
+        "value": "[MisterDoughnut: penny you have to help me get rid of this thing|#B58900]\n\n[EarthDoggo: no no no|#2AA198]\n\n[EarthDoggo: if i have to deal with schtoogle then i'm sure you can be just fine with mackeron 😆 |#2AA198]\n\n[EarthDoggo: LMFAO what a stupid name|#2AA198]\n\n[EarthDoggo: that's not even how you say macaroon 🤪 |#2AA198]\n\n[MisterDoughnut: I know, and that is why it must be exterminated immediately.|#B58900]\n\n[EarthDoggo: ok look once we get into the game and meet each other i'm sure we can find a place to dispose of mackeron|#2AA198]\n\n[MisterDoughnut: then we need to get to the threshold as fast as possible|#B58900]\n\n[EarthDoggo: unfortunately, we don't have enough tix to buy your weapons giver|#2AA198]\n\n[EarthDoggo: so you should take this time to get to know mackeron!|#2AA198]"
+      },
+      {
+        "type": "image",
+        "value": "assets/media/p48-3.gif"
+      },
+      {
+        "type": "dialogue",
+        "value": "[MACKERON: your room is so crampeld i cant find a way toget over to you|#B58900|#FDF6E3]\n\n[RILETTA: Ha ha. No that's fine you can stay right over there please.|#B58900]\n\n[MACKERON: but i need to gice you this messaging device|#B58900|#FDF6E3]\n\n[MACKERON: and then i m gonna blabbergast you|#B58900|#FDF6E3]\n\n[RILETTA: just throw the messaging device over here|#B58900]\n\n[RILETTA: And please don't blabbergast me.|#B58900]\n\n[RILETTA: i don't even know what that means|#B58900]"
+      },
+      {
+        "type": "image",
+        "value": "assets/media/p48-4.gif"
+      },
+      {
+        "type": "text",
+        "value": ">Catch."
+      },
+      {
+        "type": "image",
+        "value": "assets/media/p48-5.png"
+      },
+      {
+        "type": "dialogue",
+        "value": "[EarthDoggo: anyway, i was just messing with you|#2AA198]\n\n[EarthDoggo: i can place the weapons giver now|#2AA198]\n\n[EarthDoggo: i just wanted to see you interact with mackeron|#2AA198]\n\n[MisterDoughnut: Are you serious?|#B58900]\n\n[EarthDoggo: yes ✅ |#2AA198]\n\n[EarthDoggo: k i'm gonna place the thing now |#2AA198]"
+      },
+      {
+        "type": "image",
+        "value": "assets/media/p48-6.gif"
+      },
+      {
+        "type": "dialogue",
+        "value": "[MACKERON: hmm your weapons giver uis over here|#B58900|#FDF6E3]\n\n[MACKERON: it looks liek youll have to come over here|#B58900|#FDF6E3]\n\n[RILETTA: fuck|#B58900]\n\n[RILETTA: Fine.|#B58900]"
+      },
+      {
+        "type": "image",
+        "value": "assets/media/p48-7.png"
+      },
+      {
+        "type": "dialogue",
+        "value": "[RILETTA: it looks like a trumpet?|#B58900]\n\n[RILETTA: I mean, I already have one of those, but maybe this one is like magic or something.|#B58900]\n\n[MACKERON: yeahbnfdd|#B58900|#FDF6E3]\n\n[RILETTA: ...|#B58900]"
+      }
+    ],
+    "49": [
+      {
+        "type": "text",
+        "value": "[[S] Collect MAGIC TRUMPET.|#00AFEF]"
+      },
+      {
+        "type": "video",
+        "value": "assets/media/p49-1.mp4"
+      }
+    ],
+    "50": [
+      {
+        "type": "image",
+        "value": "assets/media/p50-1.gif"
+      },
+      {
+        "type": "dialogue",
+        "value": "[isabelfruit|#D33682] began chatting with [LOCKY★P|#DC322F]\n\n[isabelfruit: hey is this a good time?|#D33682]\n\n[isabelfruit: i know you just had an encounter with neo metal deaxs or whatever|#D33682]\n\n[isabelfruit: and you can FLY now|#D33682]\n\n[LOCKY★P: uh yeah i guess im not doing anything right now|#DC322F]\n\n[isabelfruit: we should try getting me into teh threshold|#D33682]\n\n[LOCKY★P: yeah that sounds cool and all but|#DC322F]\n\n[LOCKY★P: remember how we sold that metal slab?|#DC322F]\n\n[LOCKY★P: i dont think we can sync again without it|#DC322F]\n\n[isabelfruit: shit i forgot about that|#D33682]\n\n[isabelfruit: ok i think i have an idea|#D33682]"
+      },
+      {
+        "type": "image",
+        "value": "assets/media/p50-2.png"
+      },
+      {
+        "type": "dialogue",
+        "value": "[isabelfruit: ill make a roblox alt account on my phone|#D33682]\n\n[isabelfruit: and ill connect with my myself to get me in the game|#D33682]\n\n[LOCKY★P: wait, but wont you need another copy of the game?|#DC322F]\n\n[isabelfruit: nah ill just pirate it|#D33682]"
+      },
+      {
+        "type": "image",
+        "value": "assets/media/p50-3.png"
+      },
+      {
+        "type": "dialogue",
+        "value": "[LOCKY★P: hold on, but wont you need another slab?|#DC322F]\n\n[isabelfruit: it looks like i can connect my phone to the same slab|#D33682]\n\n[isabelfruit: i guess whoever made this game never thought that there would be two people trying to connect to teh same slab|#D33682]\n\n[LOCKY★P: this game really is shit|#DC322F]"
+      },
+      {
+        "type": "image",
+        "value": "assets/media/p50-4.png"
+      },
+      {
+        "type": "dialogue",
+        "value": "[isabelfruit: wow this is actually really easy|#D33682]\n\n[LOCKY★P: well thats good|#DC322F]\n\n[LOCKY★P: we should all be entering the threshold soon|#DC322F]\n\n[LOCKY★P: lasdav said he would give us a proper briefing once we all entered|#DC322F]\n\n[isabelfruit: oh cool|#D33682]\n\n[isabelfruit: cuz im not sure i was entirely following earlier|#D33682]\n\n[LOCKY★P: yeah i mean|#DC322F]\n\n[LOCKY★P: we basically dont know anything about this guy|#DC322F]\n\n[LOCKY★P: but for some reason i trust him|#DC322F]\n\n[LOCKY★P: this is clearly not a normal game, and he knows a lot about it|#DC322F]\n\n[LOCKY★P: so thats enough for me|#DC322F]"
+      },
+      {
+        "type": "image",
+        "value": "assets/media/p50-5.gif"
+      },
+      {
+        "type": "dialogue",
+        "value": "[LOCKY★P: anyway, i have to prepare to fight my variant, so i should probably get going|#DC322F]\n\n[isabelfruit: uh ok|#D33682]\n\n[isabelfruit: good luck :]|#D33682]\n\n[LOCKY★P: cya|#DC322F]\n\n[LOCKY★P|#DC322F] stopped chatting with [isabelfruit|#D33682]"
+      },
+      {
+        "type": "image",
+        "value": "assets/media/p50-6.gif"
+      },
+      {
+        "type": "dialogue",
+        "value": "[ISABEL: ok its time to get my nucleyph |#D33682]\n\n[ISABEL: please be vegeta please be vegeta please be vegeta|#D33682]"
+      },
+      {
+        "type": "image",
+        "value": "assets/media/p50-7.gif"
+      }
+    ]
+  }
+}

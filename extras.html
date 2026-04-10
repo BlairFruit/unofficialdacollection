@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>The Unofficial DEAXS ADVENTURE Collection - Extras</title>
+    
+    <link rel="stylesheet" href="assets/css/shared.css">
+    
+    <style>
+        body { padding: 110px 20px 50px 20px; }
+        
+        .tab-container { display: flex; justify-content: center; gap: 10px; margin-bottom: 30px; border-bottom: 2px solid #444; padding-bottom: 10px; }
+        .tab-btn { background: #1e1e1e; color: #888; border: 2px solid #444; padding: 10px 20px; font-family: "Courier New", monospace; font-weight: bold; cursor: pointer; transition: 0.2s; }
+        .tab-btn.active { background: #000080; color: white; border-color: white; box-shadow: 2px 2px 0 #fff inset; }
+        
+        .section { display: none; }
+        .section.active { display: block; animation: fadeIn 0.3s ease-in; }
+        
+        .album-wrapper { margin: 20px auto; max-width: 400px; }
+        .album-cover { width: 100%; border: 2px solid #444; cursor: pointer; transition: 0.2s; }
+        .album-cover:hover { transform: scale(1.02); border-color: white; box-shadow: 0 0 15px rgba(255,255,255,0.2); }
+        .track-list { display: none; margin-top: 20px; background: #1e1e1e; border: 1px solid #444; padding: 15px; text-align: left; }
+        .track-list.show { display: block; }
+        .track-item { display: flex; flex-direction: column; align-items: flex-start; padding: 15px 0; border-bottom: 1px dashed #333; }
+        .track-item:last-child { border-bottom: none; }
+        .locked { color: #666; font-style: italic; }
+        .track-header { display: flex; justify-content: space-between; align-items: center; width: 100%; }
+        .btn { background: #333; color: white; border: 1px solid #666; padding: 8px 12px; cursor: pointer; text-decoration: none; font-size: 0.8rem; font-family: "Courier New", monospace; transition: 0.2s; }
+        .btn:hover { background: white; color: black; }
+        
+        .custom-audio-wrapper { width: 100%; margin-top: 15px; background: #c0c0c0; border-top: 2px solid #fff; border-left: 2px solid #fff; border-bottom: 2px solid #000; border-right: 2px solid #000; padding: 6px; box-sizing: border-box; }
+        .audio-controls { display: flex; align-items: center; gap: 10px; color: black; }
+        .audio-controls input[type=range] { -webkit-appearance: none; appearance: none; background: #808080; height: 4px; cursor: pointer; flex-grow: 1; }
+        .audio-controls input[type=range]::-webkit-slider-thumb { -webkit-appearance: none; appearance: none; height: 16px; width: 8px; background: gold; border: 1px solid black; cursor: pointer; box-shadow: 1px 1px 0 #fff inset; }
+        .audio-time-display { font-size: 11px; font-family: Arial, sans-serif; min-width: 40px; text-align: center; font-weight: bold; }
+        
+        .gallery-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 15px; padding: 20px; max-width: 1000px; margin: 0 auto; }
+        .gallery-item { width: 100%; aspect-ratio: 1 / 1; object-fit: cover; border: 2px solid #444; background: #000; cursor: pointer; transition: 0.2s; }
+        .gallery-item:hover { border-color: gold; transform: scale(1.05); box-shadow: 0 4px 15px rgba(255, 215, 0, 0.3); z-index: 2; position: relative; }
+        .gallery-instructions { color: #888; font-size: 0.9rem; margin-bottom: 20px; }
+        
+        .lightbox { display: none; position: fixed; z-index: 10000; left: 0; top: 0; width: 100%; height: 100%; background-color: rgba(0, 0, 0, 0.9); align-items: center; justify-content: center; flex-direction: column; backdrop-filter: blur(5px); }
+        .lightbox.show { display: flex; animation: fadeIn 0.2s ease-out; }
+        .lightbox-content { max-width: 90%; max-height: 80vh; border: 2px solid gold; box-shadow: 0 0 25px rgba(0,0,0,0.8); background: #000; }
+        .lightbox-close-btn { margin-top: 20px; background: transparent; color: white; border: 1px solid white; padding: 8px 20px; cursor: pointer; font-family: "Courier New", monospace; transition: 0.2s; }
+        .lightbox-close-btn:hover { background: white; color: black; }
+        
+        .unused-container { max-width: 800px; margin: 0 auto; text-align: left; }
+        .unused-block { background: #1e1e1e; border: 1px solid #444; border-left: 4px solid gold; padding: 20px; margin-bottom: 30px; }
+        .unused-block img { max-width: 100%; border: 2px solid #000; margin-bottom: 15px; display: block; }
+        .dev-quote { font-family: "Consolas", monospace; color: #ccc; font-style: italic; background: #000; padding: 15px; border-radius: 4px; border: 1px dashed #666; }
+        .dev-quote::before { content: "DEV NOTE: "; color: gold; font-weight: bold; font-style: normal; }
+    </style>
+</head>
+<body>
+    <div class="retro-title-bar">
+        <div style="display: flex; align-items: center;">
+            <img src="assets/media/icon.png" class="title-bar-icon" alt="icon">
+            <div class="retro-title-text">The Unofficial DEAXS ADVENTURE Collection - Extras</div>
+        </div>
+        <div class="retro-window-controls">
+            <button class="retro-btn" onclick="minimizeApp()">_</button>
+            <button class="retro-btn" onclick="maximizeApp()">□</button>
+            <button class="retro-btn" onclick="closeApp()">X</button>
+        </div>
+    </div>
+
+    <div class="browser-ui-container">
+        <div class="retro-tabs" id="tab-container"></div>
+        <div class="retro-address-bar">
+            <span class="retro-address-label">Address</span>
+            <div class="retro-address-input-wrapper">
+                <img src="assets/media/icon.png" class="fake-favicon" alt="icon">
+                <input type="text" id="address-input" value="deaxs://home/extras.html" readonly spellcheck="false">
+            </div>
+        </div>
+    </div>
+
+    <div id="lightbox" class="lightbox" onclick="closeLightbox(event)">
+        <img id="lightbox-img" class="lightbox-content" style="display: none;">
+        <video id="lightbox-vid" class="lightbox-content" controls loop style="display: none;"></video>
+        <button class="lightbox-close-btn" onclick="closeLightbox(event)">CLOSE VIEW</button>
+    </div>
+    
+    <a href="home.html" class="nav-btn floating-menu-btn">← BACK TO MENU</a>
+    
+    <div class="tab-container">
+        <button class="tab-btn active" onclick="switchTab(this, 'soundtrack')">SOUNDTRACK</button>
+        <button class="tab-btn" onclick="switchTab(this, 'gallery')">ASSET GALLERY</button>
+        <button class="tab-btn" onclick="switchTab(this, 'unused')">UNUSED CONTENT</button>
+    </div>
+    
+    <div id="soundtrack" class="section active">
+        <p style="color: #888;" id="album-instructions">Unlock achievements to discover the Soundtrack!</p>
+        <div class="album-wrapper" id="vol1-wrapper" style="display: none;">
+            <img src="assets/media/vol1.jpg" alt="Volume 1 Cover" class="album-cover" onclick="toggleTracks()">
+            <div class="track-list" id="vol1-tracks">
+                <div class="track-item" id="track-1-container"><span class="locked">01 - ???</span></div>
+                <div class="track-item" id="track-2-container"><span class="locked">02 - ???</span></div>
+                <div class="track-item" id="track-3-container"><span class="locked">03 - ???</span></div>
+            </div>
+        </div>
+    </div>
+    
+    <div id="gallery" class="section">
+        <p class="gallery-instructions">Left-click to Focus. Right-click to Save or View Folder.</p>
+        <div class="gallery-grid" id="gallery-container"></div>
+    </div>
+    
+    <div id="unused" class="section">
+        <div class="unused-container">
+            <div class="unused-block">
+                <h3 id="coin-title" style="margin-top: 0; color: white;">[unused coin-head gif]</h3>
+                <img id="coin-img" src="assets/media/coinheads.gif" alt="Unused Asset" onerror="this.style.display='none'">
+                <div id="coin-quote" class="dev-quote">
+                    "this went unused because the tails vote won, but i already had the gif ready so i just kind of kept it."
+                </div>
+            </div>
+            <div class="unused-block">
+                <h3 style="margin-top: 0; color: white;">[egbert dance]</h3>
+                <img src="assets/media/THEGIF.gif" alt="Unused Asset" onerror="this.style.display='none'">
+                <div class="dev-quote">
+                    "this gif was used for one of the announcements regarding deaxs adventure, but it never was actually used in the comic. atleast not in high quality"
+                </div>
+            </div>
+            <div class="unused-block">
+                <h3 style="margin-top: 0; color: white;">[Sketches for sprites used in the Comic]</h3>
+                <img src="assets/media/sketches.png" alt="Unused Asset" onerror="this.style.display='none'">
+                <div class="dev-quote">
+                    "these are sketches i made before tracing them into digital so i could use them as panels."
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="assets/js/shared.js"></script>
+    
+    <script>
+        const path = require('path');
+        const fs = require('fs');
+
+        function switchTab(btn, tabId) {
+            document.querySelectorAll('.section').forEach(sec => sec.classList.remove('active'));
+            document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+            document.getElementById(tabId).classList.add('active');
+            btn.classList.add('active');
+        }
+
+        function openLightbox(src, type) {
+            const lb = document.getElementById('lightbox');
+            const img = document.getElementById('lightbox-img');
+            const vid = document.getElementById('lightbox-vid');
+            if (type === 'video') {
+                img.style.display = 'none';
+                vid.src = src;
+                vid.style.display = 'block';
+                vid.play(); 
+            } else {
+                vid.style.display = 'none';
+                vid.pause();
+                img.src = src;
+                img.style.display = 'block';
+            }
+            lb.classList.add('show');
+        }
+
+        function closeLightbox(e) {
+            if (e.target.id === 'lightbox' || e.target.classList.contains('lightbox-close-btn')) {
+                document.getElementById('lightbox').classList.remove('show');
+                document.getElementById('lightbox-vid').pause(); 
+            }
+        }
+
+        function toggleTracks() { document.getElementById('vol1-tracks').classList.toggle('show'); }
+
+        function buildTrack(id, name, file) {
+            return `
+                <div class="track-header">
+                    <span>${name}</span>
+                    <a href="assets/soundtrack/${file}" download="${file}" class="btn">SAVE</a>
+                </div>
+                <div class="custom-audio-wrapper">
+                    <audio src="assets/soundtrack/${file}" class="custom-audio"></audio>
+                    <div class="audio-controls">
+                        <button class="retro-btn play-pause-btn" style="width: 30px;">▶</button>
+                        <div class="audio-time-display"><span class="current-time">0:00</span></div>
+                        <input type="range" class="progress-bar" value="0" min="0" max="100" step="0.1">
+                        <button class="retro-btn mute-btn" style="width: 30px;">🔊</button>
+                    </div>
+                </div>
+            `;
+        }
+
+        let currentlyPlaying = null;
+        let currentlyPlayingBtn = null;
+
+        function updateSoundtrack() {
+            const hasTrack1 = localStorage.getItem('unlocked-track-1') === "true";
+            const hasTrack2 = localStorage.getItem('unlocked-track-2') === "true";
+            const hasTrack3 = localStorage.getItem('unlocked-track-3') === "true";
+
+            if (hasTrack1 || hasTrack2 || hasTrack3) {
+                document.getElementById('vol1-wrapper').style.display = 'block';
+                document.getElementById('album-instructions').innerText = "Click the album cover to view tracks.";
+            }
+
+            const t1 = document.getElementById('track-1-container');
+            if (hasTrack1 && t1.innerHTML.includes('???')) {
+                t1.innerHTML = buildTrack('01', '01 - RSIDNT', 'rsidnt.mp3');
+            }
+            
+            const t2 = document.getElementById('track-2-container');
+            if (hasTrack2 && t2.innerHTML.includes('???')) {
+                t2.innerHTML = buildTrack('02', '02 - An Absolute Banger', 'an-absolute-banger.mp3');
+            }
+            
+            const t3 = document.getElementById('track-3-container');
+            if (hasTrack3 && t3.innerHTML.includes('???')) {
+                t3.innerHTML = buildTrack('03', '03 - Displacement', 'displacement.mp3');
+            }
+
+            attachAudioListeners();
+        }
+
+        function attachAudioListeners() {
+            const audioWrappers = document.querySelectorAll('.custom-audio-wrapper');
+            audioWrappers.forEach(wrapper => {
+                const audio = wrapper.querySelector('.custom-audio');
+                const playBtn = wrapper.querySelector('.play-pause-btn');
+                const progressBar = wrapper.querySelector('.progress-bar');
+                const muteBtn = wrapper.querySelector('.mute-btn');
+                const timeDisplay = wrapper.querySelector('.current-time');
+
+                if (wrapper.dataset.listening) return;
+                wrapper.dataset.listening = "true";
+
+                const formatTime = (seconds) => {
+                    if (isNaN(seconds)) return "0:00";
+                    const mins = Math.floor(seconds / 60);
+                    const secs = Math.floor(seconds % 60);
+                    return `${mins}:${secs.toString().padStart(2, '0')}`;
+                };
+
+                playBtn.addEventListener('click', () => {
+                    if (audio.paused) {
+                        if (currentlyPlaying && currentlyPlaying !== audio) {
+                            currentlyPlaying.pause();
+                            if (currentlyPlayingBtn) currentlyPlayingBtn.innerText = "▶";
+                        }
+                        audio.play();
+                        playBtn.innerText = "⏸";
+                        currentlyPlaying = audio;
+                        currentlyPlayingBtn = playBtn;
+                    } else {
+                        audio.pause();
+                        playBtn.innerText = "▶";
+                    }
+                });
+
+                audio.addEventListener('timeupdate', () => {
+                    if (audio.duration) {
+                        progressBar.value = (audio.currentTime / audio.duration) * 100;
+                        timeDisplay.innerText = formatTime(audio.currentTime);
+                    }
+                });
+
+                progressBar.addEventListener('input', (e) => { audio.currentTime = (e.target.value / 100) * audio.duration; });
+                muteBtn.addEventListener('click', () => { audio.muted = !audio.muted; muteBtn.innerText = audio.muted ? "🔇" : "🔊"; });
+                audio.addEventListener('ended', () => { playBtn.innerText = "▶"; progressBar.value = 0; timeDisplay.innerText = "0:00"; });
+            });
+        }
+
+        function loadGallery() {
+            const galleryContainer = document.getElementById('gallery-container');
+            const dataPath = path.join(__dirname, 'assets', 'data.json');
+            const highestPage = parseInt(localStorage.getItem('highest-page')) || parseInt(localStorage.getItem('saved-page')) || 1;
+            
+            try {
+                const rawData = fs.readFileSync(dataPath, 'utf8');
+                const data = JSON.parse(rawData);
+                const loadedAssets = new Set();
+
+                for (let page in data.pages) {
+                    if (parseInt(page) <= highestPage) {
+                        data.pages[page].forEach(block => {
+                            if ((block.type === 'image' || block.type === 'video') && !loadedAssets.has(block.value)) {
+                                loadedAssets.add(block.value);
+                                
+                                const fullAssetPath = path.join(__dirname, block.value);
+                                let element;
+
+                                if (block.type === 'video') {
+                                    element = document.createElement('video');
+                                    element.src = fullAssetPath;
+                                    element.muted = true;
+                                    element.loop = true;
+                                    element.autoplay = true;
+                                    element.className = 'gallery-item';
+                                } else {
+                                    element = document.createElement('img');
+                                    element.src = fullAssetPath;
+                                    element.className = 'gallery-item';
+                                    element.loading = "lazy"; 
+                                }
+
+                                element.addEventListener('click', () => { openLightbox(fullAssetPath, block.type); });
+                                element.addEventListener('contextmenu', (e) => {
+                                    e.preventDefault(); 
+                                    ipcRenderer.send('show-asset-menu', fullAssetPath);
+                                });
+
+                                galleryContainer.appendChild(element);
+                            }
+                        });
+                    }
+                }
+            } catch (err) {
+                console.error(err);
+                galleryContainer.innerHTML = "<p>Could not load asset data. Ensure data.json exists.</p>";
+            }
+        }
+
+        // INITIALIZATION
+        document.addEventListener("DOMContentLoaded", () => {
+            updateSoundtrack();
+            loadGallery();
+
+            if (Math.random() < 0.10) { 
+                const coinImg = document.getElementById('coin-img');
+                const coinTitle = document.getElementById('coin-title');
+                const coinQuote = document.getElementById('coin-quote');
+
+                coinImg.src = "assets/media/medallion.gif"; 
+                coinImg.style.transform = "rotate(90deg)"; 
+                coinTitle.innerText = "[It seeems I have been transformed into a medallion.]";
+                coinTitle.style.fontFamily = "'medallion', monospace";
+                coinQuote.innerText = "\"how does this happen even\"";
+
+                if (window.unlockAchievement) {
+                    window.unlockAchievement('unlocked-coin-secret');
+                }
+            }
+        });
+
+        window.addEventListener('focus', () => {
+            updateSoundtrack();
+        });
+    </script>
+</body>
+</html>

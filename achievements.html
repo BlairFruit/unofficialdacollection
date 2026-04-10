@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>The Unofficial DEAXS ADVENTURE Collection - Achievements</title>
+    
+    <link rel="stylesheet" href="assets/css/shared.css">
+    
+    <style>
+        body { padding: 110px 20px 50px 20px; }
+        
+        .achievements-container { max-width: 700px; margin: 0 auto; text-align: left; }
+        .achieve-box { background: #1e1e1e; border: 2px solid #444; padding: 15px; margin-bottom: 15px; display: flex; align-items: center; gap: 20px; transition: 0.3s; }
+        
+        .achieve-box.unlocked { border-color: gold; box-shadow: 0 0 10px rgba(255, 215, 0, 0.2); background: #2a2a2a; }
+        
+        .achieve-icon { width: 64px; height: 64px; border: 2px solid #333; background: #000; object-fit: contain; }
+        .achieve-box.unlocked .achieve-icon { border-color: gold; background: #111; }
+        .achieve-box.locked .achieve-icon { filter: grayscale(100%) brightness(0.3); opacity: 0.5; }
+        
+        .achieve-details { flex-grow: 1; }
+        .achieve-details h3 { margin: 0 0 5px 0; color: #666; font-family: "Courier New", monospace; }
+        .achieve-box.unlocked .achieve-details h3 { color: gold; text-shadow: 1px 1px 0 #000; }
+        
+        .achieve-details p { margin: 0; color: #444; font-size: 0.95rem; white-space: pre-wrap; font-family: Arial, sans-serif; }
+        .achieve-box.unlocked .achieve-details p { color: #ddd; }
+        
+        .completion-header { text-align: center; color: white; margin-bottom: 30px; font-size: 1.5rem; border-bottom: 2px solid #444; padding-bottom: 10px; }
+    </style>
+</head>
+<body>
+    <div class="retro-title-bar">
+        <div style="display: flex; align-items: center;">
+            <img src="assets/media/icon.png" class="title-bar-icon" alt="icon">
+            <div class="retro-title-text">The Unofficial DEAXS ADVENTURE Collection - Achievements</div>
+        </div>
+        <div class="retro-window-controls">
+            <button class="retro-btn" onclick="minimizeApp()">_</button>
+            <button class="retro-btn" onclick="maximizeApp()">□</button>
+            <button class="retro-btn" onclick="closeApp()">X</button>
+        </div>
+    </div>
+
+    <div class="browser-ui-container">
+        <div class="retro-tabs" id="tab-container"></div>
+        <div class="retro-address-bar">
+            <span class="retro-address-label">Address</span>
+            <div class="retro-address-input-wrapper">
+                <img src="assets/media/icon.png" class="fake-favicon" alt="icon">
+                <input type="text" id="address-input" value="deaxs://home/achievements.html" readonly spellcheck="false">
+            </div>
+        </div>
+    </div>
+
+    <a href="home.html" class="nav-btn floating-menu-btn">← BACK TO MENU</a>
+    
+    <div class="achievements-container">
+        <div class="completion-header" id="completion-text">Unlocked: 0 / 3</div>
+        <div id="achievements-list"></div>
+    </div>
+
+    <script src="assets/js/shared.js"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const listContainer = document.getElementById('achievements-list');
+            let unlockedCount = 0;
+            const totalAchievements = Object.keys(window.APP_ACHIEVEMENTS).length;
+
+            // Loop through the Master List automatically
+            for (const [id, ach] of Object.entries(window.APP_ACHIEVEMENTS)) {
+                const isUnlocked = localStorage.getItem(id) === "true";
+                if (isUnlocked) unlockedCount++;
+
+                const box = document.createElement('div');
+                box.className = `achieve-box ${isUnlocked ? 'unlocked' : 'locked'}`;
+                const displayIcon = ach.icon || 'assets/media/icon.png';
+
+                box.innerHTML = `
+                    <img src="${displayIcon}" class="achieve-icon" alt="Achievement Icon">
+                    <div class="achieve-details">
+                        <h3>${isUnlocked ? ach.title : '???'}</h3>
+                        <p>${isUnlocked ? ach.desc : 'Keep exploring to unlock this secret.'}</p>
+                    </div>
+                `;
+                listContainer.appendChild(box);
+            }
+
+            document.getElementById('completion-text').innerText = `Unlocked: ${unlockedCount} / ${totalAchievements}`;
+        });
+    </script>
+</body>
+</html>
