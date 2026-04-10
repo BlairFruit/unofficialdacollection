@@ -1,16 +1,17 @@
-name: Build Desktop App
+name: Build and Release Desktop App
 
 on: 
   push:
-    branches:
-      - main
-    paths:
-      - 'version.json'
+    tags:
+      - 'v*'
   workflow_dispatch:
 
 jobs:
   build:
     runs-on: windows-latest
+    
+    permissions:
+      contents: write 
 
     steps:
       - name: Check out Git repository
@@ -24,13 +25,23 @@ jobs:
       - name: Install Dependencies
         run: npm install
 
-      - name: Build the App (ZIP format)
+      - name: Build the App
         run: npm run build
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
-      - name: Upload the Compiled ZIP
+      - name: Upload the Compiled Artifact
         uses: actions/upload-artifact@v4
         with:
           name: unofficial-deaxsadventure-collection
-          path: dist/*.zip
+          path: dist/win-unpacked/
+
+      - name: Create GitHub Release
+        uses: softprops/action-gh-release@v2
+        with:
+          tag_name: ${{ github.ref_name }}
+          name: The Unofficial Deaxs Adventure Collection - ${{ github.ref_name }}
+          files: dist/*.zip
+          body_path: release-notes.md
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

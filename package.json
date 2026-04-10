@@ -10,6 +10,7 @@
   },
   "build": {
     "appId": "com.blairfruit.deaxsadventure",
+    "asar": false,
     "win": {
       "target": "zip",
       "icon": "assets/media/icon.png"
