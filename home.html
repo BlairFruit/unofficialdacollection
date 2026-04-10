@@ -196,45 +196,85 @@
 
                 statusText.innerText = "App is up to date. Checking for new comic pages...";
                 
+                statusText.innerText = "App is up to date. Checking for comic content updates...";
+                
                 const response = await fetch(REPO_BASE_URL + 'assets/data.json');
                 if (!response.ok) throw new Error("Could not connect to GitHub.");
                 const remoteData = await response.json();
 
                 const localData = JSON.parse(fs.readFileSync(LOCAL_DATA_PATH, 'utf8'));
-                const localPageCount = Object.keys(localData.pages).length;
-                const remotePageCount = Object.keys(remoteData.pages).length;
+                
+                let hasChanges = false;
+                let downloadQueue = [];
+                let pagesToUpdate = [];
 
-                if (remotePageCount <= localPageCount) {
+                // 1. Check if any pages were completely removed from the server
+                for (let p in localData.pages) {
+                    if (!remoteData.pages[p]) {
+                        delete localData.pages[p];
+                        hasChanges = true;
+                    }
+                }
+
+                // 2. Scan every page on the server for new pages OR typo fixes
+                for (let p in remoteData.pages) {
+                    let remotePageBlocks = remoteData.pages[p];
+                    
+                    // Make a clone of the remote data so we can modify the image paths safely
+                    let mappedPageBlocks = JSON.parse(JSON.stringify(remotePageBlocks)); 
+
+                    let assetCounter = 1;
+                    mappedPageBlocks.forEach(block => {
+                        // If it's media, we need to map the GitHub path to what it should be on your hard drive
+                        if (block.type === 'image' || block.type === 'video') {
+                            let remotePath = block.value; 
+                            let ext = path.extname(remotePath);
+                            let newFileName = `p${p}-${assetCounter}${ext}`;
+                            let newRelPath = `assets/media/${newFileName}`;
+                            let localSavePath = path.join(__dirname, 'assets', 'media', newFileName);
+                            
+                            // Update the block to use the local path
+                            block.value = newRelPath;
+
+                            // If the image/video file doesn't exist on your hard drive yet, queue it up!
+                            if (!fs.existsSync(localSavePath)) {
+                                downloadQueue.push({ url: REPO_BASE_URL + remotePath, savePath: localSavePath });
+                            }
+                            assetCounter++;
+                        }
+                    });
+
+                    // 3. Compare the server's page against your local page
+                    let isDifferent = false;
+                    if (!localData.pages[p]) {
+                        isDifferent = true; // It's a brand new page!
+                    } else if (JSON.stringify(localData.pages[p]) !== JSON.stringify(mappedPageBlocks)) {
+                        isDifferent = true; // The page exists, but the text or blocks were edited!
+                    }
+
+                    // If a typo was fixed or it's new, overwrite the local memory with the server's version
+                    if (isDifferent) {
+                        localData.pages[p] = mappedPageBlocks;
+                        hasChanges = true;
+                        pagesToUpdate.push(p);
+                    }
+                }
+
+                // 4. Wrap up and Save
+                if (!hasChanges && downloadQueue.length === 0) {
                     statusText.innerText = "You are completely up to date!";
                     statusText.style.color = "#00ff00";
                     return;
                 }
 
-                statusText.innerText = `Downloading pages ${localPageCount + 1} to ${remotePageCount}...`;
+                if (pagesToUpdate.length > 0) {
+                    statusText.innerText = `Updating data for pages: ${pagesToUpdate.join(', ')}...`;
+                } else {
+                    statusText.innerText = `Downloading missing media files...`;
+                }
                 statusText.style.color = "gold";
 
-                let downloadQueue = [];
-                for (let p = localPageCount + 1; p <= remotePageCount; p++) {
-                    let pageStr = p.toString();
-                    let pageBlocks = remoteData.pages[pageStr];
-                    if (pageBlocks) {
-                        let assetCounter = 1; 
-                        pageBlocks.forEach(block => {
-                            if (block.type === 'image' || block.type === 'video') {
-                                let remotePath = block.value; 
-                                let ext = path.extname(remotePath);
-                                let newFileName = `p${p}-${assetCounter}${ext}`;
-                                let newRelPath = `assets/media/${newFileName}`;
-                                let localSavePath = path.join(__dirname, 'assets', 'media', newFileName);
-                                downloadQueue.push({ url: REPO_BASE_URL + remotePath, savePath: localSavePath });
-                                block.value = newRelPath;
-                                assetCounter++;
-                            }
-                        });
-                        localData.pages[pageStr] = pageBlocks;
-                    }
-                }
-
+                // Download any new images that were added
                 for (let i = 0; i < downloadQueue.length; i++) {
                     let item = downloadQueue[i];
                     statusText.innerText = `Downloading asset ${i + 1} of ${downloadQueue.length}...`;
@@ -246,9 +286,10 @@
                 }
 
                 statusText.innerText = "Finalizing update...";
+                // Save the newly merged and fixed data.json back to the hard drive
                 fs.writeFileSync(LOCAL_DATA_PATH, JSON.stringify(localData, null, 2));
                 
-                statusText.innerText = "New pages installed successfully!";
+                statusText.innerText = "Content updated successfully!";
                 statusText.style.color = "#00ff00";
 
             } catch (err) {

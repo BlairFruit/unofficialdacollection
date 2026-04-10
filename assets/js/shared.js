@@ -1,17 +1,13 @@
-// assets/js/shared.js
 const { ipcRenderer } = require('electron');
 
-// --- WINDOW CONTROLS ---
 function minimizeApp() { ipcRenderer.send('minimize-app'); }
 function maximizeApp() { ipcRenderer.send('maximize-app'); }
 function closeApp() { ipcRenderer.send('close-app'); }
 
-// Expose them to the global window so HTML buttons can click them
 window.minimizeApp = minimizeApp;
 window.maximizeApp = maximizeApp;
 window.closeApp = closeApp;
 
-// --- UNIVERSAL MULTI-TAB LOGIC ---
 let openTabs = JSON.parse(sessionStorage.getItem('open-tabs')) || [];
 if (openTabs.length > 0 && typeof openTabs[0] === 'string') { openTabs = []; } 
 let activeTabIndex = parseInt(sessionStorage.getItem('active-tab-index')) || 0;
@@ -55,8 +51,9 @@ function renderTabs() {
         
         const tabText = document.createElement('span');
         tabText.innerText = tabData.title;
+        
         if (!isActive) {
-            tabText.onclick = () => {
+            tab.onclick = () => {
                 sessionStorage.setItem('active-tab-index', index.toString());
                 window.location.href = tabData.url;
             };
@@ -117,9 +114,7 @@ document.addEventListener("DOMContentLoaded", () => {
     renderTabs();
 });
 
-// --- MASTER ACHIEVEMENT SYSTEM ---
 window.APP_ACHIEVEMENTS = {
-    // Original Achievements
     "unlocked-track-1": { page: "12", title: "Now we're getting somewhere", desc: "This is where the comic actually starts.\nUnlocked RSIDNT theme.", icon: "assets/media/icon-ach1.png", trigger: "video-end" },
     "unlocked-track-2": { page: "21", title: "Hey wait a second..", desc: "Where have I heard this one before?\nUnlocked An Absolute Banger.", icon: "assets/media/placeholder.png", trigger: "video-time", triggerTime: 4 },
     "unlocked-track-3": { page: "28", title: "Down into The Threshold we go", desc: "You don't know what you're getting into.\nUnlocked Displacement.", icon: "assets/media/placeholder.png", trigger: "load" },
@@ -129,14 +124,13 @@ window.APP_ACHIEVEMENTS = {
 };
 
 window.unlockAchievement = function(id) {
-    if (localStorage.getItem(id)) return; // Already unlocked
+    if (localStorage.getItem(id)) return;
     
     const ach = window.APP_ACHIEVEMENTS[id];
     if (!ach) return;
 
     localStorage.setItem(id, "true");
 
-    // Inject the popup HTML into the page if it doesn't exist yet
     if (!document.getElementById('achievement-toast')) {
         const toastHTML = `
             <div id="achievement-toast" class="achievement-popup">

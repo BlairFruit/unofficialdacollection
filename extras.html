@@ -138,11 +138,19 @@
         const path = require('path');
         const fs = require('fs');
 
+        let medallionActive = false;
+
         function switchTab(btn, tabId) {
             document.querySelectorAll('.section').forEach(sec => sec.classList.remove('active'));
             document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
             document.getElementById(tabId).classList.add('active');
             btn.classList.add('active');
+
+            if (tabId === 'unused' && medallionActive) {
+                if (window.unlockAchievement) {
+                    window.unlockAchievement('unlocked-coin-secret');
+                }
+            }
         }
 
         function openLightbox(src, type) {
@@ -319,12 +327,13 @@
             }
         }
 
-        // INITIALIZATION
         document.addEventListener("DOMContentLoaded", () => {
             updateSoundtrack();
             loadGallery();
 
             if (Math.random() < 0.10) { 
+                medallionActive = true;
+
                 const coinImg = document.getElementById('coin-img');
                 const coinTitle = document.getElementById('coin-title');
                 const coinQuote = document.getElementById('coin-quote');
@@ -335,9 +344,6 @@
                 coinTitle.style.fontFamily = "'medallion', monospace";
                 coinQuote.innerText = "\"how does this happen even\"";
 
-                if (window.unlockAchievement) {
-                    window.unlockAchievement('unlocked-coin-secret');
-                }
             }
         });
 
