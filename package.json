@@ -1,17 +1,22 @@
 {
   "name": "unofficial-deaxs-adventure-collection",
+  "productName": "Unofficial Deaxs Adventure Collection",
   "version": "1.0.0",
-  "description": "",
+  "description": "The Unofficial Collection for the shitty webcomic that chuds like.",
   "main": "main.js",
   "scripts": {
-    "start": "electron ."
+    "start": "electron .",
+    "build": "electron-builder --win"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "type": "commonjs",
+  "build": {
+    "appId": "com.blairfruit.deaxsadventure",
+    "win": {
+      "target": "zip",
+      "icon": "assets/media/icon.png"
+    }
+  },
   "devDependencies": {
-    "electron": "^41.2.0",
-    "electron-builder": "^26.8.1"
+    "electron": "^29.1.0",
+    "electron-builder": "^24.13.3"
   }
 }

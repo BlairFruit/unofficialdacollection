@@ -1,0 +1,31 @@
+name: Build Desktop App
+
+on: 
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: windows-latest
+
+    steps:
+      - name: Check out Git repository
+        uses: actions/checkout@v3
+
+      - name: Install Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: 18
+
+      - name: Install Dependencies
+        run: npm install
+
+      - name: Build the App (ZIP format)
+        run: npm run build
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Upload the Compiled ZIP
+        uses: actions/upload-artifact@v3
+        with:
+          name: DeaxsAdventure-Collection
+          path: dist/*.zip
