@@ -111,6 +111,9 @@
     <script src="assets/js/shared.js"></script>
     
     <script>
+        const fs = require('fs');
+        const path = require('path');
+
         let totalPagesCount = 1;
 
         function applyTheme() {
@@ -220,8 +223,10 @@
             }
 
             try {
-                const res = await fetch('assets/data.json');
-                const data = await res.json();
+                const dataPath = path.join(__dirname, 'assets', 'data.json');
+                const rawData = fs.readFileSync(dataPath, 'utf8');
+                const data = JSON.parse(rawData);
+                
                 container.innerHTML = "";
                 document.body.className = ''; 
                 applyTheme();

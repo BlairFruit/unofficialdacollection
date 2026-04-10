@@ -213,6 +213,13 @@
                     let remotePageBlocks = remoteData.pages[p];
                     let mappedPageBlocks = JSON.parse(JSON.stringify(remotePageBlocks)); 
 
+                    // Check if this specific page actually needs an update
+                    // We compare the remote text/structure against local BEFORE mapping paths
+                    let pageNeedsUpdate = false;
+                    if (!localData.pages[p] || JSON.stringify(localData.pages[p]) !== JSON.stringify(mappedPageBlocks)) {
+                        pageNeedsUpdate = true;
+                    }
+
                     let assetCounter = 1;
                     mappedPageBlocks.forEach(block => {
                         if (block.type === 'image' || block.type === 'video') {
@@ -224,21 +231,14 @@
                             
                             block.value = newRelPath;
 
-                            if (!fs.existsSync(localSavePath)) {
+                            if (pageNeedsUpdate || !fs.existsSync(localSavePath)) {
                                 downloadQueue.push({ url: REPO_BASE_URL + remotePath + nocache, savePath: localSavePath });
                             }
                             assetCounter++;
                         }
                     });
 
-                    let isDifferent = false;
-                    if (!localData.pages[p]) {
-                        isDifferent = true; 
-                    } else if (JSON.stringify(localData.pages[p]) !== JSON.stringify(mappedPageBlocks)) {
-                        isDifferent = true; 
-                    }
-
-                    if (isDifferent) {
+                    if (pageNeedsUpdate) {
                         localData.pages[p] = mappedPageBlocks;
                         hasChanges = true;
                         pagesToUpdate.push(p);
