@@ -27,5 +27,5 @@ jobs:
       - name: Upload the Compiled ZIP
         uses: actions/upload-artifact@v4
         with:
-          name: DeaxsAdventure-Collection
+          name: unofficial-deaxsadventure-collection
           path: dist/*.zip
