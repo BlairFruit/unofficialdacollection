@@ -28,7 +28,6 @@
         @keyframes fadeSlideUp { 0% { opacity: 0; transform: translateY(30px); } 100% { opacity: 1; transform: translateY(0); } }
         @keyframes fadeInMenu { 0% { opacity: 0; } 100% { opacity: 1; } }
 
-        /* --- VERSION DISPLAY STYLE --- */
         .version-display {
             position: fixed;
             bottom: 10px;
@@ -157,7 +156,9 @@
             statusText.style.color = "#aaa";
 
             try {
-                const versionRes = await fetch(REPO_BASE_URL + 'version.json');
+                const nocache = `?t=${new Date().getTime()}`;
+
+                const versionRes = await fetch(REPO_BASE_URL + 'version.json' + nocache, { cache: 'no-store' });
                 if (versionRes.ok) {
                    const remoteVersionData = await versionRes.json();
 
@@ -166,18 +167,12 @@
                         statusText.style.color = "gold";
                         
                         const coreFiles = [
-                            'home.html',
-                            'index.html',
-                            'extras.html',
-                            'achievements.html',
-                            'version.json',
-                            'assets/css/shared.css',
-                            'assets/js/shared.js',
-                            'main.js'
+                            'home.html', 'index.html', 'extras.html', 'achievements.html',
+                            'version.json', 'assets/css/shared.css', 'assets/js/shared.js', 'main.js'
                         ];
 
                         for (let file of coreFiles) {
-                            const fileRes = await fetch(REPO_BASE_URL + file);
+                            const fileRes = await fetch(REPO_BASE_URL + file + nocache, { cache: 'no-store' });
                             const fileContent = await fileRes.text();
                             const savePath = path.join(__dirname, file);
                             fs.writeFileSync(savePath, fileContent);
@@ -187,18 +182,17 @@
                         statusText.style.color = "#00ff00";
                         
                         setTimeout(() => {
-                            ipcRenderer.send('close-app'); 
+                            if (typeof closeApp === "function") { closeApp(); } 
+                            else { window.close(); }
                         }, 2000);
                         
                         return; 
                     }
                 }
 
-                statusText.innerText = "App is up to date. Checking for new comic pages...";
-                
                 statusText.innerText = "App is up to date. Checking for comic content updates...";
                 
-                const response = await fetch(REPO_BASE_URL + 'assets/data.json');
+                const response = await fetch(REPO_BASE_URL + 'assets/data.json' + nocache, { cache: 'no-store' });
                 if (!response.ok) throw new Error("Could not connect to GitHub.");
                 const remoteData = await response.json();
 
@@ -208,7 +202,6 @@
                 let downloadQueue = [];
                 let pagesToUpdate = [];
 
-                // 1. Check if any pages were completely removed from the server
                 for (let p in localData.pages) {
                     if (!remoteData.pages[p]) {
                         delete localData.pages[p];
@@ -216,16 +209,12 @@
                     }
                 }
 
-                // 2. Scan every page on the server for new pages OR typo fixes
                 for (let p in remoteData.pages) {
                     let remotePageBlocks = remoteData.pages[p];
-                    
-                    // Make a clone of the remote data so we can modify the image paths safely
                     let mappedPageBlocks = JSON.parse(JSON.stringify(remotePageBlocks)); 
 
                     let assetCounter = 1;
                     mappedPageBlocks.forEach(block => {
-                        // If it's media, we need to map the GitHub path to what it should be on your hard drive
                         if (block.type === 'image' || block.type === 'video') {
                             let remotePath = block.value; 
                             let ext = path.extname(remotePath);
@@ -233,26 +222,22 @@
                             let newRelPath = `assets/media/${newFileName}`;
                             let localSavePath = path.join(__dirname, 'assets', 'media', newFileName);
                             
-                            // Update the block to use the local path
                             block.value = newRelPath;
 
-                            // If the image/video file doesn't exist on your hard drive yet, queue it up!
                             if (!fs.existsSync(localSavePath)) {
-                                downloadQueue.push({ url: REPO_BASE_URL + remotePath, savePath: localSavePath });
+                                downloadQueue.push({ url: REPO_BASE_URL + remotePath + nocache, savePath: localSavePath });
                             }
                             assetCounter++;
                         }
                     });
 
-                    // 3. Compare the server's page against your local page
                     let isDifferent = false;
                     if (!localData.pages[p]) {
-                        isDifferent = true; // It's a brand new page!
+                        isDifferent = true; 
                     } else if (JSON.stringify(localData.pages[p]) !== JSON.stringify(mappedPageBlocks)) {
-                        isDifferent = true; // The page exists, but the text or blocks were edited!
+                        isDifferent = true; 
                     }
 
-                    // If a typo was fixed or it's new, overwrite the local memory with the server's version
                     if (isDifferent) {
                         localData.pages[p] = mappedPageBlocks;
                         hasChanges = true;
@@ -260,7 +245,6 @@
                     }
                 }
 
-                // 4. Wrap up and Save
                 if (!hasChanges && downloadQueue.length === 0) {
                     statusText.innerText = "You are completely up to date!";
                     statusText.style.color = "#00ff00";
@@ -274,7 +258,6 @@
                 }
                 statusText.style.color = "gold";
 
-                // Download any new images that were added
                 for (let i = 0; i < downloadQueue.length; i++) {
                     let item = downloadQueue[i];
                     statusText.innerText = `Downloading asset ${i + 1} of ${downloadQueue.length}...`;
@@ -286,7 +269,6 @@
                 }
 
                 statusText.innerText = "Finalizing update...";
-                // Save the newly merged and fixed data.json back to the hard drive
                 fs.writeFileSync(LOCAL_DATA_PATH, JSON.stringify(localData, null, 2));
                 
                 statusText.innerText = "Content updated successfully!";

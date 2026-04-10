@@ -1,6 +1,11 @@
 name: Build Desktop App
 
 on: 
+  push:
+    branches:
+      - main
+    paths:
+      - 'version.json'
   workflow_dispatch:
 
 jobs:
