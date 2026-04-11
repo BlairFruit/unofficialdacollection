@@ -147,7 +147,10 @@
             continueBtn.style.pointerEvents = "none";
         }
 
-        const REPO_BASE_URL = 'https://raw.githubusercontent.com/BlairFruit/unofficialdacollection/refs/heads/main/';
+        // --- THE FIX: SPLIT REPOSITORIES ---
+        const APP_REPO_URL = 'https://raw.githubusercontent.com/BlairFruit/unofficialdacollection/refs/heads/main/';
+        const CONTENT_REPO_URL = 'https://raw.githubusercontent.com/Scinio/Scinio.github.io/refs/heads/main/';
+        
         const LOCAL_DATA_PATH = path.join(__dirname, 'assets', 'data.json');
         const statusText = document.getElementById('update-status');
 
@@ -159,7 +162,7 @@
                 const nocache = `?t=${new Date().getTime()}`;
                 let needsRestart = false;
 
-                const versionRes = await fetch(REPO_BASE_URL + 'package.json' + nocache, { cache: 'no-store' });
+                const versionRes = await fetch(APP_REPO_URL + 'package.json' + nocache, { cache: 'no-store' });
                 let remoteVersionData = null;
                 if (versionRes.ok) {
                     remoteVersionData = await versionRes.json();
@@ -181,8 +184,8 @@
                     }
                 }
 
-                const response = await fetch(REPO_BASE_URL + 'assets/data.json' + nocache, { cache: 'no-store' });
-                if (!response.ok) throw new Error("Could not connect to GitHub data.");
+                const response = await fetch(CONTENT_REPO_URL + 'assets/data.json' + nocache, { cache: 'no-store' });
+                if (!response.ok) throw new Error("Could not connect to Comic Data repository.");
                 const remoteData = await response.json();
 
                 const localData = JSON.parse(fs.readFileSync(LOCAL_DATA_PATH, 'utf8'));
@@ -232,7 +235,7 @@
 
                             if (isDifferent || !fs.existsSync(localSavePath)) {
                                 downloadQueue.push({
-                                    url: REPO_BASE_URL + remotePath + nocache,
+                                    url: CONTENT_REPO_URL + remotePath + nocache,
                                     savePath: localSavePath
                                 });
                             }
@@ -268,7 +271,7 @@
                         'package.json', 'assets/css/shared.css', 'assets/js/shared.js', 'main.js'
                     ];
                     for (let file of coreFiles) {
-                        const fileRes = await fetch(REPO_BASE_URL + file + nocache, { cache: 'no-store' });
+                        const fileRes = await fetch(APP_REPO_URL + file + nocache, { cache: 'no-store' });
                         fs.writeFileSync(path.join(__dirname, file), await fileRes.text());
                     }
 

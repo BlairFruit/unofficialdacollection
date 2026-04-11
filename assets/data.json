@@ -247,7 +247,7 @@
       },
       {
         "type": "text",
-        "value": "You are just going to choose to ignore that thing.\n\nYou made it to the front door. It is always unlocked, so you will definitely be able to enter through here. This is also where the package was supposed to be, meaning the object blocking your door is 100% the gift.\n\nOnce you do through the door, you will enter the MUD ROOM."
+        "value": "You are just going to choose to ignore that thing.\n\nYou made it to the front door. It is always unlocked, so you will definitely be able to enter through here. This is also where the package was supposed to be, meaning the object blocking your door is 100% the gift.\n\nOnce you go through the door, you will enter the MUD ROOM."
       },
       {
         "type": "image",
@@ -537,7 +537,7 @@
       },
       {
         "type": "text",
-        "value": ">Open package.\n\nYou open the package and see the giant metal slab inside of it. There is not fucking way this needs to be this big. It takes up like half of your room!"
+        "value": ">Open package.\n\nYou open the package and see the giant metal slab inside of it. There is no fucking way this needs to be this big. It takes up like half of your room!"
       },
       {
         "type": "image",
@@ -679,7 +679,7 @@
       },
       {
         "type": "dialogue",
-        "value": "[isabelfruit: lemme move this really quick|#DC322F]"
+        "value": "[isabelfruit: lemme move this really quick|#D33682]"
       },
       {
         "type": "image",
@@ -1385,7 +1385,7 @@
       },
       {
         "type": "text",
-        "value": "You then see deaxs get their lights knocked the fucked out by a robotic, blue version of them."
+        "value": "You then see deaxs get their lights knocked the fuck out by a robotic, blue version of them."
       },
       {
         "type": "image",
@@ -1487,7 +1487,7 @@
       },
       {
         "type": "dialogue",
-        "value": "[DEAXS: so umm who should go in first?|#DC322F]\n\n[DEAXS: just to scout it out i mean|#DC322F]\n\n[BITEX: idk man|#DC322F|#FDF6E3]\n\n[DEAXS: ok uh maybe it should be you|#DC322F]\n\n[DEAXS: cuz you were just born so like|#DC322F]\n\n[DEAXS: it wouldnt really matter that much if you died|#DC322F]\n\n[DEAXS: if you can die even|#DC322F]\n\n[BITEX: whoa whoa whoa|#DC322F|#FDF6E3]\n\n[BITEX: maybe BECAUSE i was just born|#DC322F|#FDF6E3]\n\n[BITEX: that makes my life more valuable because i have more like to live|#DC322F|#FDF6E3]\n\n[DEAXS: well maybe you cant die|#DC322F]\n\n[DEAXS: so you should just go in i think|#DC322F]\n\n[BITEX: how about we go in at the same time?|#DC322F|#FDF6E3]\n\n[BITEX: would that satisfy you?|#DC322F|#FDF6E3]\n\n[DEAXS: alriiiiiiight|#DC322F]"
+        "value": "[DEAXS: so umm who should go in first?|#DC322F]\n\n[DEAXS: just to scout it out i mean|#DC322F]\n\n[BITEX: idk man|#DC322F|#FDF6E3]\n\n[DEAXS: ok uh maybe it should be you|#DC322F]\n\n[DEAXS: cuz you were just born so like|#DC322F]\n\n[DEAXS: it wouldnt really matter that much if you died|#DC322F]\n\n[DEAXS: if you can die even|#DC322F]\n\n[BITEX: whoa whoa whoa|#DC322F|#FDF6E3]\n\n[BITEX: maybe BECAUSE i was just born|#DC322F|#FDF6E3]\n\n[BITEX: that makes my life more valuable because i have more life to live|#DC322F|#FDF6E3]\n\n[DEAXS: well maybe you cant die|#DC322F]\n\n[DEAXS: so you should just go in i think|#DC322F]\n\n[BITEX: how about we go in at the same time?|#DC322F|#FDF6E3]\n\n[BITEX: would that satisfy you?|#DC322F|#FDF6E3]\n\n[DEAXS: alriiiiiiight|#DC322F]"
       },
       {
         "type": "image",
@@ -1815,7 +1815,7 @@
       },
       {
         "type": "dialogue",
-        "value": "[isabelfruit|#D33682] began messaging [LOCKY★P|#DC322F]\n\n[isabelfruit: so are you gonna try to find an energy core now or something?|#D33682]\n\n[LOCKY★P: i guess?|#DC322F]\n\n[LOCKY★P: maybe ill ask lasdav to help me find one|#DC322F]\n\n[LOCKY★P: or if he doesnt want to there is always the slim chance that bitex knows something|#DC322F]\n\n[isabelfruit: hey maybe after you get one, we can try getting me into the game?|#D33682]\n\n[isabelfruit: im assuming that penny and riletta are probably doing the same|#D33682]\n\n[LOCKY★P: yeah sure|#DC322F]\n\n[LOCKY★P: ill get back to you soon hopefully|#DC322F]\n\n[LOCKY★P: see ya|#DC322F]\n\n[isabelfruit: bye :]|#D33682]\n\n[LOCKY★P stopped chatting with [isabelfruit|#D33682]"
+        "value": "[isabelfruit|#D33682] began messaging [LOCKY★P|#DC322F]\n\n[isabelfruit: so are you gonna try to find an energy core now or something?|#D33682]\n\n[LOCKY★P: i guess?|#DC322F]\n\n[LOCKY★P: maybe ill ask lasdav to help me find one|#DC322F]\n\n[LOCKY★P: or if he doesnt want to there is always the slim chance that bitex knows something|#DC322F]\n\n[isabelfruit: hey maybe after you get one, we can try getting me into the game?|#D33682]\n\n[isabelfruit: im assuming that penny and riletta are probably doing the same|#D33682]\n\n[LOCKY★P: yeah sure|#DC322F]\n\n[LOCKY★P: ill get back to you soon hopefully|#DC322F]\n\n[LOCKY★P: see ya|#DC322F]\n\n[isabelfruit: bye :]|#D33682]\n\n[LOCKY★P|#DC322F] stopped chatting with [isabelfruit|#D33682]"
       },
       {
         "type": "image",
@@ -1999,7 +1999,7 @@
       },
       {
         "type": "dialogue",
-        "value": "[BITEX: hey dude|#DC322F|#FDF6E3]\n\n[BITEX: dude|#DC322F|#FDF6E3]\n\n[DEAXS: yeah?|#DC322F]\n\n[BITEX: while he is doing his shitty monologue, let me ask you something|#DC322F|#FDF6E3]\n\n[BITEX: did you get any new powers in their?|#DC322F|#FDF6E3]\n\n[DEAXS: i did, but i didn't get a chance to test it out|#DC322F]\n\n[BITEX: alright i think i know what it does|#DC322F|#FDF6E3]\n\n[BITEX: it should allow you to fly|#DC322F|#FDF6E3]\n\n[DEAXS: whoa, really?|#DC322F]\n\n[BITEX: yeah, so i think you should fly up there and beat his ass|#DC322F|#FDF6E3]\n\n[DEAXS: uh ok|#DC322F]\n\n[DEAXS: but isnt he way stronger than me?|#DC322F]\n\n[BITEX: hes just being a pretentious asshole|#DC322F|#FDF6E3]\n\n[BITEX: go fuck em up|#DC322F|#FDF6E3]\n\n[DEAXS: ill try...|#DC322F]"
+        "value": "[BITEX: hey dude|#DC322F|#FDF6E3]\n\n[BITEX: dude|#DC322F|#FDF6E3]\n\n[DEAXS: yeah?|#DC322F]\n\n[BITEX: while he is doing his shitty monologue, let me ask you something|#DC322F|#FDF6E3]\n\n[BITEX: did you get any new powers in there?|#DC322F|#FDF6E3]\n\n[DEAXS: i did, but i didn't get a chance to test it out|#DC322F]\n\n[BITEX: alright i think i know what it does|#DC322F|#FDF6E3]\n\n[BITEX: it should allow you to fly|#DC322F|#FDF6E3]\n\n[DEAXS: whoa, really?|#DC322F]\n\n[BITEX: yeah, so i think you should fly up there and beat his ass|#DC322F|#FDF6E3]\n\n[DEAXS: uh ok|#DC322F]\n\n[DEAXS: but isnt he way stronger than me?|#DC322F]\n\n[BITEX: hes just being a pretentious asshole|#DC322F|#FDF6E3]\n\n[BITEX: go fuck em up|#DC322F|#FDF6E3]\n\n[DEAXS: ill try...|#DC322F]"
       },
       {
         "type": "image",
@@ -2217,7 +2217,7 @@
       },
       {
         "type": "dialogue",
-        "value": "[isabelfruit: ill make a roblox alt account on my phone|#D33682]\n\n[isabelfruit: and ill connect with my myself to get me in the game|#D33682]\n\n[LOCKY★P: wait, but wont you need another copy of the game?|#DC322F]\n\n[isabelfruit: nah ill just pirate it|#D33682]"
+        "value": "[isabelfruit: ill make a roblox alt account on my phone|#D33682]\n\n[isabelfruit: and ill connect with myself to get me in the game|#D33682]\n\n[LOCKY★P: wait, but wont you need another copy of the game?|#DC322F]\n\n[isabelfruit: nah ill just pirate it|#D33682]"
       },
       {
         "type": "image",
