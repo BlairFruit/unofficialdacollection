@@ -163,9 +163,20 @@
                 let remoteVersionData = null;
                 if (versionRes.ok) {
                     remoteVersionData = await versionRes.json();
-                    if (remoteVersionData.version !== CURRENT_VERSION) {
+                    
+                    const isNewer = (remote, local) => {
+                        const r = remote.split('.').map(Number);
+                        const l = local.split('.').map(Number);
+                        for (let i = 0; i < Math.max(r.length, l.length); i++) {
+                            if ((r[i] || 0) > (l[i] || 0)) return true;
+                            if ((r[i] || 0) < (l[i] || 0)) return false;
+                        }
+                        return false;
+                    };
+
+                    if (isNewer(remoteVersionData.version, CURRENT_VERSION)) {
                         needsRestart = true;
-                        statusText.innerText = `Update v${remoteVersionData.version} found! Processing...`;
+                        statusText.innerText = `App Update v${remoteVersionData.version} found! Processing...`;
                         statusText.style.color = "gold";
                     }
                 }
