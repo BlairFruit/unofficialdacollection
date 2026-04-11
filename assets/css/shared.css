@@ -1,4 +1,3 @@
-/* assets/css/shared.css */
 body { background-color: #121212; color: white; font-family: "Courier New", monospace; text-align: center; overflow-x: hidden; }
 
 @font-face {
@@ -53,3 +52,15 @@ body { background-color: #121212; color: white; font-family: "Courier New", mono
 .achievement-text { text-align: left; }
 .achievement-text h4 { margin: 0 0 5px 0; color: gold; font-size: 1rem; }
 .achievement-text p { margin: 0; font-size: 0.85rem; color: #ccc; white-space: pre-wrap; }
+
+.bookmark-dropdown { position: absolute; top: 100%; right: 5px; margin-top: 2px; width: 220px; background: #c0c0c0; border-top: 2px solid #fff; border-left: 2px solid #fff; border-right: 2px solid #000; border-bottom: 2px solid #000; z-index: 10000; box-shadow: 2px 2px 5px rgba(0,0,0,0.5); font-family: "MS Sans Serif", Arial, sans-serif; color: black; text-align: left; }
+.bookmark-dropdown-action { padding: 6px 10px; cursor: pointer; font-size: 12px; font-weight: bold; }
+.bookmark-dropdown-action:hover { background: #000080; color: white; }
+.bookmark-dropdown-divider { height: 1px; background: #808080; border-bottom: 1px solid #fff; margin: 2px 0; }
+.bookmark-dropdown-list { max-height: 200px; overflow-y: auto; }
+.bookmark-item-row { display: flex; justify-content: space-between; align-items: center; padding: 4px 10px; font-size: 12px; cursor: pointer; border: 1px solid transparent; }
+.bookmark-item-row:hover { background: #000080; color: white; }
+.bookmark-item-row span.page-link { flex-grow: 1; }
+.bookmark-remove-x { font-weight: bold; padding-left: 10px; color: #444; }
+.bookmark-item-row:hover .bookmark-remove-x { color: #ff6666; }
+.bookmark-remove-x:hover { color: #ff0000 !important; }

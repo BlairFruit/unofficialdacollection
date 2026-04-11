@@ -20,12 +20,12 @@ jobs:
       - name: Install Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: 20
+          node-version: 24
+          cache: 'npm'
 
       - name: Install Dependencies
         run: npm install
 
-      # FIX: Removed the GH_TOKEN so electron-builder stops stealing the release!
       - name: Build the App
         run: npm run build
 
@@ -33,9 +33,8 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: unofficial-deaxsadventure-collection
-          path: dist/win-unpacked/
+          path: dist/*.zip 
 
-      # This step now has full control over what the release looks like
       - name: Create GitHub Release
         uses: softprops/action-gh-release@v2
         with:
@@ -43,5 +42,6 @@ jobs:
           name: UNOFFICIAL DEAXS ADVENTURE COLLECTION - ${{ github.ref_name }}
           files: dist/*.zip
           body_path: release-notes.md
+          draft: false
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

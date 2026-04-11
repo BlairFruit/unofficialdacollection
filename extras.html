@@ -66,11 +66,19 @@
 
     <div class="browser-ui-container">
         <div class="retro-tabs" id="tab-container"></div>
-        <div class="retro-address-bar">
+        <div class="retro-address-bar" style="position: relative;">
             <span class="retro-address-label">Address</span>
             <div class="retro-address-input-wrapper">
                 <img src="assets/media/icon.png" class="fake-favicon" alt="icon">
-                <input type="text" id="address-input" value="deaxs://home/extras.html" readonly spellcheck="false">
+                <input type="text" id="address-input" onkeypress="if(typeof handleAddressBar === 'function') handleAddressBar(event)" spellcheck="false">
+            </div>
+            
+            <button id="bookmark-icon-btn" class="retro-btn" style="width: 24px; height: 24px; font-size: 16px; margin-left: 5px; display: flex; align-items: center; justify-content: center; padding-bottom: 2px;" onclick="toggleBookmarkMenu(event)">☆</button>
+            
+            <div id="bookmark-context-menu" class="bookmark-dropdown" style="display: none;">
+                <div id="bookmark-save-action" class="bookmark-dropdown-action" onclick="saveCurrentPage()">+ Save this page</div>
+                <div id="bookmark-save-divider" class="bookmark-dropdown-divider"></div>
+                <div id="bookmark-dropdown-list" class="bookmark-dropdown-list"></div>
             </div>
         </div>
     </div>

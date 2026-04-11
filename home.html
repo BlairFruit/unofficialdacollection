@@ -57,11 +57,19 @@
 
     <div class="browser-ui-container">
         <div class="retro-tabs" id="tab-container"></div>
-        <div class="retro-address-bar">
+        <div class="retro-address-bar" style="position: relative;">
             <span class="retro-address-label">Address</span>
             <div class="retro-address-input-wrapper">
                 <img src="assets/media/icon.png" class="fake-favicon" alt="icon">
-                <input type="text" id="address-input" value="deaxs://home/menu.html" readonly spellcheck="false">
+                <input type="text" id="address-input" onkeypress="if(typeof handleAddressBar === 'function') handleAddressBar(event)" spellcheck="false">
+            </div>
+            
+            <button id="bookmark-icon-btn" class="retro-btn" style="width: 24px; height: 24px; font-size: 16px; margin-left: 5px; display: flex; align-items: center; justify-content: center; padding-bottom: 2px;" onclick="toggleBookmarkMenu(event)">☆</button>
+            
+            <div id="bookmark-context-menu" class="bookmark-dropdown" style="display: none;">
+                <div id="bookmark-save-action" class="bookmark-dropdown-action" onclick="saveCurrentPage()">+ Save this page</div>
+                <div id="bookmark-save-divider" class="bookmark-dropdown-divider"></div>
+                <div id="bookmark-dropdown-list" class="bookmark-dropdown-list"></div>
             </div>
         </div>
     </div>
@@ -147,7 +155,6 @@
             continueBtn.style.pointerEvents = "none";
         }
 
-        // --- THE FIX: SPLIT REPOSITORIES ---
         const APP_REPO_URL = 'https://raw.githubusercontent.com/BlairFruit/unofficialdacollection/refs/heads/main/';
         const CONTENT_REPO_URL = 'https://raw.githubusercontent.com/Scinio/Scinio.github.io/refs/heads/main/';
         
@@ -268,7 +275,8 @@
                     statusText.innerText = "Downloading core app files...";
                     const coreFiles = [
                         'home.html', 'index.html', 'extras.html', 'achievements.html',
-                        'package.json', 'assets/css/shared.css', 'assets/js/shared.js', 'main.js'
+                        'secret.html', 'package.json', 'assets/css/shared.css', 'assets/js/shared.js', 
+                        'main.js'
                     ];
                     for (let file of coreFiles) {
                         const fileRes = await fetch(APP_REPO_URL + file + nocache, { cache: 'no-store' });
@@ -278,8 +286,8 @@
                     statusText.innerText = "Update Complete! Restarting App...";
                     statusText.style.color = "#00ff00";
                     setTimeout(() => {
-                        if (typeof closeApp === "function") closeApp();
-                        else window.close();
+                        if (typeof restartApp === "function") restartApp();
+                        else closeApp();
                     }, 2000);
                     return;
                 }

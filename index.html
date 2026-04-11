@@ -9,7 +9,6 @@
     <link rel="stylesheet" href="assets/css/shared.css">
     
     <style>
-        /* certain themes here are unused for now cuz im gonna make them into an actual thing later. */
         :root { --bg-color: #121212; --text-color: #e0e0e0; --block-bg: #0e0e1a; --block-border: #202225; --nav-btn-border: #fff; --nav-btn-text: #fff; --font-main: "Courier New", Courier, monospace; --base-font-size: 1.2rem; --dialogue-font-size: 1.1rem; }
         body.light-mode { --bg-color: #ffffff; --text-color: #1a1a1a; --block-bg: #f0f0f5; --block-border: #d1d1d1; --nav-btn-border: #1a1a1a; --nav-btn-text: #1a1a1a; }
         body.theme-blood { --bg-color: #220000; --text-color: #ff6666; --block-bg: #110000; --block-border: #ff0000; --nav-btn-border: #ff0000; --nav-btn-text: #ff0000; }
@@ -19,6 +18,7 @@
         body.size-small { --base-font-size: 0.9rem; --dialogue-font-size: 0.85rem; }
         body.size-large { --base-font-size: 1.6rem; --dialogue-font-size: 1.4rem; }
         body { background: var(--bg-color); color: var(--text-color); font-family: var(--font-main); margin: 0; padding: 0; display: flex; flex-direction: column; align-items: center; line-height: 1.6; transition: background 0.3s, color 0.3s; }
+        body.no-scroll { overflow: hidden !important; }
         
         .theme-controls { position: fixed; top: 95px; right: 10px; z-index: 1000; display: flex; gap: 5px; background: rgba(0,0,0,0.5); padding: 8px; border-radius: 5px; backdrop-filter: blur(4px); }
         .theme-controls select { background: #1e1e1e; color: #fff; border: 1px solid #444; font-family: sans-serif; font-size: 0.7rem; padding: 4px; cursor: pointer; outline: none; }
@@ -39,6 +39,14 @@
         .jump-input:focus { background: #111; }
         .jump-btn { background-color: #c0c0c0; color: black; font-weight: bold; font-family: "MS Sans Serif", Arial, sans-serif; font-size: 12px; padding: 4px 15px; cursor: pointer; border-top: 2px solid #ffffff; border-left: 2px solid #ffffff; border-right: 2px solid #000000; border-bottom: 2px solid #000000; }
         .jump-btn:active { border-top: 2px solid #000000; border-left: 2px solid #000000; border-right: 2px solid #ffffff; border-bottom: 2px solid #ffffff; }
+
+        .comic-panel-img { cursor: pointer; transition: transform 0.2s ease, box-shadow 0.2s ease; }
+        .comic-panel-img:hover { transform: scale(1.02); box-shadow: 0 5px 20px rgba(0,0,0,0.5); z-index: 10; position: relative; }
+        .lightbox { display: none; position: fixed; z-index: 10000; left: 0; top: 0; width: 100%; height: 100%; background-color: rgba(0, 0, 0, 0.9); align-items: center; justify-content: center; flex-direction: column; backdrop-filter: blur(5px); }
+        .lightbox.show { display: flex; animation: fadeIn 0.2s ease-out; }
+        .lightbox-content { width: auto !important; height: auto !important; max-width: 90vw; max-height: 85vh; object-fit: contain; border: 2px solid gold; box-shadow: 0 0 25px rgba(0,0,0,0.8); background: #000; }
+        .lightbox-close-btn { margin-top: 20px; background: transparent; color: white; border: 1px solid white; padding: 8px 20px; cursor: pointer; font-family: "Courier New", monospace; transition: 0.2s; }
+        .lightbox-close-btn:hover { background: white; color: black; }
         
         .custom-video-wrapper { position: relative; width: 100%; background: #000; overflow: hidden; display: flex; flex-direction: column; margin: 20px 0; }
         .video-controls { position: absolute; bottom: 0; left: 0; width: 100%; box-sizing: border-box; display: flex; align-items: center; background: rgba(192, 192, 192, 0.95); padding: 5px 10px; gap: 10px; border-top: 2px solid #fff; color: black; z-index: 10; opacity: 0; transform: translateY(100%); transition: opacity 0.2s ease, transform 0.2s ease; }
@@ -47,7 +55,7 @@
         .video-controls input[type=range]::-webkit-slider-thumb { -webkit-appearance: none; appearance: none; height: 16px; width: 8px; background: gold; border: 1px solid black; cursor: pointer; box-shadow: 1px 1px 0 #fff inset; }
         .video-time-display { font-size: 10px; font-family: Arial, sans-serif; min-width: 60px; text-align: center; }
         .progress-bar { flex-grow: 1; }
-        
+
         body.green-mode { background-color: #00ff00 !important; transition: background-color 0.1s; }
         .green-jumpscare { position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%) scale(0.1); z-index: 10000; pointer-events: none; opacity: 0; animation: jumpScareAnim 0.8s forwards ease-out; }
         @keyframes jumpScareAnim { 0% { transform: translate(-50%, -50%) scale(0.1); opacity: 0; } 20% { transform: translate(-50%, -50%) scale(0.8); opacity: 1; } 70% { transform: translate(-50%, -50%) scale(1.0); opacity: 1; } 100% { transform: translate(-50%, -50%) scale(2); opacity: 0; } }
@@ -68,16 +76,30 @@
 
     <div class="browser-ui-container">
         <div class="retro-tabs" id="tab-container"></div>
-        <div class="retro-address-bar">
+        <div class="retro-address-bar" style="position: relative;">
             <span class="retro-address-label">Address</span>
             <div class="retro-address-input-wrapper">
                 <img src="assets/media/icon.png" class="fake-favicon" alt="icon">
-                <input type="text" id="address-input" onkeypress="handleAddressBar(event)" spellcheck="false">
+                <input type="text" id="address-input" onkeypress="if(typeof handleAddressBar === 'function') handleAddressBar(event)" spellcheck="false" readonly>
+            </div>
+            
+            <button id="bookmark-icon-btn" class="retro-btn" style="width: 24px; height: 24px; font-size: 16px; margin-left: 5px; display: flex; align-items: center; justify-content: center; padding-bottom: 2px;" onclick="toggleBookmarkMenu(event)">☆</button>
+            
+            <div id="bookmark-context-menu" class="bookmark-dropdown" style="display: none;">
+                <div id="bookmark-save-action" class="bookmark-dropdown-action" onclick="saveCurrentPage()">+ Save this page</div>
+                <div id="bookmark-save-divider" class="bookmark-dropdown-divider"></div>
+                <div id="bookmark-dropdown-list" class="bookmark-dropdown-list"></div>
             </div>
         </div>
     </div>
 
     <a href="home.html" class="nav-btn floating-menu-btn">MAIN MENU</a>
+
+    <div id="lightbox" class="lightbox" onclick="closeLightbox(event)">
+        <img id="lightbox-img" class="lightbox-content" style="display: none;">
+        <video id="lightbox-vid" class="lightbox-content" controls loop style="display: none;"></video>
+        <button class="lightbox-close-btn" onclick="closeLightbox(event)">CLOSE VIEW</button>
+    </div>
     
     <div class="theme-controls">
         <select id="mode-select" onchange="applyTheme()">
@@ -164,24 +186,21 @@
             }
         }
 
-        function handleAddressBar(event) {
-            if (event.key === "Enter") {
-                const val = event.target.value.toLowerCase();
-                const match = val.match(/(\d+)/); 
-                if (match) {
-                    let page = parseInt(match[1]);
-                    if (page < 1) page = 1;
-                    if (page > totalPagesCount) page = totalPagesCount;
-                    window.location.search = `?p=${page}`;
-                }
-            }
-        }
-
         let keyBuffer = '';
         const secretCode = 'green';
 
         document.addEventListener('keydown', (e) => {
             if (e.target.tagName.toLowerCase() === 'input') return;
+
+            const urlParams = new URLSearchParams(window.location.search);
+            let currentPage = parseInt(urlParams.get('p') || "1");
+
+            if (e.key === 'ArrowLeft' && currentPage > 1) {
+                window.location.search = `?p=${currentPage - 1}`;
+            } else if (e.key === 'ArrowRight' && currentPage < totalPagesCount) {
+                window.location.search = `?p=${currentPage + 1}`;
+            }
+
             keyBuffer += e.key.toLowerCase();
             if (keyBuffer.length > secretCode.length) {
                 keyBuffer = keyBuffer.slice(-secretCode.length);
@@ -193,7 +212,9 @@
         });
 
         function triggerGreenEasterEgg() {
-            if (window.unlockAchievement) window.unlockAchievement('unlocked-green');
+            setTimeout(() => {
+                if (window.unlockAchievement) window.unlockAchievement('unlocked-green');
+            }, 1500);
             
             const greenSound = new Audio('assets/media/bell.mp3');
             greenSound.volume = 0.8;
@@ -209,12 +230,45 @@
             }, 800);
         }
 
+        function openLightbox(src, type) {
+            const lb = document.getElementById('lightbox');
+            const img = document.getElementById('lightbox-img');
+            const vid = document.getElementById('lightbox-vid');
+            if (type === 'video') {
+                img.style.display = 'none';
+                vid.src = src;
+                vid.style.display = 'block';
+                vid.play(); 
+            } else {
+                vid.style.display = 'none';
+                vid.pause();
+                img.src = src;
+                img.style.display = 'block';
+            }
+            lb.classList.add('show');
+            document.body.classList.add('no-scroll');
+        }
+
+        function closeLightbox(e) {
+            if (e.target.id === 'lightbox' || e.target.classList.contains('lightbox-close-btn')) {
+                document.getElementById('lightbox').classList.remove('show');
+                document.getElementById('lightbox-vid').pause(); 
+                document.body.classList.remove('no-scroll');
+            }
+        }
+
         async function loadComic() {
             loadSavedTheme();
             const container = document.getElementById('main-content');
             const footer = document.getElementById('nav-footer');
             const urlParams = new URLSearchParams(window.location.search);
             let currentPage = urlParams.get('p') || "1";
+            
+            const addressInput = document.getElementById('address-input');
+            if (addressInput) {
+                addressInput.value = `deaxs://comic/page/${currentPage}`;
+            }
+
             localStorage.setItem('saved-page', currentPage);
             
             let highest = parseInt(localStorage.getItem('highest-page')) || 0;
@@ -246,10 +300,12 @@
                         if (ach.page === "last" && currentPage === lastPage && ach.trigger === triggerType) {
                             window.unlockAchievement(id);
                         }
-                        else if (ach.page === currentPage) {
-                            if (ach.trigger === triggerType) {
-                                window.unlockAchievement(id);
-                            } else if (ach.trigger === "video-time" && currentVideoTime >= ach.triggerTime) {
+                        else if (ach.page === currentPage && ach.trigger === triggerType) {
+                            if (triggerType === "video-time") {
+                                if (currentVideoTime >= ach.triggerTime) {
+                                    window.unlockAchievement(id);
+                                }
+                            } else {
                                 window.unlockAchievement(id);
                             }
                         }
@@ -269,7 +325,7 @@
                         div.className = "content-block";
                         
                         if (block.type === 'image') {
-                            div.innerHTML = `<img src="${block.value}" alt="Panel">`;
+                            div.innerHTML = `<img src="${block.value}" alt="Panel" class="comic-panel-img" onclick="openLightbox('${block.value}', 'image')">`;
                         } else if (block.type === 'video') {
                             div.innerHTML = `
                                 <div class="custom-video-wrapper">
@@ -280,6 +336,7 @@
                                         <input type="range" class="progress-bar" value="0" min="0" max="100" step="0.1">
                                         <button class="retro-btn mute-btn" style="width: 30px;">🔊</button>
                                         <input type="range" class="volume-bar" value="1" min="0" max="1" step="0.05" style="width: 50px;">
+                                        <button class="retro-btn" style="width: 30px;" onclick="openLightbox('${block.value}', 'video')">🔍</button>
                                     </div>
                                 </div>
                             `;
@@ -365,18 +422,52 @@
                 const prevNum = parseInt(currentPage) - 1;
 
                 footer.innerHTML = `
-                    ${currentPage !== "1" ? `<a href="?p=1" class="nav-btn">FIRST</a>` : ''}
-                    ${prevNum > 0 ? `<a href="?p=${prevNum}" class="nav-btn">PREV</a>` : ''}
-                    <span class="page-indicator">PG. ${currentPage} / ${totalPagesCount}</span>
-                    ${data.pages[nextNum.toString()] ? `<a href="?p=${nextNum}" class="nav-btn">NEXT</a>` : ''}
-                    ${currentPage !== lastPage ? `<a href="?p=${lastPage}" class="nav-btn">LAST</a>` : ''}
+                    <div style="margin-bottom: 20px;">
+                        ${currentPage !== "1" ? `<a href="?p=1" class="nav-btn">FIRST</a>` : ''}
+                        ${prevNum > 0 ? `<a href="?p=${prevNum}" class="nav-btn">PREV</a>` : ''}
+                        <span class="page-indicator">PG. ${currentPage} / ${totalPagesCount}</span>
+                        ${data.pages[nextNum.toString()] ? `<a href="?p=${nextNum}" class="nav-btn">NEXT</a>` : ''}
+                        ${currentPage !== lastPage ? `<a href="?p=${lastPage}" class="nav-btn">LAST</a>` : ''}
+                    </div>
                     <div class="jump-container">
                         GO TO PAGE: 
                         <input type="number" id="jump-input-field" class="jump-input" min="1" max="${totalPagesCount}" placeholder="${currentPage}" onkeypress="jumpToPage(event)">
                         <button class="jump-btn" onclick="executeJump()">GO</button>
                     </div>
                 `;
+
+                footer.innerHTML = `
+                    <div style="margin-bottom: 20px;">
+                        ${currentPage !== "1" ? `<a href="?p=1" class="nav-btn">FIRST</a>` : ''}
+                        ${prevNum > 0 ? `<a href="?p=${prevNum}" class="nav-btn">PREV</a>` : ''}
+                        <span class="page-indicator">PG. ${currentPage} / ${totalPagesCount}</span>
+                        ${data.pages[nextNum.toString()] ? `<a href="?p=${nextNum}" class="nav-btn">NEXT</a>` : ''}
+                        ${currentPage !== lastPage ? `<a href="?p=${lastPage}" class="nav-btn">LAST</a>` : ''}
+                    </div>
+                    <div class="jump-container">
+                        GO TO PAGE: 
+                        <input type="number" id="jump-input-field" class="jump-input" min="1" max="${totalPagesCount}" placeholder="${currentPage}" onkeypress="jumpToPage(event)">
+                        <button class="jump-btn" onclick="executeJump()">GO</button>
+                    </div>
+                `;
+
+                if (data.pages[nextNum.toString()]) {
+                    setTimeout(() => {
+                        data.pages[nextNum.toString()].forEach(block => {
+                            if (block.type === 'image') {
+                                const img = new Image();
+                                img.src = block.value;
+                            } else if (block.type === 'video') {
+                                const vid = document.createElement('video');
+                                vid.preload = 'auto';
+                                vid.src = block.value;
+                            }
+                        });
+                    }, 500);
+                }
+                
             } catch (err) {
+                console.error(err);
                 container.innerHTML = "<p style='text-align:center;'>[ ERROR LOADING ]</p>";
             }
         }

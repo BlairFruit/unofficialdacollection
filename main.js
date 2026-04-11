@@ -22,6 +22,11 @@ function createWindow () {
 
 ipcMain.on('close-app', () => { app.quit(); });
 
+ipcMain.on('restart-app', () => {
+  app.relaunch();
+  app.quit();
+});
+
 ipcMain.on('minimize-app', (event) => {
   BrowserWindow.fromWebContents(event.sender).minimize();
 });
