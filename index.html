@@ -80,7 +80,7 @@
             <span class="retro-address-label">Address</span>
             <div class="retro-address-input-wrapper">
                 <img src="assets/media/icon.png" class="fake-favicon" alt="icon">
-                <input type="text" id="address-input" onkeypress="if(typeof handleAddressBar === 'function') handleAddressBar(event)" spellcheck="false" readonly>
+                <input type="text" id="address-input" onkeypress="if(typeof handleAddressBar === 'function') handleAddressBar(event)" spellcheck="false">
             </div>
             
             <button id="bookmark-icon-btn" class="retro-btn" style="width: 24px; height: 24px; font-size: 16px; margin-left: 5px; display: flex; align-items: center; justify-content: center; padding-bottom: 2px;" onclick="toggleBookmarkMenu(event)">☆</button>
@@ -270,6 +270,24 @@
             }
 
             localStorage.setItem('saved-page', currentPage);
+
+            let lastLoadTime = sessionStorage.getItem('last-page-load-time');
+            let currentTimeMs = Date.now();
+            
+            if (lastLoadTime) {
+                let timeDiff = currentTimeMs - parseInt(lastLoadTime);
+                if (timeDiff < 2000) {
+                    let speedCount = parseInt(sessionStorage.getItem('speedreader-count') || "0") + 1;
+                    sessionStorage.setItem('speedreader-count', speedCount.toString());
+                    
+                    if (speedCount >= 5 && window.unlockAchievement) {
+                        window.unlockAchievement('unlocked-speedreader');
+                    }
+                } else {
+                    sessionStorage.setItem('speedreader-count', "0");
+                }
+            }
+            sessionStorage.setItem('last-page-load-time', currentTimeMs.toString());
             
             let highest = parseInt(localStorage.getItem('highest-page')) || 0;
             if (parseInt(currentPage) > highest) {

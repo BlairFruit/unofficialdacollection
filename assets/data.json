@@ -2255,6 +2255,64 @@
         "type": "image",
         "value": "assets/media/p50-7.gif"
       }
+    ],
+    "51": [
+      {
+        "type": "image",
+        "value": "assets/media/p51-1.png"
+      },
+      {
+        "type": "dialogue",
+        "value": "[ISABEL: youre not vegeta...|#D33682]\n\n[ERROR:|#D33682|#FDF6E3] 🟪⬛🟪⬛🟪⬛🟪⬛🟪⬛\n\n[ERROR:|#D33682|#FDF6E3] 🟪⬛🟪⬛\n\n[ERROR:|#D33682|#FDF6E3] 🟪⬛🟪⬛🟪⬛🟪⬛🟪⬛🟪⬛🟪⬛🟪⬛🟪⬛\n\n[ISABEL: uhhh|#D33682]\n\n[ISABEL: what?|#D33682]\n\n[ERROR:|#D33682|#FDF6E3] 🟪⬛🟪⬛🟪⬛🟪⬛\n\n[ISABEL: this is stupid|#D33682]"
+      },
+      {
+        "type": "image",
+        "value": "assets/media/p51-2.gif"
+      },
+      {
+        "type": "dialogue",
+        "value": "[ISABEL: ... |#D33682]\n\n[ISABEL: what the fuck|#D33682]"
+      },
+      {
+        "type": "image",
+        "value": "assets/media/p51-3.png"
+      },
+      {
+        "type": "dialogue",
+        "value": "[ERROR:|#D33682|#FDF6E3] 🟪⬛🟪⬛🟪⬛🟪⬛🟪⬛🟪⬛🟪⬛🟪⬛🟪⬛🟪⬛🟪⬛🟪⬛🟪⬛🟪⬛🟪⬛🟪⬛🟪⬛🟪⬛🟪⬛🟪⬛🟪⬛🟪⬛🟪⬛🟪⬛\n\n[ISABEL: we are not doing this|#D33682]\n\n[ISABEL: im gonna ignore you|#D33682]"
+      },
+      {
+        "type": "image",
+        "value": "assets/media/p51-4.png"
+      },
+      {
+        "type": "text",
+        "value": "Now that you are done talking to that WEIRDO, you can get down to business. You should be able to buy the weapons giver and find out what your weapon is. You hope it won't be nearly as disappointing as your Nucleyph was."
+      },
+      {
+        "type": "image",
+        "value": "assets/media/p51-5.png"
+      },
+      {
+        "type": "text",
+        "value": "Is that a gun? Listen, it may not be as good as deaxs' Dragon Ball powers, but you definitely aren't mad about this. It does look poorly drawn though for some reason."
+      },
+      {
+        "type": "image",
+        "value": "assets/media/p51-6.gif"
+      },
+      {
+        "type": "text",
+        "value": "You almost want to test it out on your new friend there, but you have a feeling something fucking weird would happen. \n\nAnyway, I have to stop narrating for a bit. There is something I need to do. I'll be back later."
+      },
+      {
+        "type": "image",
+        "value": "assets/media/p51-7.gif"
+      },
+      {
+        "type": "dialogue",
+        "value": "[ISABEL: wow that was so easy|#D33682]\n\n[ISABEL: how come it took so much longer when deaxs did it?|#D33682]\n\n[ERROR:|#D33682|#FDF6E3] 🟪⬛🟪⬛🟪⬛\n\n[ISABEL: bro...|#D33682]\n\n[ISABEL: i dont think you can say that|#D33682]"
+      }
     ]
   }
 }

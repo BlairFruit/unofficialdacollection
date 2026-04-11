@@ -123,7 +123,10 @@ window.APP_ACHIEVEMENTS = {
     "unlocked-track-3": { page: "28", title: "Down into The Threshold we go", desc: "You don't know what you're getting into.\nUnlocked Displacement.", icon: "assets/media/placeholder.png", trigger: "load" },
     "unlocked-green": { page: "any", title: "Green and Inbetween", desc: "He's watching. He's green and inbetween.", icon: "assets/media/greendav.png", trigger: "custom" },
     "unlocked-end": { page: "last", title: "To Be Continued", desc: "You reached the end of the currently available pages.", icon: "assets/media/icon.png", trigger: "load" },
-    "unlocked-coin-secret": { page: "extras", title: "How could this be", desc: "Find the medallion.", icon: "assets/media/medallion.gif", trigger: "custom" }
+    "unlocked-coin-secret": { page: "extras", title: "How could this be", desc: "Find the medallion.", icon: "assets/media/medallion.gif", trigger: "custom" },
+    "unlocked-nightowl": { page: "any", title: "Night Owl", desc: "Are you reading this past midnight? Go to sleep.", icon: "assets/media/placeholder.png", trigger: "custom" },
+    "unlocked-void": { page: "any", title: "Lost in the Void", desc: "You tried to navigate to a page that doesn't exist yet.", icon: "assets/media/placeholder.png", trigger: "custom" },
+    "unlocked-speedreader": { page: "any", title: "Speedreader", desc: "You are flipping through these pages way too fast.", icon: "assets/media/placeholder.png", trigger: "custom" }
 };
 
 window.unlockAchievement = function(id) {
@@ -275,6 +278,7 @@ window.handleAddressBar = function(event) {
 
             if (window.location.pathname.includes('index.html')) {
                 if (typeof totalPagesCount !== 'undefined' && page > totalPagesCount) {
+                    if (window.unlockAchievement) window.unlockAchievement('unlocked-void');
                     page = totalPagesCount;
                 }
                 window.location.search = `?p=${page}`;
@@ -291,5 +295,10 @@ document.addEventListener("DOMContentLoaded", () => {
         let currentPath = window.location.pathname.split('/').pop() || 'home';
         currentPath = currentPath.replace('.html', '');
         addressInput.value = `deaxs://${currentPath}`;
+    }
+
+    const currentHour = new Date().getHours();
+    if (currentHour >= 0 && currentHour < 4) {
+        if (window.unlockAchievement) window.unlockAchievement('unlocked-nightowl');
     }
 });
