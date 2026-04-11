@@ -30,17 +30,11 @@ jobs:
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
-      - name: Upload the Compiled Artifact
-        uses: actions/upload-artifact@v4
-        with:
-          name: unofficial-deaxsadventure-collection
-          path: dist/win-unpacked/
-
       - name: Create GitHub Release
         uses: softprops/action-gh-release@v2
         with:
           tag_name: ${{ github.ref_name }}
-          name: The Unofficial Deaxs Adventure Collection - ${{ github.ref_name }}
+          name: UNOFFICIAL DEAXS ADVENTURE COLLECTION - ${{ github.ref_name }}
           files: dist/*.zip
           body_path: release-notes.md
         env:

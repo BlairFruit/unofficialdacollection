@@ -1,7 +1,7 @@
 ## What's New in This Version
-* Fixed auto-updater
-* Implemented tabs properly
-* No more bugs. I hope...
+* I am going insane.
+* Theres nothing you can do about it.
+* Data bug hopefully finally fixed
 
 ###  Developer Note
-*I was really stupid and I forgot that by default, it doesnt compile things the way I wanted, which made it so it couldn't update everything properly.. my bad.*
+*Probably the last one for a bit.*

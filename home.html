@@ -103,11 +103,11 @@
             const menu = document.getElementById('menu-container');
 
             try {
-                const localVersionPath = path.join(__dirname, 'version.json');
+                const localVersionPath = path.join(__dirname, 'package.json');
                 const localVersionData = JSON.parse(fs.readFileSync(localVersionPath, 'utf8'));
                 CURRENT_VERSION = localVersionData.version;
             } catch (err) {
-                console.error("Could not read local version.json", err);
+                console.error("Could not read local package.json", err);
                 CURRENT_VERSION = "Unknown";
             }
 
@@ -158,7 +158,7 @@
             try {
                 const nocache = `?t=${new Date().getTime()}`;
 
-                const versionRes = await fetch(REPO_BASE_URL + 'version.json' + nocache, { cache: 'no-store' });
+                const versionRes = await fetch(REPO_BASE_URL + 'package.json' + nocache, { cache: 'no-store' });
                 if (versionRes.ok) {
                    const remoteVersionData = await versionRes.json();
 
@@ -168,7 +168,7 @@
                         
                         const coreFiles = [
                             'home.html', 'index.html', 'extras.html', 'achievements.html',
-                            'version.json', 'assets/css/shared.css', 'assets/js/shared.js', 'main.js'
+                            'package.json', 'assets/css/shared.css', 'assets/js/shared.js', 'main.js'
                         ];
 
                         for (let file of coreFiles) {
@@ -213,32 +213,44 @@
                     let remotePageBlocks = remoteData.pages[p];
                     let mappedPageBlocks = JSON.parse(JSON.stringify(remotePageBlocks)); 
 
-                    // Check if this specific page actually needs an update
-                    // We compare the remote text/structure against local BEFORE mapping paths
-                    let pageNeedsUpdate = false;
-                    if (!localData.pages[p] || JSON.stringify(localData.pages[p]) !== JSON.stringify(mappedPageBlocks)) {
-                        pageNeedsUpdate = true;
-                    }
-
                     let assetCounter = 1;
                     mappedPageBlocks.forEach(block => {
                         if (block.type === 'image' || block.type === 'video') {
                             let remotePath = block.value; 
                             let ext = path.extname(remotePath);
                             let newFileName = `p${p}-${assetCounter}${ext}`;
-                            let newRelPath = `assets/media/${newFileName}`;
+                            
+                            block.value = `assets/media/${newFileName}`;
+                            assetCounter++;
+                        }
+                    });
+
+                    let isDifferent = false;
+                    if (!localData.pages[p]) {
+                        isDifferent = true; 
+                    } else if (JSON.stringify(localData.pages[p]) !== JSON.stringify(mappedPageBlocks)) {
+                        isDifferent = true;
+                    }
+
+                    assetCounter = 1; 
+                    remotePageBlocks.forEach(block => {
+                        if (block.type === 'image' || block.type === 'video') {
+                            let remotePath = block.value;
+                            let ext = path.extname(remotePath);
+                            let newFileName = `p${p}-${assetCounter}${ext}`;
                             let localSavePath = path.join(__dirname, 'assets', 'media', newFileName);
                             
-                            block.value = newRelPath;
-
-                            if (pageNeedsUpdate || !fs.existsSync(localSavePath)) {
-                                downloadQueue.push({ url: REPO_BASE_URL + remotePath + nocache, savePath: localSavePath });
+                            if (isDifferent || !fs.existsSync(localSavePath)) {
+                                downloadQueue.push({ 
+                                    url: REPO_BASE_URL + remotePath + nocache, 
+                                    savePath: localSavePath 
+                                });
                             }
                             assetCounter++;
                         }
                     });
 
-                    if (pageNeedsUpdate) {
+                    if (isDifferent) {
                         localData.pages[p] = mappedPageBlocks;
                         hasChanges = true;
                         pagesToUpdate.push(p);
