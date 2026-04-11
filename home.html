@@ -210,8 +210,17 @@
                     });
 
                     let isDifferent = false;
-                    if (!localData.pages[p] || JSON.stringify(localData.pages[p]) !== JSON.stringify(mappedPageBlocks)) {
+                    if (!localData.pages[p]) {
                         isDifferent = true;
+                    } else if (localData.pages[p].length !== mappedPageBlocks.length) {
+                        isDifferent = true;
+                    } else {
+                        for (let i = 0; i < mappedPageBlocks.length; i++) {
+                            if (localData.pages[p][i].value !== mappedPageBlocks[i].value) {
+                                isDifferent = true;
+                                break;
+                            }
+                        }
                     }
 
                     assetCounter = 1;
