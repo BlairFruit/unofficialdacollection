@@ -152,55 +152,31 @@
         const statusText = document.getElementById('update-status');
 
         async function checkForUpdates() {
-            statusText.innerText = "Checking for Software Updates...";
+            statusText.innerText = "Checking for updates...";
             statusText.style.color = "#aaa";
 
             try {
                 const nocache = `?t=${new Date().getTime()}`;
+                let needsRestart = false;
 
                 const versionRes = await fetch(REPO_BASE_URL + 'package.json' + nocache, { cache: 'no-store' });
+                let remoteVersionData = null;
                 if (versionRes.ok) {
-                   const remoteVersionData = await versionRes.json();
-
+                    remoteVersionData = await versionRes.json();
                     if (remoteVersionData.version !== CURRENT_VERSION) {
-                        statusText.innerText = `Downloading App Update v${remoteVersionData.version}... Please wait.`;
+                        needsRestart = true;
+                        statusText.innerText = `Update v${remoteVersionData.version} found! Processing...`;
                         statusText.style.color = "gold";
-                        
-                        const coreFiles = [
-                            'home.html', 'index.html', 'extras.html', 'achievements.html',
-                            'package.json', 'assets/css/shared.css', 'assets/js/shared.js', 'main.js'
-                        ];
-
-                        for (let file of coreFiles) {
-                            const fileRes = await fetch(REPO_BASE_URL + file + nocache, { cache: 'no-store' });
-                            const fileContent = await fileRes.text();
-                            const savePath = path.join(__dirname, file);
-                            fs.writeFileSync(savePath, fileContent);
-                        }
-
-                        statusText.innerText = "Update Complete! Restarting App...";
-                        statusText.style.color = "#00ff00";
-                        
-                        setTimeout(() => {
-                            if (typeof closeApp === "function") { closeApp(); } 
-                            else { window.close(); }
-                        }, 2000);
-                        
-                        return; 
                     }
                 }
 
-                statusText.innerText = "App is up to date. Checking for comic content updates...";
-                
                 const response = await fetch(REPO_BASE_URL + 'assets/data.json' + nocache, { cache: 'no-store' });
-                if (!response.ok) throw new Error("Could not connect to GitHub.");
+                if (!response.ok) throw new Error("Could not connect to GitHub data.");
                 const remoteData = await response.json();
 
                 const localData = JSON.parse(fs.readFileSync(LOCAL_DATA_PATH, 'utf8'));
-                
                 let hasChanges = false;
                 let downloadQueue = [];
-                let pagesToUpdate = [];
 
                 for (let p in localData.pages) {
                     if (!remoteData.pages[p]) {
@@ -211,39 +187,33 @@
 
                 for (let p in remoteData.pages) {
                     let remotePageBlocks = remoteData.pages[p];
-                    let mappedPageBlocks = JSON.parse(JSON.stringify(remotePageBlocks)); 
+                    let mappedPageBlocks = JSON.parse(JSON.stringify(remotePageBlocks));
 
                     let assetCounter = 1;
                     mappedPageBlocks.forEach(block => {
                         if (block.type === 'image' || block.type === 'video') {
-                            let remotePath = block.value; 
-                            let ext = path.extname(remotePath);
-                            let newFileName = `p${p}-${assetCounter}${ext}`;
-                            
-                            block.value = `assets/media/${newFileName}`;
+                            let ext = path.extname(block.value);
+                            block.value = `assets/media/p${p}-${assetCounter}${ext}`;
                             assetCounter++;
                         }
                     });
 
                     let isDifferent = false;
-                    if (!localData.pages[p]) {
-                        isDifferent = true; 
-                    } else if (JSON.stringify(localData.pages[p]) !== JSON.stringify(mappedPageBlocks)) {
+                    if (!localData.pages[p] || JSON.stringify(localData.pages[p]) !== JSON.stringify(mappedPageBlocks)) {
                         isDifferent = true;
                     }
 
-                    assetCounter = 1; 
+                    assetCounter = 1;
                     remotePageBlocks.forEach(block => {
                         if (block.type === 'image' || block.type === 'video') {
                             let remotePath = block.value;
                             let ext = path.extname(remotePath);
-                            let newFileName = `p${p}-${assetCounter}${ext}`;
-                            let localSavePath = path.join(__dirname, 'assets', 'media', newFileName);
-                            
+                            let localSavePath = path.join(__dirname, 'assets', 'media', `p${p}-${assetCounter}${ext}`);
+
                             if (isDifferent || !fs.existsSync(localSavePath)) {
-                                downloadQueue.push({ 
-                                    url: REPO_BASE_URL + remotePath + nocache, 
-                                    savePath: localSavePath 
+                                downloadQueue.push({
+                                    url: REPO_BASE_URL + remotePath + nocache,
+                                    savePath: localSavePath
                                 });
                             }
                             assetCounter++;
@@ -253,38 +223,51 @@
                     if (isDifferent) {
                         localData.pages[p] = mappedPageBlocks;
                         hasChanges = true;
-                        pagesToUpdate.push(p);
                     }
                 }
 
-                if (!hasChanges && downloadQueue.length === 0) {
-                    statusText.innerText = "You are completely up to date!";
+                if (downloadQueue.length > 0) {
+                    for (let i = 0; i < downloadQueue.length; i++) {
+                        let item = downloadQueue[i];
+                        statusText.innerText = `Downloading media ${i + 1} of ${downloadQueue.length}...`;
+                        fs.mkdirSync(path.dirname(item.savePath), { recursive: true });
+                        let fileRes = await fetch(item.url);
+                        let buffer = Buffer.from(await fileRes.arrayBuffer());
+                        fs.writeFileSync(item.savePath, buffer);
+                    }
+                }
+
+                if (hasChanges) {
+                    fs.writeFileSync(LOCAL_DATA_PATH, JSON.stringify(localData, null, 2));
+                }
+
+                if (needsRestart && remoteVersionData) {
+                    statusText.innerText = "Downloading core app files...";
+                    const coreFiles = [
+                        'home.html', 'index.html', 'extras.html', 'achievements.html',
+                        'package.json', 'assets/css/shared.css', 'assets/js/shared.js', 'main.js'
+                    ];
+                    for (let file of coreFiles) {
+                        const fileRes = await fetch(REPO_BASE_URL + file + nocache, { cache: 'no-store' });
+                        fs.writeFileSync(path.join(__dirname, file), await fileRes.text());
+                    }
+
+                    statusText.innerText = "Update Complete! Restarting App...";
                     statusText.style.color = "#00ff00";
+                    setTimeout(() => {
+                        if (typeof closeApp === "function") closeApp();
+                        else window.close();
+                    }, 2000);
                     return;
                 }
 
-                if (pagesToUpdate.length > 0) {
-                    statusText.innerText = `Updating data for pages: ${pagesToUpdate.join(', ')}...`;
+                if (hasChanges || downloadQueue.length > 0) {
+                    statusText.innerText = "Content updated successfully!";
+                    statusText.style.color = "#00ff00";
                 } else {
-                    statusText.innerText = `Downloading missing media files...`;
+                    statusText.innerText = "You are completely up to date!";
+                    statusText.style.color = "#00ff00";
                 }
-                statusText.style.color = "gold";
-
-                for (let i = 0; i < downloadQueue.length; i++) {
-                    let item = downloadQueue[i];
-                    statusText.innerText = `Downloading asset ${i + 1} of ${downloadQueue.length}...`;
-                    fs.mkdirSync(path.dirname(item.savePath), { recursive: true });
-                    let fileRes = await fetch(item.url);
-                    let arrayBuffer = await fileRes.arrayBuffer();
-                    let buffer = Buffer.from(arrayBuffer);
-                    fs.writeFileSync(item.savePath, buffer);
-                }
-
-                statusText.innerText = "Finalizing update...";
-                fs.writeFileSync(LOCAL_DATA_PATH, JSON.stringify(localData, null, 2));
-                
-                statusText.innerText = "Content updated successfully!";
-                statusText.style.color = "#00ff00";
 
             } catch (err) {
                 console.error(err);

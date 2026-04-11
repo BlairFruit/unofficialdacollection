@@ -25,11 +25,17 @@ jobs:
       - name: Install Dependencies
         run: npm install
 
+      # FIX: Removed the GH_TOKEN so electron-builder stops stealing the release!
       - name: Build the App
         run: npm run build
-        env:
-          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
+      - name: Upload the Compiled Artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: unofficial-deaxsadventure-collection
+          path: dist/win-unpacked/
+
+      # This step now has full control over what the release looks like
       - name: Create GitHub Release
         uses: softprops/action-gh-release@v2
         with:
