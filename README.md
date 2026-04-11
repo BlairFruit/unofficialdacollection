@@ -9,7 +9,7 @@ A program I made for the **DEAXS ADVENTURE** comic made by my friends so that ev
 * **Automatic Updates:** The app automatically checks for new comic pages and software improvements if you just press the button.
 * **Asset Gallery:** Unlock and view (debatably) high-quality panels and animations as you progress through the story.
 * **Listeneable Soundtrack**: Discover and listen to the official soundtrack, with tracks unlocking alongside your achievements.
-* **Portable & Standalone:**: Unzip the damn thing and go read it right now. Stop reading this README.
+* **Portable & Standalone**: Unzip the damn thing and go read it right now. Stop reading this README.
 
 ## Installation Guide
 
