@@ -129,7 +129,20 @@
                 menu.style.opacity = "1";
             }
 
-            document.getElementById('version-display').innerText = `Collection Version: v${CURRENT_VERSION}`;
+            const versionDisplay = document.getElementById('version-display');
+            
+            function updateNetworkStatus() {
+                if (navigator.onLine) {
+                    versionDisplay.innerHTML = `Collection Version: v${CURRENT_VERSION}`;
+                } else {
+                    versionDisplay.innerHTML = `Collection Version: v${CURRENT_VERSION} <span style="color: #ff3333; font-weight: bold; margin-left: 5px;">[OFFLINE MODE]</span>`;
+                }
+            }
+
+            updateNetworkStatus();
+
+            window.addEventListener('online', updateNetworkStatus);
+            window.addEventListener('offline', updateNetworkStatus);
         });
 
         function startNewGame() {
@@ -273,14 +286,21 @@
 
                 if (needsRestart && remoteVersionData) {
                     statusText.innerText = "Downloading core app files...";
-                    const coreFiles = [
+                    const coreFiles = remoteVersionData.coreFiles || [
                         'home.html', 'index.html', 'extras.html', 'achievements.html',
                         'secret.html', 'package.json', 'assets/css/shared.css', 'assets/js/shared.js', 
                         'main.js'
                     ];
+                    
+                    let memoryBuffer = {};
                     for (let file of coreFiles) {
                         const fileRes = await fetch(APP_REPO_URL + file + nocache, { cache: 'no-store' });
-                        fs.writeFileSync(path.join(__dirname, file), await fileRes.text());
+                        if (!fileRes.ok) throw new Error(`Could not fetch ${file}`);
+                        memoryBuffer[file] = await fileRes.text();
+                    }
+
+                    for (let file of coreFiles) {
+                        fs.writeFileSync(path.join(__dirname, file), memoryBuffer[file]);
                     }
 
                     statusText.innerText = "Update Complete! Restarting App...";
@@ -302,8 +322,13 @@
 
             } catch (err) {
                 console.error(err);
-                statusText.innerText = "Error updating. Check your connection.";
-                statusText.style.color = "red";
+                statusText.innerText = "Update Failed: Connection dropped or data corrupted.";
+                statusText.style.color = "#ff3333";
+                
+                const versionDisplay = document.getElementById('version-display');
+                if (!versionDisplay.innerHTML.includes('[OFFLINE')) {
+                    versionDisplay.innerHTML += ' <span style="color: #ff3333; font-weight: bold; margin-left: 5px;">[UPDATE FAILED]</span>';
+                }
             }
         }
     </script>

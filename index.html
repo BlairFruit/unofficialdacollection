@@ -96,7 +96,7 @@
     <a href="home.html" class="nav-btn floating-menu-btn">MAIN MENU</a>
 
     <div id="lightbox" class="lightbox" onclick="closeLightbox(event)">
-        <img id="lightbox-img" class="lightbox-content" style="display: none;">
+        <img id="lightbox-img" class="lightbox-content" style="display: none;" onerror="this.onerror=null; this.src='assets/media/fallback.png';">
         <video id="lightbox-vid" class="lightbox-content" controls loop style="display: none;"></video>
         <button class="lightbox-close-btn" onclick="closeLightbox(event)">CLOSE VIEW</button>
     </div>
@@ -341,9 +341,9 @@
 
                         const div = document.createElement('div');
                         div.className = "content-block";
-                        
+
                         if (block.type === 'image') {
-                            div.innerHTML = `<img src="${block.value}" alt="Panel" class="comic-panel-img" onclick="openLightbox('${block.value}', 'image')">`;
+                            div.innerHTML = `<img src="${block.value}" alt="Panel" class="comic-panel-img" onerror="this.onerror=null; this.src='assets/media/fallback.png';" onclick="openLightbox(this.getAttribute('src'), 'image')">`;
                         } else if (block.type === 'video') {
                             div.innerHTML = `
                                 <div class="custom-video-wrapper">
@@ -374,9 +374,18 @@
                     const video = wrapper.querySelector('.custom-video');
                     const playBtn = wrapper.querySelector('.play-pause-btn');
                     const progressBar = wrapper.querySelector('.progress-bar');
-                    const muteBtn = wrapper.querySelector('.mute-btn');
-                    const volumeBar = wrapper.querySelector('.volume-bar'); 
                     const timeDisplay = wrapper.querySelector('.current-time');
+                    const muteBtn = wrapper.querySelector('.mute-btn');
+                    const volumeBar = wrapper.querySelector('.volume-bar');
+
+                    // Load saved preferences
+                    const savedVolume = localStorage.getItem('global-volume') || 1;
+                    const savedMuted = localStorage.getItem('global-muted') === 'true';
+
+                    video.volume = savedVolume;
+                    video.muted = savedMuted;
+                    volumeBar.value = savedMuted ? 0 : savedVolume;
+                    muteBtn.innerText = savedMuted ? "🔇" : "🔊";
 
                     const formatTime = (seconds) => {
                         const mins = Math.floor(seconds / 60);
@@ -413,16 +422,20 @@
                         video.currentTime = (e.target.value / 100) * video.duration;
                     });
 
+                    // Save audio preferences when changed
                     muteBtn.addEventListener('click', () => {
                         video.muted = !video.muted;
                         muteBtn.innerText = video.muted ? "🔇" : "🔊";
-                        volumeBar.value = video.muted ? 0 : video.volume; 
+                        volumeBar.value = video.muted ? 0 : video.volume;
+                        localStorage.setItem('global-muted', video.muted);
                     });
 
                     volumeBar.addEventListener('input', (e) => {
                         video.volume = e.target.value;
-                        video.muted = (video.volume === 0);
+                        video.muted = (video.volume == 0);
                         muteBtn.innerText = video.muted ? "🔇" : "🔊";
+                        localStorage.setItem('global-volume', video.volume);
+                        localStorage.setItem('global-muted', video.muted);
                     });
                 });
 
@@ -447,25 +460,22 @@
                         ${data.pages[nextNum.toString()] ? `<a href="?p=${nextNum}" class="nav-btn">NEXT</a>` : ''}
                         ${currentPage !== lastPage ? `<a href="?p=${lastPage}" class="nav-btn">LAST</a>` : ''}
                     </div>
-                    <div class="jump-container">
-                        GO TO PAGE: 
-                        <input type="number" id="jump-input-field" class="jump-input" min="1" max="${totalPagesCount}" placeholder="${currentPage}" onkeypress="jumpToPage(event)">
-                        <button class="jump-btn" onclick="executeJump()">GO</button>
-                    </div>
-                `;
-
-                footer.innerHTML = `
-                    <div style="margin-bottom: 20px;">
-                        ${currentPage !== "1" ? `<a href="?p=1" class="nav-btn">FIRST</a>` : ''}
-                        ${prevNum > 0 ? `<a href="?p=${prevNum}" class="nav-btn">PREV</a>` : ''}
-                        <span class="page-indicator">PG. ${currentPage} / ${totalPagesCount}</span>
-                        ${data.pages[nextNum.toString()] ? `<a href="?p=${nextNum}" class="nav-btn">NEXT</a>` : ''}
-                        ${currentPage !== lastPage ? `<a href="?p=${lastPage}" class="nav-btn">LAST</a>` : ''}
-                    </div>
-                    <div class="jump-container">
-                        GO TO PAGE: 
-                        <input type="number" id="jump-input-field" class="jump-input" min="1" max="${totalPagesCount}" placeholder="${currentPage}" onkeypress="jumpToPage(event)">
-                        <button class="jump-btn" onclick="executeJump()">GO</button>
+                    
+                    <div class="jump-container" style="flex-direction: column; gap: 15px;">
+                        <div style="display: flex; gap: 10px; align-items: center; justify-content: center;">
+                            GO TO PAGE: 
+                            <input type="number" id="jump-input-field" class="jump-input" min="1" max="${totalPagesCount}" placeholder="${currentPage}" onkeypress="jumpToPage(event)">
+                            <button class="jump-btn" onclick="executeJump()">GO</button>
+                        </div>
+                        
+                        <div style="display: flex; gap: 10px; align-items: center; justify-content: center; margin-top: 5px;">
+                            CHAPTER INDEX:
+                            <select class="jump-input" style="width: auto; cursor: pointer; text-align: left; padding: 4px 10px; font-size: 0.9rem;" onchange="if(this.value) window.location.search = '?p=' + this.value;">
+                                <option value="" disabled selected>-- Select a Scene --</option>
+                                <option value="1">Act 1</option>
+                                <option value="30" ${highest >= 30 ? '' : 'disabled'}>Act 2 ${highest >= 30 ? '' : '[LOCKED]'}</option>
+                            </select>
+                        </div>
                     </div>
                 `;
 

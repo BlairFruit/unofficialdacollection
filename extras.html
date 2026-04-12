@@ -12,6 +12,10 @@
         .tab-btn { background: #1e1e1e; color: #888; border: 2px solid #444; padding: 10px 20px; font-family: "Courier New", monospace; font-weight: bold; cursor: pointer; transition: 0.2s; }
         .tab-btn.active { background: #000080; color: white; border-color: white; box-shadow: 2px 2px 0 #fff inset; }
         
+        .sub-tab-container { display: flex; justify-content: center; gap: 10px; margin-bottom: 20px; }
+        .sub-tab { font-size: 0.9rem; padding: 6px 15px; }
+        .locked-btn { opacity: 0.5; cursor: not-allowed !important; background: #111 !important; color: #555 !important; border-color: #333 !important; }
+
         .section { display: none; }
         .section.active { display: block; animation: fadeIn 0.3s ease-in; }
         
@@ -84,7 +88,7 @@
     </div>
 
     <div id="lightbox" class="lightbox" onclick="closeLightbox(event)">
-        <img id="lightbox-img" class="lightbox-content" style="display: none;">
+        <img id="lightbox-img" class="lightbox-content" style="display: none;" onerror="this.onerror=null; this.src='assets/media/fallback.png';">
         <video id="lightbox-vid" class="lightbox-content" controls loop style="display: none;"></video>
         <button class="lightbox-close-btn" onclick="closeLightbox(event)">CLOSE VIEW</button>
     </div>
@@ -111,9 +115,19 @@
     
     <div id="gallery" class="section">
         <p class="gallery-instructions">Left-click to Focus. Right-click to Save or View Folder.</p>
-        <div class="gallery-grid" id="gallery-container"></div>
+        
+        <div class="sub-tab-container">
+            <button class="tab-btn sub-tab active" id="act-1-tab-btn" onclick="switchGalleryAct(1, this)">ACT 1</button>
+            <button class="tab-btn sub-tab" id="act-2-tab-btn" onclick="switchGalleryAct(2, this)">ACT 2</button>
+        </div>
+
+        <div id="act-1-gallery" class="gallery-act-container" style="display: block;">
+            <div class="gallery-grid" id="gallery-grid-act-1"></div>
+        </div>
+        <div id="act-2-gallery" class="gallery-act-container" style="display: none;">
+            <div class="gallery-grid" id="gallery-grid-act-2"></div>
+        </div>
     </div>
-    
     <div id="unused" class="section">
         <div class="unused-container">
             <div class="unused-block">
@@ -137,6 +151,14 @@
                     "these are sketches i made before tracing them into digital so i could use them as panels."
                 </div>
             </div>
+
+            <div class="unused-block">
+                <h3 style="margin-top: 0; color: white;">[scrapped energy core design]</h3>
+                <img src="assets/media/oldcore.png" alt="Unused Asset" onerror="this.style.display='none'">
+                <div class="dev-quote">
+                    "originally tyler wanted the design of the energy cores to not be the same cut as the chaos emeralds, but since i figured they serve similar enough roles anyways, we ultimately decided on leaving their design alone. the design shown here is tyler's initial design for a different energy core, based on an opal."
+                </div>
+            </div>
         </div>
     </div>
 
@@ -150,7 +172,7 @@
 
         function switchTab(btn, tabId) {
             document.querySelectorAll('.section').forEach(sec => sec.classList.remove('active'));
-            document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+            document.querySelectorAll('.tab-btn:not(.sub-tab)').forEach(b => b.classList.remove('active'));
             document.getElementById(tabId).classList.add('active');
             btn.classList.add('active');
 
@@ -159,6 +181,16 @@
                     window.unlockAchievement('unlocked-coin-secret');
                 }
             }
+        }
+
+        function switchGalleryAct(actNum, btn) {
+            if (btn.classList.contains('locked-btn')) return;
+
+            document.querySelectorAll('.gallery-act-container').forEach(c => c.style.display = 'none');
+            document.querySelectorAll('.sub-tab').forEach(b => b.classList.remove('active'));
+
+            document.getElementById(`act-${actNum}-gallery`).style.display = 'block';
+            btn.classList.add('active');
         }
 
         function openLightbox(src, type) {
@@ -286,10 +318,19 @@
         }
 
         function loadGallery() {
-            const galleryContainer = document.getElementById('gallery-container');
+            const act1Container = document.getElementById('gallery-grid-act-1');
+            const act2Container = document.getElementById('gallery-grid-act-2');
             const dataPath = path.join(__dirname, 'assets', 'data.json');
             const highestPage = parseInt(localStorage.getItem('highest-page')) || parseInt(localStorage.getItem('saved-page')) || 1;
             
+            const act2Btn = document.getElementById('act-2-tab-btn');
+            if (highestPage < 30) {
+                act2Btn.classList.add('locked-btn');
+                act2Btn.innerText = "ACT 2";
+                act2Btn.onclick = null;
+                act2Container.innerHTML = "<p style='grid-column: 1/-1; text-align: center; color: #666; font-family: monospace; font-size: 1.1rem; margin-top: 30px;'>[ SPOILER WARNING ]<br><br>Keep reading past Page 29 to unlock these assets.</p>";
+            }
+
             try {
                 const rawData = fs.readFileSync(dataPath, 'utf8');
                 const data = JSON.parse(rawData);
@@ -316,6 +357,12 @@
                                     element.src = fullAssetPath;
                                     element.className = 'gallery-item';
                                     element.loading = "lazy"; 
+                                    
+                                    element.onerror = function() {
+                                        this.onerror = null;
+                                        this.src = "assets/media/fallback.png";
+                                        this.style.border = "2px solid red";
+                                    };
                                 }
 
                                 element.addEventListener('click', () => { openLightbox(fullAssetPath, block.type); });
@@ -324,14 +371,18 @@
                                     ipcRenderer.send('show-asset-menu', fullAssetPath);
                                 });
 
-                                galleryContainer.appendChild(element);
+                                if (parseInt(page) <= 29) {
+                                    act1Container.appendChild(element);
+                                } else {
+                                    act2Container.appendChild(element);
+                                }
                             }
                         });
                     }
                 }
             } catch (err) {
                 console.error(err);
-                galleryContainer.innerHTML = "<p>Could not load asset data. Ensure data.json exists.</p>";
+                act1Container.innerHTML = "<p>Could not load asset data. Ensure data.json exists.</p>";
             }
         }
 

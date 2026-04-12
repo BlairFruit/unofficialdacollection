@@ -2,10 +2,53 @@ const { app, BrowserWindow, ipcMain, Menu, shell, dialog } = require('electron')
 const path = require('path');
 const fs = require('fs');
 
+const DiscordRPC = require('discord-rpc');
+const clientId = '1012842910946963486'; 
+DiscordRPC.register(clientId);
+
+const rpc = new DiscordRPC.Client({ transport: 'ipc' });
+const startTimestamp = new Date();
+
+async function setActivity(details, state) {
+    if (!rpc || !clientId) return;
+    try {
+        await rpc.setActivity({
+            details: details || 'Loading...',
+            state: state || 'Main Menu',
+            startTimestamp,
+            largeImageKey: 'icon',
+            largeImageText: 'THE UNOFFICIAL DEAXS ADVENTURE COLLECTION',
+            instance: false,
+        });
+    } catch (err) {
+        console.error('Discord RPC Error:', err);
+    }
+}
+
+rpc.on('ready', () => {
+    setActivity('Booting up...', 'Main Menu');
+});
+
+rpc.login({ clientId }).catch(console.error);
+
+ipcMain.on('update-rpc', (event, args) => {
+    setActivity(args.details, args.state);
+});
+
+const windowStateKeeper = require('electron-window-state');
+
 function createWindow () {
+  let mainWindowState = windowStateKeeper({
+    defaultWidth: 1000,
+    defaultHeight: 800
+  });
+
   const win = new BrowserWindow({
-    width: 1000,
-    height: 800,
+    x: mainWindowState.x,
+    y: mainWindowState.y,
+    width: mainWindowState.width,
+    height: mainWindowState.height,
+    
     frame: false, 
     backgroundColor: '#121212',
     icon: path.join(__dirname, 'assets/media/icon.png'),
@@ -16,6 +59,8 @@ function createWindow () {
       webSecurity: false 
     }
   });
+
+  mainWindowState.manage(win);
 
   win.loadFile('home.html');
 }
