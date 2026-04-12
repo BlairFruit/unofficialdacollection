@@ -9,7 +9,6 @@
     <link rel="stylesheet" href="assets/css/shared.css">
     
     <style>
-        /* THEME VARIABLES */
         :root {
             --bg-color: #121212;
             --text-color: #e0e0e0;
@@ -23,7 +22,6 @@
             --dialogue-font-size: 1.1rem;
         }
 
-        /* LIGHT MODE / COLOR OVERRIDES */
         body.light-mode {
             --bg-color: #ffffff;
             --text-color: #1a1a1a;
@@ -58,7 +56,6 @@
             --block-border: #202225;
         }
 
-        /* NEW THEME 2: VINTAGE */
         body.theme-threshold { 
             background-color: #f4ecd8; 
             background-image: url('assets/media/themethreshold.png'); 
@@ -97,12 +94,10 @@
         body.dialogue-font-dyslexic { --font-dialogue: "OpenDyslexic", "Comic Sans MS", Arial, sans-serif; }
         body.dialogue-font-dyslexic .dialogue-box { letter-spacing: 0.1em; line-height: 2; word-spacing: 0.2em; }
 
-        /* SIZE OVERRIDES */
         body.size-small { --base-font-size: 0.9rem; --dialogue-font-size: 0.85rem; }
         body.size-large { --base-font-size: 1.6rem; --dialogue-font-size: 1.4rem; }
         body.size-xlarge { --base-font-size: 2.0rem; --dialogue-font-size: 1.8rem; font-weight: bold; }
 
-        /* --- THIS IS THE BLOCK THAT CENTERS EVERYTHING --- */
         body { 
             background: var(--bg-color); 
             color: var(--text-color); 
@@ -112,7 +107,6 @@
             line-height: 1.6;
         }
 
-        /* --- LIGHTBOX STYLES --- */
         .lightbox { display: none; position: fixed; z-index: 10000; left: 0; top: 0; width: 100%; height: 100%; background-color: rgba(0, 0, 0, 0.9); align-items: center; justify-content: center; flex-direction: column; backdrop-filter: blur(5px); }
         .lightbox.show { display: flex; animation: fadeIn 0.2s ease-out; }
         .lightbox-content { max-width: 90%; max-height: 80vh; border: 2px solid gold; box-shadow: 0 0 25px rgba(0,0,0,0.8); background: #000; }
@@ -120,7 +114,7 @@
         #lightbox-vid.lightbox-content { width: 100% !important; }
         .lightbox-close-btn { margin-top: 20px; background: transparent; color: white; border: 1px solid white; padding: 8px 20px; cursor: pointer; font-family: "Courier New", monospace; transition: 0.3s; }
         .lightbox-close-btn:hover { background: white; color: black; }
-        body.no-scroll { overflow: hidden; } /* Stops the background comic from scrolling while zoomed in */
+        body.no-scroll { overflow: hidden; }
 
         header { width: 100%; max-width: 800px; padding: 40px 20px; text-align: center; box-sizing: border-box; }
         .logo { width: 100%; max-width: 800px; height: auto; display: block; margin: 0 auto; }
@@ -178,7 +172,6 @@
             margin: 5px 10px;
         }
 
-        /* --- CUSTOM VIDEO PLAYER STYLES --- */
         .custom-video-wrapper { position: relative; width: 100%; background: #000; overflow: hidden; display: flex; flex-direction: column; margin: 20px 0; }
         .video-controls { position: absolute; bottom: 0; left: 0; width: 100%; box-sizing: border-box; display: flex; align-items: center; background: rgba(192, 192, 192, 0.95); padding: 5px 10px; gap: 10px; border-top: 2px solid #fff; color: black; z-index: 10; opacity: 0; transform: translateY(100%); transition: opacity 0.2s ease, transform 0.2s ease; }
         .custom-video-wrapper:hover .video-controls { opacity: 1; transform: translateY(0); }
@@ -186,7 +179,6 @@
         .video-controls input[type=range]::-webkit-slider-thumb { -webkit-appearance: none; appearance: none; height: 16px; width: 8px; background: gold; border: 1px solid black; cursor: pointer; box-shadow: 1px 1px 0 #fff inset; }
         .video-time-display { font-size: 10px; font-family: Arial, sans-serif; min-width: 60px; text-align: center; }
         .progress-bar { flex-grow: 1; }
-        /* ---------------------------------- */
 
         .nav-btn:hover { background: var(--nav-btn-text); color: var(--bg-color); }
         .page-indicator { font-size: 0.9rem; color: #555; margin: 0 20px; vertical-align: middle; }
@@ -205,7 +197,6 @@
         }
 
         @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
-        /* ------------------------------ */
     </style>
 </head>
 <body>
@@ -274,21 +265,17 @@
             const dialogueFont = localStorage.getItem('reader-font-dialogue') || 'default';
             const size = localStorage.getItem('reader-size') || 'medium';
             
-            // 1. Apply Colors
             document.body.classList.toggle('light-mode', mode === 'light');
             document.body.classList.toggle('theme-metal', mode === 'metal');
             document.body.classList.toggle('theme-rsidnt', mode === 'rsidnt');
             document.body.classList.toggle('theme-threshold', mode === 'threshold');
             document.body.classList.toggle('theme-threshold', mode === 'thresholdred');
-            // 2. Apply Main Font
             document.body.classList.remove('main-font-serif', 'main-font-sans', 'main-font-comic', 'main-font-dyslexic');
             if (mainFont !== 'default') document.body.classList.add(`main-font-${mainFont}`);
 
-            // 3. Apply Dialogue Font
             document.body.classList.remove('dialogue-font-serif', 'dialogue-font-sans', 'dialogue-font-comic', 'dialogue-font-dyslexic');
             if (dialogueFont !== 'default') document.body.classList.add(`dialogue-font-${dialogueFont}`);
-            
-            // 4. Apply Sizes
+
             document.body.classList.remove('size-small', 'size-large', 'size-xlarge');
             if (size !== 'medium') document.body.classList.add(`size-${size}`);
         }
@@ -509,7 +496,6 @@
                     const muteBtn = wrapper.querySelector('.mute-btn');
                     const volumeBar = wrapper.querySelector('.volume-bar');
 
-                    // Load saved preferences
                     const savedVolume = localStorage.getItem('global-volume') || 1;
                     const savedMuted = localStorage.getItem('global-muted') === 'true';
 
@@ -553,7 +539,6 @@
                         video.currentTime = (e.target.value / 100) * video.duration;
                     });
 
-                    // Save audio preferences when changed
                     muteBtn.addEventListener('click', () => {
                         video.muted = !video.muted;
                         muteBtn.innerText = video.muted ? "🔇" : "🔊";

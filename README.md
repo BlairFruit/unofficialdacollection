@@ -24,7 +24,7 @@ A program I made for the **DEAXS ADVENTURE** comic made by my friends so that ev
 
 This project is an unofficial fan-made collection. 
 
-* **Original Comic & Assets:** All assets, story and lore are created by **SpaceF** on [deaxsadventure.com](https://deaxsadventure.com/).
+* **Original Comic & Assets:** All assets, story and lore are created by **SpaceF** and **deaxs** on [deaxsadventure.com](https://deaxsadventure.com/).
 * **Original Source Code:** Based on the website version at [Scinio.github.io](https://github.com/Scinio/Scinio.github.io).
 * **Collection Development:** Developed and maintained by BlairFruit.
 
