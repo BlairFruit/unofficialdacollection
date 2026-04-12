@@ -1,7 +1,7 @@
 {
   "name": "unofficial-deaxs-adventure-collection",
   "productName": "Unofficial Deaxs Adventure Collection",
-  "version": "1.3.1",
+  "version": "1.3.2",
   "description": "The Unofficial Collection for the shitty webcomic that chuds like.",
   "main": "main.js",
   "coreFiles": [
@@ -35,6 +35,7 @@
     "assets/media/sketches.png",
     "assets/media/THEGIF.gif",
     "assets/media/themersidnt.png",
+    "assets/media/themethreshold.png",
     "assets/media/themethresholdred.png",
     "assets/media/vol1.jpg",
     "assets/fonts/Alkhemikal.ttf",

@@ -58,8 +58,8 @@
 
         body.theme-threshold { 
             background-color: #f4ecd8; 
-            background-image: url('assets/media/themethreshold.png'); 
-            background-position: center 110px;
+            background-image: url('assets/media/themethreshold.png') !important; 
+            background-position: center top;
             background-size: cover; 
             background-repeat: no-repeat; 
             background-attachment: fixed; 
@@ -72,7 +72,7 @@
         body.theme-thresholdred { 
             background-color: #f4ecd8; 
             background-image: url('assets/media/themethresholdred.png'); 
-            background-position: center 110px;
+            background-position: center 85px;
             background-size: cover; 
             background-repeat: no-repeat; 
             background-attachment: fixed; 
@@ -80,6 +80,44 @@
             --text-color: #e0e0e0;
             --block-bg: #0e0e1a;
             --block-border: #202225;
+        }
+
+        body.green-mode {
+            background-color: #001a00 !important;
+            background-image: none !important;
+            color: #00ff00 !important;
+            --bg-color: #001a00 !important;
+            --text-color: #00ff00 !important;
+            --block-bg: rgba(0, 20, 0, 0.9) !important;
+            --block-border: #00ff00 !important;
+        }
+
+        body.green-mode .retro-title-bar, 
+        body.green-mode .browser-ui-container,
+        body.green-mode .retro-address-bar { 
+            background-color: #004400 !important; 
+            border-color: #00ff00 !important;
+        }
+
+        body.green-mode .nav-btn { 
+            border-color: #00ff00 !important; 
+            color: #00ff00 !important; 
+            background: transparent !important;
+        }
+
+        #green-easter-egg.green-jumpscare {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%) scale(0.5);
+            z-index: 10001;
+            animation: green-scare-anim 0.8s ease-out forwards;
+        }
+
+        @keyframes green-scare-anim {
+            0% { opacity: 0; transform: translate(-50%, -50%) scale(0.1); }
+            50% { opacity: 1; transform: translate(-50%, -50%) scale(1.2); }
+            100% { opacity: 0; transform: translate(-50%, -50%) scale(1.5); }
         }
 
         body.main-font-serif { --font-main: "Georgia", serif; }
@@ -99,11 +137,14 @@
         body.size-xlarge { --base-font-size: 2.0rem; --dialogue-font-size: 1.8rem; font-weight: bold; }
 
         body { 
-            background: var(--bg-color); 
+            background-color: var(--bg-color); 
             color: var(--text-color); 
             font-family: var(--font-main); 
-            margin: 0; padding: 0; 
-            display: flex; flex-direction: column; align-items: center; 
+            margin: 0; 
+            padding: 110px 0 0 0; 
+            display: flex; 
+            flex-direction: column; 
+            align-items: center; 
             line-height: 1.6;
         }
 
@@ -265,6 +306,8 @@
             const dialogueFont = localStorage.getItem('reader-font-dialogue') || 'default';
             const size = localStorage.getItem('reader-size') || 'medium';
             
+            document.body.className = ''; 
+
             document.body.classList.toggle('light-mode', mode === 'light');
             document.body.classList.toggle('theme-metal', mode === 'metal');
             document.body.classList.toggle('theme-rsidnt', mode === 'rsidnt');
@@ -331,19 +374,18 @@
         });
 
         function triggerGreenEasterEgg() {
-            setTimeout(() => {
-                if (window.unlockAchievement) window.unlockAchievement('unlocked-green');
-            }, 1500);
+            if (window.unlockAchievement) window.unlockAchievement('unlocked-green');
             
             const greenSound = new Audio('assets/media/bell.mp3');
             greenSound.volume = 0.8;
             greenSound.play().catch(err => console.log(err));
-            document.body.classList.add('green-mode');
+
             const eggImg = document.getElementById('green-easter-egg');
             eggImg.style.display = 'block';
-            eggImg.classList.remove('green-jumpscare');
-            void eggImg.offsetWidth; 
             eggImg.classList.add('green-jumpscare');
+            
+            document.body.classList.add('green-mode');
+
             setTimeout(() => {
                 eggImg.style.display = 'none';
             }, 800);
