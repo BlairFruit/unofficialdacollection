@@ -1,7 +1,7 @@
 {
   "name": "unofficial-deaxs-adventure-collection",
   "productName": "Unofficial Deaxs Adventure Collection",
-  "version": "1.2.0",
+  "version": "1.2.1",
   "coreFiles": [
     "home.html",
     "index.html",
@@ -34,6 +34,7 @@
     "electron-builder": "^24.13.3"
   },
   "dependencies": {
+    "discord-rpc": "^4.0.1",
     "electron-window-state": "^5.0.3"
   }
 }
