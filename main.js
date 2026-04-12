@@ -9,30 +9,57 @@ DiscordRPC.register(clientId);
 const rpc = new DiscordRPC.Client({ transport: 'ipc' });
 const startTimestamp = new Date();
 
-async function setActivity(details, state) {
-    if (!rpc || !clientId) return;
-    try {
-        await rpc.setActivity({
-            details: details || 'Loading...',
-            state: state || 'Main Menu',
-            startTimestamp,
-            largeImageKey: 'icon',
-            largeImageText: 'THE UNOFFICIAL DEAXS ADVENTURE COLLECTION',
-            instance: false,
-        });
-    } catch (err) {
-        console.error('Discord RPC Error:', err);
+let lastRpcUpdateTime = 0;
+let rpcUpdateTimeout = null;
+let isRpcReady = false;
+
+let currentRPCState = null; 
+
+async function processRpcUpdate() {
+    if (!rpc || !clientId || !isRpcReady || !currentRPCState) return;
+
+    const now = Date.now();
+    const timeSinceLastUpdate = now - lastRpcUpdateTime;
+    const cooldown = 15000;
+
+    if (timeSinceLastUpdate >= cooldown) {
+        try {
+            await rpc.setActivity({
+                details: currentRPCState.details,
+                state: currentRPCState.state,
+                startTimestamp,
+                largeImageKey: 'icon',
+                largeImageText: 'THE UNOFFICIAL DEAXS ADVENTURE COLLECTION',
+                instance: false,
+            });
+            console.log("Successfully pushed to Discord:", currentRPCState.state);
+            lastRpcUpdateTime = Date.now();
+        } catch (err) {
+            console.error('Discord RPC Error:', err);
+        }
+    } else {
+        if (rpcUpdateTimeout) clearTimeout(rpcUpdateTimeout);
+        rpcUpdateTimeout = setTimeout(() => {
+            processRpcUpdate();
+        }, cooldown - timeSinceLastUpdate);
     }
 }
 
 rpc.on('ready', () => {
-    setActivity('Booting up...', 'Main Menu');
+    isRpcReady = true;
+    processRpcUpdate();
 });
 
 rpc.login({ clientId }).catch(console.error);
 
 ipcMain.on('update-rpc', (event, args) => {
-    setActivity(args.details, args.state);
+    if (args && args.state) {
+        currentRPCState = {
+            details: args.details,
+            state: args.state
+        };
+        processRpcUpdate();
+    }
 });
 
 const windowStateKeeper = require('electron-window-state');
@@ -56,7 +83,8 @@ function createWindow () {
     webPreferences: {
       nodeIntegration: true,
       contextIsolation: false, 
-      webSecurity: false 
+      webSecurity: false,
+      sandbox: false
     }
   });
 
@@ -108,10 +136,31 @@ ipcMain.on('show-asset-menu', (event, assetPath) => {
   menu.popup(BrowserWindow.fromWebContents(event.sender));
 });
 
-app.whenReady().then(() => { createWindow(); });
+const gotTheLock = app.requestSingleInstanceLock();
+
+if (!gotTheLock) {
+  app.quit();
+} else {
+  app.on('second-instance', (event, commandLine, workingDirectory) => {
+    const win = BrowserWindow.getAllWindows()[0];
+    if (win) {
+      if (win.isMinimized()) win.restore();
+      win.focus();
+    }
+  });
+
+  app.whenReady().then(() => { 
+    createWindow(); 
+  });
+}
 
 app.on('window-all-closed', () => {
   if (process.platform !== 'darwin') {
     app.quit();
   }
+});
+
+process.on('uncaughtException', (error) => {
+    console.error('Fatal App Crash:', error);
+    app.quit(); 
 });

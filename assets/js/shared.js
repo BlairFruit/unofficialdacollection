@@ -1,16 +1,11 @@
-const { ipcRenderer } = require('electron');
+var { ipcRenderer } = require('electron');
 
 function minimizeApp() { ipcRenderer.send('minimize-app'); }
 function maximizeApp() { ipcRenderer.send('maximize-app'); }
 function closeApp() { ipcRenderer.send('close-app'); }
-
 function restartApp() { ipcRenderer.send('restart-app'); }
+
 window.restartApp = restartApp;
-
-window.minimizeApp = minimizeApp;
-window.maximizeApp = maximizeApp;
-window.closeApp = closeApp;
-
 window.minimizeApp = minimizeApp;
 window.maximizeApp = maximizeApp;
 window.closeApp = closeApp;
@@ -32,6 +27,8 @@ if (currentPath.includes('index.html')) {
     currentTitle = "Extras";
 } else if (currentPath.includes('achievements.html')) {
     currentTitle = "Achievements";
+} else if (currentPath.includes('settings.html')) {
+    currentTitle = "Settings";
 } else {
     currentTitle = "Main Menu";
 }
@@ -120,7 +117,7 @@ function closeTab(indexToRemove) {
 window.APP_ACHIEVEMENTS = {
     "unlocked-track-1": { page: "12", title: "Now we're getting somewhere", desc: "This is where the comic actually starts.\nUnlocked RSIDNT theme.", icon: "assets/media/icon-ach1.png", trigger: "video-end" },
     "unlocked-track-2": { page: "21", title: "Hey wait a second..", desc: "Where have I heard this one before?\nUnlocked An Absolute Banger.", icon: "assets/media/placeholder.png", trigger: "video-time", triggerTime: 4 },
-    "unlocked-track-3": { page: "28", title: "Down into The Threshold we go", desc: "You don't know what you're getting into.\nUnlocked Displacement.", icon: "assets/media/placeholder.png", trigger: "load" },
+    "unlocked-track-3": { page: "28", title: "Down into The Threshold we go", desc: "You don't know what you're getting into.\nUnlocked Displacement.", icon: "assets/media/icon-ach3.png", trigger: "load" },
     "unlocked-green": { page: "any", title: "Green and Inbetween", desc: "He's watching. He's green and inbetween.", icon: "assets/media/greendav.png", trigger: "custom" },
     "unlocked-end": { page: "last", title: "To Be Continued", desc: "You reached the end of the currently available pages.", icon: "assets/media/icon.png", trigger: "load" },
     "unlocked-coin-secret": { page: "extras", title: "How could this be", desc: "Find the medallion.", icon: "assets/media/medallion.gif", trigger: "custom" },
@@ -190,7 +187,7 @@ function saveCurrentPage() {
     
     if (!bookmarks.includes(currentPage)) {
         bookmarks.push(currentPage);
-        bookmarks.sort((a, b) => parseInt(a) - parseInt(b)); // Keep numerical order
+        bookmarks.sort((a, b) => parseInt(a) - parseInt(b));
         localStorage.setItem('saved-bookmarks', JSON.stringify(bookmarks));
     }
     renderBookmarkList();
@@ -257,11 +254,6 @@ document.addEventListener('click', (e) => {
     }
 });
 
-document.addEventListener("DOMContentLoaded", () => {
-    renderTabs();
-    updateBookmarkIcon();
-});
-
 window.handleAddressBar = function(event) {
     if (event.key === "Enter") {
         const val = event.target.value.toLowerCase().trim();
@@ -289,12 +281,49 @@ window.handleAddressBar = function(event) {
     }
 };
 
+function updateDiscordRPC() {
+    let details = "Playing the Collection";
+    let state = "In the menus";
+
+    const fullUrl = window.location.href.toLowerCase();
+
+    if (fullUrl.includes('index.html')) {
+        const urlParams = new URLSearchParams(window.location.search);
+        let p = urlParams.get('p') || "1";
+        state = `Reading Page ${p}`;
+        
+        if (parseInt(p) < 30) {
+            details = "Act 1";
+        } else {
+            details = "Act 2";
+        }
+    } else if (fullUrl.includes('extras.html')) {
+        state = "Browsing the Extras Gallery";
+    } else if (fullUrl.includes('achievements.html')) {
+        state = "Checking Achievements";
+    } else if (fullUrl.includes('settings.html')) {
+        state = "Changing Settings";
+    } else if (fullUrl.includes('secret.html')) {
+        state = "Snooping around...";
+        details = "TRUTHSEEKER555 BLOG";
+    } else {
+        state = "Main Menu";
+    }
+
+    ipcRenderer.send('update-rpc', { details, state });
+}
+
 document.addEventListener("DOMContentLoaded", () => {
+    if (typeof renderTabs === 'function') renderTabs();
+    if (typeof updateBookmarkIcon === 'function') updateBookmarkIcon();
+    
+    if (typeof updateDiscordRPC === 'function') updateDiscordRPC();
+
     const addressInput = document.getElementById('address-input');
     if (addressInput && !window.location.pathname.includes('index.html')) {
-        let currentPath = window.location.pathname.split('/').pop() || 'home';
-        currentPath = currentPath.replace('.html', '');
-        addressInput.value = `deaxs://${currentPath}`;
+        let cleanPath = window.location.pathname.split('/').pop() || 'home';
+        cleanPath = cleanPath.replace('.html', '');
+        addressInput.value = `deaxs://${cleanPath}`;
     }
 
     const currentHour = new Date().getHours();
