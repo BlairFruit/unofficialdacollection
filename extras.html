@@ -99,6 +99,7 @@
         <button class="tab-btn active" onclick="switchTab(this, 'soundtrack')">SOUNDTRACK</button>
         <button class="tab-btn" onclick="switchTab(this, 'gallery')">ASSET GALLERY</button>
         <button class="tab-btn" onclick="switchTab(this, 'unused')">UNUSED CONTENT</button>
+        <button class="tab-btn" onclick="switchTab(this, 'achievements')">ACHIEVEMENTS</button>
     </div>
     
     <div id="soundtrack" class="section active">
@@ -128,6 +129,7 @@
             <div class="gallery-grid" id="gallery-grid-act-2"></div>
         </div>
     </div>
+    
     <div id="unused" class="section">
         <div class="unused-container">
             <div class="unused-block">
@@ -159,6 +161,21 @@
                     "originally tyler wanted the design of the energy cores to not be the same cut as the chaos emeralds, but since i figured they serve similar enough roles anyways, we ultimately decided on leaving their design alone. the design shown here is tyler's initial design for a different energy core, based on an opal."
                 </div>
             </div>
+
+            <div class="unused-block">
+                <h3 style="margin-top: 0; color: white;">[beta deaxs]</h3>
+                <img src="assets/media/betadeaxs.png" alt="Unused Asset" onerror="this.style.display='none'">
+                <div class="dev-quote">
+                    "this was the very first asset made for deaxs adventure. tyler made it as an inital idea of what deaxs might look like when translated to a pixel style slightly reminiscent of homestuck. the design was updated when we realised the arms and head looked like ass, which went on to become the very design used today. who the hell is tyler?"
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="achievements" class="section">
+        <div class="achievements-container">
+            <div class="completion-header" id="completion-text">Unlocked: 0 / ?</div>
+            <div id="achievements-list"></div>
         </div>
     </div>
 
@@ -386,23 +403,52 @@
             }
         }
 
+        function loadAchievements() {
+            const listContainer = document.getElementById('achievements-list');
+            listContainer.innerHTML = ''; 
+            let unlockedCount = 0;
+            const totalAchievements = Object.keys(window.APP_ACHIEVEMENTS).length;
+
+            for (const [id, ach] of Object.entries(window.APP_ACHIEVEMENTS)) {
+                const isUnlocked = localStorage.getItem(id) === "true";
+                if (isUnlocked) unlockedCount++;
+
+                const box = document.createElement('div');
+                box.className = `achieve-box ${isUnlocked ? 'unlocked' : 'locked'}`;
+                const displayIcon = ach.icon || 'assets/media/icon.png';
+
+                box.innerHTML = `
+                    <img src="${displayIcon}" class="achieve-icon" alt="Achievement Icon">
+                    <div class="achieve-details">
+                        <h3>${isUnlocked ? ach.title : '???'}</h3>
+                        <p>${isUnlocked ? ach.desc : 'Keep exploring to unlock this secret.'}</p>
+                    </div>
+                `;
+                listContainer.appendChild(box);
+            }
+
+            document.getElementById('completion-text').innerText = `Unlocked: ${unlockedCount} / ${totalAchievements}`;
+        }
+
         document.addEventListener("DOMContentLoaded", () => {
             updateSoundtrack();
             loadGallery();
+            loadAchievements(); 
 
-            if (Math.random() < 0.10) { 
-                medallionActive = true;
+            if (localStorage.getItem('setting-eastereggs') !== 'false') {
+                if (Math.random() < 0.10) { 
+                    medallionActive = true;
 
-                const coinImg = document.getElementById('coin-img');
-                const coinTitle = document.getElementById('coin-title');
-                const coinQuote = document.getElementById('coin-quote');
+                    const coinImg = document.getElementById('coin-img');
+                    const coinTitle = document.getElementById('coin-title');
+                    const coinQuote = document.getElementById('coin-quote');
 
-                coinImg.src = "assets/media/medallion.gif"; 
-                coinImg.style.transform = "rotate(90deg)"; 
-                coinTitle.innerText = "[It seeems I have been transformed into a medallion.]";
-                coinTitle.style.fontFamily = "'medallion', monospace";
-                coinQuote.innerText = "\"how does this happen even\"";
-
+                    coinImg.src = "assets/media/medallion.gif"; 
+                    coinImg.style.transform = "rotate(90deg)"; 
+                    coinTitle.innerText = "[It seeems I have been transformed into a medallion.]";
+                    coinTitle.style.fontFamily = "'medallion', monospace";
+                    coinQuote.innerText = "\"how does this happen even\"";
+                }
             }
         });
 

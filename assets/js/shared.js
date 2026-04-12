@@ -134,6 +134,8 @@ window.unlockAchievement = function(id) {
 
     localStorage.setItem(id, "true");
 
+    if (localStorage.getItem('setting-achievements') === 'false') return;
+
     if (!document.getElementById('achievement-toast')) {
         const toastHTML = `
             <div id="achievement-toast" class="achievement-popup">
@@ -259,7 +261,9 @@ window.handleAddressBar = function(event) {
         const val = event.target.value.toLowerCase().trim();
         
         if (val === "valentine" || val === "deaxs://valentine") {
-            window.location.href = 'secret.html';
+            if (localStorage.getItem('setting-eastereggs') !== 'false') {
+                window.location.href = 'secret.html';
+            }
             return;
         }
 
@@ -282,6 +286,11 @@ window.handleAddressBar = function(event) {
 };
 
 function updateDiscordRPC() {
+    if (localStorage.getItem('setting-discord') === 'false') {
+        ipcRenderer.send('update-rpc', { details: '', state: '' });
+        return;
+    }
+
     let details = "Playing the Collection";
     let state = "In the menus";
 
@@ -291,6 +300,12 @@ function updateDiscordRPC() {
         const urlParams = new URLSearchParams(window.location.search);
         let p = urlParams.get('p') || "1";
         state = `Reading Page ${p}`;
+
+        if (localStorage.getItem('setting-spoilers') === 'true') {
+            state = "Reading a page";
+        } else {
+            state = `Reading Page ${p}`;
+        }
         
         if (parseInt(p) < 30) {
             details = "Act 1";
@@ -328,6 +343,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
     const currentHour = new Date().getHours();
     if (currentHour >= 0 && currentHour < 4) {
-        if (window.unlockAchievement) window.unlockAchievement('unlocked-nightowl');
+        if (localStorage.getItem('setting-eastereggs') !== 'false') {
+            if (window.unlockAchievement) window.unlockAchievement('unlocked-nightowl');
+        }
     }
 });

@@ -53,6 +53,19 @@ body { background-color: #121212; color: white; font-family: "Courier New", mono
 .achievement-text h4 { margin: 0 0 5px 0; color: gold; font-size: 1rem; }
 .achievement-text p { margin: 0; font-size: 0.85rem; color: #ccc; white-space: pre-wrap; }
 
+.achievements-container { max-width: 700px; margin: 0 auto; text-align: left; }
+.achieve-box { background: #1e1e1e; border: 2px solid #444; padding: 15px; margin-bottom: 15px; display: flex; align-items: center; gap: 20px; transition: 0.3s; }
+.achieve-box.unlocked { border-color: gold; box-shadow: 0 0 10px rgba(255, 215, 0, 0.2); background: #2a2a2a; }
+.achieve-icon { width: 64px; height: 64px; border: 2px solid #333; background: #000; object-fit: contain; }
+.achieve-box.unlocked .achieve-icon { border-color: gold; background: #111; }
+.achieve-box.locked .achieve-icon { filter: grayscale(100%) brightness(0.3); opacity: 0.5; }
+.achieve-details { flex-grow: 1; }
+.achieve-details h3 { margin: 0 0 5px 0; color: #666; font-family: "Courier New", monospace; }
+.achieve-box.unlocked .achieve-details h3 { color: gold; text-shadow: 1px 1px 0 #000; }
+.achieve-details p { margin: 0; color: #444; font-size: 0.95rem; white-space: pre-wrap; font-family: Arial, sans-serif; }
+.achieve-box.unlocked .achieve-details p { color: #ddd; }
+.completion-header { text-align: center; color: white; margin-bottom: 30px; font-size: 1.5rem; border-bottom: 2px solid #444; padding-bottom: 10px; }
+
 .bookmark-dropdown { position: absolute; top: 100%; right: 5px; margin-top: 2px; width: 220px; background: #c0c0c0; border-top: 2px solid #fff; border-left: 2px solid #fff; border-right: 2px solid #000; border-bottom: 2px solid #000; z-index: 10000; box-shadow: 2px 2px 5px rgba(0,0,0,0.5); font-family: "MS Sans Serif", Arial, sans-serif; color: black; text-align: left; }
 .bookmark-dropdown-action { padding: 6px 10px; cursor: pointer; font-size: 12px; font-weight: bold; }
 .bookmark-dropdown-action:hover { background: #000080; color: white; }

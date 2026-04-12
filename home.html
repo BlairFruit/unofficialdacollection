@@ -11,8 +11,18 @@
         .menu-btn { display: block; width: 200px; margin: 20px auto; padding: 15px; background: #222; color: white; text-decoration: none; border: 2px solid white; font-size: 1.2rem; font-family: inherit; box-sizing: border-box; transition: 0.3s; cursor: pointer; }
         .menu-btn:hover { background: white; color: black; }
         
-        .update-btn { display: block; width: 200px; margin: 20px auto; padding: 15px; background: #1a1a1a; color: #ffd700; font-family: "Courier New", monospace; font-size: 1.2rem; text-decoration: none; border: 2px solid #ffd700; cursor: pointer; transition: all 0.3s ease; box-shadow: 0 0 8px rgba(255, 215, 0, 0.2); text-shadow: 0 0 5px rgba(255, 215, 0, 0.5); animation: pulse-gold 2s infinite; }
-        .update-btn:hover { background: #ffd700; color: #121212; text-shadow: none; box-shadow: 0 0 20px rgba(255, 215, 0, 0.8); animation: none; }
+        .small-update-btn { 
+            background: none; 
+            border: none; 
+            color: #666; 
+            font-family: "Courier New", monospace; 
+            font-size: 0.9rem; 
+            text-decoration: underline; 
+            cursor: pointer; 
+            transition: 0.2s; 
+            margin-top: 40px;
+        }
+        .small-update-btn:hover { color: #fff; }
         @keyframes pulse-gold { 0% { box-shadow: 0 0 0 0 rgba(255, 215, 0, 0.4); } 70% { box-shadow: 0 0 15px 10px rgba(255, 215, 0, 0); } 100% { box-shadow: 0 0 0 0 rgba(255, 215, 0, 0); } }
         
         .modal-overlay { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.85); z-index: 10000; align-items: center; justify-content: center; backdrop-filter: blur(3px); }
@@ -87,13 +97,15 @@
 
     <img id="main-logo" src="assets/media/logo-menu.png" alt="Logo" style="max-width: 400px;">
     
-    <div id="menu-container" style="margin-top: 50px;">
-        <button onclick="startNewGame()" class="menu-btn">NEW GAME</button>
-        <a href="#" id="continue-btn" class="menu-btn">CONTINUE</a>
-        <a href="extras.html" class="menu-btn">EXTRAS</a>
-        <a href="achievements.html" class="menu-btn">ACHIEVEMENTS</a>
-        <button onclick="checkForUpdates()" class="update-btn">CHECK FOR UPDATES</button>
-        <p id="update-status" style="margin-top: 15px; font-weight: bold; color: #aaa;"></p>
+    <div style="text-align: center; margin-top: 50px;">
+        <div id="menu-container" style="text-align: center; margin-top: 50px;">
+        <button class="menu-btn" onclick="startNewGame()">New Game</button>
+        <button id="continue-btn" class="menu-btn" onclick="continueGame()">Continue</button>
+        <button class="menu-btn" onclick="window.location.href='settings.html'">Settings</button>
+        <button class="menu-btn" onclick="window.location.href='extras.html'">Extras</button>
+        <br>
+        <button class="small-update-btn" onclick="checkForUpdates()">check for updates</button>
+        <p id="update-status" style="margin-top: 10px; font-family: monospace;"></p>
     </div>
 
     <div id="version-display" class="version-display">App Version: Loading...</div>
@@ -129,6 +141,18 @@
                 menu.style.opacity = "1";
             }
 
+            const savedPage = localStorage.getItem('saved-page');
+            const continueBtn = document.getElementById('continue-btn');
+            
+            if (savedPage) {
+                continueBtn.innerText = `Continue (Pg. ${savedPage})`;
+            } else {
+                continueBtn.style.opacity = "0.3";
+                continueBtn.style.pointerEvents = "none";
+                continueBtn.innerText = "Continue";
+            }
+
+
             const versionDisplay = document.getElementById('version-display');
             
             function updateNetworkStatus() {
@@ -143,6 +167,12 @@
 
             window.addEventListener('online', updateNetworkStatus);
             window.addEventListener('offline', updateNetworkStatus);
+
+            if (localStorage.getItem('setting-autoupdate') !== 'false') {
+                setTimeout(() => {
+                    if (navigator.onLine) checkForUpdates();
+                }, 1500);
+            }
         });
 
         function startNewGame() {
@@ -158,14 +188,9 @@
 
         function cancelNewGame() { document.getElementById('new-game-modal').style.display = 'none'; }
 
-        const savedPage = localStorage.getItem('saved-page');
-        const continueBtn = document.getElementById('continue-btn');
-        if (savedPage) {
-            continueBtn.href = `index.html?p=${savedPage}`;
-            continueBtn.innerText = `CONTINUE (PG. ${savedPage})`;
-        } else {
-            continueBtn.style.opacity = "0.3";
-            continueBtn.style.pointerEvents = "none";
+        function continueGame() {
+            let savedPage = localStorage.getItem('saved-page') || "1";
+            window.location.href = 'index.html?p=' + savedPage;
         }
 
         const APP_REPO_URL = 'https://raw.githubusercontent.com/BlairFruit/unofficialdacollection/refs/heads/main/';
@@ -306,6 +331,20 @@
                         fs.mkdirSync(path.dirname(fullSavePath), { recursive: true });
                         
                         fs.writeFileSync(fullSavePath, memoryBuffer[file]);
+                    }
+
+                    const deadFiles = ['achievements.html']; 
+                    
+                    for (let deadFile of deadFiles) {
+                        let deadFilePath = path.join(__dirname, deadFile);
+                        if (fs.existsSync(deadFilePath)) {
+                            try {
+                                fs.unlinkSync(deadFilePath); // This physically deletes the file
+                                console.log(`Successfully deleted obsolete file: ${deadFile}`);
+                            } catch (err) {
+                                console.error(`Could not delete ${deadFile}:`, err);
+                            }
+                        }
                     }
 
                     statusText.innerText = "Update Complete! Restarting App...";

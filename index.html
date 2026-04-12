@@ -9,45 +9,176 @@
     <link rel="stylesheet" href="assets/css/shared.css">
     
     <style>
-        :root { --bg-color: #121212; --text-color: #e0e0e0; --block-bg: #0e0e1a; --block-border: #202225; --nav-btn-border: #fff; --nav-btn-text: #fff; --font-main: "Courier New", Courier, monospace; --base-font-size: 1.2rem; --dialogue-font-size: 1.1rem; }
-        body.light-mode { --bg-color: #ffffff; --text-color: #1a1a1a; --block-bg: #f0f0f5; --block-border: #d1d1d1; --nav-btn-border: #1a1a1a; --nav-btn-text: #1a1a1a; }
-        body.theme-blood { --bg-color: #220000; --text-color: #ff6666; --block-bg: #110000; --block-border: #ff0000; --nav-btn-border: #ff0000; --nav-btn-text: #ff0000; }
-        body.theme-void { --bg-color: #000000; --text-color: #555555; --block-bg: #000000; --block-border: #111111; --nav-btn-border: #333333; --nav-btn-text: #555555; }
-        body.font-serif { --font-main: "Georgia", serif; }
-        body.font-sans { --font-main: "Arial", Helvetica, sans-serif; }
+        /* THEME VARIABLES */
+        :root {
+            --bg-color: #121212;
+            --text-color: #e0e0e0;
+            --block-bg: #0e0e1a;
+            --block-border: #202225;
+            --nav-btn-border: #fff;
+            --nav-btn-text: #fff;
+            --font-main: "Courier New", Courier, monospace;
+            --font-dialogue: "Consolas", "Monaco", monospace;
+            --base-font-size: 1.2rem;
+            --dialogue-font-size: 1.1rem;
+        }
+
+        /* LIGHT MODE / COLOR OVERRIDES */
+        body.light-mode {
+            --bg-color: #ffffff;
+            --text-color: #1a1a1a;
+            --block-bg: #f0f0f5;
+            --block-border: #d1d1d1;
+            --nav-btn-border: #1a1a1a;
+            --nav-btn-text: #1a1a1a;
+        }
+        body.theme-metal { 
+            background-color: #000;
+            background-image: url('assets/media/metaltheme.png'); 
+            background-position: center 85px;
+            background-size: cover; 
+            background-repeat: no-repeat; 
+            background-attachment: fixed; 
+            
+            --text-color: #e0e0e0;
+            --block-bg: #0e0e1a;
+            --block-border: #202225;
+        }
+
+        body.theme-rsidnt { 
+            background-color: #0d001a; 
+            background-image: url('assets/media/themersidnt.png'); 
+            background-position: center 85px;
+            background-size: cover; 
+            background-repeat: no-repeat; 
+            background-attachment: fixed; 
+            
+            --text-color: #e0e0e0;
+            --block-bg: #0e0e1a;
+            --block-border: #202225;
+        }
+
+        /* NEW THEME 2: VINTAGE */
+        body.theme-threshold { 
+            background-color: #f4ecd8; 
+            background-image: url('assets/media/themethreshold.png'); 
+            background-position: center 110px;
+            background-size: cover; 
+            background-repeat: no-repeat; 
+            background-attachment: fixed; 
+            
+            --text-color: #e0e0e0;
+            --block-bg: #0e0e1a;
+            --block-border: #202225;
+        }
+
+        body.theme-thresholdred { 
+            background-color: #f4ecd8; 
+            background-image: url('assets/media/themethresholdred.png'); 
+            background-position: center 110px;
+            background-size: cover; 
+            background-repeat: no-repeat; 
+            background-attachment: fixed; 
+            
+            --text-color: #e0e0e0;
+            --block-bg: #0e0e1a;
+            --block-border: #202225;
+        }
+
+        body.main-font-serif { --font-main: "Georgia", serif; }
+        body.main-font-sans { --font-main: "Arial", Helvetica, sans-serif; }
+        body.main-font-comic { --font-main: "Comic Sans MS", "Comic Sans", cursive; }
+        body.main-font-dyslexic { --font-main: "OpenDyslexic", "Comic Sans MS", Arial, sans-serif; }
+        body.main-font-dyslexic .text-block { letter-spacing: 0.1em; line-height: 2; word-spacing: 0.2em; }
+
+        body.dialogue-font-serif { --font-dialogue: "Georgia", serif; }
+        body.dialogue-font-sans { --font-dialogue: "Arial", Helvetica, sans-serif; }
+        body.dialogue-font-comic { --font-dialogue: "Comic Sans MS", "Comic Sans", cursive; }
+        body.dialogue-font-dyslexic { --font-dialogue: "OpenDyslexic", "Comic Sans MS", Arial, sans-serif; }
+        body.dialogue-font-dyslexic .dialogue-box { letter-spacing: 0.1em; line-height: 2; word-spacing: 0.2em; }
+
+        /* SIZE OVERRIDES */
         body.size-small { --base-font-size: 0.9rem; --dialogue-font-size: 0.85rem; }
         body.size-large { --base-font-size: 1.6rem; --dialogue-font-size: 1.4rem; }
-        body { background: var(--bg-color); color: var(--text-color); font-family: var(--font-main); margin: 0; padding: 0; display: flex; flex-direction: column; align-items: center; line-height: 1.6; transition: background 0.3s, color 0.3s; }
-        body.no-scroll { overflow: hidden !important; }
-        
-        .theme-controls { position: fixed; top: 95px; right: 10px; z-index: 1000; display: flex; gap: 5px; background: rgba(0,0,0,0.5); padding: 8px; border-radius: 5px; backdrop-filter: blur(4px); }
-        .theme-controls select { background: #1e1e1e; color: #fff; border: 1px solid #444; font-family: sans-serif; font-size: 0.7rem; padding: 4px; cursor: pointer; outline: none; }
-        header { width: 100%; max-width: 800px; padding: 110px 20px 40px 20px; text-align: center; box-sizing: border-box; }
-        .logo { width: 100%; max-width: 800px; height: auto; display: block; margin: 0 auto; }
-        .comic-container { width: 100%; max-width: 800px; padding: 0 20px; box-sizing: border-box; min-height: 50vh; }
-        .content-block { width: 100%; margin-bottom: 50px; animation: fadeIn 0.8s ease-in; }
-        img, video { width: 100%; height: auto; display: block; border-radius: 2px; }
-        .text-block { text-align: left; line-height: 1.8; font-size: var(--base-font-size); margin: 30px 0; width: 100%; word-wrap: break-word; white-space: pre-wrap; }
-        .dialogue-box { background: var(--block-bg); border: 1px solid var(--block-border); border-radius: 4px; padding: 20px; margin: 25px 0; width: 100%; box-sizing: border-box; font-family: "Consolas", "Monaco", monospace; color: var(--text-color); white-space: pre-wrap; font-size: var(--dialogue-font-size); text-align: left; }
-        footer { width: 100%; max-width: 800px; padding: 60px 0; text-align: center; border-top: 1px solid #222; margin-top: 40px; }
-        
-        .page-indicator { font-size: 0.9rem; color: #555; margin: 0 20px; vertical-align: middle; }
-        .jump-container { margin-top: 30px; color: #aaa; font-size: 0.9rem; display: flex; align-items: center; justify-content: center; gap: 10px; font-weight: bold; }
-        .jump-input { background: #000; color: #00ff00; padding: 4px; width: 50px; text-align: center; font-family: "Courier New", monospace; font-weight: bold; font-size: 1rem; outline: none; border-top: 2px solid #555; border-left: 2px solid #555; border-right: 2px solid #eee; border-bottom: 2px solid #eee; border-radius: 0; }
-        input::-webkit-outer-spin-button, input::-webkit-inner-spin-button { -webkit-appearance: none; margin: 0; }
-        input[type=number] { -webkit-appearance: none; appearance: none; -moz-appearance: textfield; }
-        .jump-input:focus { background: #111; }
-        .jump-btn { background-color: #c0c0c0; color: black; font-weight: bold; font-family: "MS Sans Serif", Arial, sans-serif; font-size: 12px; padding: 4px 15px; cursor: pointer; border-top: 2px solid #ffffff; border-left: 2px solid #ffffff; border-right: 2px solid #000000; border-bottom: 2px solid #000000; }
-        .jump-btn:active { border-top: 2px solid #000000; border-left: 2px solid #000000; border-right: 2px solid #ffffff; border-bottom: 2px solid #ffffff; }
+        body.size-xlarge { --base-font-size: 2.0rem; --dialogue-font-size: 1.8rem; font-weight: bold; }
 
-        .comic-panel-img { cursor: pointer; transition: transform 0.2s ease, box-shadow 0.2s ease; }
-        .comic-panel-img:hover { transform: scale(1.02); box-shadow: 0 5px 20px rgba(0,0,0,0.5); z-index: 10; position: relative; }
+        /* --- THIS IS THE BLOCK THAT CENTERS EVERYTHING --- */
+        body { 
+            background: var(--bg-color); 
+            color: var(--text-color); 
+            font-family: var(--font-main); 
+            margin: 0; padding: 0; 
+            display: flex; flex-direction: column; align-items: center; 
+            line-height: 1.6;
+        }
+
+        /* --- LIGHTBOX STYLES --- */
         .lightbox { display: none; position: fixed; z-index: 10000; left: 0; top: 0; width: 100%; height: 100%; background-color: rgba(0, 0, 0, 0.9); align-items: center; justify-content: center; flex-direction: column; backdrop-filter: blur(5px); }
         .lightbox.show { display: flex; animation: fadeIn 0.2s ease-out; }
-        .lightbox-content { width: auto !important; height: auto !important; max-width: 90vw; max-height: 85vh; object-fit: contain; border: 2px solid gold; box-shadow: 0 0 25px rgba(0,0,0,0.8); background: #000; }
-        .lightbox-close-btn { margin-top: 20px; background: transparent; color: white; border: 1px solid white; padding: 8px 20px; cursor: pointer; font-family: "Courier New", monospace; transition: 0.2s; }
+        .lightbox-content { max-width: 90%; max-height: 80vh; border: 2px solid gold; box-shadow: 0 0 25px rgba(0,0,0,0.8); background: #000; }
+        #lightbox-img.lightbox-content { width: auto !important; height: auto !important; object-fit: contain; }
+        #lightbox-vid.lightbox-content { width: 100% !important; }
+        .lightbox-close-btn { margin-top: 20px; background: transparent; color: white; border: 1px solid white; padding: 8px 20px; cursor: pointer; font-family: "Courier New", monospace; transition: 0.3s; }
         .lightbox-close-btn:hover { background: white; color: black; }
-        
+        body.no-scroll { overflow: hidden; } /* Stops the background comic from scrolling while zoomed in */
+
+        header { width: 100%; max-width: 800px; padding: 40px 20px; text-align: center; box-sizing: border-box; }
+        .logo { width: 100%; max-width: 800px; height: auto; display: block; margin: 0 auto; }
+
+        .comic-container { width: 100%; max-width: 800px; padding: 0 20px; box-sizing: border-box; min-height: 50vh; margin: 0 auto; }
+        .content-block { width: 100%; margin-bottom: 50px; animation: fadeIn 0.8s ease-in; }
+        img, video { width: 100%; height: auto; display: block; border-radius: 2px; }
+
+        .text-block { 
+            text-align: left;
+            line-height: 1.8; 
+            font-size: var(--base-font-size);
+            margin: 30px 0;
+            width: 100%; 
+            word-wrap: break-word;
+            white-space: pre-wrap; 
+        }
+
+        .dialogue-box {
+            background: var(--block-bg); 
+            border: 1px solid var(--block-border);
+            border-radius: 4px;
+            padding: 20px;
+            margin: 25px 0;
+            width: 100%;
+            box-sizing: border-box;
+            font-family: var(--font-dialogue); 
+            color: var(--text-color);
+            white-space: pre-wrap; 
+            font-size: var(--dialogue-font-size);
+            text-align: left;
+        }
+
+        footer {
+            width: 100%;
+            max-width: 800px;
+            padding: 60px 0;
+            text-align: center;
+            border-top: 1px solid #222;
+            margin-top: 40px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .nav-btn {
+            background: transparent;
+            color: var(--nav-btn-text);
+            padding: 10px 25px;
+            text-decoration: none;
+            border: 2px solid var(--nav-btn-border); 
+            font-family: var(--font-main);
+            font-weight: bold;
+            transition: 0.3s;
+            display: inline-block;
+            margin: 5px 10px;
+        }
+
+        /* --- CUSTOM VIDEO PLAYER STYLES --- */
         .custom-video-wrapper { position: relative; width: 100%; background: #000; overflow: hidden; display: flex; flex-direction: column; margin: 20px 0; }
         .video-controls { position: absolute; bottom: 0; left: 0; width: 100%; box-sizing: border-box; display: flex; align-items: center; background: rgba(192, 192, 192, 0.95); padding: 5px 10px; gap: 10px; border-top: 2px solid #fff; color: black; z-index: 10; opacity: 0; transform: translateY(100%); transition: opacity 0.2s ease, transform 0.2s ease; }
         .custom-video-wrapper:hover .video-controls { opacity: 1; transform: translateY(0); }
@@ -55,10 +186,26 @@
         .video-controls input[type=range]::-webkit-slider-thumb { -webkit-appearance: none; appearance: none; height: 16px; width: 8px; background: gold; border: 1px solid black; cursor: pointer; box-shadow: 1px 1px 0 #fff inset; }
         .video-time-display { font-size: 10px; font-family: Arial, sans-serif; min-width: 60px; text-align: center; }
         .progress-bar { flex-grow: 1; }
+        /* ---------------------------------- */
 
-        body.green-mode { background-color: #00ff00 !important; transition: background-color 0.1s; }
-        .green-jumpscare { position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%) scale(0.1); z-index: 10000; pointer-events: none; opacity: 0; animation: jumpScareAnim 0.8s forwards ease-out; }
-        @keyframes jumpScareAnim { 0% { transform: translate(-50%, -50%) scale(0.1); opacity: 0; } 20% { transform: translate(-50%, -50%) scale(0.8); opacity: 1; } 70% { transform: translate(-50%, -50%) scale(1.0); opacity: 1; } 100% { transform: translate(-50%, -50%) scale(2); opacity: 0; } }
+        .nav-btn:hover { background: var(--nav-btn-text); color: var(--bg-color); }
+        .page-indicator { font-size: 0.9rem; color: #555; margin: 0 20px; vertical-align: middle; }
+
+        .jump-container { margin-top: 25px; color: #666; font-size: 0.8rem; }
+        .jump-input {
+            background: #1e1e1e;
+            border: 1px solid #333;
+            color: white;
+            padding: 5px;
+            width: 60px;
+            text-align: center;
+            font-family: var(--font-main);
+            outline: none;
+            border-radius: 3px;
+        }
+
+        @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+        /* ------------------------------ */
     </style>
 </head>
 <body>
@@ -101,23 +248,6 @@
         <button class="lightbox-close-btn" onclick="closeLightbox(event)">CLOSE VIEW</button>
     </div>
     
-    <div class="theme-controls">
-        <select id="mode-select" onchange="applyTheme()">
-            <option value="dark">Dark</option>
-            <option value="light">Light</option>
-        </select>
-        <select id="font-select" onchange="applyTheme()">
-            <option value="default">Mono</option>
-            <option value="serif">Serif</option>
-            <option value="sans">Sans</option>
-        </select>
-        <select id="size-select" onchange="applyTheme()">
-            <option value="medium">Standard</option>
-            <option value="small">Small</option>
-            <option value="large">Large</option>
-        </select>
-    </div>
-    
     <header>
         <img src="assets/media/logo.png" alt="Deaxs Adventure" class="logo">
     </header>
@@ -139,29 +269,28 @@
         let totalPagesCount = 1;
 
         function applyTheme() {
-            const mode = document.getElementById('mode-select').value;
-            const font = document.getElementById('font-select').value;
-            const size = document.getElementById('size-select').value;
+            const mode = localStorage.getItem('reader-mode') || 'dark';
+            const mainFont = localStorage.getItem('reader-font-main') || 'default';
+            const dialogueFont = localStorage.getItem('reader-font-dialogue') || 'default';
+            const size = localStorage.getItem('reader-size') || 'medium';
+            
+            // 1. Apply Colors
             document.body.classList.toggle('light-mode', mode === 'light');
-            document.body.classList.remove('font-serif', 'font-sans');
-            if (font === 'serif') document.body.classList.add('font-serif');
-            if (font === 'sans') document.body.classList.add('font-sans');
-            document.body.classList.remove('size-small', 'size-large');
-            if (size === 'small') document.body.classList.add('size-small');
-            if (size === 'large') document.body.classList.add('size-large');
-            localStorage.setItem('reader-mode', mode);
-            localStorage.setItem('reader-font', font);
-            localStorage.setItem('reader-size', size);
-        }
+            document.body.classList.toggle('theme-metal', mode === 'metal');
+            document.body.classList.toggle('theme-rsidnt', mode === 'rsidnt');
+            document.body.classList.toggle('theme-threshold', mode === 'threshold');
+            document.body.classList.toggle('theme-threshold', mode === 'thresholdred');
+            // 2. Apply Main Font
+            document.body.classList.remove('main-font-serif', 'main-font-sans', 'main-font-comic', 'main-font-dyslexic');
+            if (mainFont !== 'default') document.body.classList.add(`main-font-${mainFont}`);
 
-        function loadSavedTheme() {
-            const savedMode = localStorage.getItem('reader-mode') || 'dark';
-            const savedFont = localStorage.getItem('reader-font') || 'default';
-            const savedSize = localStorage.getItem('reader-size') || 'medium';
-            document.getElementById('mode-select').value = savedMode;
-            document.getElementById('font-select').value = savedFont;
-            document.getElementById('size-select').value = savedSize;
-            applyTheme();
+            // 3. Apply Dialogue Font
+            document.body.classList.remove('dialogue-font-serif', 'dialogue-font-sans', 'dialogue-font-comic', 'dialogue-font-dyslexic');
+            if (dialogueFont !== 'default') document.body.classList.add(`dialogue-font-${dialogueFont}`);
+            
+            // 4. Apply Sizes
+            document.body.classList.remove('size-small', 'size-large', 'size-xlarge');
+            if (size !== 'medium') document.body.classList.add(`size-${size}`);
         }
 
         function jumpToPage(event) {
@@ -201,13 +330,15 @@
                 window.location.search = `?p=${currentPage + 1}`;
             }
 
-            keyBuffer += e.key.toLowerCase();
-            if (keyBuffer.length > secretCode.length) {
-                keyBuffer = keyBuffer.slice(-secretCode.length);
-            }
-            if (keyBuffer === secretCode) {
-                triggerGreenEasterEgg();
-                keyBuffer = ''; 
+            if (localStorage.getItem('setting-eastereggs') !== 'false') {
+                keyBuffer += e.key.toLowerCase();
+                if (keyBuffer.length > secretCode.length) {
+                    keyBuffer = keyBuffer.slice(-secretCode.length);
+                }
+                if (keyBuffer === secretCode) {
+                    triggerGreenEasterEgg();
+                    keyBuffer = ''; 
+                }
             }
         });
 
@@ -258,7 +389,7 @@
         }
 
         async function loadComic() {
-            loadSavedTheme();
+            applyTheme();
             const container = document.getElementById('main-content');
             const footer = document.getElementById('nav-footer');
             const urlParams = new URLSearchParams(window.location.search);
@@ -501,6 +632,24 @@
         }
         
         window.onload = loadComic;
+
+        document.addEventListener('click', (e) => {
+            if (localStorage.getItem('setting-clickturn') === 'false') return;
+            
+            if (['button', 'input', 'a', 'video', 'select'].includes(e.target.tagName.toLowerCase())) return;
+            if (e.target.closest('.nav-btn')) return;
+
+            const urlParams = new URLSearchParams(window.location.search);
+            let currentPage = parseInt(urlParams.get('p') || "1");
+            const screenWidth = window.innerWidth;
+            const clickX = e.clientX;
+
+            if (clickX < screenWidth * 0.25 && currentPage > 1) {
+                window.location.search = `?p=${currentPage - 1}`;
+            } else if (clickX > screenWidth * 0.75 && currentPage < totalPagesCount) {
+                window.location.search = `?p=${currentPage + 1}`;
+            }
+        });
        
     </script> <script src="assets/js/shared.js"></script> 
 
