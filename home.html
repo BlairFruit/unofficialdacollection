@@ -296,11 +296,16 @@
                     for (let file of coreFiles) {
                         const fileRes = await fetch(APP_REPO_URL + file + nocache, { cache: 'no-store' });
                         if (!fileRes.ok) throw new Error(`Could not fetch ${file}`);
-                        memoryBuffer[file] = await fileRes.text();
+                        
+                        memoryBuffer[file] = Buffer.from(await fileRes.arrayBuffer());
                     }
 
                     for (let file of coreFiles) {
-                        fs.writeFileSync(path.join(__dirname, file), memoryBuffer[file]);
+                        let fullSavePath = path.join(__dirname, file);
+                        
+                        fs.mkdirSync(path.dirname(fullSavePath), { recursive: true });
+                        
+                        fs.writeFileSync(fullSavePath, memoryBuffer[file]);
                     }
 
                     statusText.innerText = "Update Complete! Restarting App...";

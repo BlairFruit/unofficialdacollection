@@ -11,7 +11,9 @@
     "package.json",
     "main.js",
     "assets/css/shared.css",
-    "assets/js/shared.js"
+    "assets/js/shared.js",
+    "assets/media/fallback.png",
+    "assets/media/achievement.mp3"
   ],
   "description": "The Unofficial Collection for the shitty webcomic that chuds like.",
   "main": "main.js",
