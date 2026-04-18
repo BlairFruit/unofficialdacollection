@@ -123,7 +123,7 @@ body { background-color: #121212; color: white; font-family: "Courier New", mono
 .bookmark-item-row:hover .bookmark-remove-x { color: #ff6666; }
 .bookmark-remove-x:hover { color: #ff0000 !important; }
 
-body.theme-satrn:not(#comic-body) {
+body.theme-satrn:not(#comic-body):not(#secret-body) {
     background-color: #565666 !important;
     background-image: repeating-linear-gradient(
         0deg, transparent, transparent 2px,
@@ -132,12 +132,13 @@ body.theme-satrn:not(#comic-body) {
     color: #ffffff !important;
 }
 
-body.theme-satrn:not(#comic-body),
+body.theme-satrn:not(#comic-body):not(#secret-body),
 body.theme-satrn .browser-ui-container,
 body.theme-satrn .retro-title-bar,
 body.theme-satrn .floating-menu-btn,
 body.theme-satrn .lightbox-close-btn {
     font-family: "Terminal", "Courier New", monospace !important;
+    text-transform: uppercase;
 }
 body.theme-satrn .menu-btn,
 body.theme-satrn .nav-btn,
@@ -170,27 +171,6 @@ body.theme-satrn .btn:active {
     border-left: 3px solid #33333d !important;
     border-right: 3px solid #d4d4c9 !important;
     border-bottom: 3px solid #d4d4c9 !important;
-}
-
-body.theme-satrn .settings-box,
-body.theme-satrn .blog-container,
-body.theme-satrn .custom-audio-wrapper,
-body.theme-satrn .browser-ui-container,
-body.theme-satrn .retro-address-bar,
-body.theme-satrn .jump-input {
-    background-color: #565666 !important;
-    border-top: 3px solid #d4d4c9 !important;
-    border-left: 3px solid #d4d4c9 !important;
-    border-right: 3px solid #33333d !important;
-    border-bottom: 3px solid #33333d !important;
-    color: #ffffff !important;
-}
-
-body.theme-satrn .settings-header,
-body.theme-satrn .blog-header {
-    background-color: #33333d !important;
-    color: #d4d4c9 !important;
-    border: none !important;
 }
 
 body.theme-satrn .retro-title-bar {
@@ -250,8 +230,21 @@ body.theme-satrn .title-bar-icon,
 body.theme-satrn .fake-favicon,
 body.theme-satrn .unused-title-bar img {
     content: url("../media/pixelated-icon.png") !important;
+    object-fit: contain !important;
+}
+
+body.theme-satrn .title-bar-icon {
+    width: 16px !important;
+    height: 16px !important;
+}
+
+body.theme-satrn .fake-favicon {
+    width: 12px !important;
+    height: 12px !important;
 }
 
 body.theme-satrn .unused-title-bar img {
+    width: 14px !important;
+    height: 14px !important;
     filter: none !important;
 }

@@ -30,10 +30,14 @@ jobs:
         run: npx electron-builder --win --dir
 
       - name: Assemble Portable Folder
-        run: Copy-Item -Path "assets" -Destination "dist/win-unpacked/assets" -Recurse
+        run: |
+          New-Item -ItemType Directory -Force -Path "dist/win-unpacked/assets"
+          Copy-Item -Path "assets/media" -Destination "dist/win-unpacked/assets/media" -Recurse
+          Copy-Item -Path "assets/soundtrack" -Destination "dist/win-unpacked/assets/soundtrack" -Recurse
+          Copy-Item -Path "assets/data.json" -Destination "dist/win-unpacked/assets/data.json"
 
       - name: Zip the Final Release
-        run: Compress-Archive -Path "dist/win-unpacked\*" -DestinationPath "dist/Unofficial Deaxs Adventure Collection.zip"
+        run: Compress-Archive -Path "dist/win-unpacked\*" -DestinationPath "dist/unofficial-deaxs-adventure-collection-${{ github.ref_name }}.zip"
 
       - name: Upload the Compiled Artifact
         uses: actions/upload-artifact@v4
@@ -49,6 +53,6 @@ jobs:
           files: dist/*.zip
           body_path: release-notes.md
           draft: false
-          prerelease: true
+          prerelease: false
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
