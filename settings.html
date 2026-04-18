@@ -260,7 +260,12 @@
             const newTheme = document.getElementById('theme-select').value;
             localStorage.setItem('app-theme', newTheme);
             
-            document.body.classList.remove('theme-satrn'); 
+            document.body.classList.remove('theme-satrn');
+            const iconPath = newTheme === 'theme-satrn' ? "assets/media/pixelated-icon.png" : "assets/media/icon.png";
+            document.querySelectorAll('.title-bar-icon, .fake-favicon, .unused-title-bar img').forEach(img => {
+                img.src = iconPath;
+            });
+            
             if (newTheme !== 'default') {
                 document.body.classList.add(newTheme);
             }

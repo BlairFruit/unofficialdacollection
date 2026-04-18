@@ -62,7 +62,8 @@ function renderTabs() {
         }
 
         const icon = document.createElement('img');
-        icon.src = "assets/media/icon.png";
+        const currentTheme = localStorage.getItem('app-theme');
+        icon.src = currentTheme === 'theme-satrn' ? "assets/media/pixelated-icon.png" : "assets/media/icon.png";
         icon.className = "fake-favicon";
         
         tab.appendChild(icon);
@@ -330,6 +331,12 @@ document.addEventListener("DOMContentLoaded", () => {
     const globalTheme = localStorage.getItem('app-theme');
     if (globalTheme && globalTheme !== 'default') {
         document.body.classList.add(globalTheme);
+    }
+
+    if (globalTheme === 'theme-satrn') {
+        document.querySelectorAll('.title-bar-icon, .fake-favicon, .unused-title-bar img').forEach(img => {
+            img.src = "assets/media/pixelated-icon.png";
+        });
     }
 
     if (typeof renderTabs === 'function') renderTabs();

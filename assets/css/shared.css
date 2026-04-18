@@ -132,14 +132,15 @@ body.theme-satrn:not(#comic-body):not(#secret-body) {
     color: #ffffff !important;
 }
 
-body.theme-satrn:not(#comic-body):not(#secret-body),
 body.theme-satrn .browser-ui-container,
 body.theme-satrn .retro-title-bar,
 body.theme-satrn .floating-menu-btn,
-body.theme-satrn .lightbox-close-btn {
+body.theme-satrn .lightbox-close-btn,
+body.theme-satrn .split-sidebar .tab-btn {
     font-family: "Terminal", "Courier New", monospace !important;
     text-transform: uppercase;
 }
+
 body.theme-satrn .menu-btn,
 body.theme-satrn .nav-btn,
 body.theme-satrn .tab-btn,
@@ -229,7 +230,6 @@ body.theme-satrn .split-content {
 body.theme-satrn .title-bar-icon,
 body.theme-satrn .fake-favicon,
 body.theme-satrn .unused-title-bar img {
-    content: url("../media/pixelated-icon.png") !important;
     object-fit: contain !important;
 }
 
