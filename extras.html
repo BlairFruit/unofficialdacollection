@@ -2,7 +2,7 @@
 <html>
 <head>
     <title>The Unofficial DEAXS ADVENTURE Collection - Extras</title>
-    
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; img-src 'self' data: comic: https://raw.githubusercontent.com; media-src 'self' comic: https://raw.githubusercontent.com; connect-src 'self' https://raw.githubusercontent.com;">
     <link rel="stylesheet" href="assets/css/shared.css">
     
     <style>
@@ -49,10 +49,43 @@
         .lightbox-close-btn:hover { background: white; color: black; }
         
         .unused-container { max-width: 800px; margin: 0 auto; text-align: left; }
-        .unused-block { background: #1e1e1e; border: 1px solid #444; border-left: 4px solid gold; padding: 20px; margin-bottom: 30px; }
-        .unused-block img { max-width: 100%; border: 2px solid #000; margin-bottom: 15px; display: block; }
-        .dev-quote { font-family: "Consolas", monospace; color: #ccc; font-style: italic; background: #000; padding: 15px; border-radius: 4px; border: 1px dashed #666; }
-        .dev-quote::before { content: "DEV NOTE: "; color: gold; font-weight: bold; font-style: normal; }
+        .unused-block { 
+            background-color: #e1eae3;
+            background-image: repeating-linear-gradient(
+                0deg, transparent, transparent 2px,
+                rgba(0, 0, 0, 0.06) 2px, rgba(0, 0, 0, 0.06) 4px
+            );
+            border: 3px solid #222228; 
+            border-radius: 4px; 
+            margin-bottom: 35px; 
+            color: #111; 
+            overflow: hidden;
+            box-shadow: 5px 5px 0 rgba(0,0,0,0.4);
+        }
+        .unused-title-bar {
+            background-color: #222228;
+            color: #d4d4c9;
+            padding: 5px 10px;
+            font-family: "Daydream", "Courier New", monospace;
+            font-size: 14px;
+            display: flex;
+            align-items: center;
+            border-bottom: 2px solid #111;
+        }
+        .unused-content-inner {
+            padding: 20px;
+            font-family: "DOSVGA", "Courier New", monospace;
+            font-weight: bold;
+        }
+        .unused-content-inner h3 { 
+            margin-top: 0; 
+            color: #111 !important; 
+            border-bottom: 2px dashed #9c9c8d; 
+            padding-bottom: 10px; 
+        }
+        .unused-block img { max-width: 100%; border: 2px solid #222228; margin-bottom: 15px; display: block; }
+        .dev-quote { color: #333; font-style: normal; border-left: 4px solid #222228; padding: 10px 15px; margin-top: 15px; }
+        .dev-quote::before { content: "DEV NOTE: "; color: #111; font-weight: bold; }
     </style>
 </head>
 <body>
@@ -95,11 +128,108 @@
     
     <a href="home.html" class="nav-btn floating-menu-btn">← BACK TO MENU</a>
     
-    <div class="tab-container">
-        <button class="tab-btn active" onclick="switchTab(this, 'soundtrack')">SOUNDTRACK</button>
-        <button class="tab-btn" onclick="switchTab(this, 'gallery')">ASSET GALLERY</button>
-        <button class="tab-btn" onclick="switchTab(this, 'unused')">UNUSED CONTENT</button>
-        <button class="tab-btn" onclick="switchTab(this, 'achievements')">ACHIEVEMENTS</button>
+    <div class="split-layout">
+        <div class="split-sidebar tab-container">
+            <button class="tab-btn active" onclick="switchTab(this, 'soundtrack')">SOUNDTRACK</button>
+            <button class="tab-btn" onclick="switchTab(this, 'gallery')">ASSET GALLERY</button>
+            <button class="tab-btn" onclick="switchTab(this, 'unused')">UNUSED CONTENT</button>
+            <button class="tab-btn" onclick="switchTab(this, 'achievements')">ACHIEVEMENTS</button>
+        </div>
+        
+        <div class="split-content">
+            
+            <div id="soundtrack" class="section active">
+                <p style="color: #888;" id="album-instructions">Unlock achievements to discover the Soundtrack!</p>
+                <div class="album-wrapper" id="vol1-wrapper" style="display: none;">
+                    <img src="assets/media/vol1.jpg" alt="Volume 1 Cover" class="album-cover" onclick="toggleTracks()">
+                    <div class="track-list" id="vol1-tracks">
+                        <div class="track-item" id="track-1-container"><span class="locked">01 - ???</span></div>
+                        <div class="track-item" id="track-2-container"><span class="locked">02 - ???</span></div>
+                        <div class="track-item" id="track-3-container"><span class="locked">03 - ???</span></div>
+                    </div>
+                </div>
+            </div>
+            
+            <div id="gallery" class="section">
+                <p class="gallery-instructions">Left-click to Focus. Right-click to Save or View Folder.</p>
+                
+                <div class="sub-tab-container">
+                    <button class="tab-btn sub-tab active" id="act-1-tab-btn" onclick="switchGalleryAct(1, this)">ACT 1</button>
+                    <button class="tab-btn sub-tab" id="act-2-tab-btn" onclick="switchGalleryAct(2, this)">ACT 2</button>
+                </div>
+
+                <div id="act-1-gallery" class="gallery-act-container" style="display: block;">
+                    <div class="gallery-grid" id="gallery-grid-act-1"></div>
+                </div>
+                <div id="act-2-gallery" class="gallery-act-container" style="display: none;">
+                    <div class="gallery-grid" id="gallery-grid-act-2"></div>
+                </div>
+            </div>
+            
+            <div id="unused" class="section">
+                <div class="unused-container">
+                    
+                    <div class="unused-block">
+                        <div class="unused-content-inner">
+                            <h3 id="coin-title">[unused coin-head gif]</h3>
+                            <img id="coin-img" src="assets/media/coinheads.gif" alt="Unused Asset" onerror="this.style.display='none'">
+                            <div id="coin-quote" class="dev-quote">
+                                "this went unused because the tails vote won, but i already had the gif ready so i just kind of kept it."
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="unused-block">
+                        <div class="unused-content-inner">
+                            <h3>[egbert dance]</h3>
+                            <img src="assets/media/THEGIF.gif" alt="Unused Asset" onerror="this.style.display='none'">
+                            <div class="dev-quote">
+                                "this gif was used for one of the announcements regarding deaxs adventure, but it never was actually used in the comic. atleast not in high quality"
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="unused-block">
+                        <div class="unused-content-inner">
+                            <h3>[Sketches for sprites used in the Comic]</h3>
+                            <img src="assets/media/sketches.png" alt="Unused Asset" onerror="this.style.display='none'">
+                            <div class="dev-quote">
+                                "these are sketches i made before tracing them into digital so i could use them as panels."
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="unused-block">
+                        <div class="unused-content-inner">
+                            <h3>[scrapped energy core design]</h3>
+                            <img src="assets/media/oldcore.png" alt="Unused Asset" onerror="this.style.display='none'">
+                            <div class="dev-quote">
+                                "originally tyler wanted the design of the energy cores to not be the same cut as the chaos emeralds, but since i figured they serve similar enough roles anyways, we ultimately decided on leaving their design alone. the design shown here is tyler's initial design for a different energy core, based on an opal."
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="unused-block">
+                        <div class="unused-content-inner">
+                            <h3>[beta deaxs]</h3>
+                            <img src="assets/media/betadeaxs.png" alt="Unused Asset" onerror="this.style.display='none'">
+                            <div class="dev-quote">
+                                "this was the very first asset made for deaxs adventure. tyler made it as an inital idea of what deaxs might look like when translated to a pixel style slightly reminiscent of homestuck. the design was updated when we realised the arms and head looked like ass, which went on to become the very design used today. who the hell is tyler?"
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+            <div id="achievements" class="section">
+                <div class="achievements-container">
+                    <div class="completion-header" id="completion-text">Unlocked: 0 / ?</div>
+                    <div id="achievements-list"></div>
+                </div>
+            </div>
+            
+        </div> 
     </div>
     
     <div id="soundtrack" class="section active">
@@ -182,9 +312,6 @@
     <script src="assets/js/shared.js"></script>
     
     <script>
-        const path = require('path');
-        const fs = require('fs');
-
         let medallionActive = false;
 
         function switchTab(btn, tabId) {
@@ -241,7 +368,7 @@
             return `
                 <div class="track-header">
                     <span>${name}</span>
-                    <a href="assets/soundtrack/${file}" download="${file}" class="btn">SAVE</a>
+                    <button class="btn" onclick="window.api.showAssetMenu('assets/soundtrack/${file}')">SAVE</button>
                 </div>
                 <div class="custom-audio-wrapper">
                     <audio src="assets/soundtrack/${file}" class="custom-audio"></audio>
@@ -334,10 +461,9 @@
             });
         }
 
-        function loadGallery() {
+        async function loadGallery() { 
             const act1Container = document.getElementById('gallery-grid-act-1');
             const act2Container = document.getElementById('gallery-grid-act-2');
-            const dataPath = path.join(__dirname, 'assets', 'data.json');
             const highestPage = parseInt(localStorage.getItem('highest-page')) || parseInt(localStorage.getItem('saved-page')) || 1;
             
             const act2Btn = document.getElementById('act-2-tab-btn');
@@ -348,9 +474,10 @@
                 act2Container.innerHTML = "<p style='grid-column: 1/-1; text-align: center; color: #666; font-family: monospace; font-size: 1.1rem; margin-top: 30px;'>[ SPOILER WARNING ]<br><br>Keep reading past Page 29 to unlock these assets.</p>";
             }
 
+            const appPath = await window.api.getAppPath();
+
             try {
-                const rawData = fs.readFileSync(dataPath, 'utf8');
-                const data = JSON.parse(rawData);
+                const data = await window.api.getComicData(); 
                 const loadedAssets = new Set();
 
                 for (let page in data.pages) {
@@ -358,8 +485,8 @@
                         data.pages[page].forEach(block => {
                             if ((block.type === 'image' || block.type === 'video') && !loadedAssets.has(block.value)) {
                                 loadedAssets.add(block.value);
-                                
-                                const fullAssetPath = path.join(__dirname, block.value);
+
+                                const fullAssetPath = appPath + block.value;
                                 let element;
 
                                 if (block.type === 'video') {
@@ -369,6 +496,8 @@
                                     element.loop = true;
                                     element.autoplay = true;
                                     element.className = 'gallery-item';
+
+                                    element.oncanplay = () => element.play().catch(e => {});
                                 } else {
                                     element = document.createElement('img');
                                     element.src = fullAssetPath;
@@ -385,7 +514,7 @@
                                 element.addEventListener('click', () => { openLightbox(fullAssetPath, block.type); });
                                 element.addEventListener('contextmenu', (e) => {
                                     e.preventDefault(); 
-                                    ipcRenderer.send('show-asset-menu', fullAssetPath);
+                                    window.api.showAssetMenu(fullAssetPath);
                                 });
 
                                 if (parseInt(page) <= 29) {

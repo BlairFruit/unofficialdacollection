@@ -2,9 +2,8 @@
 <html>
 <head>
     <title>The Unofficial DEAXS ADVENTURE Collection</title>
-    
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; img-src 'self' data: comic: https://raw.githubusercontent.com; media-src 'self' comic: https://raw.githubusercontent.com; connect-src 'self' https://raw.githubusercontent.com;">
     <link rel="stylesheet" href="assets/css/shared.css">
-    
     <style>
         body { padding-top: 110px; }
         
@@ -99,13 +98,14 @@
     
     <div style="text-align: center; margin-top: 50px;">
         <div id="menu-container" style="text-align: center; margin-top: 50px;">
-        <button class="menu-btn" onclick="startNewGame()">New Game</button>
-        <button id="continue-btn" class="menu-btn" onclick="continueGame()">Continue</button>
-        <button class="menu-btn" onclick="window.location.href='settings.html'">Settings</button>
-        <button class="menu-btn" onclick="window.location.href='extras.html'">Extras</button>
-        <br>
-        <button class="small-update-btn" onclick="checkForUpdates()">check for updates</button>
-        <p id="update-status" style="margin-top: 10px; font-family: monospace;"></p>
+            <button class="menu-btn" onclick="startNewGame()">New Game</button>
+            <button id="continue-btn" class="menu-btn" onclick="continueGame()">Continue</button>
+            <button class="menu-btn" onclick="window.location.href='settings.html'">Settings</button>
+            <button class="menu-btn" onclick="window.location.href='extras.html'">Extras</button>
+            <br>
+            <button class="small-update-btn" onclick="checkForUpdates()">check for updates</button>
+            <p id="update-status" style="margin-top: 10px; font-family: monospace;"></p>
+        </div>
     </div>
 
     <div id="version-display" class="version-display">App Version: Loading...</div>
@@ -113,21 +113,20 @@
     <script src="assets/js/shared.js"></script>
 
     <script>
-        const fs = require('fs');
-        const path = require('path');
-
         let CURRENT_VERSION = "";
 
-        document.addEventListener("DOMContentLoaded", () => {
+        function checkForUpdates() {
+            window.api.checkForUpdates();
+        }
+
+        document.addEventListener("DOMContentLoaded", async () => {
             const logo = document.getElementById('main-logo');
             const menu = document.getElementById('menu-container');
 
             try {
-                const localVersionPath = path.join(__dirname, 'package.json');
-                const localVersionData = JSON.parse(fs.readFileSync(localVersionPath, 'utf8'));
-                CURRENT_VERSION = localVersionData.version;
+                CURRENT_VERSION = await window.api.getAppVersion();
             } catch (err) {
-                console.error("Could not read local package.json", err);
+                console.error("Could not read app version", err);
                 CURRENT_VERSION = "Unknown";
             }
 
@@ -152,7 +151,6 @@
                 continueBtn.innerText = "Continue";
             }
 
-
             const versionDisplay = document.getElementById('version-display');
             
             function updateNetworkStatus() {
@@ -164,9 +162,18 @@
             }
 
             updateNetworkStatus();
-
             window.addEventListener('online', updateNetworkStatus);
             window.addEventListener('offline', updateNetworkStatus);
+
+            window.api.onUpdateStatus((msg, color) => {
+                const statusText = document.getElementById('update-status');
+                statusText.innerText = msg;
+                statusText.style.color = color;
+                
+                if (msg.includes('Failed') && !versionDisplay.innerHTML.includes('[OFFLINE')) {
+                    versionDisplay.innerHTML += ' <span style="color: #ff3333; font-weight: bold; margin-left: 5px;">[UPDATE FAILED]</span>';
+                }
+            });
 
             if (localStorage.getItem('setting-autoupdate') !== 'false') {
                 setTimeout(() => {
@@ -192,189 +199,7 @@
             let savedPage = localStorage.getItem('saved-page') || "1";
             window.location.href = 'index.html?p=' + savedPage;
         }
-
-        const APP_REPO_URL = 'https://raw.githubusercontent.com/BlairFruit/unofficialdacollection/refs/heads/main/';
-        const CONTENT_REPO_URL = 'https://raw.githubusercontent.com/Scinio/Scinio.github.io/refs/heads/main/';
         
-        const LOCAL_DATA_PATH = path.join(__dirname, 'assets', 'data.json');
-        const statusText = document.getElementById('update-status');
-
-        async function checkForUpdates() {
-            statusText.innerText = "Checking for updates...";
-            statusText.style.color = "#aaa";
-
-            try {
-                const nocache = `?t=${new Date().getTime()}`;
-                let needsRestart = false;
-
-                const versionRes = await fetch(APP_REPO_URL + 'package.json' + nocache, { cache: 'no-store' });
-                let remoteVersionData = null;
-                if (versionRes.ok) {
-                    remoteVersionData = await versionRes.json();
-                    
-                    const isNewer = (remote, local) => {
-                        const r = remote.split('.').map(Number);
-                        const l = local.split('.').map(Number);
-                        for (let i = 0; i < Math.max(r.length, l.length); i++) {
-                            if ((r[i] || 0) > (l[i] || 0)) return true;
-                            if ((r[i] || 0) < (l[i] || 0)) return false;
-                        }
-                        return false;
-                    };
-
-                    if (isNewer(remoteVersionData.version, CURRENT_VERSION)) {
-                        needsRestart = true;
-                        statusText.innerText = `App Update v${remoteVersionData.version} found! Processing...`;
-                        statusText.style.color = "gold";
-                    }
-                }
-
-                const response = await fetch(CONTENT_REPO_URL + 'assets/data.json' + nocache, { cache: 'no-store' });
-                if (!response.ok) throw new Error("Could not connect to Comic Data repository.");
-                const remoteData = await response.json();
-
-                const localData = JSON.parse(fs.readFileSync(LOCAL_DATA_PATH, 'utf8'));
-                let hasChanges = false;
-                let downloadQueue = [];
-
-                for (let p in localData.pages) {
-                    if (!remoteData.pages[p]) {
-                        delete localData.pages[p];
-                        hasChanges = true;
-                    }
-                }
-
-                for (let p in remoteData.pages) {
-                    let remotePageBlocks = remoteData.pages[p];
-                    let mappedPageBlocks = JSON.parse(JSON.stringify(remotePageBlocks));
-
-                    let assetCounter = 1;
-                    mappedPageBlocks.forEach(block => {
-                        if (block.type === 'image' || block.type === 'video') {
-                            let ext = path.extname(block.value);
-                            block.value = `assets/media/p${p}-${assetCounter}${ext}`;
-                            assetCounter++;
-                        }
-                    });
-
-                    let isDifferent = false;
-                    if (!localData.pages[p]) {
-                        isDifferent = true;
-                    } else if (localData.pages[p].length !== mappedPageBlocks.length) {
-                        isDifferent = true;
-                    } else {
-                        for (let i = 0; i < mappedPageBlocks.length; i++) {
-                            if (localData.pages[p][i].value !== mappedPageBlocks[i].value) {
-                                isDifferent = true;
-                                break;
-                            }
-                        }
-                    }
-
-                    assetCounter = 1;
-                    remotePageBlocks.forEach(block => {
-                        if (block.type === 'image' || block.type === 'video') {
-                            let remotePath = block.value;
-                            let ext = path.extname(remotePath);
-                            let localSavePath = path.join(__dirname, 'assets', 'media', `p${p}-${assetCounter}${ext}`);
-
-                            if (isDifferent || !fs.existsSync(localSavePath)) {
-                                downloadQueue.push({
-                                    url: CONTENT_REPO_URL + remotePath + nocache,
-                                    savePath: localSavePath
-                                });
-                            }
-                            assetCounter++;
-                        }
-                    });
-
-                    if (isDifferent) {
-                        localData.pages[p] = mappedPageBlocks;
-                        hasChanges = true;
-                    }
-                }
-
-                if (downloadQueue.length > 0) {
-                    for (let i = 0; i < downloadQueue.length; i++) {
-                        let item = downloadQueue[i];
-                        statusText.innerText = `Downloading media ${i + 1} of ${downloadQueue.length}...`;
-                        fs.mkdirSync(path.dirname(item.savePath), { recursive: true });
-                        let fileRes = await fetch(item.url);
-                        let buffer = Buffer.from(await fileRes.arrayBuffer());
-                        fs.writeFileSync(item.savePath, buffer);
-                    }
-                }
-
-                if (hasChanges) {
-                    fs.writeFileSync(LOCAL_DATA_PATH, JSON.stringify(localData, null, 2));
-                }
-
-                if (needsRestart && remoteVersionData) {
-                    statusText.innerText = "Downloading core app files...";
-                    const coreFiles = remoteVersionData.coreFiles || [
-                        'home.html', 'index.html', 'extras.html', 'achievements.html',
-                        'secret.html', 'package.json', 'assets/css/shared.css', 'assets/js/shared.js', 
-                        'main.js'
-                    ];
-                    
-                    let memoryBuffer = {};
-                    for (let file of coreFiles) {
-                        const fileRes = await fetch(APP_REPO_URL + file + nocache, { cache: 'no-store' });
-                        if (!fileRes.ok) throw new Error(`Could not fetch ${file}`);
-                        
-                        memoryBuffer[file] = Buffer.from(await fileRes.arrayBuffer());
-                    }
-
-                    for (let file of coreFiles) {
-                        let fullSavePath = path.join(__dirname, file);
-                        
-                        fs.mkdirSync(path.dirname(fullSavePath), { recursive: true });
-                        
-                        fs.writeFileSync(fullSavePath, memoryBuffer[file]);
-                    }
-
-                    const deadFiles = ['achievements.html']; 
-                    
-                    for (let deadFile of deadFiles) {
-                        let deadFilePath = path.join(__dirname, deadFile);
-                        if (fs.existsSync(deadFilePath)) {
-                            try {
-                                fs.unlinkSync(deadFilePath); // This physically deletes the file
-                                console.log(`Successfully deleted obsolete file: ${deadFile}`);
-                            } catch (err) {
-                                console.error(`Could not delete ${deadFile}:`, err);
-                            }
-                        }
-                    }
-
-                    statusText.innerText = "Update Complete! Restarting App...";
-                    statusText.style.color = "#00ff00";
-                    setTimeout(() => {
-                        if (typeof restartApp === "function") restartApp();
-                        else closeApp();
-                    }, 2000);
-                    return;
-                }
-
-                if (hasChanges || downloadQueue.length > 0) {
-                    statusText.innerText = "Content updated successfully!";
-                    statusText.style.color = "#00ff00";
-                } else {
-                    statusText.innerText = "You are completely up to date!";
-                    statusText.style.color = "#00ff00";
-                }
-
-            } catch (err) {
-                console.error(err);
-                statusText.innerText = "Update Failed: Connection dropped or data corrupted.";
-                statusText.style.color = "#ff3333";
-                
-                const versionDisplay = document.getElementById('version-display');
-                if (!versionDisplay.innerHTML.includes('[OFFLINE')) {
-                    versionDisplay.innerHTML += ' <span style="color: #ff3333; font-weight: bold; margin-left: 5px;">[UPDATE FAILED]</span>';
-                }
-            }
-        }
     </script>
 </body>
 </html>

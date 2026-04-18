@@ -867,7 +867,7 @@
       },
       {
         "type": "dialogue",
-        "value": "[DEAXS: um|#DC322F]\n\n[DEAXS: hi?|#DC322F]\n\n[???: whats up|#DC322F|#FDF6E3]\n\n[DEAXS: what the hell are you|#DC322F]\n\n[???: im a Nucleyph|#DC322F|#FDF6E3]\n\n[???: thought that would be pretty fucking obvious|#DC322F|#FDF6E3]\n\n[DEAXS: dude ive never played this game before. it just came out|#DC322F]\n\n[???: did you not even watch the goddamn trailer?|#DC322F|#FDF6E3]\n\n[DEAXS: uh no|#DC322F]\n\n[???: god|#DC322F|#FDF6E3]\n\n[???: ok|#DC322F|#FDF6E3]\n\n[???: well basically im like|#DC322F|#FDF6E3]\n\n[???: a ghost that helps you do shit|#DC322F|#FDF6E3]\n\n[???: and i pretty much know everything about this game|#DC322F|#FDF6E3]\n\n[DEAXS: interesting|#DC322F]\n\n[???: yeah it is pretty fucking interesting|#DC322F|#FDF6E3]\n\n[DEAXS: so if you know everything about the game, what happens when we get through portal?|#DC322F]\n\n[???: first of all, its called The Threshold|#DC322F|#FDF6E3]\n\n[???: second, i cant tell you that|#DC322F|#FDF6E3]\n\n[DEAXS: why|#DC322F]\n\n[???: you gotta figure it out on your own|#DC322F|#FDF6E3]\n\n[???: god all these gamers want fucking yellow paint these days|#DC322F|#FDF6E3]\n\n[DEAXS: jeez, i was just curious|#DC322F]\n\n[DEAXS: hang on, isabel is messaging me|#DC322F]"
+        "value": "[DEAXS: um|#DC322F]\n\n[DEAXS: hi?|#DC322F]\n\n[???: whats up|#DC322F|#FDF6E3]\n\n[DEAXS: what the hell are you|#DC322F]\n\n[???: im a Nucleyph|#DC322F|#FDF6E3]\n\n[???: thought that would be pretty fucking obvious|#DC322F|#FDF6E3]\n\n[DEAXS: dude ive never played this game before. it just came out|#DC322F]\n\n[???: did you not even watch the goddamn trailer?|#DC322F|#FDF6E3]\n\n[DEAXS: uh no|#DC322F]\n\n[???: god|#DC322F|#FDF6E3]\n\n[???: ok|#DC322F|#FDF6E3]\n\n[???: well basically im like|#DC322F|#FDF6E3]\n\n[???: a ghost that helps you do shit|#DC322F|#FDF6E3]\n\n[???: and i pretty much know everything about this game|#DC322F|#FDF6E3]\n\n[DEAXS: interesting|#DC322F]\n\n[???: yeah it is pretty fucking interesting|#DC322F|#FDF6E3]\n\n[DEAXS: so if you know everything about the game, what happens when we get through the portal?|#DC322F]\n\n[???: first of all, its called The Threshold|#DC322F|#FDF6E3]\n\n[???: second, i cant tell you that|#DC322F|#FDF6E3]\n\n[DEAXS: why|#DC322F]\n\n[???: you gotta figure it out on your own|#DC322F|#FDF6E3]\n\n[???: god all these gamers want fucking yellow paint these days|#DC322F|#FDF6E3]\n\n[DEAXS: jeez, i was just curious|#DC322F]\n\n[DEAXS: hang on, isabel is messaging me|#DC322F]"
       },
       {
         "type": "image",
@@ -967,7 +967,7 @@
       },
       {
         "type": "text",
-        "value": "If you see deaxs later, that will be a good opportunity to to give it to them. You know that they will like it. It may even turn out to be useful for them."
+        "value": "If you see deaxs later, that will be a good opportunity to give it to them. You know that they will like it. It may even turn out to be useful for them."
       },
       {
         "type": "image",
@@ -1005,7 +1005,7 @@
       },
       {
         "type": "dialogue",
-        "value": "[MisterDoughnut: uh hold one someone else is messaging me|#B58900]\n\n[EarthDoggo: but we just started!!!!!!|#2AA198]\n\n[MisterDoughnut|#B58900] has stopped chatting with [EarthDoggo|#2AA198]\n\n[EarthDoggo: why does this keep happening!!!!!!!!!!!!!!!!|#2AA198] ☹️"
+        "value": "[MisterDoughnut: uh hold on someone else is messaging me|#B58900]\n\n[EarthDoggo: but we just started!!!!!!|#2AA198]\n\n[MisterDoughnut|#B58900] has stopped chatting with [EarthDoggo|#2AA198]\n\n[EarthDoggo: why does this keep happening!!!!!!!!!!!!!!!!|#2AA198] ☹️"
       },
       {
         "type": "image",
@@ -2312,6 +2312,76 @@
       {
         "type": "dialogue",
         "value": "[ISABEL: wow that was so easy|#D33682]\n\n[ISABEL: how come it took so much longer when deaxs did it?|#D33682]\n\n[ERROR:|#D33682|#FDF6E3] 🟪⬛🟪⬛🟪⬛\n\n[ISABEL: bro...|#D33682]\n\n[ISABEL: i dont think you can say that|#D33682]"
+      }
+    ],
+    "52": [
+      {
+        "type": "image",
+        "value": "assets/media/p52-1.gif"
+      },
+      {
+        "type": "text",
+        "value": ">Be Lasdav."
+      },
+      {
+        "type": "image",
+        "value": "assets/media/p52-2.png"
+      },
+      {
+        "type": "image",
+        "value": "assets/media/p52-3.png"
+      },
+      {
+        "type": "image",
+        "value": "assets/media/p52-4.png"
+      },
+      {
+        "type": "dialogue",
+        "value": "[LASDAV: If all else fails, I still have this as a backup plan.|#4F545C|#FDF6E3]"
+      },
+      {
+        "type": "image",
+        "value": "assets/media/p52-5.png"
+      },
+      {
+        "type": "image",
+        "value": "assets/media/p52-6.gif"
+      },
+      {
+        "type": "dialogue",
+        "value": "[MACKY✦J|#6C71C4] began chatting with [L|#4F545C|#FDF6E3]\n\n[MACKY✦J: Hey.|#6C71C4]\n\n[MACKY✦J: I'm MACKY✦J!|#6C71C4]\n\n[MACKY✦J: No wait that was stupid.|#6C71C4]\n\n[MACKY✦J: Why did I say that.|#6C71C4]\n\n[L: Who are you?|#4F545C|#FDF6E3]\n\n[MACKY✦J: I just told you.|#6C71C4]\n\n[L: Yes, but what do you want?|#4F545C|#FDF6E3]\n\n[MACKY✦J: I'm here to tell you something very important!|#6C71C4]\n\n[L: Being cryptic is my deal.|#4F545C|#FDF6E3]\n\n[L: You can just tell me what you want to say.|#4F545C|#FDF6E3]\n\n[MACKY✦J: Ok so you and the GRIDDERS need to start preparing big time.|#6C71C4]\n\n[MACKY✦J: Something is coming soon.|#6C71C4]\n\n[MACKY✦J: Here, in this game.|#6C71C4]\n\n[MACKY✦J: You and everything you know will be gone if you guys don't get ready.|#6C71C4]\n\n[L: Well, I'm not really in the position to begin prepping for something like this.|#4F545C|#FDF6E3]\n\n[MACKY✦J: Yeah, I know, but the Gridders can.|#6C71C4]\n\n[L: This is an interesting development.|#4F545C|#FDF6E3]\n\n[L: Why so sudden?|#4F545C|#FDF6E3]\n\n[MACKY✦J: Look, I didn't get a warning, so you should be thanking me.|#6C71C4]\n\n[MACKY✦J: Really.|#6C71C4]\n\n[L: Can you tell me anything about what we should be preparing for?|#4F545C|#FDF6E3]\n\n[MACKY✦J: In truth, I don't really know much about them.|#6C71C4]\n\n[MACKY✦J: But their name is Chaos Valentine.|#6C71C4]\n\n[MACKY✦J: As it stands right now, you will not be able to beat them.|#6C71C4]\n\n[MACKY✦J: Anyway, I just came to tell you that.|#6C71C4]\n\n[MACKY✦J: You can go back to messing with that slab or whatever.|#6C71C4]\n\n[MACKY✦J|#6C71C4] stopped chatting with [L|#4F545C|#FDF6E3]\n\n[L: Now I know what it's like to get information-dumped on.|#4F545C|#FDF6E3]"
+      },
+      {
+        "type": "image",
+        "value": "assets/media/p52-7.png"
+      },
+      {
+        "type": "image",
+        "value": "assets/media/p52-8.png"
+      },
+      {
+        "type": "image",
+        "value": "assets/media/p52-9.png"
+      },
+      {
+        "type": "image",
+        "value": "assets/media/p52-10.png"
+      },
+      {
+        "type": "image",
+        "value": "assets/media/p52-11.png"
+      },
+      {
+        "type": "image",
+        "value": "assets/media/p52-12.png"
+      },
+      {
+        "type": "image",
+        "value": "assets/media/p52-13.gif"
+      },
+      {
+        "type": "image",
+        "value": "assets/media/p52-14.png"
       }
     ]
   }

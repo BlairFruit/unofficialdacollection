@@ -1,9 +1,7 @@
-var { ipcRenderer } = require('electron');
-
-function minimizeApp() { ipcRenderer.send('minimize-app'); }
-function maximizeApp() { ipcRenderer.send('maximize-app'); }
-function closeApp() { ipcRenderer.send('close-app'); }
-function restartApp() { ipcRenderer.send('restart-app'); }
+function minimizeApp() { window.api.minimizeApp(); }
+function maximizeApp() { window.api.maximizeApp(); }
+function closeApp() { window.api.closeApp(); }
+function restartApp() { window.api.restartApp(); }
 
 window.restartApp = restartApp;
 window.minimizeApp = minimizeApp;
@@ -287,7 +285,7 @@ window.handleAddressBar = function(event) {
 
 function updateDiscordRPC() {
     if (localStorage.getItem('setting-discord') === 'false') {
-        ipcRenderer.send('update-rpc', { details: '', state: '' });
+        window.api.updateRpc({ details: '', state: '' });
         return;
     }
 
@@ -325,20 +323,31 @@ function updateDiscordRPC() {
         state = "Main Menu";
     }
 
-    ipcRenderer.send('update-rpc', { details, state });
+    window.api.updateRpc({ details, state });
 }
 
 document.addEventListener("DOMContentLoaded", () => {
+    const globalTheme = localStorage.getItem('app-theme');
+    if (globalTheme && globalTheme !== 'default') {
+        document.body.classList.add(globalTheme);
+    }
+
     if (typeof renderTabs === 'function') renderTabs();
     if (typeof updateBookmarkIcon === 'function') updateBookmarkIcon();
     
     if (typeof updateDiscordRPC === 'function') updateDiscordRPC();
 
     const addressInput = document.getElementById('address-input');
-    if (addressInput && !window.location.pathname.includes('index.html')) {
-        let cleanPath = window.location.pathname.split('/').pop() || 'home';
-        cleanPath = cleanPath.replace('.html', '');
-        addressInput.value = `deaxs://${cleanPath}`;
+    if (addressInput) {
+        if (!window.location.pathname.includes('index.html')) {
+            let cleanPath = window.location.pathname.split('/').pop() || 'home';
+            cleanPath = cleanPath.replace('.html', '');
+            addressInput.value = `deaxs://${cleanPath}`;
+        } else {
+            const urlParams = new URLSearchParams(window.location.search);
+            let p = urlParams.get('p') || "1";
+            addressInput.value = `deaxs://page/${p}`;
+        }
     }
 
     const currentHour = new Date().getHours();

@@ -5,10 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>The Unofficial DEAXS ADVENTURE Collection - Comic</title>
     <link rel="icon" type="image/png" href="assets/media/icon.png">
-    
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; img-src 'self' data: comic: https://raw.githubusercontent.com; media-src 'self' comic: https://raw.githubusercontent.com; connect-src 'self' https://raw.githubusercontent.com;">
     <link rel="stylesheet" href="assets/css/shared.css">
+    <script src="node_modules/dompurify/dist/purify.min.js"></script>
     
     <style>
+        
         :root {
             --bg-color: #121212;
             --text-color: #e0e0e0;
@@ -57,7 +59,7 @@
         }
 
         body.theme-threshold { 
-            background-color: #f4ecd8; 
+            background-color: #121212; 
             background-image: url('assets/media/themethreshold.png') !important; 
             background-position: center top;
             background-size: cover; 
@@ -70,7 +72,7 @@
         }
 
         body.theme-thresholdred { 
-            background-color: #f4ecd8; 
+            background-color: #121212; 
             background-image: url('assets/media/themethresholdred.png'); 
             background-position: center 85px;
             background-size: cover; 
@@ -136,16 +138,30 @@
         body.size-large { --base-font-size: 1.6rem; --dialogue-font-size: 1.4rem; }
         body.size-xlarge { --base-font-size: 2.0rem; --dialogue-font-size: 1.8rem; font-weight: bold; }
 
+        html {
+            min-height: 100vh;
+            background-color: #121212;
+        }
+
+        header { 
+            width: 100%; 
+            max-width: 800px; 
+            padding: 40px 20px; 
+            text-align: center; 
+            box-sizing: border-box; 
+            margin: 0 auto;
+        }
+
         body { 
             background-color: var(--bg-color); 
             color: var(--text-color); 
             font-family: var(--font-main); 
             margin: 0; 
             padding: 110px 0 0 0; 
-            display: flex; 
-            flex-direction: column; 
-            align-items: center; 
+            display: block; 
             line-height: 1.6;
+            min-height: 100vh; 
+            width: 100%;
         }
 
         .lightbox { display: none; position: fixed; z-index: 10000; left: 0; top: 0; width: 100%; height: 100%; background-color: rgba(0, 0, 0, 0.9); align-items: center; justify-content: center; flex-direction: column; backdrop-filter: blur(5px); }
@@ -157,7 +173,6 @@
         .lightbox-close-btn:hover { background: white; color: black; }
         body.no-scroll { overflow: hidden; }
 
-        header { width: 100%; max-width: 800px; padding: 40px 20px; text-align: center; box-sizing: border-box; }
         .logo { width: 100%; max-width: 800px; height: auto; display: block; margin: 0 auto; }
 
         .comic-container { width: 100%; max-width: 800px; padding: 0 20px; box-sizing: border-box; min-height: 50vh; margin: 0 auto; }
@@ -238,9 +253,41 @@
         }
 
         @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+        body[class*="theme-"] {
+            background-size: cover !important; 
+            background-repeat: no-repeat !important;
+            background-attachment: fixed !important;
+            background-position: center top !important;
+            width: 100%;
+            min-height: 100vh;
+        }
+
+        body[class*="theme-"] .comic-container,
+        body[class*="theme-"] header,
+        body[class*="theme-"] footer {
+            width: min(100%, max(41.66vw, 74.07vh)) !important; 
+            max-width: 800px !important; 
+            margin: 0 auto !important;
+            box-sizing: border-box;
+        }
+
+        #main-content img,
+        #main-content video {
+            width: 100% !important; 
+            max-width: 100% !important;
+            height: auto !important;    
+            display: block;
+            margin: 0 auto 15px auto;
+            border-radius: 2px;
+        }
+
+        .custom-video {
+            margin: 0 !important;
+            border-radius: 2px;
+        }
     </style>
 </head>
-<body>
+<body id="comic-body">
     <div class="retro-title-bar">
         <div style="display: flex; align-items: center;">
             <img src="assets/media/icon.png" class="title-bar-icon" alt="icon">
@@ -295,9 +342,6 @@
     <script src="assets/js/shared.js"></script>
     
     <script>
-        const fs = require('fs');
-        const path = require('path');
-
         let totalPagesCount = 1;
 
         function applyTheme() {
@@ -305,22 +349,21 @@
             const mainFont = localStorage.getItem('reader-font-main') || 'default';
             const dialogueFont = localStorage.getItem('reader-font-dialogue') || 'default';
             const size = localStorage.getItem('reader-size') || 'medium';
-            
-            document.body.className = ''; 
 
+            document.body.className = ''; 
+            const globalTheme = localStorage.getItem('app-theme');
+            if (globalTheme && globalTheme !== 'default') {
+                document.body.classList.add(globalTheme);
+            }
             document.body.classList.toggle('light-mode', mode === 'light');
             document.body.classList.toggle('theme-metal', mode === 'metal');
             document.body.classList.toggle('theme-rsidnt', mode === 'rsidnt');
             document.body.classList.toggle('theme-threshold', mode === 'threshold');
             document.body.classList.toggle('theme-thresholdred', mode === 'thresholdred');
-            
-            document.body.classList.remove('main-font-serif', 'main-font-sans', 'main-font-comic', 'main-font-dyslexic');
-            if (mainFont !== 'default') document.body.classList.add(`main-font-${mainFont}`);
 
-            document.body.classList.remove('dialogue-font-serif', 'dialogue-font-sans', 'dialogue-font-comic', 'dialogue-font-dyslexic');
+            if (mainFont !== 'default') document.body.classList.add(`main-font-${mainFont}`);
             if (dialogueFont !== 'default') document.body.classList.add(`dialogue-font-${dialogueFont}`);
 
-            document.body.classList.remove('size-small', 'size-large', 'size-xlarge');
             if (size !== 'medium') document.body.classList.add(`size-${size}`);
         }
 
@@ -419,16 +462,13 @@
         }
 
         async function loadComic() {
-            applyTheme();
             const container = document.getElementById('main-content');
             const footer = document.getElementById('nav-footer');
             const urlParams = new URLSearchParams(window.location.search);
             let currentPage = urlParams.get('p') || "1";
-            
-            const addressInput = document.getElementById('address-input');
-            if (addressInput) {
-                addressInput.value = `deaxs://comic/page/${currentPage}`;
-            }
+            const p = parseInt(currentPage);
+
+            applyTheme();
 
             localStorage.setItem('saved-page', currentPage);
 
@@ -456,10 +496,7 @@
             }
 
             try {
-                const dataPath = path.join(__dirname, 'assets', 'data.json');
-                const rawData = fs.readFileSync(dataPath, 'utf8');
-                const data = JSON.parse(rawData);
-                
+                const data = await window.api.getComicData();    
                 container.innerHTML = "";
                 document.body.className = ''; 
                 applyTheme();
@@ -470,8 +507,8 @@
                 }
                 
                 const pageKeys = Object.keys(data.pages).sort((a,b) => a-b);
-                totalPagesCount = pageKeys.length;
                 const lastPage = pageKeys[pageKeys.length - 1];
+                totalPagesCount = parseInt(lastPage);
 
                 function scanForAchievements(triggerType, currentVideoTime = 0) {
                     if (!window.APP_ACHIEVEMENTS) return;
@@ -504,27 +541,27 @@
                         div.className = "content-block";
 
                         if (block.type === 'image') {
-                            div.innerHTML = `<img src="${block.value}" alt="Panel" class="comic-panel-img" onerror="this.onerror=null; this.src='assets/media/fallback.png';" onclick="openLightbox(this.getAttribute('src'), 'image')">`;
+                            div.innerHTML = `<img src="comic://${block.value}" alt="Panel" class="comic-panel-img" onerror="this.onerror=null; this.src='assets/media/fallback.png';" onclick="openLightbox(this.getAttribute('src'), 'image')">`;
                         } else if (block.type === 'video') {
                             div.innerHTML = `
                                 <div class="custom-video-wrapper">
-                                    <video class="custom-video" src="${block.value}"></video>
+                                    <video class="custom-video" src="comic://${block.value}"></video>
                                     <div class="video-controls">
                                         <button class="retro-btn play-pause-btn" style="width: 30px;">▶</button>
                                         <div class="video-time-display"><span class="current-time">0:00</span></div>
                                         <input type="range" class="progress-bar" value="0" min="0" max="100" step="0.1">
                                         <button class="retro-btn mute-btn" style="width: 30px;">🔊</button>
                                         <input type="range" class="volume-bar" value="1" min="0" max="1" step="0.05" style="width: 50px;">
-                                        <button class="retro-btn" style="width: 30px;" onclick="openLightbox('${block.value}', 'video')">🔍</button>
+                                        <button class="retro-btn" style="width: 30px;" onclick="openLightbox('comic://${block.value}', 'video')">🔍</button>
                                     </div>
                                 </div>
                             `;
                         } else if (block.type === 'text') {
                             div.className += " text-block";
-                            div.innerHTML = parseColors(block.value);
+                            div.innerHTML = DOMPurify.sanitize(parseColors(block.value));
                         } else if (block.type === 'dialogue') {
                             div.className += " dialogue-box";
-                            div.innerHTML = parseColors(block.value);
+                            div.innerHTML = DOMPurify.sanitize(parseColors(block.value));
                         }
                         container.appendChild(div);
                     });
@@ -643,13 +680,15 @@
                         data.pages[nextNum.toString()].forEach(block => {
                             if (block.type === 'image') {
                                 const img = new Image();
-                                img.src = block.value;
+                                img.src = 'comic://' + block.value;
                             } else if (block.type === 'video') {
                                 const vid = document.createElement('video');
                                 vid.preload = 'auto';
-                                vid.src = block.value;
+                                vid.src = 'comic://' + block.value;
                             }
                         });
+                        
+                        
                     }, 500);
                 }
                 
@@ -657,6 +696,7 @@
                 console.error(err);
                 container.innerHTML = "<p style='text-align:center;'>[ ERROR LOADING ]</p>";
             }
+
         }
         
         window.onload = loadComic;

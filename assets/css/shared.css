@@ -28,6 +28,28 @@ body { background-color: #121212; color: white; font-family: "Courier New", mono
     font-style: italic;
 }
 
+@font-face {
+    font-family: "Daydream"; 
+    src: url("../fonts/DaydreamDEMO.otf") format("opentype"); 
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "mono-pixel"; 
+    src: url("../fonts/mono-pixel.otf") format("opentype"); 
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "DOSVGA"; 
+    src: url("../fonts/PerfectDOSVGA.otf") format("opentype"); 
+    font-weight: normal;
+    font-style: normal;
+}
+
+
 .retro-title-bar { background-color: #000080; color: white; font-family: "MS Sans Serif", "Microsoft Sans Serif", "Terminal", sans-serif; display: flex; justify-content: space-between; align-items: center; padding: 3px 5px; -webkit-app-region: drag; position: fixed; top: 0; left: 0; width: 100%; box-sizing: border-box; z-index: 9999; }
 .retro-title-text { font-weight: bold; font-size: 14px; margin-left: 5px; letter-spacing: 1px; text-shadow: 1px 1px 0 #000; }
 .title-bar-icon { width: 16px; height: 16px; margin-right: 5px; -webkit-app-region: drag; }
@@ -36,7 +58,7 @@ body { background-color: #121212; color: white; font-family: "Courier New", mono
 .retro-btn:active { border-top: 2px solid #000000; border-left: 2px solid #000000; border-right: 2px solid #ffffff; border-bottom: 2px solid #ffffff; }
 
 .browser-ui-container { position: fixed; top: 22px; left: 0; width: 100%; z-index: 9998; background: #c0c0c0; }
-.retro-tabs { display: flex; gap: 2px; padding: 5px 5px 0 5px; border-bottom: 1px solid #fff; }
+.retro-tabs { display: flex; justify-content: flex-start; align-items: flex-end; margin: 0; gap: 2px; padding: 5px 5px 0 5px; border-bottom: 0px solid #fff; }
 .retro-tab { padding: 5px 15px; font-family: "MS Sans Serif", Arial, sans-serif; font-size: 12px; text-decoration: none; color: black; border-top: 2px solid #fff; border-left: 2px solid #fff; border-right: 2px solid #000; border-top-left-radius: 4px; border-top-right-radius: 4px; position: relative; top: 1px; transition: 0.2s; display: flex; align-items: center; user-select: none; cursor: pointer; }
 .retro-tab.active { background: #c0c0c0; font-weight: bold; border-bottom: 1px solid #c0c0c0; z-index: 2; }
 .retro-tab.inactive { background: #a0a0a0; border-bottom: 1px solid #fff; color: #444; }
@@ -100,3 +122,136 @@ body { background-color: #121212; color: white; font-family: "Courier New", mono
 .bookmark-remove-x { font-weight: bold; padding-left: 10px; color: #444; }
 .bookmark-item-row:hover .bookmark-remove-x { color: #ff6666; }
 .bookmark-remove-x:hover { color: #ff0000 !important; }
+
+body.theme-satrn:not(#comic-body) {
+    background-color: #565666 !important;
+    background-image: repeating-linear-gradient(
+        0deg, transparent, transparent 2px,
+        rgba(0, 0, 0, 0.15) 2px, rgba(0, 0, 0, 0.15) 4px
+    ) !important;
+    color: #ffffff !important;
+}
+
+body.theme-satrn:not(#comic-body),
+body.theme-satrn .browser-ui-container,
+body.theme-satrn .retro-title-bar,
+body.theme-satrn .floating-menu-btn,
+body.theme-satrn .lightbox-close-btn {
+    font-family: "Terminal", "Courier New", monospace !important;
+}
+body.theme-satrn .menu-btn,
+body.theme-satrn .nav-btn,
+body.theme-satrn .tab-btn,
+body.theme-satrn .retro-btn,
+body.theme-satrn .modal-btn,
+body.theme-satrn .btn {
+    background-color: #9c9c8d !important;
+    color: #111 !important;
+    border-top: 3px solid #d4d4c9 !important;
+    border-left: 3px solid #d4d4c9 !important;
+    border-right: 3px solid #33333d !important;
+    border-bottom: 3px solid #33333d !important;
+    font-weight: bold;
+    box-shadow: none !important;
+}
+
+body.theme-satrn .menu-btn:hover,
+body.theme-satrn .nav-btn:hover,
+body.theme-satrn .tab-btn:hover,
+body.theme-satrn .btn:hover {
+    background-color: #b5b5a6 !important;
+}
+
+body.theme-satrn .menu-btn:active,
+body.theme-satrn .nav-btn:active,
+body.theme-satrn .tab-btn:active,
+body.theme-satrn .btn:active {
+    border-top: 3px solid #33333d !important;
+    border-left: 3px solid #33333d !important;
+    border-right: 3px solid #d4d4c9 !important;
+    border-bottom: 3px solid #d4d4c9 !important;
+}
+
+body.theme-satrn .settings-box,
+body.theme-satrn .blog-container,
+body.theme-satrn .custom-audio-wrapper,
+body.theme-satrn .browser-ui-container,
+body.theme-satrn .retro-address-bar,
+body.theme-satrn .jump-input {
+    background-color: #565666 !important;
+    border-top: 3px solid #d4d4c9 !important;
+    border-left: 3px solid #d4d4c9 !important;
+    border-right: 3px solid #33333d !important;
+    border-bottom: 3px solid #33333d !important;
+    color: #ffffff !important;
+}
+
+body.theme-satrn .settings-header,
+body.theme-satrn .blog-header {
+    background-color: #33333d !important;
+    color: #d4d4c9 !important;
+    border: none !important;
+}
+
+body.theme-satrn .retro-title-bar {
+    background-color: #222228 !important;
+    color: #9c9c8d !important;
+    border-bottom: 2px solid #111 !important;
+}
+
+.split-layout {
+    display: block;
+    max-width: 800px;
+    margin: 0 auto;
+}
+.split-sidebar.tab-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    flex-wrap: wrap;
+    width: 100%;
+    gap: 10px;
+    margin-bottom: 30px;
+    border-bottom: 2px solid #444;
+    padding-bottom: 10px;
+}
+.split-sidebar .tab-btn {
+    width: auto;
+    padding: 10px 20px;
+    margin: 0;
+}
+
+body.theme-satrn .split-layout {
+    display: flex;
+    max-width: 900px;
+    gap: 20px;
+    align-items: flex-start;
+}
+body.theme-satrn .split-sidebar.tab-container {
+    width: 220px;
+    flex-direction: column;
+    gap: 12px;
+    flex-shrink: 0;
+    border-bottom: none;
+    padding-bottom: 0;
+    margin-bottom: 0;
+}
+body.theme-satrn .split-sidebar .tab-btn {
+    width: 100%;
+    padding: 15px 10px;
+    box-sizing: border-box;
+}
+body.theme-satrn .split-content {
+    flex-grow: 1;
+    width: 100%;
+}
+
+body.theme-satrn .title-bar-icon,
+body.theme-satrn .fake-favicon,
+body.theme-satrn .unused-title-bar img {
+    content: url("../media/pixelated-icon.png") !important;
+}
+
+body.theme-satrn .unused-title-bar img {
+    filter: none !important;
+}

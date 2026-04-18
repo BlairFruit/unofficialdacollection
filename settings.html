@@ -2,7 +2,7 @@
 <html>
 <head>
     <title>The Unofficial DEAXS ADVENTURE Collection - Settings</title>
-    
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; img-src 'self' data: comic: https://raw.githubusercontent.com; media-src 'self' comic: https://raw.githubusercontent.com; connect-src 'self' https://raw.githubusercontent.com;">
     <link rel="stylesheet" href="assets/css/shared.css">
     
     <style>
@@ -60,13 +60,20 @@
         }
         
         .setting-desc { font-size: 11px; color: #444; display: block; margin-top: 3px; }
+
+        .section { display: none; }
+        .section.active { display: block; animation: fadeIn 0.3s ease-in; }
+        .tab-btn { background: #1e1e1e; color: #888; border: 2px solid #444; font-family: "Courier New", monospace; font-weight: bold; cursor: pointer; transition: 0.2s; }
+        .tab-btn.active { background: #000080; color: white; border-color: white; box-shadow: 2px 2px 0 #fff inset; }
+        body:not(.theme-satrn) .split-sidebar { display: none !important; }
+        body:not(.theme-satrn) .section { display: block !important; animation: none; }
     </style>
 </head>
 <body>
     <div class="retro-title-bar">
         <div style="display: flex; align-items: center;">
             <img src="assets/media/icon.png" class="title-bar-icon" alt="icon">
-            <div class="retro-title-text"></div>
+            <div class="retro-title-text">The Unofficial DEAXS ADVENTURE Collection - Settings</div>
         </div>
         <div class="retro-window-controls">
             <button class="retro-btn" onclick="minimizeApp()">_</button>
@@ -95,144 +102,137 @@
     </div>
 
     </div> <a href="home.html" class="nav-btn floating-menu-btn">← BACK TO MENU</a>
-
-    <div class="settings-container">
-        
-        <div class="settings-box">
-            <div class="settings-header">App Display Settings</div>
-            <div class="setting-row">
-                <label for="theme-select"><strong>Global App Theme:</strong></label>
-                <select id="theme-select" class="retro-select" onchange="saveSettings()">
-                    <option value="default">Default</option>
-                </select>
-            </div>
-            <p style="font-size: 12px; color: #444; margin-top: 10px;">
-                * Note: Theres literally none other than the default right now. There's some for the actual comic tho
-            </p>
-        </div>
-
-        <div class="settings-box">
-            <div class="settings-header">Comic Reader Settings</div>
+        <div class="split-layout">
             
-            <div class="setting-row">
-                <label for="reader-mode"><strong>Reader Background:</strong></label>
-                <select id="reader-mode" class="retro-select" onchange="saveSettings()">
-                    <option value="dark">Dark Mode</option>
-                    <option value="light">Light Mode</option>
-                    <option value="metal">Metal Mode</option>
-                    <option value="rsidnt">RSIDNT Mode</option>
-                    <option value="threshold">Threshold Mode</option>
-                    <option value="thresholdred">Red RSIDNT Mode</option>
-                </select>
+            <div class="split-sidebar tab-container">
+                <button class="tab-btn active" onclick="switchSettingsTab(this, 'set-display')">APP DISPLAY</button>
+                <button class="tab-btn" onclick="switchSettingsTab(this, 'set-reader')">COMIC READER</button>
+                <button class="tab-btn" onclick="switchSettingsTab(this, 'set-system')">SYSTEM & NAV</button>
+                <button class="tab-btn" onclick="switchSettingsTab(this, 'set-media')">MEDIA & AUDIO</button>
+                <button class="tab-btn" onclick="switchSettingsTab(this, 'set-features')">FEATURES</button>
             </div>
 
-            <div class="setting-row">
-                <label for="reader-font-main"><strong>Main Text Font:</strong></label>
-                <select id="reader-font-main" class="retro-select" onchange="saveSettings()">
-                    <option value="default">Typewriter (Default)</option>
-                    <option value="sans">Sans</option>
-                    <option value="serif">Serif</option>
-                    <option value="comic">comic sans</option>
-                    <option value="dyslexic">Dyslexic</option>
-                </select>
-            </div>
+            <div class="split-content settings-container" style="margin: 0; max-width: none;">
+                
+                <div id="set-display" class="settings-section section active">
+                    <div class="settings-box">
+                        <div class="settings-header">APP DISPLAY</div>
+                        <div class="setting-row">
+                            <label for="theme-select"><strong>Global App Theme:</strong></label>
+                            <select id="theme-select" class="retro-select" onchange="saveSettings()">
+                                <option value="default">Default</option>
+                                <option value="theme-satrn">SAT-RN OS</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
 
-            <div class="setting-row">
-                <label for="reader-font-dialogue"><strong>Dialogue Font:</strong></label>
-                <select id="reader-font-dialogue" class="retro-select" onchange="saveSettings()">
-                    <option value="default">Sleek Code (Default)</option>
-                    <option value="sans">Sans</option>
-                    <option value="serif">Serif</option>
-                    <option value="comic">comic sans</option>
-                    <option value="dyslexic">Dyslexic</option>
-                </select>
-            </div>
+                <div id="set-reader" class="settings-section section">
+                    <div class="settings-box">
+                        <div class="settings-header">COMIC READER</div>
+                        <div class="setting-row">
+                            <label for="reader-mode"><strong>Background Theme:</strong></label>
+                            <select id="reader-mode" class="retro-select" onchange="saveSettings()">
+                                <option value="dark">Dark Mode (Default)</option>
+                                <option value="light">Light Mode</option>
+                                <option value="metal">Metal</option>
+                                <option value="rsidnt">RSIDNT</option>
+                                <option value="threshold">Threshold</option>
+                                <option value="thresholdred">Threshold (Red)</option>
+                            </select>
+                        </div>
+                        <div class="setting-row">
+                            <label for="reader-font-main"><strong>Main Font:</strong></label>
+                            <select id="reader-font-main" class="retro-select" onchange="saveSettings()">
+                                <option value="default">Default (Courier)</option>
+                                <option value="serif">Serif (Georgia)</option>
+                                <option value="sans">Sans-Serif (Arial)</option>
+                                <option value="comic">Comic Sans</option>
+                                <option value="dyslexic">OpenDyslexic</option>
+                            </select>
+                        </div>
+                        <div class="setting-row">
+                            <label for="reader-font-dialogue"><strong>Dialogue Font:</strong></label>
+                            <select id="reader-font-dialogue" class="retro-select" onchange="saveSettings()">
+                                <option value="default">Default (Consolas)</option>
+                                <option value="serif">Serif (Georgia)</option>
+                                <option value="sans">Sans-Serif (Arial)</option>
+                                <option value="comic">Comic Sans</option>
+                                <option value="dyslexic">OpenDyslexic</option>
+                            </select>
+                        </div>
+                        <div class="setting-row">
+                            <label for="reader-size"><strong>Text Size:</strong></label>
+                            <select id="reader-size" class="retro-select" onchange="saveSettings()">
+                                <option value="small">Small</option>
+                                <option value="medium">Medium</option>
+                                <option value="large">Large</option>
+                                <option value="xlarge">Extra Large</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
 
-            <div class="setting-row">
-                <label for="reader-size"><strong>Text Size:</strong></label>
-                <select id="reader-size" class="retro-select" onchange="saveSettings()">
-                    <option value="small">Small</option>
-                    <option value="medium">Standard</option>
-                    <option value="large">Large</option>
-                    <option value="xlarge">Extra Large</option>
-                </select>
-            </div>
-        </div>
+                <div id="set-system" class="settings-section section">
+                    <div class="settings-box">
+                        <div class="settings-header">SYSTEM & NAVIGATION</div>
+                        <div class="setting-row">
+                            <label>
+                                <strong>Auto-Check for Updates</strong><br>
+                                <span class="setting-desc">Automatically check for new app and comic updates on launch.</span>
+                            </label>
+                            <input type="checkbox" id="toggle-autoupdate" onchange="saveSettings()">
+                        </div>
+                        <div class="setting-row">
+                            <label>
+                                <strong>Click to Turn Pages</strong><br>
+                                <span class="setting-desc">Click the left/right sides of the screen to change comic pages.</span>
+                            </label>
+                            <input type="checkbox" id="toggle-clickturn" onchange="saveSettings()">
+                        </div>
+                    </div>
+                </div>
 
-        <div class="settings-box">
-            <div class="settings-header">System & Navigation</div>
-            
-            <div class="setting-row">
-                <label for="toggle-autoupdate">
-                    <strong>Auto-Check for Updates</strong>
-                    <span class="setting-desc">Check for new pages automatically when the app opens.</span>
-                </label>
-                <input type="checkbox" id="toggle-autoupdate" onchange="saveSettings()">
-            </div>
+                <div id="set-media" class="settings-section section">
+                    <div class="settings-box">
+                        <div class="settings-header">MEDIA & AUDIO</div>
+                        <div class="setting-row">
+                            <label><strong>Mute All Audio</strong></label>
+                            <input type="checkbox" id="toggle-mute" onchange="saveSettings()">
+                        </div>
+                        <div class="setting-row">
+                            <label><strong>Global Volume</strong></label>
+                            <input type="range" id="volume-slider" min="0" max="1" step="0.05" onchange="saveSettings()">
+                        </div>
+                    </div>
+                </div>
 
-            <div class="setting-row">
-                <label for="toggle-clickturn">
-                    <strong>Click Screen to Turn Pages</strong>
-                    <span class="setting-desc">Click the left or right edges of the window to turn pages.</span>
-                </label>
-                <input type="checkbox" id="toggle-clickturn" onchange="saveSettings()">
-            </div>
-        </div>
+                <div id="set-features" class="settings-section section">
+                    <div class="settings-box">
+                        <div class="settings-header">APPLICATION FEATURES</div>
+                        <div class="setting-row">
+                            <label><strong>Enable Achievements</strong></label>
+                            <input type="checkbox" id="toggle-achievements" onchange="saveSettings()">
+                        </div>
+                        <div class="setting-row">
+                            <label><strong>Enable Easter Eggs</strong></label>
+                            <input type="checkbox" id="toggle-eastereggs" onchange="saveSettings()">
+                        </div>
+                        <div class="setting-row">
+                            <label><strong>Discord Rich Presence</strong></label>
+                            <input type="checkbox" id="toggle-discord" onchange="saveSettings()">
+                        </div>
+                        <div class="setting-row">
+                            <label>
+                                <strong>Hide Spoilers in Discord RPC</strong><br>
+                                <span class="setting-desc">Hides exact page numbers from your Discord status.</span>
+                            </label>
+                            <input type="checkbox" id="toggle-spoilers" onchange="saveSettings()">
+                        </div>
+                    </div>
+                </div>
 
-        <div class="settings-box">
-            <div class="settings-header">Media & Audio</div>
-            
-            <div class="setting-row">
-                <label for="toggle-mute">
-                    <strong>Mute by Default</strong>
-                    <span class="setting-desc">Start all comic pages and extras with audio muted.</span>
-                </label>
-                <input type="checkbox" id="toggle-mute" onchange="saveSettings()">
-            </div>
-
-            <div class="setting-row">
-                <label for="volume-slider">
-                    <strong>Default Volume</strong>
-                </label>
-                <input type="range" id="volume-slider" min="0" max="1" step="0.05" onchange="saveSettings()">
-            </div>
-        </div>
-
-        <div class="settings-box">
-            <div class="settings-header">Application Features</div>
-            
-            <div class="setting-row">
-                <label for="toggle-achievements">
-                    <strong>Enable Achievements</strong>
-                    <span class="setting-desc">Show popups and play sounds when discovering secrets.</span>
-                </label>
-                <input type="checkbox" id="toggle-achievements" onchange="saveSettings()">
-            </div>
-
-            <div class="setting-row">
-                <label for="toggle-eastereggs">
-                    <strong>Enable Easter Eggs</strong>
-                    <span class="setting-desc">Allow random events, jumpscares, and secret pages to appear.</span>
-                </label>
-                <input type="checkbox" id="toggle-eastereggs" onchange="saveSettings()">
-            </div>
-
-            <div class="setting-row">
-                <label for="toggle-discord">
-                    <strong>Discord Rich Presence</strong>
-                    <span class="setting-desc">Show what page you are currently reading on your Discord profile.</span>
-                </label>
-                <input type="checkbox" id="toggle-discord" onchange="saveSettings()">
-            </div>
-
-            <div class="setting-row">
-                <label for="toggle-spoilers">
-                    <strong>Hide Discord Spoilers</strong>
-                    <span class="setting-desc">Hide your current Page Number on your Discord status.</span>
-                </label>
-                <input type="checkbox" id="toggle-spoilers" onchange="saveSettings()">
-            </div>
-
+            </div> 
         </div>
     </div>
 
@@ -257,6 +257,14 @@
         });
 
         function saveSettings() {
+            const newTheme = document.getElementById('theme-select').value;
+            localStorage.setItem('app-theme', newTheme);
+            
+            document.body.classList.remove('theme-satrn'); 
+            if (newTheme !== 'default') {
+                document.body.classList.add(newTheme);
+            }
+
             localStorage.setItem('app-theme', document.getElementById('theme-select').value);
             localStorage.setItem('setting-achievements', document.getElementById('toggle-achievements').checked);
             localStorage.setItem('setting-eastereggs', document.getElementById('toggle-eastereggs').checked);
@@ -267,8 +275,7 @@
             const rpcChecked = document.getElementById('toggle-discord').checked;
             localStorage.setItem('setting-discord', rpcChecked);
             if (!rpcChecked) {
-                const { ipcRenderer } = require('electron');
-                ipcRenderer.send('update-rpc', { details: '', state: '' });
+                window.api.updateRpc({ details: '', state: '' });
             } else {
                 if (typeof updateDiscordRPC === 'function') updateDiscordRPC();
             }
@@ -280,6 +287,13 @@
             localStorage.setItem('reader-font-main', document.getElementById('reader-font-main').value);
             localStorage.setItem('reader-font-dialogue', document.getElementById('reader-font-dialogue').value);
             localStorage.setItem('reader-size', document.getElementById('reader-size').value);
+        }
+
+        function switchSettingsTab(btn, tabId) {
+            document.querySelectorAll('.settings-section').forEach(sec => sec.classList.remove('active'));
+            document.querySelectorAll('.split-sidebar .tab-btn').forEach(b => b.classList.remove('active'));
+            document.getElementById(tabId).classList.add('active');
+            btn.classList.add('active');
         }
     </script>
 </body>

@@ -26,8 +26,14 @@ jobs:
       - name: Install Dependencies
         run: npm install
 
-      - name: Build the App
-        run: npm run build
+      - name: Build the App Engine
+        run: npx electron-builder --win --dir
+
+      - name: Assemble Portable Folder
+        run: Copy-Item -Path "assets" -Destination "dist/win-unpacked/assets" -Recurse
+
+      - name: Zip the Final Release
+        run: Compress-Archive -Path "dist/win-unpacked\*" -DestinationPath "dist/Unofficial Deaxs Adventure Collection.zip"
 
       - name: Upload the Compiled Artifact
         uses: actions/upload-artifact@v4
@@ -43,5 +49,6 @@ jobs:
           files: dist/*.zip
           body_path: release-notes.md
           draft: false
+          prerelease: true
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
